@@ -87,6 +87,7 @@
     <Compile Include="Enums\EClassePontoForte.cs" />
     <Compile Include="Enums\ETipoEndereco.cs" />
     <Compile Include="Models\Avaliacao.cs" />
+    <Compile Include="Models\Claims.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Coachee.cs" />
     <Compile Include="Models\Dispositivo.cs" />
@@ -96,10 +97,12 @@
     <Compile Include="Models\Formacao.cs" />
     <Compile Include="Models\Fragilidade.cs" />
     <Compile Include="Models\Indicador_Desempenho.cs" />
+    <Compile Include="Models\Logins.cs" />
     <Compile Include="Models\Mensagem.cs" />
     <Compile Include="Models\Meta.cs" />
     <Compile Include="Models\Objetivo.cs" />
     <Compile Include="Models\Orcamento.cs" />
+    <Compile Include="Models\Papel.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Plano_Acao.cs" />
     <Compile Include="Models\PontoForte.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="Models\Tarefa.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Usuario_Papel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
