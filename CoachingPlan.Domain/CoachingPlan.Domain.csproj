@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{981571FF-7C77-4F43-BFF3-E9692FDAB8FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoachingPlan.Domain</RootNamespace>
+    <AssemblyName>CoachingPlan.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Luan\Documents\Visual Studio 2013\Projects\GerenciamentoFinanceiro\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Luan\Desktop\IdentitySample\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Luan\Documents\Visual Studio 2013\Projects\GerenciamentoFinanceiro\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Luan\Documents\Visual Studio 2013\Projects\GerenciamentoFinanceiro\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\Repositories\IFormacaoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPontoForteRepository.cs" />
+    <Compile Include="Contracts\Repositories\IFragilidadeRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEspecialidadeRepository.cs" />
+    <Compile Include="Contracts\Repositories\ICoacheeRepository.cs" />
+    <Compile Include="Contracts\Repositories\ICoachRepository.cs" />
+    <Compile Include="Contracts\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Contracts\Repositories\ITelefoneRepository.cs" />
+    <Compile Include="Contracts\Services\ICoacheeService.cs" />
+    <Compile Include="Contracts\Services\ICoachService.cs" />
+    <Compile Include="Contracts\Services\IUsuarioService.cs" />
+    <Compile Include="Contracts\Services\IFormacaoService.cs" />
+    <Compile Include="Contracts\Services\IPontoForteService.cs" />
+    <Compile Include="Contracts\Services\IEspecialidadeService.cs" />
+    <Compile Include="Contracts\Services\IFragilidadeService.cs" />
+    <Compile Include="Contracts\Services\IPessoaService.cs" />
+    <Compile Include="Contracts\Services\IEnderecoService.cs" />
+    <Compile Include="Contracts\Services\ITelefoneService.cs" />
+    <Compile Include="Enums\EEstado.cs" />
+    <Compile Include="Enums\EGenero.cs" />
+    <Compile Include="Enums\EClassePontoForte.cs" />
+    <Compile Include="Enums\ETipoEndereco.cs" />
+    <Compile Include="Models\Avaliacao.cs" />
+    <Compile Include="Models\Claims.cs" />
+    <Compile Include="Models\Coach.cs" />
+    <Compile Include="Models\Coachee.cs" />
+    <Compile Include="Models\Dispositivo.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Especialidade.cs" />
+    <Compile Include="Models\Ferramenta_Avaliacao.cs" />
+    <Compile Include="Models\Formacao.cs" />
+    <Compile Include="Models\Fragilidade.cs" />
+    <Compile Include="Models\Indicador_Desempenho.cs" />
+    <Compile Include="Models\Logins.cs" />
+    <Compile Include="Models\Mensagem.cs" />
+    <Compile Include="Models\Meta.cs" />
+    <Compile Include="Models\Objetivo.cs" />
+    <Compile Include="Models\Orcamento.cs" />
+    <Compile Include="Models\Papel.cs" />
+    <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Models\Plano_Acao.cs" />
+    <Compile Include="Models\PontoForte.cs" />
+    <Compile Include="Models\Preenchimento_Ferramenta.cs" />
+    <Compile Include="Models\Processo_Coaching.cs" />
+    <Compile Include="Models\Questao.cs" />
+    <Compile Include="Models\Resposta.cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="Models\Sessao.cs" />
+    <Compile Include="Models\Tarefa.cs" />
+    <Compile Include="Models\Telefone.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Usuario_Papel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoachingPlan.Resources\CoachingPlan.Resources.csproj">
+      <Project>{e2834bee-2bf1-4489-be52-e39ab7ae5a0e}</Project>
+      <Name>CoachingPlan.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

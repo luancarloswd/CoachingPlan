@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="46b41bd2-4153-43eb-8835-f0944b9e50dd"
+  name="UC10 - Gerar Plano de Ação" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+        name="UC10-Gerar plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="03d0f86b-107b-426e-8ca2-bbe832b77a51">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a678c4c8-4ea6-4381-b2a2-7c6a15577f5a"
+        name="Cadastrar Plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="b4fc97af-7f52-4d4d-a9d6-8c29f2ded084">
+            <useCaseMoniker
+              Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+              LastKnownName="UC10-Gerar plano de Ação"
+              LastKnownLocation="Package1_1930.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2b1faf50-d558-4434-8ea2-f2fce71f67ee"
+        name="Editar Plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="e7fcd389-45b4-4f10-abdb-c85e4c2875c2">
+            <useCaseMoniker
+              Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+              LastKnownName="UC10-Gerar plano de Ação"
+              LastKnownLocation="Package1_1930.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6f077123-ee54-4883-986e-0ed957244770"
+        name="Excluir Plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="e1c4be3c-ff98-4832-972b-0f49c61bf51c">
+            <useCaseMoniker
+              Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+              LastKnownName="UC10-Gerar plano de Ação"
+              LastKnownLocation="Package1_1930.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0ebf5a9b-3571-4abd-8f54-ea82a2917e2b"
+        name="Visualizar Plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="f7d2286a-0de2-4cae-8874-ab0c87eda2c1">
+            <useCaseMoniker
+              Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+              LastKnownName="UC10-Gerar plano de Ação"
+              LastKnownLocation="Package1_1930.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c0f1bab4-029e-4aa8-99db-dd1d691fa754"
+        name="Pesquisar Plano de Ação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="e142b248-0791-4678-b394-386f60d7fce5">
+            <useCaseMoniker
+              Id="6c3f904a-f0f7-484a-86b4-73609a580b9f"
+              LastKnownName="UC10-Gerar plano de Ação"
+              LastKnownLocation="Package1_1930.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="85ab1f34-bde0-4001-b988-5f0a8dba6325"
+  name="UC04 - Acessar Sistema" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="fd7f5ec4-7145-45b3-864a-310741793d56"
+        name="Altenticar Sistema"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="45d01df2-d152-4f31-9ff8-520c5f124ab1">
+            <useCaseMoniker
+              Id="f1ea7705-55c7-4c7c-92c0-99d0de83fc3a"
+              LastKnownName="UC04-Acessar sistema"
+              LastKnownLocation="Package_2020.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3f625e04-abbc-4fcc-ae1c-af0241672b08"
+        name="Logout Sistema"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="3fd40ffc-d198-47fe-b0ef-5106ca087de7">
+            <useCaseMoniker
+              Id="f1ea7705-55c7-4c7c-92c0-99d0de83fc3a"
+              LastKnownName="UC04-Acessar sistema"
+              LastKnownLocation="Package_2020.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f1ea7705-55c7-4c7c-92c0-99d0de83fc3a"
+        name="UC04-Acessar sistema"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

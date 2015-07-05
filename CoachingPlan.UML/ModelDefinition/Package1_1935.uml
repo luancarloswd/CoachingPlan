@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="04dfb478-7d99-417c-b496-c18a26e170fe"
+  name="UC17 - Gerar Relatórios" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d"
+        name="UC17-Gerar Relatórios"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ece263ff-8da4-4f1a-b37b-f446b273b9f0">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b4b8e3d3-b1ea-4033-b4fa-e8cf2d8fed0c"
+        name="Relatório de Coachees"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="e9800518-0d5b-41c2-acc7-23535fde23b5">
+            <useCaseMoniker
+              Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d"
+              LastKnownName="UC17-Gerar Relatórios"
+              LastKnownLocation="Package1_1935.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7de2e05b-bdb1-4055-a493-f78681b1951b"
+        name="Relatório de Sessões"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="b091a55e-1593-40d0-a1b4-c458a0f3e561">
+            <useCaseMoniker
+              Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d"
+              LastKnownName="UC17-Gerar Relatórios"
+              LastKnownLocation="Package1_1935.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7c83f3cc-e3fa-4fe6-802e-e0630c983302"
+        name="Relatório de Aproveitamento"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a12406cd-f690-4ff9-9502-4e30decbda56">
+            <useCaseMoniker
+              Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d"
+              LastKnownName="UC17-Gerar Relatórios"
+              LastKnownLocation="Package1_1935.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

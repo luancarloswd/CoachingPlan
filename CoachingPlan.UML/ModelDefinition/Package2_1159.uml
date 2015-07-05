@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c"
+  name="Infraestructure" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="7c707f9d-53b6-4654-8618-63cd3bfc0103">
+      <packageMoniker
+        Id="89a412f4-b732-42e1-a00d-14653532d6aa"
+        LastKnownName="Domain"
+        LastKnownLocation="Package1_1159.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="340b3f02-420a-43ff-866d-da5cc7da6fe2"
+        LastKnownName="Repositories"
+        LastKnownLocation="Package_1340.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

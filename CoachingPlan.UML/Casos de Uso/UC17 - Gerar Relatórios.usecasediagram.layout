@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UC17 - Gerar Relatórios">
+  <useCaseModelRootMoniker Id="bb6d0b26-aa12-4c65-ad39-9afd6a8135ac" />
+  <nestedChildShapes>
+    <useCaseShape Id="549b82fc-9699-40db-b370-c9a2deda002b" absoluteBounds="5.375, 2.375, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" LastKnownName="UC17-Gerar Relatórios" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <actorShape Id="66a7b463-a7a4-451b-831b-2dc34ed86cb9" absoluteBounds="7, 2.375, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="329f706c-6622-4a06-af82-52dfaf43cadd" LastKnownName="Coach" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(7 : 2.625); (6.375 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="f9b23d7e-08f0-4db8-a1c3-909c90667949" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="66a7b463-a7a4-451b-831b-2dc34ed86cb9" />
+        <useCaseShapeMoniker Id="549b82fc-9699-40db-b370-c9a2deda002b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="7db8d384-47d7-4161-b477-d8f6d4925831" absoluteBounds="8.375, 2.375, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="a52b9526-fd7c-493f-b315-cb9b447644c9" LastKnownName="Administrador" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(8.375 : 2.625); (7.5 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="6cca2d9b-094d-4be5-924b-a1641cae7314" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="7db8d384-47d7-4161-b477-d8f6d4925831" />
+        <actorShapeMoniker Id="66a7b463-a7a4-451b-831b-2dc34ed86cb9" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <useCaseShape Id="16d34306-86fa-49db-92aa-cda32eb0d66b" absoluteBounds="3.875, 2.25, 1.25, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="1a438dda-8c7a-4a3c-a182-11982f572acf" LastKnownName="Relatório de Aproveitamento" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseDependencyConnector edgePoints="[(5.125 : 2.625); (5.375 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="3e22e52d-d4ef-482d-adc2-52aa33cf1ab7" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="16d34306-86fa-49db-92aa-cda32eb0d66b" />
+        <useCaseShapeMoniker Id="549b82fc-9699-40db-b370-c9a2deda002b" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <useCaseShape Id="51d16886-de60-49d7-8544-fe7f18c09d64" absoluteBounds="5.375, 1.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="7181cb48-3d40-4eef-8db6-4e331af7ba41" LastKnownName="Relatório de Coachees" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseDependencyConnector edgePoints="[(5.875 : 2.125); (5.875 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="765f4bb1-076c-46d9-bd8e-095d0c87d588" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="51d16886-de60-49d7-8544-fe7f18c09d64" />
+        <useCaseShapeMoniker Id="549b82fc-9699-40db-b370-c9a2deda002b" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <useCaseShape Id="3990150a-40b8-43d9-a540-8327ebaff47f" absoluteBounds="5.375, 3.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="ecfa8342-e230-47d7-a68e-842e8fc7db2f" LastKnownName="Relatório de Sessões" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseDependencyConnector edgePoints="[(5.875 : 3.125); (5.875 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="8386aaeb-85e6-4e82-9d5c-cc0262120f50" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="3990150a-40b8-43d9-a540-8327ebaff47f" />
+        <useCaseShapeMoniker Id="549b82fc-9699-40db-b370-c9a2deda002b" />
+      </nodes>
+    </useCaseDependencyConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

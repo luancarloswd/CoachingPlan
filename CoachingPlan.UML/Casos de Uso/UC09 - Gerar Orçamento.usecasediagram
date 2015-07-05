@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="5b87c541-5d09-4555-8cbf-889423b073dc" name="UC09 - Gerar Orçamento" linkedPackageId="607d022e-3a09-48f1-ab4b-d278c299d1e0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f14e32f4-fe01-458f-905b-ef5d0d169596" name="UC09-Gerar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fdb29997-fa65-4093-9a66-db047040d85a" />
+        <extendedCases>
+          <extend Id="fcbd86c5-c263-4ea9-95d9-152a64164306">
+            <useCaseMoniker Id="cff55b96-df45-4b4a-aa56-081a2bbb6610" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="54765db1-b4ad-4416-8626-8315d168fe04" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="41d4eefe-1e9a-4da7-9503-d925cc706527" name="Cadastrar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a43b8ec8-7048-4ef7-a3be-d2e5e3381930" />
+        <suppliersInternal>
+          <dependency Id="a9a080a6-6d02-49ad-ad76-5f3f1372c6cc">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="74952465-8c2f-4e5a-ad62-d35ccba77209" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cff55b96-df45-4b4a-aa56-081a2bbb6610" name="UC08-Planejar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b2982097-e583-4620-9853-357d73ebe354" name="Editar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9d45ef70-ab1b-4205-bbc8-d0bef81dcebf" />
+        <suppliersInternal>
+          <dependency Id="c94abf10-1e0d-4469-a6f9-ac89b63657b8">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="73f7e58e-0158-4b53-b234-97939b30ec90" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8de80340-3b60-43e2-a206-1c1c77593f6e" name="Enviar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="86cb0b6c-80dd-4ed5-8192-bd2f970d226c" />
+        <suppliersInternal>
+          <dependency Id="5dcf23a6-beea-43b6-a971-d87aff9286bc">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="5f04c447-d129-4207-8d6f-16ef930a352f" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bd9585eb-8189-4fa8-b311-8f3b8c3d3a61" name="Excluir Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c66c64a-04fb-412b-830f-0ca0d1b9f6d3" />
+        <suppliersInternal>
+          <dependency Id="7e1e242e-a5be-414d-b24b-559500727f9c">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="e97fea5e-06c0-4705-bafe-92389b87ee61" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="dedb1fef-fa9b-46af-868c-21fd9125d423" name="Pesquisar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="30ba50a2-bd9a-4e66-be4d-f6ad479fd4f7" />
+        <suppliersInternal>
+          <dependency Id="42edb781-9929-4792-8f6f-d39d53843e8a">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="42ff8e75-fb9a-433c-9ed6-68dfda263fe1" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c9b3d046-0250-4395-86a2-ee2d6be6f4eb" name="Visualisar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5c02d299-24ff-4356-b4c2-79b61a980626" />
+        <suppliersInternal>
+          <dependency Id="18ea7a26-9191-4a2f-b012-f03cfa64d2cd">
+            <useCaseMoniker Id="f14e32f4-fe01-458f-905b-ef5d0d169596" LastKnownName="UC09-Gerar Orçamento" />
+            <elementDefinition Id="7aaa55fa-9be7-429c-8854-615af301f462" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="720f16c4-6417-4b9d-b587-65d978f4bca9" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="384c30e0-f71f-4a85-9f96-60a872fff23f" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC04-Acompanhar processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cff55b96-df45-4b4a-aa56-081a2bbb6610" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="164d6f79-4c93-4f6a-a206-fed2b60159c7" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="30285b91-bc75-42ae-abc1-30f238fe12b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cee21f34-c751-4d45-9c15-536be6ff0364" name="UC04-Acompanhar processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bf012a28-eaa6-4eee-914f-cb8730402abe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ffb7b9f5-e1f4-48de-b9d0-eed1237e916a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="78b07ae3-20dd-4fe9-b5e4-0921d0fb16ba" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="003abe6a-f78c-4770-b69e-8c9b4ce502fb" isSubstitutable="false">
+            <actorMoniker Id="720f16c4-6417-4b9d-b587-65d978f4bca9" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="607d022e-3a09-48f1-ab4b-d278c299d1e0" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b2dfcc1b-486c-4a5d-8266-4a6b7c6ce900">
+        <profileInstance Id="df8df8a3-7a36-4310-86d2-cf5cc06db588" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="77cf8de8-4c26-4172-b7c8-608a82f30054">
+        <profileInstance Id="925ecfc5-0236-4c3a-ad35-a8d50df3bbf4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

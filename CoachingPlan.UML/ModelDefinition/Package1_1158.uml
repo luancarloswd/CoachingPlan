@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="75276a6f-1c91-4003-9d0d-384e73684011"
+  name="API" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="742ef085-4db2-4fc2-935b-cb53da4b7fd8">
+      <packageMoniker
+        Id="02da7dcf-c87c-4d6c-b98f-8672a8ebddaa"
+        LastKnownName="Business"
+        LastKnownLocation="Package_1159.uml" />
+    </dependency>
+    <dependency
+      Id="270a1bec-63a0-486d-86d0-33814a65e6bf">
+      <packageMoniker
+        Id="c53af1d3-70de-4626-a222-ff4362ebf5cb"
+        LastKnownName="Startup"
+        LastKnownLocation="Package_1200.uml" />
+    </dependency>
+    <dependency
+      Id="ab5d8624-84d4-417e-b0ca-b81b5cbfeb11">
+      <packageMoniker
+        Id="ca2a6026-44a2-4589-9743-8477f248db06"
+        LastKnownName="Resources"
+        LastKnownLocation="Package3_1159.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8fbb013f-ee55-4ddf-9fb6-743db873587b"
+        LastKnownName="Controllers"
+        LastKnownLocation="Package1_1202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a0b65b27-92c1-446f-abca-8ec306b19323"
+        LastKnownName="Helpers"
+        LastKnownLocation="Package2_1202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="21a5878e-a6f2-4072-aa49-7c7a116525fa"
+        LastKnownName="ViewModels"
+        LastKnownLocation="Package3_1202.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

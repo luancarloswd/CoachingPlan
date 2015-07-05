@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="15dc216f-8cbf-4c75-afc3-31996c62f411" name="UC13 - Visualizar Agenda de Sessões" linkedPackageId="d9fb4be6-c0a8-4268-b228-f629213e2797" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a7278f91-ec86-4e79-a6d7-f39510df17b0" name="UC12-Acompanhar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a6d97fd9-1652-4db4-99dd-4f8876b3bae9" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="90454431-1739-4e3f-8dc4-360d9a79aff6" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="UC12-Acompanhar Processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a7278f91-ec86-4e79-a6d7-f39510df17b0" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="512b176f-4d0a-4fba-bc05-a3b79fa133b6" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a67fe57-a7be-4803-bbdc-dd2b54aa1824" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="45d81d4d-8a5a-4ff4-8951-8caa1f074269" name="UC12-Acompanhar Processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0873addf-7adb-4215-9ce2-94072a4d78b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="592dc6e2-a1e5-4ba5-b91f-c0a391029ad2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="9a41b671-59dd-4c47-a765-a520eb307957" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="68c87367-03b3-4afa-95e0-cfd6407283c0" isSubstitutable="false">
+            <actorMoniker Id="a6d97fd9-1652-4db4-99dd-4f8876b3bae9" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="02e02fc6-12a3-4915-a7a7-6d97e141217e" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="1a410d73-9e1e-4813-8a7f-95671ce8669f" isSubstitutable="false">
+            <actorMoniker Id="9a41b671-59dd-4c47-a765-a520eb307957" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="979fc402-201c-4244-ac7e-8aceadb267d0" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
+        <extendedCases>
+          <extend Id="2666fa4c-3f95-4c2f-b97f-173fe6ce9e13">
+            <useCaseMoniker Id="a7278f91-ec86-4e79-a6d7-f39510df17b0" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="7f590421-8ec4-4e6c-984d-c00358761dd4" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="d9fb4be6-c0a8-4268-b228-f629213e2797" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="9c8233bf-86db-4e23-af1d-43c04e43cefc">
+        <profileInstance Id="58b6d1e6-1dd4-45c1-a90c-fab1fb9ff654" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5746c502-8dfb-443e-8495-2e09cd227194">
+        <profileInstance Id="ac5ae522-a4c6-4d82-9cd5-6f1121066ae9" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8fbb013f-ee55-4ddf-9fb6-743db873587b"
+  name="Controllers" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="e1e38580-7608-4166-be50-ff9a6a240def">
+      <packageMoniker
+        Id="a0b65b27-92c1-446f-abca-8ec306b19323"
+        LastKnownName="Helpers"
+        LastKnownLocation="Package2_1202.uml" />
+    </dependency>
+    <dependency
+      Id="ed5ee8f9-6faa-41e8-ace5-511260c5fe29">
+      <packageMoniker
+        Id="21a5878e-a6f2-4072-aa49-7c7a116525fa"
+        LastKnownName="ViewModels"
+        LastKnownLocation="Package3_1202.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="06d9448a-ce79-4525-8d58-7e6a1dd70745"
+        LastKnownName="Reports"
+        LastKnownLocation="Package_1213.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

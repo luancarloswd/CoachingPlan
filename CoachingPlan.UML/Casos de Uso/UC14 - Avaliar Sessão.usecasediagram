@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="bf228923-b5ea-4a9f-8d53-17f268469616" name="UC14 - Avaliar Sessão" linkedPackageId="9300cef2-364c-4984-9c9e-341e1ac2b516" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="bd1fcbf9-7d99-4aa8-807d-42f421896fa1">
+      <profileInstance Id="c9a32ef3-bf2d-4e45-9286-a68efaa878e2" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="adec2b7c-64d0-4a46-9f11-7eb2ff375261">
+      <profileInstance Id="45abc980-9517-4fe6-990a-60c1dbd38b2d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="c924e9d7-4001-4cbe-8601-cf805445f02f" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="753f289b-5f1a-48e1-8fc1-89e19835f5a0" isSubstitutable="false">
+            <actorMoniker Id="978f07d0-1800-418a-9eac-37b9c36239a1" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="978f07d0-1800-418a-9eac-37b9c36239a1" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="cf9f7600-e3e1-4f0f-ab46-e266d474f4fc" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Avaliar Sessão" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7d44db6e-a90a-4485-a325-faa2ffebf821" LastKnownName="UC14-Avaliar Sessão" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a5992e2c-339e-4447-8b80-03819e7f74e7" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c2522465-538b-4a5b-98c8-42f6b78914ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="67d38579-3602-4232-84e7-639cf01d923f" name="Avaliar Sessão" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="64a3ff79-7065-488b-9245-4b78e49600b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e0645870-6eee-4996-a3a2-3e55f3e225c3" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7d44db6e-a90a-4485-a325-faa2ffebf821" name="UC14-Avaliar Sessão" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c936f273-4317-4b2c-bef2-1c58362434f1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ff938a8c-5bce-4b8e-abdc-1e15412161b0" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="a381b5f4-d869-43df-88b6-bf0d9b866938" isSubstitutable="false">
+            <actorMoniker Id="c924e9d7-4001-4cbe-8601-cf805445f02f" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="9300cef2-364c-4984-9c9e-341e1ac2b516" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

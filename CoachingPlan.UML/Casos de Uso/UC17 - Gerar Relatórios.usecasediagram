@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="bb6d0b26-aa12-4c65-ad39-9afd6a8135ac" name="UC17 - Gerar Relatórios" linkedPackageId="c8eb961a-1304-4c2f-b4bb-e8a4bbdb6e18" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="dfb9ee0a-0feb-431f-a822-f8ba802101d0">
+      <profileInstance Id="f1c4c27f-8927-423b-9a2e-03ac398482b9" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="74c9b934-2c55-4df0-ac2c-8500a1f67509">
+      <profileInstance Id="91a38026-52ab-409a-af46-cb70095c4454" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" name="UC17-Gerar Relatórios" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="329f706c-6622-4a06-af82-52dfaf43cadd" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="f9b23d7e-08f0-4db8-a1c3-909c90667949" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC16-Gerar Relatórios" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" LastKnownName="UC17-Gerar Relatórios" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5f4457de-bda4-4415-951f-0823b86ed31a" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d9feab4-8d01-4d25-9d13-1d9af3a21b6e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3fa6f1ca-6bd1-4fee-a281-f334ba8174eb" name="UC16-Gerar Relatórios" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b2a2fa6-bfd9-4834-8b29-366ae9ab55fc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe96b236-4048-4670-ac88-cd3a54ad574a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a52b9526-fd7c-493f-b315-cb9b447644c9" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="6cca2d9b-094d-4be5-924b-a1641cae7314" isSubstitutable="false">
+            <actorMoniker Id="329f706c-6622-4a06-af82-52dfaf43cadd" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1a438dda-8c7a-4a3c-a182-11982f572acf" name="Relatório de Aproveitamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7c83f3cc-e3fa-4fe6-802e-e0630c983302" />
+        <suppliersInternal>
+          <dependency Id="3e22e52d-d4ef-482d-adc2-52aa33cf1ab7">
+            <useCaseMoniker Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" LastKnownName="UC17-Gerar Relatórios" />
+            <elementDefinition Id="a12406cd-f690-4ff9-9502-4e30decbda56" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7181cb48-3d40-4eef-8db6-4e331af7ba41" name="Relatório de Coachees" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b4b8e3d3-b1ea-4033-b4fa-e8cf2d8fed0c" />
+        <suppliersInternal>
+          <dependency Id="765f4bb1-076c-46d9-bd8e-095d0c87d588">
+            <useCaseMoniker Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" LastKnownName="UC17-Gerar Relatórios" />
+            <elementDefinition Id="e9800518-0d5b-41c2-acc7-23535fde23b5" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ecfa8342-e230-47d7-a68e-842e8fc7db2f" name="Relatório de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7de2e05b-bdb1-4055-a493-f78681b1951b" />
+        <suppliersInternal>
+          <dependency Id="8386aaeb-85e6-4e82-9d5c-cc0262120f50">
+            <useCaseMoniker Id="8bc0a68f-a3b3-427f-9e67-b5ff1eab16fd" LastKnownName="UC17-Gerar Relatórios" />
+            <elementDefinition Id="b091a55e-1593-40d0-a1b4-c458a0f3e561" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="c8eb961a-1304-4c2f-b4bb-e8a4bbdb6e18" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

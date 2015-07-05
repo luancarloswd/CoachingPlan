@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="a11854c2-708a-42af-8b08-cc06fcc463ff" name="UC10 - Gerar Plano de Ação" linkedPackageId="9e5d8c52-1ef7-4c9e-baef-9b2decf98618" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="78d5f340-8168-4419-a99b-52db506eb472">
+      <profileInstance Id="bb393de9-9e06-46a8-913a-d6592b3d6ad1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="68e3260c-8cb4-4073-a098-18ab989ba2d9">
+      <profileInstance Id="4af13a83-6c65-4380-a40c-ae3bdd09e725" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="72ad5e62-fa24-478b-a508-6cb09232f532" name="UC10-Gerar plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6c3f904a-f0f7-484a-86b4-73609a580b9f" />
+        <extendedCases>
+          <extend Id="ef6e2d3f-820c-47dc-88c9-4ba1fe82224d">
+            <useCaseMoniker Id="6c63657f-f5b1-41e4-9c38-e6a8c315c217" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="03d0f86b-107b-426e-8ca2-bbe832b77a51" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6c63657f-f5b1-41e4-9c38-e6a8c315c217" name="UC08-Planejar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f6f51e92-23f6-44be-a6d9-f2d3e213159b" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="a1d17c51-e1ad-43b0-b76b-1547c01d4ae3" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC04-Acompanhar processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6c63657f-f5b1-41e4-9c38-e6a8c315c217" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f1a5e6a-7340-4186-8aab-b2a994374df4" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="30285b91-bc75-42ae-abc1-30f238fe12b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3b0b8d4a-b7b1-4d79-8822-c2a15e56e48f" name="UC04-Acompanhar processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bf012a28-eaa6-4eee-914f-cb8730402abe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ffb7b9f5-e1f4-48de-b9d0-eed1237e916a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="53f597fd-5d14-416c-bd63-b5424aad2f3d" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="7da9493c-5eee-4777-870d-59e66d3a662c" isSubstitutable="false">
+            <actorMoniker Id="f6f51e92-23f6-44be-a6d9-f2d3e213159b" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9b18192d-bb6f-49cc-8ca6-2727063535a5" name="Cadastrar Plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a678c4c8-4ea6-4381-b2a2-7c6a15577f5a" />
+        <suppliersInternal>
+          <dependency Id="1b54bbb8-64d6-49d6-b3c2-2038c998b357">
+            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
+            <elementDefinition Id="b4fc97af-7f52-4d4d-a9d6-8c29f2ded084" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="16a85e43-fd5d-4d81-a411-f076b5b47e72" name="Editar Plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2b1faf50-d558-4434-8ea2-f2fce71f67ee" />
+        <suppliersInternal>
+          <dependency Id="7cf6b83f-424b-4e7a-81a1-913673cb1e5f">
+            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
+            <elementDefinition Id="e7fcd389-45b4-4f10-abdb-c85e4c2875c2" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e9918d16-d4b7-4a4c-bf33-bc05c7de99ea" name="Excluir Plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6f077123-ee54-4883-986e-0ed957244770" />
+        <suppliersInternal>
+          <dependency Id="5b8fc1d6-7d01-444e-a2fd-72e0ca3ad2f6">
+            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
+            <elementDefinition Id="e1c4be3c-ff98-4832-972b-0f49c61bf51c" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="76d68d29-4e52-49b0-93d0-e494161af00f" name="Pesquisar Plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c0f1bab4-029e-4aa8-99db-dd1d691fa754" />
+        <suppliersInternal>
+          <dependency Id="20b7d4c6-9ba9-4ea8-bc31-b03debd1242c">
+            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
+            <elementDefinition Id="e142b248-0791-4678-b394-386f60d7fce5" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f8023956-a276-49d7-9a21-024ce192a7bf" name="Visualizar Plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0ebf5a9b-3571-4abd-8f54-ea82a2917e2b" />
+        <suppliersInternal>
+          <dependency Id="67af9421-2bab-4e7d-afdc-8962a5197805">
+            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
+            <elementDefinition Id="f7d2286a-0de2-4cae-8874-ab0c87eda2c1" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="9e5d8c52-1ef7-4c9e-baef-9b2decf98618" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

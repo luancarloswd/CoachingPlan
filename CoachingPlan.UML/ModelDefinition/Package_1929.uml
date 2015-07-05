@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2188907b-5117-454c-b317-fdccf2f5fa85"
+  name="UC08 - Planejar Processo de Coaching" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+        name="UC08-Planejar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="794c3335-45c5-4679-b71f-80b8c8d6f62f"
+        name="Cadastrar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="68c7067d-b3d3-4be8-ba94-20687237369e">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7d31834b-f4f9-48d0-a6bc-dd779f5b47eb"
+        name="Editar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="8c19ca18-6e3f-48b1-95bb-63388ef28161">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6bf1e4d6-3d26-42b2-b3ba-fac6823d2cf0"
+        name="Pesquisar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="13c7ec4c-ef67-4eb3-8bef-2ae729e67022">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d298dedb-5c33-4348-b02d-d8ba263c1fd5"
+        name="Visualizar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="61ca328d-6818-4118-8f8d-44d5c22ab6f5">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fb06b1f9-8fd0-45de-9019-5060cde11cc1"
+        name="Excluir Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="647801f4-bcbf-4100-ad07-1c1ff060a938">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

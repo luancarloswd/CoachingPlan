@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="c001dc7d-9533-4fea-9d7a-9ea7431795b3" name="UC0 - Manter Ferramenta de Avaliação" linkedPackageId="edf4ad99-14e4-4deb-87b9-c6229fcc4ba3" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="ff624a99-16fe-45c8-82d8-e298f5a1c7a5">
+      <profileInstance Id="01287f24-0fd0-4ad6-99b4-635eaa82d29c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5370ae8d-4a2c-49a6-ad46-821c02cf0bd9">
+      <profileInstance Id="2af79256-fefd-414c-a1d7-4220a8d23a1f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="fd8b9b4b-1b5c-44b9-873a-6d7725ef171e" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="f3da2083-59e0-4613-98ac-02d1af36a401" isSubstitutable="false">
+            <actorMoniker Id="3b441c94-911f-47e9-b764-3709b6358b66" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="3b441c94-911f-47e9-b764-3709b6358b66" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="7d02e66f-f7cb-403c-b9e5-86d950c8f45b" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Manter Ferramenta de avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2003bd29-ef56-4ee5-8471-76db9c1e96f9" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="00b8c9e1-7115-4244-ae9c-9f58cf24764f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="543fbf35-2d4d-4eb7-a12b-411b27fc14a0" name="Manter Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc9d4034-009a-4ff6-8805-36c946ebcc15" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="47b2163c-2936-4c63-bdcc-f4771bdef7bb" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" name="UC07-Manter Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2936535e-4746-4fbb-9aa2-8120084fadd5" name="Cadastrar Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5a5e2f2b-6a73-479f-829d-9eefd4f264c2" />
+        <suppliersInternal>
+          <dependency Id="2eb437d0-e894-4bb9-be70-4dd372cb4d34">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="b2247168-3f59-4de2-9329-1029847d2e49" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="59500c12-dc03-4db7-8af6-5de2bf42e67b" name="Editar Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1132e444-491e-49d8-ab50-2ecfd4f1d5d5" />
+        <suppliersInternal>
+          <dependency Id="a742d0b1-f55f-4c79-bad2-54299be3c860">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="a30df882-e3f8-4c24-98fa-5a06602929a5" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9eda1897-0150-41c3-b5f7-9c6599fec83d" name="Pesquisar Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="41aefbb6-1c13-45c2-90ac-37754423d72b" />
+        <suppliersInternal>
+          <dependency Id="1f986d87-6b52-4597-acd1-437163bb14d3">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="c1032a28-1697-4351-81eb-47fa4cc79582" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b30cff9b-9638-4be7-8a62-8cd84c0f77d1" name="Visualizar Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9ec0ea68-62c4-48fe-b275-003fd10f139b" />
+        <suppliersInternal>
+          <dependency Id="b2fdf0a2-665a-45b5-b589-5b6dc172fe1e">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="65191006-a69e-40da-8b06-4dab54140cda" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ffb7ac51-0ce6-487d-bce0-6d9cade9f025" name="Excluir Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d058d713-224f-4283-8c63-b50b74b04cc2" />
+        <suppliersInternal>
+          <dependency Id="ce572fcd-3a6f-41be-af36-f4f8112c30c5">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="b2fabb21-1f8c-456b-80e4-77f30c5e07d8" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="edf4ad99-14e4-4deb-87b9-c6229fcc4ba3" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

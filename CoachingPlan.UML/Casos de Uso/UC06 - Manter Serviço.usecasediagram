@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="634bf34e-79d9-4d89-bc13-fb8767777b37" name="UC06 - Manter Serviço" linkedPackageId="17620ad7-dfa4-4a64-8df4-bd1b31eba7ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="144e7119-772e-42c1-bf5c-c23f630cd6c2" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="4862d355-9c0c-490e-bf67-7a79cc25cad7" isSubstitutable="false">
+            <actorMoniker Id="99d29ee6-694f-4b7f-8068-08b50addb64b" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="99d29ee6-694f-4b7f-8068-08b50addb64b" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="e7796054-5329-478d-ba19-d33fcdd24e7b" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Manter Serviços" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a3a39c3-8867-4941-904b-31e5162af7fc" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="defee127-6a47-4c73-8eb9-dd62558925b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b9f008e8-de25-44f1-b64d-56f112ec2779" name="Manter Serviços" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0fcc71ef-9bfb-4ae5-846b-e66c6f0fda5d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e64aecb0-6f0a-402d-bcc5-0ddd50241d7f" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="12cbd789-d6f8-46d8-b655-b892655db525" name="UC06-Manter Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b9d2fee5-ccb9-4709-8ea2-60ac7be338fd" name="Cadastrar Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="40c97ed0-bac9-44f7-aa08-6ebdbd7e72f4" />
+        <suppliersInternal>
+          <dependency Id="3e319652-ee3d-49d4-b5d5-bfccba9b9abb">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <elementDefinition Id="13399a35-8a84-4ca9-ada1-6a2392788833" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1059bc3d-33e1-4cec-9ddb-a5577d1385da" name="Editar Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cf9fce03-401c-47bd-8ecc-75b2c357d1ae" />
+        <suppliersInternal>
+          <dependency Id="180d8bfc-ac5a-465d-8fce-ee00a412cdac">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <elementDefinition Id="1a602e72-bff0-4170-8276-0af285c64840" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6b3204a0-3deb-43a8-bc4a-54c9077256c2" name="Pesquisar Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="675f7e59-d9ca-4547-9116-d44dc58fd0e8" />
+        <suppliersInternal>
+          <dependency Id="290e53b7-1424-4593-a245-cfb41fc93bd6">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <elementDefinition Id="a47428a3-e5f1-435b-9807-c31efba2def0" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0fd7d91a-9ec1-45a9-923d-16e9a8b43ff6" name="Visualizar Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cc0446cc-1b96-4a25-a647-bd0501db7d57" />
+        <suppliersInternal>
+          <dependency Id="490c68e7-449b-4563-b890-07febfeebdae">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <elementDefinition Id="05ae891a-7568-4ec4-a5d5-7c8595f623d7" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d2659054-92bf-4734-adc6-76797f076f09" name="Excluir Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="60779371-d821-499f-8d7c-76f81c10dc0b" />
+        <suppliersInternal>
+          <dependency Id="4cf43b6d-2ddd-435d-a8bc-a4bc0d4844f8">
+            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
+            <elementDefinition Id="72476ccc-e314-4f16-b9bf-03ea1ac6aada" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="17620ad7-dfa4-4a64-8df4-bd1b31eba7ae" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="50a9fbd1-8417-4516-89b3-74ce5a0245b4">
+        <profileInstance Id="df24709e-c9d3-4ebc-a4e1-e458342308bc" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="014a4248-5624-4efd-b9c6-96f2affc6b09">
+        <profileInstance Id="b5b7ac2b-945b-456e-8e55-018a18449ab7" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

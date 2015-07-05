@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="48bae986-4117-42d9-b706-e0edf0ed1724"
+  name="Casos de Uso" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a259671a-8681-4111-a98b-71b38fcfab7f"
+        LastKnownName="UC01 - Manter Usuário"
+        LastKnownLocation="Package_2032.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0949580b-1b62-42ea-b048-9fee2e652798"
+        LastKnownName="UC02 - Manter Coach"
+        LastKnownLocation="Package_1926.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="46c9005a-b0f5-42e3-9be1-9e5332c48e3d"
+        LastKnownName="UC03 - Manter Coachee"
+        LastKnownLocation="Package1_1926.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="85ab1f34-bde0-4001-b988-5f0a8dba6325"
+        LastKnownName="UC04 - Acessar Sistema"
+        LastKnownLocation="Package_2020.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dbc85df0-8b1f-4609-b43d-1b3af2ba2e16"
+        LastKnownName="UC05 - Recuperar Senha"
+        LastKnownLocation="Package_1927.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0bde3a77-7bad-40bb-861c-ebb5acce716d"
+        LastKnownName="UC06 - Manter Serviço"
+        LastKnownLocation="Package_1928.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="27fa1e3f-76b7-479a-a6a0-a62af5d1b170"
+        LastKnownName="UC07 - Manter Ferramenta de Avaliação"
+        LastKnownLocation="Package1_1928.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2188907b-5117-454c-b317-fdccf2f5fa85"
+        LastKnownName="UC08 - Planejar Processo de Coaching"
+        LastKnownLocation="Package_1929.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5f0a043f-ffeb-4f25-97d9-02813a2e4121"
+        LastKnownName="UC09 - Gerar Orçamento"
+        LastKnownLocation="Package_1930.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="46b41bd2-4153-43eb-8835-f0944b9e50dd"
+        LastKnownName="UC10 - Gerar Plano de Ação"
+        LastKnownLocation="Package1_1930.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ca54088d-6d00-4f42-a5b5-4caa38510ce8"
+        LastKnownName="UC11 - Gerenciar Sessões de Coaching"
+        LastKnownLocation="Package_1932.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d727cf11-685e-4143-a2df-1f7da3ccddb7"
+        LastKnownName="UC12 - Acompanhar Processo de Coaching"
+        LastKnownLocation="Package1_1932.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="17072475-2539-4f81-83eb-5ea687dc52e5"
+        LastKnownName="UC13 - Visualizar Agenda de Sessões"
+        LastKnownLocation="Package_1933.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="97672c02-9494-4234-8816-46cd301a5d18"
+        LastKnownName="UC14 - Avaliar Sessão"
+        LastKnownLocation="Package_1934.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d6c24257-d03a-4f1a-b66b-4d3ec4f4981c"
+        LastKnownName="UC15 - Preecher Ferramenta de Avaliação"
+        LastKnownLocation="Package1_1934.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c172602d-38dc-404c-8b6b-c0bb1ab872bd"
+        LastKnownName="UC16 - Analisar Resultado de Avaliação"
+        LastKnownLocation="Package_1935.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="04dfb478-7d99-417c-b496-c18a26e170fe"
+        LastKnownName="UC17 - Gerar Relatórios"
+        LastKnownLocation="Package1_1935.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4de35444-5051-40c5-83df-7a0a01829471"
+        LastKnownName="UC18 - Reportar Processo de Coaching"
+        LastKnownLocation="Package_1936.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="af7b2407-afb7-47cb-836b-1981e5a2c474" name="UC16 - Analisar Resultado de Avaliação " linkedPackageId="e8a01866-771f-41bf-bff1-331f72850ece" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="553966f1-c7f1-4c09-84cf-d4c158294728">
+      <profileInstance Id="d740aff8-0a72-4773-aab3-010f5ddf398e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="54b234e7-0fca-4aa9-b5c3-d9227c5855a3">
+      <profileInstance Id="0a92d04f-793e-4269-8bf5-f10a24683ac4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b46bd2ee-5228-472b-9ff9-bb0307a8d5a9" name="UC16-Analisar Resultado de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="235789d3-5cfd-4cc1-a147-5ef1ed371aed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="2d7a1aa6-ef8d-42f6-9293-64edb4ab0ea3" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <targetEnds>
+          <association Id="4d2d2dde-c085-4d2d-8c4e-750a0d6a57a6" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Gerar Resultado de Avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b46bd2ee-5228-472b-9ff9-bb0307a8d5a9" LastKnownName="UC16-Analisar Resultado de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ffd83753-a261-4cde-bd0a-2c2ff47f62af" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2744e875-8b1e-4baa-abf0-247371918b7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="07353472-24d7-41c7-bc0e-e8a96100d8df" name="Gerar Resultado de Avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6970ea35-d779-4f87-b00d-413a90dbddf1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="71c07433-8c82-4fdd-8662-6b306cf9cac7" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="926d372a-fc81-4664-92ad-7dbb753b67f7" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="aba1e9e7-6386-4aa6-b609-e838af3dba97" isSubstitutable="false">
+            <actorMoniker Id="2d7a1aa6-ef8d-42f6-9293-64edb4ab0ea3" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e8a01866-771f-41bf-bff1-331f72850ece" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="27fa1e3f-76b7-479a-a6a0-a62af5d1b170"
+  name="UC07 - Manter Ferramenta de Avaliação" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+        name="UC07-Manter Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5a5e2f2b-6a73-479f-829d-9eefd4f264c2"
+        name="Cadastrar Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="b2247168-3f59-4de2-9329-1029847d2e49">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1132e444-491e-49d8-ab50-2ecfd4f1d5d5"
+        name="Editar Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a30df882-e3f8-4c24-98fa-5a06602929a5">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="41aefbb6-1c13-45c2-90ac-37754423d72b"
+        name="Pesquisar Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="c1032a28-1697-4351-81eb-47fa4cc79582">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9ec0ea68-62c4-48fe-b275-003fd10f139b"
+        name="Visualizar Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="65191006-a69e-40da-8b06-4dab54140cda">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d058d713-224f-4283-8c63-b50b74b04cc2"
+        name="Excluir Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="b2fabb21-1f8c-456b-80e4-77f30c5e07d8">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

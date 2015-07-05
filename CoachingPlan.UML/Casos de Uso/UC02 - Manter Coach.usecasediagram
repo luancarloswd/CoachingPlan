@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="14b6bcf5-6f05-4071-8cba-72bedcc6de05" name="UC02 - Manter Coach" linkedPackageId="08797d05-e15d-4aa2-862d-de68f9b49033" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" name="UC02-Manter Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299" />
+        <extendedCases>
+          <extend Id="c5ad72e2-4ab4-4e5c-b1b1-2c0244584c53">
+            <useCaseMoniker Id="bdce62a9-3661-4336-8025-e19fc84f3a02" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="538fa478-a8e8-4b03-81de-b7b29e943220" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bdce62a9-3661-4336-8025-e19fc84f3a02" name="UC01-Manter Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d553b200-cf08-4830-9277-1fb09f08909f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="45d0c52b-bd88-4ecf-ba56-f0c26a58ea9d" name="Cadastrar Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5a7aa038-862a-4172-b977-d944dae40e9e" />
+        <suppliersInternal>
+          <dependency Id="deeec445-7a9f-4129-8c93-ce7f6ff130ff">
+            <useCaseMoniker Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" LastKnownName="UC02-Manter Coach" />
+            <elementDefinition Id="3729a9c4-32d2-4d41-9914-51b71990cb25" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="baba4455-c93d-4ec4-9b8e-b4931ced4174" name="Editar Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c199514-8aea-4f92-8730-cdcfeeb6eff4" />
+        <suppliersInternal>
+          <dependency Id="14e41262-6200-49a3-b322-3f1e4dee3e57">
+            <useCaseMoniker Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" LastKnownName="UC02-Manter Coach" />
+            <elementDefinition Id="34619348-5b05-463d-b424-9fdadfc6c51b" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="40eba405-b073-4597-9ccf-4e6a6faf73b8" name="Pesquisar Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bd8c3765-df48-456c-98db-85d4dfb513c1" />
+        <suppliersInternal>
+          <dependency Id="a063cc1d-912b-45f4-a2db-221f75aa3136">
+            <useCaseMoniker Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" LastKnownName="UC02-Manter Coach" />
+            <elementDefinition Id="b7f67f7e-0a11-46af-940d-b05996bc2fd6" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="44ad9350-7f62-49ed-bd3b-f615bc0fccd6" name="Visualizar Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cfd60002-61f4-496c-ac83-c83b503d998d" />
+        <suppliersInternal>
+          <dependency Id="859112f8-fd11-40b6-926b-485a522f75bd">
+            <useCaseMoniker Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" LastKnownName="UC02-Manter Coach" />
+            <elementDefinition Id="3d1b1ba6-9c37-4000-9b29-b7106407eca9" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="67320a59-bd4e-4967-9839-2f7aa88b4d5c" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <targetEnds>
+          <association Id="4224ecdc-921b-4028-b33c-2123bf409fc4" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Manter Usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bdce62a9-3661-4336-8025-e19fc84f3a02" LastKnownName="UC01-Manter Usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0d846e5-8c49-454b-96a6-81683e8c08fd" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43e11bf2-37ac-44fb-9c79-c7e3297035b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6f02f814-d0e1-4a23-99c1-9b2dcf252f73" name="Manter Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e47f15c-809c-455f-b9e0-2bd313539c53" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c39cf225-9e95-4a65-a17c-7f11fe517320" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5d4edd33-5c27-4442-a763-17eefc7f7802" name="Excluir Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0bfe3882-6bfe-4e53-b2fd-fd00a3c61440" />
+        <suppliersInternal>
+          <dependency Id="e543f691-db30-481c-9eb0-91b6077c4cee">
+            <useCaseMoniker Id="ce4edb5a-0a5b-4efe-a769-5f4e6e588968" LastKnownName="UC02-Manter Coach" />
+            <elementDefinition Id="ba73af79-0886-499a-bbe0-7ba313fa8ce2" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="08797d05-e15d-4aa2-862d-de68f9b49033" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="25840f77-a0fb-41b8-a834-8bb7eb96e1e0">
+        <profileInstance Id="e4720bbd-2b0b-4af8-94fd-5bc088819dd7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="73889d56-2b12-4bef-b781-65624782f86f">
+        <profileInstance Id="0d5c9d3e-4323-462b-9292-cfd1ff943b23" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

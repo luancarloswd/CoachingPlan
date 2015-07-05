@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a259671a-8681-4111-a98b-71b38fcfab7f"
+  name="UC01 - Manter Usuário" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="d553b200-cf08-4830-9277-1fb09f08909f"
+        name="UC01-Manter Usuário"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9e9e6f0d-7669-4b18-804f-7c94f57f8021"
+        name="Cadastrar Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="2a8286dd-675a-4615-8329-f5d776091fbc">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0df7e0f5-a836-4cff-8ce0-91ff89056570"
+        name="Editar Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="dd9c8133-81a3-49ca-a609-5fff177ce71c">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="274942bc-3300-4b0b-9568-6c900617740b"
+        name="Pesquisar Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="fdba8776-f902-4c64-b7c1-9190115b5881">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bac32bfb-c07b-48cb-b7be-8858292df8c5"
+        name="Visualizar Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="9e89310d-0784-4786-813c-1bce792c1b0e">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6ae9149f-cd27-4bb3-9d74-a57e14f9e3bf"
+        name="Excluir Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="97f19499-344d-40ec-8c54-a9a31b3b34ef">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="11a4eb10-a858-446b-a131-a42dfdda5c51"
+        name="Bloquear Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="62d39b26-bfb5-4248-b319-bfd02ac0e517">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="675cfd0b-9874-41d6-a57b-318196b0af2d"
+        name="Desbloquear Usuário"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="73a09000-dc80-4d85-9b69-b95069da245e">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

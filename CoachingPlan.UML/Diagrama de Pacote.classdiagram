@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b258cc56-088f-4eb2-814d-480dac5783b7" name="Diagrama de Pacote" linkedPackageId="809bd284-5692-4d41-a043-cb34fb9bf8e6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3ff724a4-1815-42ea-b222-9978692520bf" name="Coaching Plan">
+        <elementDefinition Id="88c590bf-27a6-417d-a844-886a42d4a83e" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="9913e204-72b2-4ce7-ad59-ed78942246e0" name="Business">
+              <elementDefinition Id="02da7dcf-c87c-4d6c-b98f-8672a8ebddaa" />
+              <suppliersInternal>
+                <dependency Id="1600b127-ea74-4bc2-9d95-f5919ae3886e">
+                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
+                  <elementDefinition Id="625b98ac-3d2c-48f0-a3ce-90a567b4bda2" />
+                </dependency>
+                <dependency Id="c5cb2d2e-7a20-42aa-be81-8f01c688eeeb">
+                  <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
+                  <elementDefinition Id="b7e2e095-bcea-4221-b357-a6d3760e0151" />
+                </dependency>
+                <dependency Id="bfc99e20-cadd-4994-81b0-4d45b8bab37a">
+                  <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="Resources" />
+                  <elementDefinition Id="63789d1b-483c-4269-a9a0-b9826ff0b78f" />
+                </dependency>
+              </suppliersInternal>
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="93115d5f-d627-43c7-92cb-34ea0a2c78c4" name="Services">
+                    <elementDefinition Id="dab74250-4087-4eea-81c7-cfd4e8566f98" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="71e26fe9-0789-44df-bb43-655310c3a1c5" name="Domain">
+              <elementDefinition Id="89a412f4-b732-42e1-a00d-14653532d6aa" />
+              <suppliersInternal>
+                <dependency Id="c5dd5e7c-5c34-4e28-a8af-abce7ffe4c1b">
+                  <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="Resources" />
+                  <elementDefinition Id="71f6cd50-6f10-4a01-a965-e48168ef938a" />
+                </dependency>
+              </suppliersInternal>
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="43ae6ff5-6d4a-46cb-b065-1c6e194344c9" name="Contracts">
+                    <elementDefinition Id="b2476c04-3e00-463e-96bb-e774697b036f" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <package Id="3748ab85-3cd6-46cb-b145-1fa9c3845ace" name="Repositories">
+                          <elementDefinition Id="7681a6c6-fa3d-405c-9cc6-abcfea7de5d8" />
+                        </package>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <package Id="49e006e3-96bf-48ec-9691-d0579594aef1" name="Services">
+                          <elementDefinition Id="c2af6461-90e2-400d-9719-6bbf170e1f8a" />
+                        </package>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="b238d4dc-eb77-4020-8b98-0e803d87f15d" name="Models">
+                    <elementDefinition Id="ab6ae860-7c44-4ba6-81d4-5b49ad4cd269" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="b44f5c38-3002-4339-a036-995553f4e99a" name="Infraestructure">
+              <elementDefinition Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c" />
+              <suppliersInternal>
+                <dependency Id="9a6b33b3-dba9-4741-a570-a6100f7ed510">
+                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
+                  <elementDefinition Id="7c707f9d-53b6-4654-8618-63cd3bfc0103" />
+                </dependency>
+              </suppliersInternal>
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="c4fcd6bf-5957-4cdb-a07c-577f5cc5076a" name="Repositories">
+                    <elementDefinition Id="340b3f02-420a-43ff-866d-da5cc7da6fe2" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" name="Resources">
+              <elementDefinition Id="ca2a6026-44a2-4589-9743-8477f248db06" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="299b3b26-8b0d-4560-993a-dd2fe463c18c" name="Messages">
+                    <elementDefinition Id="177351e4-a70b-4c0a-9869-cd7f8a12aa87" />
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="a0f80c69-02de-45a0-a062-628b8b923945" name="Validations">
+                    <elementDefinition Id="a1c84ca3-320c-40f5-a541-ad2eb51fe5f1" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" name="Startup">
+              <elementDefinition Id="c53af1d3-70de-4626-a222-ff4362ebf5cb" />
+              <suppliersInternal>
+                <dependency Id="29884ae1-c6b1-4985-aeb4-7f6495d15b2d">
+                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
+                  <elementDefinition Id="8790b2a6-8482-4fa8-94f6-93967ceed536" />
+                </dependency>
+                <dependency Id="cae3d831-e5c9-4c01-8b9f-eeef50db36e5">
+                  <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
+                  <elementDefinition Id="c5e09f09-d235-4418-a1a1-490f4bfe1c44" />
+                </dependency>
+                <dependency Id="59a333dc-ba89-4284-8d56-9ca74591fdc1">
+                  <packageMoniker Id="9913e204-72b2-4ce7-ad59-ed78942246e0" LastKnownName="Business" />
+                  <elementDefinition Id="95878c7e-3ec3-4a44-892d-9d2098a2bbf7" />
+                </dependency>
+              </suppliersInternal>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="4579a29a-7ad2-41ef-8b0a-f98afd11fe84" name="SPA">
+              <elementDefinition Id="17bb37c9-2918-4bd6-a3ec-046cb06b36be" />
+              <suppliersInternal>
+                <dependency Id="a90921c5-ecb1-4240-b46b-051f31988a19">
+                  <packageMoniker Id="a6ebee97-9a16-4af7-b71b-13f6414db739" LastKnownName="API" />
+                  <elementDefinition Id="ccf541bc-32cb-4fc3-9ddc-94ddec3a5abb" />
+                </dependency>
+              </suppliersInternal>
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <package Id="a6ebee97-9a16-4af7-b71b-13f6414db739" name="API">
+        <elementDefinition Id="75276a6f-1c91-4003-9d0d-384e73684011" />
+        <suppliersInternal>
+          <dependency Id="bb814d3a-ff8c-49d3-ab35-394b3f7b28ce">
+            <packageMoniker Id="9913e204-72b2-4ce7-ad59-ed78942246e0" LastKnownName="Business" />
+            <elementDefinition Id="742ef085-4db2-4fc2-935b-cb53da4b7fd8" />
+          </dependency>
+          <dependency Id="3242b14d-48aa-48e4-a4cd-b15b390a5001">
+            <packageMoniker Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" LastKnownName="Startup" />
+            <elementDefinition Id="270a1bec-63a0-486d-86d0-33814a65e6bf" />
+          </dependency>
+          <dependency Id="baf29461-2e7d-4d75-98e8-f6a77b5434dc">
+            <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="Resources" />
+            <elementDefinition Id="ab5d8624-84d4-417e-b0ca-b81b5cbfeb11" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="ae0ea320-8853-437b-ab13-9056902fc669" name="Controllers">
+              <elementDefinition Id="8fbb013f-ee55-4ddf-9fb6-743db873587b" />
+              <suppliersInternal>
+                <dependency Id="fb1391b9-379f-4d58-97c2-84ef5faf4d66">
+                  <packageMoniker Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" LastKnownName="Helpers" />
+                  <elementDefinition Id="e1e38580-7608-4166-be50-ff9a6a240def" />
+                </dependency>
+                <dependency Id="b2f8e874-c009-4675-b749-88ff4611e37f">
+                  <packageMoniker Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" LastKnownName="ViewModels" />
+                  <elementDefinition Id="ed5ee8f9-6faa-41e8-ace5-511260c5fe29" />
+                </dependency>
+              </suppliersInternal>
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="9140f798-6512-4550-a521-74b7db2cc43d" name="Reports">
+                    <elementDefinition Id="06d9448a-ce79-4525-8d58-7e6a1dd70745" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" name="Helpers">
+              <elementDefinition Id="a0b65b27-92c1-446f-abca-8ec306b19323" />
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" name="ViewModels">
+              <elementDefinition Id="21a5878e-a6f2-4072-aa49-7c7a116525fa" />
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="809bd284-5692-4d41-a043-cb34fb9bf8e6" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1bceb0b7-aa4f-4cdb-aa12-a9a8927a58e0">
+        <profileInstance Id="d9d617fe-0e99-4cb9-a3ee-c7958606406f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="13864356-5d5c-4e08-aed7-11c53b2c9393">
+        <profileInstance Id="a7a9379e-0340-4d6b-bdeb-0bdf174e2815" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4334c68c-0a1e-4554-9617-25b2aee7b897">
+        <profileInstance Id="e946db4e-9849-4b61-89de-33d6f430f896" name="CSharpProfile">
+          <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+        </profileInstance>
+        <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

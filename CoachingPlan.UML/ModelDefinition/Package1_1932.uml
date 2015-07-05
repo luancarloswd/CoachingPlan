@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d727cf11-685e-4143-a2df-1f7da3ccddb7"
+  name="UC12 - Acompanhar Processo de Coaching" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
+        name="UC12-Acompanhar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9e8e896c-7f1f-454d-ad7a-c7853459fd7b"
+        name="Visualizar Processo de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="c1845230-b8d4-4d64-be0e-455b0d744367">
+            <useCaseMoniker
+              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
+              LastKnownName="UC12-Acompanhar Processo de Coaching"
+              LastKnownLocation="Package1_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bb628d52-7ee7-41ec-8ab8-0b3bf0bcef6b"
+        name="Visualizar Resultado Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="4d51c44b-1fd9-4eb8-96cb-baadba3e6000">
+            <useCaseMoniker
+              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
+              LastKnownName="UC12-Acompanhar Processo de Coaching"
+              LastKnownLocation="Package1_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

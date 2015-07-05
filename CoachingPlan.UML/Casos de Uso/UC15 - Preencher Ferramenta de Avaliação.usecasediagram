@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="91b3342a-83f1-4fd3-a6aa-27046c5a16f0" name="UC15 - Preencher Ferramenta de Avaliação" linkedPackageId="a6ee2c8f-849f-4643-ad21-0d48e110b56a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="ab653530-1024-4e92-b4ab-26f696bfe3d3">
+      <profileInstance Id="461672ef-510d-4583-a99d-b1f09fc9a264" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2a0dfd08-5f33-4b83-a345-9a94a3022dcd">
+      <profileInstance Id="b01c1f4f-e3d9-4acf-8ae2-be30f1bc7046" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="514fe6d3-f037-439b-9b8e-1cfad210699d" name="UC15-Preencher Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17a67882-440a-47aa-b896-4d8f5b2849e4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="aec1421c-472e-495b-a571-5049f015bac2" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="0e4efc08-93e5-4981-a1b0-71074c81f1a0" isSubstitutable="false">
+            <actorMoniker Id="5958a3d8-764c-4f67-9d67-e77b110feca9" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="5958a3d8-764c-4f67-9d67-e77b110feca9" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="13675fc3-4f42-4d38-87ad-c0ff3f18d504" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Preencher Ferramenta de avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="514fe6d3-f037-439b-9b8e-1cfad210699d" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="350fff66-fb0c-4d50-9939-287696232cb3" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e7d23311-e8ce-49c7-aab1-13fdea132dcc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f845e75-8d57-4141-9292-87ff17fa10e0" name="Preencher Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4db8d866-2b40-4638-b53b-5ecec6d7942d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e2c035b-a12a-49ef-a8fb-f923a5ad0fc9" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="cbaff91d-3df1-40d0-bcec-d98d2caac8e6" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="c156e4d7-c170-4f6f-8f3c-0533ae4e5d17" isSubstitutable="false">
+            <actorMoniker Id="aec1421c-472e-495b-a571-5049f015bac2" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3c26c834-a247-487d-9631-714bce5f9639" name="Cadastrar Respostas" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d2fe39e0-2b0c-42b7-ae93-96d6af67651b" />
+        <suppliersInternal>
+          <dependency Id="0bfac0e9-e108-4f10-9ab0-07baaceddc04">
+            <useCaseMoniker Id="514fe6d3-f037-439b-9b8e-1cfad210699d" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
+            <elementDefinition Id="d83281d7-3a04-47ca-8843-eb63ad29e794" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bf2d1cef-e657-4670-b4ea-d79e4a2d20aa" name="Editar Respostas" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="35c51f97-d737-48a8-a622-4f6bb2a17931" />
+        <suppliersInternal>
+          <dependency Id="752fd7de-213e-47fd-a971-a9ce65816eca">
+            <useCaseMoniker Id="514fe6d3-f037-439b-9b8e-1cfad210699d" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
+            <elementDefinition Id="ac797049-9341-49a2-a98a-1c008bfa67bd" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="a6ee2c8f-849f-4643-ad21-0d48e110b56a" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

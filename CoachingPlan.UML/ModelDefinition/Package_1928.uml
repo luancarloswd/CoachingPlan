@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0bde3a77-7bad-40bb-861c-ebb5acce716d"
+  name="UC06 - Manter Serviço" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+        name="UC06-Manter Serviço"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="40c97ed0-bac9-44f7-aa08-6ebdbd7e72f4"
+        name="Cadastrar Serviço"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="13399a35-8a84-4ca9-ada1-6a2392788833">
+            <useCaseMoniker
+              Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+              LastKnownName="UC06-Manter Serviço"
+              LastKnownLocation="Package_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cf9fce03-401c-47bd-8ecc-75b2c357d1ae"
+        name="Editar Serviço"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="1a602e72-bff0-4170-8276-0af285c64840">
+            <useCaseMoniker
+              Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+              LastKnownName="UC06-Manter Serviço"
+              LastKnownLocation="Package_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="675f7e59-d9ca-4547-9116-d44dc58fd0e8"
+        name="Pesquisar Serviço"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a47428a3-e5f1-435b-9807-c31efba2def0">
+            <useCaseMoniker
+              Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+              LastKnownName="UC06-Manter Serviço"
+              LastKnownLocation="Package_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cc0446cc-1b96-4a25-a647-bd0501db7d57"
+        name="Visualizar Serviço"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="05ae891a-7568-4ec4-a5d5-7c8595f623d7">
+            <useCaseMoniker
+              Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+              LastKnownName="UC06-Manter Serviço"
+              LastKnownLocation="Package_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="60779371-d821-499f-8d7c-76f81c10dc0b"
+        name="Excluir Serviço"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="72476ccc-e314-4f16-b9bf-03ea1ac6aada">
+            <useCaseMoniker
+              Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c"
+              LastKnownName="UC06-Manter Serviço"
+              LastKnownLocation="Package_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

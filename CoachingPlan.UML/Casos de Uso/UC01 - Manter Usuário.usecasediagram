@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6cda9092-f076-4c99-b415-54d15b9ff6dc" name="UC01 - Manter Usuário" linkedPackageId="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="37dcc9ab-36b7-4f3e-87e3-dc8665c1296e" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <targetEnds>
+          <association Id="f37af918-d6f4-4ef3-b68b-b827dfc75cce" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Manter Usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4d801bb9-6a92-491a-8ad2-3a3fc0e61256" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43e11bf2-37ac-44fb-9c79-c7e3297035b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8caba02f-9820-4864-b41e-601f73a60da6" name="Manter Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e47f15c-809c-455f-b9e0-2bd313539c53" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c39cf225-9e95-4a65-a17c-7f11fe517320" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" name="UC01-Manter Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d553b200-cf08-4830-9277-1fb09f08909f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f9f9fd5d-01da-426e-8805-05de9913d1fa" name="UC02-Manter Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299" />
+        <extendedCases>
+          <extend Id="62a1ea7e-673d-4822-a394-633e090f3f7a">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="538fa478-a8e8-4b03-81de-b7b29e943220" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="331f52b6-dede-40e5-b574-ab52164aaed3" name="UC03-Manter Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="15788fdf-0c65-4e3c-8e36-0fcf63c20931" />
+        <extendedCases>
+          <extend Id="77a2276a-8227-455a-92ff-2976c9c7f2c7">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="951737c1-97aa-4208-91f9-0cbf6ad9247a" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="97eea03a-f88a-4bfd-8901-5ab7ece73bba" name="Cadastrar Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e9e6f0d-7669-4b18-804f-7c94f57f8021" />
+        <suppliersInternal>
+          <dependency Id="09991d2a-07de-43c4-b3b2-555f681274fb">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="2a8286dd-675a-4615-8329-f5d776091fbc" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4cca0bd9-286a-455b-a6ab-5448ed8bd803" name="Editar Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0df7e0f5-a836-4cff-8ce0-91ff89056570" />
+        <suppliersInternal>
+          <dependency Id="a922d696-09e6-4ad6-8dd7-bf2fb6bd6b9b">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="dd9c8133-81a3-49ca-a609-5fff177ce71c" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e4efe316-5c94-48f9-8ce7-8fa33f3e1e50" name="Visualizar Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bac32bfb-c07b-48cb-b7be-8858292df8c5" />
+        <suppliersInternal>
+          <dependency Id="e0aff716-f103-4913-8c27-852d5b4d8f38">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="9e89310d-0784-4786-813c-1bce792c1b0e" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="83376c50-b03e-4abc-a7fa-12a835753576" name="Pesquisar Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="274942bc-3300-4b0b-9568-6c900617740b" />
+        <suppliersInternal>
+          <dependency Id="5b2ac07d-4fe3-41ce-bc61-ef6860e23f33">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="fdba8776-f902-4c64-b7c1-9190115b5881" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="59b98cdf-ff22-4855-9c57-53a555788f42" name="Excluir Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6ae9149f-cd27-4bb3-9d74-a57e14f9e3bf" />
+        <suppliersInternal>
+          <dependency Id="41061c07-4fbe-4e1f-9924-fcd3859d254b">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="97f19499-344d-40ec-8c54-a9a31b3b34ef" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="78f58a58-9316-4e3d-8098-675ff0d3e0a3" name="Bloquear Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="11a4eb10-a858-446b-a131-a42dfdda5c51" />
+        <suppliersInternal>
+          <dependency Id="4fafc259-d214-4df7-b40d-6cb9e73ae97e">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="62d39b26-bfb5-4248-b319-bfd02ac0e517" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cb404087-73ba-4b18-b4ea-7dcd04cecf53" name="Desbloquear Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="675cfd0b-9874-41d6-a57b-318196b0af2d" />
+        <suppliersInternal>
+          <dependency Id="7113daff-aee5-4ba6-8af0-2ce5f246b8b5">
+            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="73a09000-dc80-4d85-9b69-b95069da245e" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4a40900b-43e1-47c4-9bf6-22e89d452b9d">
+        <profileInstance Id="783da4c3-b44a-433f-aaba-725312804201" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cd439ea2-380a-48b8-8792-2d3cf7e6d814">
+        <profileInstance Id="8d49634c-8d83-448f-8a20-9742494cb5c1" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

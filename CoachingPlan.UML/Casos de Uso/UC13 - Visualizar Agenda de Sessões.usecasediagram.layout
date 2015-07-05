@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UC13 - Visualizar Agenda de Sessões">
+  <useCaseModelRootMoniker Id="15dc216f-8cbf-4c75-afc3-31996c62f411" />
+  <nestedChildShapes>
+    <useCaseShape Id="8c74d140-43f3-4956-912d-c57baf7b8b3b" absoluteBounds="4.75, 3.75, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a7278f91-ec86-4e79-a6d7-f39510df17b0" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <actorShape Id="aff63b2e-a983-4b2d-930b-7eeda10f3cf5" absoluteBounds="6.625, 3.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="a6d97fd9-1652-4db4-99dd-4f8876b3bae9" LastKnownName="Coachee" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(6.625 : 4.13461538461539); (5.74951766538875 : 4.16828778210043)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="90454431-1739-4e3f-8dc4-360d9a79aff6" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="aff63b2e-a983-4b2d-930b-7eeda10f3cf5" />
+        <useCaseShapeMoniker Id="8c74d140-43f3-4956-912d-c57baf7b8b3b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="772bfb3d-56e7-4835-8cf0-19964ae3b000" absoluteBounds="8, 3.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="9a41b671-59dd-4c47-a765-a520eb307957" LastKnownName="Coach" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(8 : 4.125); (7.125 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="68c87367-03b3-4afa-95e0-cfd6407283c0" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="772bfb3d-56e7-4835-8cf0-19964ae3b000" />
+        <actorShapeMoniker Id="aff63b2e-a983-4b2d-930b-7eeda10f3cf5" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <actorShape Id="e82b9ae2-551a-426b-8fdd-4f2091e56023" absoluteBounds="9.125, 3.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="02e02fc6-12a3-4915-a7a7-6d97e141217e" LastKnownName="Administrador" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(9.125 : 4.125); (8.5 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="1a410d73-9e1e-4813-8a7f-95671ce8669f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="e82b9ae2-551a-426b-8fdd-4f2091e56023" />
+        <actorShapeMoniker Id="772bfb3d-56e7-4835-8cf0-19964ae3b000" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <useCaseShape Id="7846b85d-aadd-491b-af10-21e84f166020" absoluteBounds="3, 3.75, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="979fc402-201c-4244-ac7e-8aceadb267d0" LastKnownName="UC13-Visualizar Agenda de Sessões" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <extendConnector edgePoints="[(4 : 4.1875); (4.75 : 4.1875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="2666fa4c-3f95-4c2f-b97f-173fe6ce9e13" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallySized="true" manuallyPlaced="true" absoluteBounds="4.0297468392054228, 4.3125, 0.75916666666666632, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="7846b85d-aadd-491b-af10-21e84f166020" />
+        <useCaseShapeMoniker Id="8c74d140-43f3-4956-912d-c57baf7b8b3b" />
+      </nodes>
+    </extendConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

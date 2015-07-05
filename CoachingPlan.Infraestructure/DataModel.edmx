@@ -1,0 +1,2181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="coaching_planModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="a1_pessoa_tb">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+          <Property Name="NOME_PESSOA" Type="varchar" MaxLength="65" Nullable="false" />
+          <Property Name="CPF_PESSOA" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="DATA_NASC_PESSOA" Type="date" Nullable="false" />
+          <Property Name="GENERO_PESSOA" Type="enum" Nullable="false" />
+          <Property Name="ATIVO_PESSOA" Type="bool" Nullable="false" />
+          <Property Name="FOTO_PESSOA" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="a10_orcamento_tb">
+          <Key>
+            <PropertyRef Name="ID_PROPOSTA" />
+          </Key>
+          <Property Name="ID_PROPOSTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+          <Property Name="PROPOSTA" Type="longtext" Nullable="false" />
+          <Property Name="PRECO_PROPOSTA" Type="float" Nullable="false" />
+          <Property Name="DATA_PROPOSTA" Type="date" Nullable="false" />
+          <Property Name="PRECO_SESSAO" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a11_sessao_tb">
+          <Key>
+            <PropertyRef Name="ID_SESSAO" />
+          </Key>
+          <Property Name="ID_SESSAO" Type="int" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TEMA_SESSAO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="DATA_SESSAO" Type="date" Nullable="false" />
+          <Property Name="INICIO_SESSAO" Type="time" Precision="0" Nullable="false" />
+          <Property Name="FIM_SESSAO" Type="time" Precision="0" />
+          <Property Name="CLASSIFICACAO_SESSAO" Type="enum" Nullable="false" />
+          <Property Name="OBSERVACAO_SESSAO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a12_tarefa_tb">
+          <Key>
+            <PropertyRef Name="ID_TAREFA" />
+          </Key>
+          <Property Name="ID_TAREFA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_SESSAO" Type="int" Nullable="false" />
+          <Property Name="ID_META" Type="int" Nullable="false" />
+          <Property Name="DATA_INICIO" Type="date" Nullable="false" />
+          <Property Name="DATA_REALIZACAO" Type="date" Nullable="false" />
+          <Property Name="DATA_VERIFICACAO" Type="date" Nullable="false" />
+          <Property Name="DESCRICAO_TAREFA" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a13_plano_acao_tb">
+          <Key>
+            <PropertyRef Name="ID_PLANO_ACAO" />
+          </Key>
+          <Property Name="ID_PLANO_ACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+          <Property Name="DESCRICAO_PLANO_ACAO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a15_objetivo_tb">
+          <Key>
+            <PropertyRef Name="ID_OBJETIVO" />
+          </Key>
+          <Property Name="ID_OBJETIVO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO_OBJETIVO" Type="longtext" />
+          <Property Name="ID_PLANO_ACAO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a16_meta_tb">
+          <Key>
+            <PropertyRef Name="ID_META" />
+          </Key>
+          <Property Name="ID_META" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_OBJETIVO" Type="int" Nullable="false" />
+          <Property Name="PRAZO_META" Type="date" Nullable="false" />
+          <Property Name="DESC_META" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a17_avaliacao_tb">
+          <Key>
+            <PropertyRef Name="ID_AVALIACAO" />
+          </Key>
+          <Property Name="ID_AVALIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_SESSAO" Type="int" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NOTA_AVALIACAO" Type="float" Nullable="false" />
+          <Property Name="OBSERVACAO_AVALIACAO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a18_servico_tb">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_SERVICO" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="PRECO_SERVICO" Type="float" Nullable="false" />
+          <Property Name="DESC_SERVICO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a19_ferramenta_tb">
+          <Key>
+            <PropertyRef Name="ID_FERRAMENTA" />
+          </Key>
+          <Property Name="ID_FERRAMENTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_FERRAMENTA" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="TIPO_FERRAMENTA" Type="enum" Nullable="false" />
+          <Property Name="ID_COACH" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a2_telefone_tb">
+          <Key>
+            <PropertyRef Name="ID_TELEFONE" />
+          </Key>
+          <Property Name="ID_TELEFONE" Type="int" Nullable="false" />
+          <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+          <Property Name="DDD_TELEFONE" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="TELEFONE" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="DESCRICAO_TELEFONE" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="a20_questao_tb">
+          <Key>
+            <PropertyRef Name="ID_QUESTAO" />
+          </Key>
+          <Property Name="ID_QUESTAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_FERRAMENTA" Type="int" Nullable="false" />
+          <Property Name="TIPO_RESPOSTA" Type="enum" />
+          <Property Name="TIPO_QUESTAO" Type="enum" Nullable="false" />
+          <Property Name="FASE_QUESTAO" Type="varchar" MaxLength="45" />
+          <Property Name="PASSO_QUESTAO" Type="int" />
+          <Property Name="ENUNCIADO_QUESTAO" Type="longtext" />
+          <Property Name="INSTRUNCAO_QUESTAO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a21_resposta_tb">
+          <Key>
+            <PropertyRef Name="ID_RESPOSTA" />
+          </Key>
+          <Property Name="ID_RESPOSTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_QUESTAO" Type="int" Nullable="false" />
+          <Property Name="RESPOSTA" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a22_mensagem_tb">
+          <Key>
+            <PropertyRef Name="ID_MENSAGEM" />
+          </Key>
+          <Property Name="ID_MENSAGEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ASSUNTO_MENSAGEM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MENSAGEM" Type="longtext" Nullable="false" />
+          <Property Name="DESTINO_MENSAGEM" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="DATA_MENSAGEM" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a23_especialidade_tb">
+          <Key>
+            <PropertyRef Name="ID_ESPECIALIDADE" />
+          </Key>
+          <Property Name="ID_ESPECIALIDADE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_ESPECIALIDADE" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="DESCRICAO_ESPECIALIDADE" Type="varchar" MaxLength="45" />
+          <Property Name="ID_COACH" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a24_formacao_tb">
+          <Key>
+            <PropertyRef Name="ID_FORMACAO" />
+          </Key>
+          <Property Name="ID_FORMACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_FORMACAO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="DESCRICAO_FORMACAO" Type="longtext" />
+          <Property Name="ID_COACH" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a3_endereco_tb">
+          <Key>
+            <PropertyRef Name="ID_ENDERECO" />
+          </Key>
+          <Property Name="ID_ENDERECO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+          <Property Name="CEP_ENDERECO" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="ESTADO_ENDERECO" Type="enum" Nullable="false" />
+          <Property Name="CIDADE_ENDERECO" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="RUA_ENDERECO" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="NUMERO_ENDERECO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a4_usuario_tb">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ID_PESSOA" Type="int" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="65" />
+          <Property Name="EMAILCONFIRMADO" Type="bool" Nullable="false" />
+          <Property Name="PASSWORDHASH" Type="longtext" />
+          <Property Name="SECURITYSTAMP" Type="longtext" />
+          <Property Name="NUMEROTELEFONE" Type="varchar" MaxLength="15" />
+          <Property Name="NUMEROTELEFONECONFIRMADO" Type="bool" Nullable="false" />
+          <Property Name="TWOFACTORENABLE" Type="bool" Nullable="false" />
+          <Property Name="LOCKOUTENDDATEUTC" Type="datetime" Precision="0" />
+          <Property Name="LOCKOUTENABLE" Type="bool" Nullable="false" />
+          <Property Name="ACESSFAILEDCOUNT" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="65" />
+          <Property Name="DISCRIMINATOR" Type="varchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a5_coach_tb">
+          <Key>
+            <PropertyRef Name="ID_COACH" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ID_COACH" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a6_coachee_tb">
+          <Key>
+            <PropertyRef Name="ID_COACHEE" />
+          </Key>
+          <Property Name="ID_COACHEE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="PROFISSAO_COACHEE" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="a7_ponto_forte_tb">
+          <Key>
+            <PropertyRef Name="ID_PONTO_FORTE" />
+          </Key>
+          <Property Name="ID_PONTO_FORTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_COACHEE" Type="int" Nullable="false" />
+          <Property Name="PONTO_FORTE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CLASSE_PONTO_FORTE" Type="enum" />
+          <Property Name="DESCRICAO_PONTO_FORTE" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a8_fragilidade_tb">
+          <Key>
+            <PropertyRef Name="ID_FRAGILIDADE" />
+          </Key>
+          <Property Name="ID_FRAGILIDADE" Type="int" Nullable="false" />
+          <Property Name="ID_COACHEE" Type="int" Nullable="false" />
+          <Property Name="FRAGILIDADE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DESCRICAO_FRAGILIDADE" Type="longtext" />
+        </EntityType>
+        <EntityType Name="a9_processo_coaching_tb">
+          <Key>
+            <PropertyRef Name="ID_PROCESSO" />
+          </Key>
+          <Property Name="ID_PROCESSO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_COACH" Type="int" Nullable="false" />
+          <Property Name="DATA_INICIO_PROCESSO" Type="date" Nullable="false" />
+          <Property Name="DATA_FIM_PROCESSO" Type="date" />
+          <Property Name="MODALIDADE_PROCESSO" Type="enum" Nullable="false" />
+          <Property Name="OBSERVACAO_PROCESSO" Type="longtext" />
+        </EntityType>
+        <EntityType Name="t1_logins_tb">
+          <Key>
+            <PropertyRef Name="LOGINPROVIDER" />
+            <PropertyRef Name="PROVIDERKEY" />
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="LOGINPROVIDER" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="PROVIDERKEY" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="IDENTITYUSER_ID" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="t2_claims_tb">
+          <Key>
+            <PropertyRef Name="ID_CLAIMS" />
+          </Key>
+          <Property Name="ID_CLAIMS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="longtext" />
+          <Property Name="CLAIMTYPE" Type="longtext" />
+          <Property Name="CLAIMVALUE" Type="longtext" />
+          <Property Name="IDENTITYUSER_ID" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="t3_papel_tb">
+          <Key>
+            <PropertyRef Name="ID_PAPEL" />
+          </Key>
+          <Property Name="ID_PAPEL" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NOME_PAPEL" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t4_usuario_papel_tb">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="ID_PAPEL" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="ID_PAPEL" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="IDENTITYUSER_ID" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="t5_indicador_desempenho_tb">
+          <Key>
+            <PropertyRef Name="ID_INDICADOR" />
+          </Key>
+          <Property Name="ID_INDICADOR" Type="int" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+          <Property Name="INDICADOR" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t6_participante_tb">
+          <Key>
+            <PropertyRef Name="ID_PROCESSO" />
+            <PropertyRef Name="ID_COACHEE" />
+          </Key>
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+          <Property Name="ID_COACHEE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t7_servico_processo_tb">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+            <PropertyRef Name="ID_PROCESSO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="int" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t8_preenchimento_ferramenta_tb">
+          <Key>
+            <PropertyRef Name="ID_COACHEE" />
+            <PropertyRef Name="ID_FERRAMENTA" />
+          </Key>
+          <Property Name="ID_COACHEE" Type="int" Nullable="false" />
+          <Property Name="ID_FERRAMENTA" Type="int" Nullable="false" />
+          <Property Name="Data_Avaliação" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a10_orcamento_tb" Type="Self.a10_orcamento_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a10_orcamento_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A11_SESSAO_TB_A4_USUARIO_TB1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a11_sessao_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1">
+          <End Role="a13_plano_acao_tb" Type="Self.a13_plano_acao_tb" Multiplicity="1" />
+          <End Role="a15_objetivo_tb" Type="Self.a15_objetivo_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a13_plano_acao_tb">
+              <PropertyRef Name="ID_PLANO_ACAO" />
+            </Principal>
+            <Dependent Role="a15_objetivo_tb">
+              <PropertyRef Name="ID_PLANO_ACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A17_AVALIACAO_TB_A4_USUARIO_TB1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a17_avaliacao_tb" Type="Self.a17_avaliacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a17_avaliacao_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_FERRAMENTA_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_TAREFA_TB_a17_meta1">
+          <End Role="a16_meta_tb" Type="Self.a16_meta_tb" Multiplicity="1" />
+          <End Role="a12_tarefa_tb" Type="Self.a12_tarefa_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a16_meta_tb">
+              <PropertyRef Name="ID_META" />
+            </Principal>
+            <Dependent Role="a12_tarefa_tb">
+              <PropertyRef Name="ID_META" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_TAREFA_TB_a9_sessao_tb1">
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="1" />
+          <End Role="a12_tarefa_tb" Type="Self.a12_tarefa_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a11_sessao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Principal>
+            <Dependent Role="a12_tarefa_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a2_telefone_tb_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a2_telefone_tb" Type="Self.a2_telefone_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a2_telefone_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A20_avaliacao_tb_a9_sessao_tb1">
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="1" />
+          <End Role="a17_avaliacao_tb" Type="Self.a17_avaliacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a11_sessao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Principal>
+            <Dependent Role="a17_avaliacao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A21_questao_tb_a10_ferramenta_tb1">
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="1" />
+          <End Role="a20_questao_tb" Type="Self.a20_questao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Principal>
+            <Dependent Role="a20_questao_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A22_FORMACAO_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a24_formacao_tb" Type="Self.a24_formacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a24_formacao_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A22_resposta_tb_A21_questao_tb1">
+          <End Role="a20_questao_tb" Type="Self.a20_questao_tb" Multiplicity="1" />
+          <End Role="a21_resposta_tb" Type="Self.a21_resposta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a20_questao_tb">
+              <PropertyRef Name="ID_QUESTAO" />
+            </Principal>
+            <Dependent Role="a21_resposta_tb">
+              <PropertyRef Name="ID_QUESTAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a23_especialidade_tb" Type="Self.a23_especialidade_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a23_especialidade_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a24_mensagem_tb_usuarios">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a22_mensagem_tb" Type="Self.a22_mensagem_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a22_mensagem_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a3_endereco_tb_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a3_endereco_tb" Type="Self.a3_endereco_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a3_endereco_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1">
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="1" />
+          <End Role="t8_preenchimento_ferramenta_tb" Type="Self.t8_preenchimento_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Principal>
+            <Dependent Role="t8_preenchimento_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="t8_preenchimento_ferramenta_tb" Type="Self.t8_preenchimento_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="t8_preenchimento_ferramenta_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_usuarios1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a6_coachee_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a5_coach_tb_usuarios1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a5_coach_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="a8_fragilidade_tb" Type="Self.a8_fragilidade_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="a8_fragilidade_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AVALIA">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="t5_indicador_desempenho_tb" Type="Self.t5_indicador_desempenho_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="t5_indicador_desempenho_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CARACTERIZA_PONTOS_FORTES">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="a7_ponto_forte_tb" Type="Self.a7_ponto_forte_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="a7_ponto_forte_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPOE">
+          <End Role="a15_objetivo_tb" Type="Self.a15_objetivo_tb" Multiplicity="1" />
+          <End Role="a16_meta_tb" Type="Self.a16_meta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a15_objetivo_tb">
+              <PropertyRef Name="ID_OBJETIVO" />
+            </Principal>
+            <Dependent Role="a16_meta_tb">
+              <PropertyRef Name="ID_OBJETIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIVIDE">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a11_sessao_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GERA">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a13_plano_acao_tb" Type="Self.a13_plano_acao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a13_plano_acao_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORIENTA">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T7_SERVICO_PROCESSO_TB">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="t7_servico_processo_tb" Type="Self.t7_servico_processo_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="t7_servico_processo_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T7_SERVICO_PROCESSO_TB2">
+          <End Role="a18_servico_tb" Type="Self.a18_servico_tb" Multiplicity="1" />
+          <End Role="t7_servico_processo_tb" Type="Self.t7_servico_processo_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a18_servico_tb">
+              <PropertyRef Name="ID_SERVICO" />
+            </Principal>
+            <Dependent Role="t7_servico_processo_tb">
+              <PropertyRef Name="ID_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T9_PARTICIPANTE_TB">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="t6_participante_tb" Type="Self.t6_participante_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="t6_participante_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T9_PARTICIPANTE_TB2">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="t6_participante_tb" Type="Self.t6_participante_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="t6_participante_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuarios_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a4_usuario_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityRole_Users">
+          <End Role="t3_papel_tb" Type="Self.t3_papel_tb" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="t4_usuario_papel_tb" Type="Self.t4_usuario_papel_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t3_papel_tb">
+              <PropertyRef Name="ID_PAPEL" />
+            </Principal>
+            <Dependent Role="t4_usuario_papel_tb">
+              <PropertyRef Name="ID_PAPEL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Claims">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t2_claims_tb" Type="Self.t2_claims_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t2_claims_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Logins">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t1_logins_tb" Type="Self.t1_logins_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t1_logins_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Roles">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t4_usuario_papel_tb" Type="Self.t4_usuario_papel_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t4_usuario_papel_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="coaching_planModelStoreContainer">
+          <EntitySet Name="a1_pessoa_tb" EntityType="Self.a1_pessoa_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a10_orcamento_tb" EntityType="Self.a10_orcamento_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a11_sessao_tb" EntityType="Self.a11_sessao_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a12_tarefa_tb" EntityType="Self.a12_tarefa_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a13_plano_acao_tb" EntityType="Self.a13_plano_acao_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a15_objetivo_tb" EntityType="Self.a15_objetivo_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a16_meta_tb" EntityType="Self.a16_meta_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a17_avaliacao_tb" EntityType="Self.a17_avaliacao_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a18_servico_tb" EntityType="Self.a18_servico_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a19_ferramenta_tb" EntityType="Self.a19_ferramenta_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a2_telefone_tb" EntityType="Self.a2_telefone_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a20_questao_tb" EntityType="Self.a20_questao_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a21_resposta_tb" EntityType="Self.a21_resposta_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a22_mensagem_tb" EntityType="Self.a22_mensagem_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a23_especialidade_tb" EntityType="Self.a23_especialidade_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a24_formacao_tb" EntityType="Self.a24_formacao_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a3_endereco_tb" EntityType="Self.a3_endereco_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a4_usuario_tb" EntityType="Self.a4_usuario_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a5_coach_tb" EntityType="Self.a5_coach_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a6_coachee_tb" EntityType="Self.a6_coachee_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a7_ponto_forte_tb" EntityType="Self.a7_ponto_forte_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a8_fragilidade_tb" EntityType="Self.a8_fragilidade_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="a9_processo_coaching_tb" EntityType="Self.a9_processo_coaching_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t1_logins_tb" EntityType="Self.t1_logins_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t2_claims_tb" EntityType="Self.t2_claims_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t3_papel_tb" EntityType="Self.t3_papel_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t4_usuario_papel_tb" EntityType="Self.t4_usuario_papel_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t5_indicador_desempenho_tb" EntityType="Self.t5_indicador_desempenho_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t6_participante_tb" EntityType="Self.t6_participante_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t7_servico_processo_tb" EntityType="Self.t7_servico_processo_tb" Schema="coaching_plan" store:Type="Tables" />
+          <EntitySet Name="t8_preenchimento_ferramenta_tb" EntityType="Self.t8_preenchimento_ferramenta_tb" Schema="coaching_plan" store:Type="Tables" />
+          <AssociationSet Name="fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1" Association="Self.fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a10_orcamento_tb" EntitySet="a10_orcamento_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A11_SESSAO_TB_A4_USUARIO_TB1" Association="Self.fk_A11_SESSAO_TB_A4_USUARIO_TB1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1" Association="Self.fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1">
+            <End Role="a13_plano_acao_tb" EntitySet="a13_plano_acao_tb" />
+            <End Role="a15_objetivo_tb" EntitySet="a15_objetivo_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A17_AVALIACAO_TB_A4_USUARIO_TB1" Association="Self.fk_A17_AVALIACAO_TB_A4_USUARIO_TB1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a17_avaliacao_tb" EntitySet="a17_avaliacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_FERRAMENTA_TB_A5_COACH_TB1" Association="Self.fk_A19_FERRAMENTA_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_TAREFA_TB_a17_meta1" Association="Self.fk_A19_TAREFA_TB_a17_meta1">
+            <End Role="a16_meta_tb" EntitySet="a16_meta_tb" />
+            <End Role="a12_tarefa_tb" EntitySet="a12_tarefa_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_TAREFA_TB_a9_sessao_tb1" Association="Self.fk_A19_TAREFA_TB_a9_sessao_tb1">
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+            <End Role="a12_tarefa_tb" EntitySet="a12_tarefa_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a2_telefone_tb_a1_pessoa_tb1" Association="Self.fk_a2_telefone_tb_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a2_telefone_tb" EntitySet="a2_telefone_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A20_avaliacao_tb_a9_sessao_tb1" Association="Self.fk_A20_avaliacao_tb_a9_sessao_tb1">
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+            <End Role="a17_avaliacao_tb" EntitySet="a17_avaliacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A21_questao_tb_a10_ferramenta_tb1" Association="Self.fk_A21_questao_tb_a10_ferramenta_tb1">
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+            <End Role="a20_questao_tb" EntitySet="a20_questao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A22_FORMACAO_TB_A5_COACH_TB1" Association="Self.fk_A22_FORMACAO_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a24_formacao_tb" EntitySet="a24_formacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A22_resposta_tb_A21_questao_tb1" Association="Self.fk_A22_resposta_tb_A21_questao_tb1">
+            <End Role="a20_questao_tb" EntitySet="a20_questao_tb" />
+            <End Role="a21_resposta_tb" EntitySet="a21_resposta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1" Association="Self.fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a23_especialidade_tb" EntitySet="a23_especialidade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a24_mensagem_tb_usuarios" Association="Self.fk_a24_mensagem_tb_usuarios">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a22_mensagem_tb" EntitySet="a22_mensagem_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a3_endereco_tb_a1_pessoa_tb1" Association="Self.fk_a3_endereco_tb_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a3_endereco_tb" EntitySet="a3_endereco_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1" Association="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1">
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+            <End Role="t8_preenchimento_ferramenta_tb" EntitySet="t8_preenchimento_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1" Association="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="t8_preenchimento_ferramenta_tb" EntitySet="t8_preenchimento_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_usuarios1" Association="Self.fk_a4_coachee_tb_usuarios1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a5_coach_tb_usuarios1" Association="Self.fk_a5_coach_tb_usuarios1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1" Association="Self.fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="a8_fragilidade_tb" EntitySet="a8_fragilidade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AVALIA" Association="Self.FK_AVALIA">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="t5_indicador_desempenho_tb" EntitySet="t5_indicador_desempenho_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CARACTERIZA_PONTOS_FORTES" Association="Self.FK_CARACTERIZA_PONTOS_FORTES">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="a7_ponto_forte_tb" EntitySet="a7_ponto_forte_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPOE" Association="Self.FK_COMPOE">
+            <End Role="a15_objetivo_tb" EntitySet="a15_objetivo_tb" />
+            <End Role="a16_meta_tb" EntitySet="a16_meta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIVIDE" Association="Self.FK_DIVIDE">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GERA" Association="Self.FK_GERA">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a13_plano_acao_tb" EntitySet="a13_plano_acao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORIENTA" Association="Self.FK_ORIENTA">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T7_SERVICO_PROCESSO_TB" Association="Self.FK_T7_SERVICO_PROCESSO_TB">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="t7_servico_processo_tb" EntitySet="t7_servico_processo_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T7_SERVICO_PROCESSO_TB2" Association="Self.FK_T7_SERVICO_PROCESSO_TB2">
+            <End Role="a18_servico_tb" EntitySet="a18_servico_tb" />
+            <End Role="t7_servico_processo_tb" EntitySet="t7_servico_processo_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T9_PARTICIPANTE_TB" Association="Self.FK_T9_PARTICIPANTE_TB">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="t6_participante_tb" EntitySet="t6_participante_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T9_PARTICIPANTE_TB2" Association="Self.FK_T9_PARTICIPANTE_TB2">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="t6_participante_tb" EntitySet="t6_participante_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuarios_a1_pessoa_tb1" Association="Self.fk_usuarios_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityRole_Users" Association="Self.IdentityRole_Users">
+            <End Role="t3_papel_tb" EntitySet="t3_papel_tb" />
+            <End Role="t4_usuario_papel_tb" EntitySet="t4_usuario_papel_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Claims" Association="Self.IdentityUser_Claims">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t2_claims_tb" EntitySet="t2_claims_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Logins" Association="Self.IdentityUser_Logins">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t1_logins_tb" EntitySet="t1_logins_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Roles" Association="Self.IdentityUser_Roles">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t4_usuario_papel_tb" EntitySet="t4_usuario_papel_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="coaching_planModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="a1_pessoa_tb">
+          <Key>
+            <PropertyRef Name="ID_PESSOA" />
+          </Key>
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" />
+          <Property Name="NOME_PESSOA" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPF_PESSOA" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATA_NASC_PESSOA" Type="DateTime" Nullable="false" />
+          <Property Name="GENERO_PESSOA" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ATIVO_PESSOA" Type="Boolean" Nullable="false" />
+          <Property Name="FOTO_PESSOA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a2_telefone_tb" Relationship="Self.fk_a2_telefone_tb_a1_pessoa_tb1" FromRole="a1_pessoa_tb" ToRole="a2_telefone_tb" />
+          <NavigationProperty Name="a3_endereco_tb" Relationship="Self.fk_a3_endereco_tb_a1_pessoa_tb1" FromRole="a1_pessoa_tb" ToRole="a3_endereco_tb" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_usuarios_a1_pessoa_tb1" FromRole="a1_pessoa_tb" ToRole="a4_usuario_tb" />
+        </EntityType>
+        <EntityType Name="a10_orcamento_tb">
+          <Key>
+            <PropertyRef Name="ID_PROPOSTA" />
+          </Key>
+          <Property Name="ID_PROPOSTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PROCESSO" Type="Int32" Nullable="false" />
+          <Property Name="PROPOSTA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECO_PROPOSTA" Type="Single" Nullable="false" />
+          <Property Name="DATA_PROPOSTA" Type="DateTime" Nullable="false" />
+          <Property Name="PRECO_SESSAO" Type="Single" Nullable="false" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1" FromRole="a10_orcamento_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a11_sessao_tb">
+          <Key>
+            <PropertyRef Name="ID_SESSAO" />
+          </Key>
+          <Property Name="ID_SESSAO" Type="Int32" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="Int32" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEMA_SESSAO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATA_SESSAO" Type="DateTime" Nullable="false" />
+          <Property Name="INICIO_SESSAO" Type="Time" Nullable="false" />
+          <Property Name="FIM_SESSAO" Type="Time" />
+          <Property Name="CLASSIFICACAO_SESSAO" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OBSERVACAO_SESSAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_A11_SESSAO_TB_A4_USUARIO_TB1" FromRole="a11_sessao_tb" ToRole="a4_usuario_tb" />
+          <NavigationProperty Name="a12_tarefa_tb" Relationship="Self.fk_A19_TAREFA_TB_a9_sessao_tb1" FromRole="a11_sessao_tb" ToRole="a12_tarefa_tb" />
+          <NavigationProperty Name="a17_avaliacao_tb" Relationship="Self.fk_A20_avaliacao_tb_a9_sessao_tb1" FromRole="a11_sessao_tb" ToRole="a17_avaliacao_tb" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.FK_DIVIDE" FromRole="a11_sessao_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a12_tarefa_tb">
+          <Key>
+            <PropertyRef Name="ID_TAREFA" />
+          </Key>
+          <Property Name="ID_TAREFA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SESSAO" Type="Int32" Nullable="false" />
+          <Property Name="ID_META" Type="Int32" Nullable="false" />
+          <Property Name="DATA_INICIO" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_REALIZACAO" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_VERIFICACAO" Type="DateTime" Nullable="false" />
+          <Property Name="DESCRICAO_TAREFA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a11_sessao_tb" Relationship="Self.fk_A19_TAREFA_TB_a9_sessao_tb1" FromRole="a12_tarefa_tb" ToRole="a11_sessao_tb" />
+          <NavigationProperty Name="a16_meta_tb" Relationship="Self.fk_A19_TAREFA_TB_a17_meta1" FromRole="a12_tarefa_tb" ToRole="a16_meta_tb" />
+        </EntityType>
+        <EntityType Name="a13_plano_acao_tb">
+          <Key>
+            <PropertyRef Name="ID_PLANO_ACAO" />
+          </Key>
+          <Property Name="ID_PLANO_ACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PROCESSO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRICAO_PLANO_ACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a15_objetivo_tb" Relationship="Self.fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1" FromRole="a13_plano_acao_tb" ToRole="a15_objetivo_tb" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.FK_GERA" FromRole="a13_plano_acao_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a15_objetivo_tb">
+          <Key>
+            <PropertyRef Name="ID_OBJETIVO" />
+          </Key>
+          <Property Name="ID_OBJETIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO_OBJETIVO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="ID_PLANO_ACAO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a13_plano_acao_tb" Relationship="Self.fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1" FromRole="a15_objetivo_tb" ToRole="a13_plano_acao_tb" />
+          <NavigationProperty Name="a16_meta_tb" Relationship="Self.FK_COMPOE" FromRole="a15_objetivo_tb" ToRole="a16_meta_tb" />
+        </EntityType>
+        <EntityType Name="a16_meta_tb">
+          <Key>
+            <PropertyRef Name="ID_META" />
+          </Key>
+          <Property Name="ID_META" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_OBJETIVO" Type="Int32" Nullable="false" />
+          <Property Name="PRAZO_META" Type="DateTime" Nullable="false" />
+          <Property Name="DESC_META" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a12_tarefa_tb" Relationship="Self.fk_A19_TAREFA_TB_a17_meta1" FromRole="a16_meta_tb" ToRole="a12_tarefa_tb" />
+          <NavigationProperty Name="a15_objetivo_tb" Relationship="Self.FK_COMPOE" FromRole="a16_meta_tb" ToRole="a15_objetivo_tb" />
+        </EntityType>
+        <EntityType Name="a17_avaliacao_tb">
+          <Key>
+            <PropertyRef Name="ID_AVALIACAO" />
+          </Key>
+          <Property Name="ID_AVALIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SESSAO" Type="Int32" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOTA_AVALIACAO" Type="Single" Nullable="false" />
+          <Property Name="OBSERVACAO_AVALIACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a11_sessao_tb" Relationship="Self.fk_A20_avaliacao_tb_a9_sessao_tb1" FromRole="a17_avaliacao_tb" ToRole="a11_sessao_tb" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_A17_AVALIACAO_TB_A4_USUARIO_TB1" FromRole="a17_avaliacao_tb" ToRole="a4_usuario_tb" />
+        </EntityType>
+        <EntityType Name="a18_servico_tb">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_SERVICO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECO_SERVICO" Type="Single" Nullable="false" />
+          <Property Name="DESC_SERVICO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.t7_servico_processo_tb" FromRole="a18_servico_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a19_ferramenta_tb">
+          <Key>
+            <PropertyRef Name="ID_FERRAMENTA" />
+          </Key>
+          <Property Name="ID_FERRAMENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_FERRAMENTA" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_FERRAMENTA" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_COACH" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a5_coach_tb" Relationship="Self.fk_A19_FERRAMENTA_TB_A5_COACH_TB1" FromRole="a19_ferramenta_tb" ToRole="a5_coach_tb" />
+          <NavigationProperty Name="a20_questao_tb" Relationship="Self.fk_A21_questao_tb_a10_ferramenta_tb1" FromRole="a19_ferramenta_tb" ToRole="a20_questao_tb" />
+          <NavigationProperty Name="t8_preenchimento_ferramenta_tb" Relationship="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1" FromRole="a19_ferramenta_tb" ToRole="t8_preenchimento_ferramenta_tb" />
+        </EntityType>
+        <EntityType Name="a2_telefone_tb">
+          <Key>
+            <PropertyRef Name="ID_TELEFONE" />
+          </Key>
+          <Property Name="ID_TELEFONE" Type="Int32" Nullable="false" />
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" />
+          <Property Name="DDD_TELEFONE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRICAO_TELEFONE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a1_pessoa_tb" Relationship="Self.fk_a2_telefone_tb_a1_pessoa_tb1" FromRole="a2_telefone_tb" ToRole="a1_pessoa_tb" />
+        </EntityType>
+        <EntityType Name="a20_questao_tb">
+          <Key>
+            <PropertyRef Name="ID_QUESTAO" />
+          </Key>
+          <Property Name="ID_QUESTAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_FERRAMENTA" Type="Int32" Nullable="false" />
+          <Property Name="TIPO_RESPOSTA" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_QUESTAO" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FASE_QUESTAO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="PASSO_QUESTAO" Type="Int32" />
+          <Property Name="ENUNCIADO_QUESTAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="INSTRUNCAO_QUESTAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a19_ferramenta_tb" Relationship="Self.fk_A21_questao_tb_a10_ferramenta_tb1" FromRole="a20_questao_tb" ToRole="a19_ferramenta_tb" />
+          <NavigationProperty Name="a21_resposta_tb" Relationship="Self.fk_A22_resposta_tb_A21_questao_tb1" FromRole="a20_questao_tb" ToRole="a21_resposta_tb" />
+        </EntityType>
+        <EntityType Name="a21_resposta_tb">
+          <Key>
+            <PropertyRef Name="ID_RESPOSTA" />
+          </Key>
+          <Property Name="ID_RESPOSTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_QUESTAO" Type="Int32" Nullable="false" />
+          <Property Name="RESPOSTA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a20_questao_tb" Relationship="Self.fk_A22_resposta_tb_A21_questao_tb1" FromRole="a21_resposta_tb" ToRole="a20_questao_tb" />
+        </EntityType>
+        <EntityType Name="a22_mensagem_tb">
+          <Key>
+            <PropertyRef Name="ID_MENSAGEM" />
+          </Key>
+          <Property Name="ID_MENSAGEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ASSUNTO_MENSAGEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MENSAGEM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESTINO_MENSAGEM" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATA_MENSAGEM" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_a24_mensagem_tb_usuarios" FromRole="a22_mensagem_tb" ToRole="a4_usuario_tb" />
+        </EntityType>
+        <EntityType Name="a23_especialidade_tb">
+          <Key>
+            <PropertyRef Name="ID_ESPECIALIDADE" />
+          </Key>
+          <Property Name="ID_ESPECIALIDADE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_ESPECIALIDADE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRICAO_ESPECIALIDADE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ID_COACH" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a5_coach_tb" Relationship="Self.fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1" FromRole="a23_especialidade_tb" ToRole="a5_coach_tb" />
+        </EntityType>
+        <EntityType Name="a24_formacao_tb">
+          <Key>
+            <PropertyRef Name="ID_FORMACAO" />
+          </Key>
+          <Property Name="ID_FORMACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_FORMACAO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRICAO_FORMACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="ID_COACH" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a5_coach_tb" Relationship="Self.fk_A22_FORMACAO_TB_A5_COACH_TB1" FromRole="a24_formacao_tb" ToRole="a5_coach_tb" />
+        </EntityType>
+        <EntityType Name="a3_endereco_tb">
+          <Key>
+            <PropertyRef Name="ID_ENDERECO" />
+          </Key>
+          <Property Name="ID_ENDERECO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" />
+          <Property Name="CEP_ENDERECO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_ENDERECO" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIDADE_ENDERECO" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RUA_ENDERECO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUMERO_ENDERECO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a1_pessoa_tb" Relationship="Self.fk_a3_endereco_tb_a1_pessoa_tb1" FromRole="a3_endereco_tb" ToRole="a1_pessoa_tb" />
+        </EntityType>
+        <EntityType Name="a4_usuario_tb">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_PESSOA" Type="Int32" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILCONFIRMADO" Type="Boolean" Nullable="false" />
+          <Property Name="PASSWORDHASH" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="SECURITYSTAMP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="NUMEROTELEFONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NUMEROTELEFONECONFIRMADO" Type="Boolean" Nullable="false" />
+          <Property Name="TWOFACTORENABLE" Type="Boolean" Nullable="false" />
+          <Property Name="LOCKOUTENDDATEUTC" Type="DateTime" />
+          <Property Name="LOCKOUTENABLE" Type="Boolean" Nullable="false" />
+          <Property Name="ACESSFAILEDCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="DISCRIMINATOR" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="a1_pessoa_tb" Relationship="Self.fk_usuarios_a1_pessoa_tb1" FromRole="a4_usuario_tb" ToRole="a1_pessoa_tb" />
+          <NavigationProperty Name="a11_sessao_tb" Relationship="Self.fk_A11_SESSAO_TB_A4_USUARIO_TB1" FromRole="a4_usuario_tb" ToRole="a11_sessao_tb" />
+          <NavigationProperty Name="a17_avaliacao_tb" Relationship="Self.fk_A17_AVALIACAO_TB_A4_USUARIO_TB1" FromRole="a4_usuario_tb" ToRole="a17_avaliacao_tb" />
+          <NavigationProperty Name="a22_mensagem_tb" Relationship="Self.fk_a24_mensagem_tb_usuarios" FromRole="a4_usuario_tb" ToRole="a22_mensagem_tb" />
+          <NavigationProperty Name="a6_coachee_tb" Relationship="Self.fk_a4_coachee_tb_usuarios1" FromRole="a4_usuario_tb" ToRole="a6_coachee_tb" />
+          <NavigationProperty Name="a5_coach_tb" Relationship="Self.fk_a5_coach_tb_usuarios1" FromRole="a4_usuario_tb" ToRole="a5_coach_tb" />
+          <NavigationProperty Name="t2_claims_tb" Relationship="Self.IdentityUser_Claims" FromRole="a4_usuario_tb" ToRole="t2_claims_tb" />
+          <NavigationProperty Name="t1_logins_tb" Relationship="Self.IdentityUser_Logins" FromRole="a4_usuario_tb" ToRole="t1_logins_tb" />
+          <NavigationProperty Name="t4_usuario_papel_tb" Relationship="Self.IdentityUser_Roles" FromRole="a4_usuario_tb" ToRole="t4_usuario_papel_tb" />
+        </EntityType>
+        <EntityType Name="a5_coach_tb">
+          <Key>
+            <PropertyRef Name="ID_COACH" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_COACH" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="a19_ferramenta_tb" Relationship="Self.fk_A19_FERRAMENTA_TB_A5_COACH_TB1" FromRole="a5_coach_tb" ToRole="a19_ferramenta_tb" />
+          <NavigationProperty Name="a23_especialidade_tb" Relationship="Self.fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1" FromRole="a5_coach_tb" ToRole="a23_especialidade_tb" />
+          <NavigationProperty Name="a24_formacao_tb" Relationship="Self.fk_A22_FORMACAO_TB_A5_COACH_TB1" FromRole="a5_coach_tb" ToRole="a24_formacao_tb" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_a5_coach_tb_usuarios1" FromRole="a5_coach_tb" ToRole="a4_usuario_tb" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.FK_ORIENTA" FromRole="a5_coach_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a6_coachee_tb">
+          <Key>
+            <PropertyRef Name="ID_COACHEE" />
+          </Key>
+          <Property Name="ID_COACHEE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROFISSAO_COACHEE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.fk_a4_coachee_tb_usuarios1" FromRole="a6_coachee_tb" ToRole="a4_usuario_tb" />
+          <NavigationProperty Name="t8_preenchimento_ferramenta_tb" Relationship="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1" FromRole="a6_coachee_tb" ToRole="t8_preenchimento_ferramenta_tb" />
+          <NavigationProperty Name="a8_fragilidade_tb" Relationship="Self.fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1" FromRole="a6_coachee_tb" ToRole="a8_fragilidade_tb" />
+          <NavigationProperty Name="a7_ponto_forte_tb" Relationship="Self.FK_CARACTERIZA_PONTOS_FORTES" FromRole="a6_coachee_tb" ToRole="a7_ponto_forte_tb" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.t6_participante_tb" FromRole="a6_coachee_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="a7_ponto_forte_tb">
+          <Key>
+            <PropertyRef Name="ID_PONTO_FORTE" />
+          </Key>
+          <Property Name="ID_PONTO_FORTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_COACHEE" Type="Int32" Nullable="false" />
+          <Property Name="PONTO_FORTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLASSE_PONTO_FORTE" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRICAO_PONTO_FORTE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a6_coachee_tb" Relationship="Self.FK_CARACTERIZA_PONTOS_FORTES" FromRole="a7_ponto_forte_tb" ToRole="a6_coachee_tb" />
+        </EntityType>
+        <EntityType Name="a8_fragilidade_tb">
+          <Key>
+            <PropertyRef Name="ID_FRAGILIDADE" />
+          </Key>
+          <Property Name="ID_FRAGILIDADE" Type="Int32" Nullable="false" />
+          <Property Name="ID_COACHEE" Type="Int32" Nullable="false" />
+          <Property Name="FRAGILIDADE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRICAO_FRAGILIDADE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a6_coachee_tb" Relationship="Self.fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1" FromRole="a8_fragilidade_tb" ToRole="a6_coachee_tb" />
+        </EntityType>
+        <EntityType Name="a9_processo_coaching_tb">
+          <Key>
+            <PropertyRef Name="ID_PROCESSO" />
+          </Key>
+          <Property Name="ID_PROCESSO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_COACH" Type="Int32" Nullable="false" />
+          <Property Name="DATA_INICIO_PROCESSO" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_FIM_PROCESSO" Type="DateTime" />
+          <Property Name="MODALIDADE_PROCESSO" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OBSERVACAO_PROCESSO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a10_orcamento_tb" Relationship="Self.fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1" FromRole="a9_processo_coaching_tb" ToRole="a10_orcamento_tb" />
+          <NavigationProperty Name="a11_sessao_tb" Relationship="Self.FK_DIVIDE" FromRole="a9_processo_coaching_tb" ToRole="a11_sessao_tb" />
+          <NavigationProperty Name="a13_plano_acao_tb" Relationship="Self.FK_GERA" FromRole="a9_processo_coaching_tb" ToRole="a13_plano_acao_tb" />
+          <NavigationProperty Name="a5_coach_tb" Relationship="Self.FK_ORIENTA" FromRole="a9_processo_coaching_tb" ToRole="a5_coach_tb" />
+          <NavigationProperty Name="t5_indicador_desempenho_tb" Relationship="Self.FK_AVALIA" FromRole="a9_processo_coaching_tb" ToRole="t5_indicador_desempenho_tb" />
+          <NavigationProperty Name="a6_coachee_tb" Relationship="Self.t6_participante_tb" FromRole="a9_processo_coaching_tb" ToRole="a6_coachee_tb" />
+          <NavigationProperty Name="a18_servico_tb" Relationship="Self.t7_servico_processo_tb" FromRole="a9_processo_coaching_tb" ToRole="a18_servico_tb" />
+        </EntityType>
+        <EntityType Name="t1_logins_tb">
+          <Key>
+            <PropertyRef Name="LOGINPROVIDER" />
+            <PropertyRef Name="PROVIDERKEY" />
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="LOGINPROVIDER" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVIDERKEY" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDENTITYUSER_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.IdentityUser_Logins" FromRole="t1_logins_tb" ToRole="a4_usuario_tb" />
+        </EntityType>
+        <EntityType Name="t2_claims_tb">
+          <Key>
+            <PropertyRef Name="ID_CLAIMS" />
+          </Key>
+          <Property Name="ID_CLAIMS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="CLAIMTYPE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="CLAIMVALUE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="IDENTITYUSER_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.IdentityUser_Claims" FromRole="t2_claims_tb" ToRole="a4_usuario_tb" />
+        </EntityType>
+        <EntityType Name="t3_papel_tb">
+          <Key>
+            <PropertyRef Name="ID_PAPEL" />
+          </Key>
+          <Property Name="ID_PAPEL" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOME_PAPEL" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="t4_usuario_papel_tb" Relationship="Self.IdentityRole_Users" FromRole="t3_papel_tb" ToRole="t4_usuario_papel_tb" />
+        </EntityType>
+        <EntityType Name="t4_usuario_papel_tb">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="ID_PAPEL" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_PAPEL" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDENTITYUSER_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="a4_usuario_tb" Relationship="Self.IdentityUser_Roles" FromRole="t4_usuario_papel_tb" ToRole="a4_usuario_tb" />
+          <NavigationProperty Name="t3_papel_tb" Relationship="Self.IdentityRole_Users" FromRole="t4_usuario_papel_tb" ToRole="t3_papel_tb" />
+        </EntityType>
+        <EntityType Name="t5_indicador_desempenho_tb">
+          <Key>
+            <PropertyRef Name="ID_INDICADOR" />
+          </Key>
+          <Property Name="ID_INDICADOR" Type="Int32" Nullable="false" />
+          <Property Name="ID_PROCESSO" Type="Int32" Nullable="false" />
+          <Property Name="INDICADOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="a9_processo_coaching_tb" Relationship="Self.FK_AVALIA" FromRole="t5_indicador_desempenho_tb" ToRole="a9_processo_coaching_tb" />
+        </EntityType>
+        <EntityType Name="t8_preenchimento_ferramenta_tb">
+          <Key>
+            <PropertyRef Name="ID_COACHEE" />
+            <PropertyRef Name="ID_FERRAMENTA" />
+          </Key>
+          <Property Name="ID_COACHEE" Type="Int32" Nullable="false" />
+          <Property Name="ID_FERRAMENTA" Type="Int32" Nullable="false" />
+          <Property Name="Data_Avaliação" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="a19_ferramenta_tb" Relationship="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1" FromRole="t8_preenchimento_ferramenta_tb" ToRole="a19_ferramenta_tb" />
+          <NavigationProperty Name="a6_coachee_tb" Relationship="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1" FromRole="t8_preenchimento_ferramenta_tb" ToRole="a6_coachee_tb" />
+        </EntityType>
+        <Association Name="fk_a2_telefone_tb_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a2_telefone_tb" Type="Self.a2_telefone_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a2_telefone_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a3_endereco_tb_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a3_endereco_tb" Type="Self.a3_endereco_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a3_endereco_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuarios_a1_pessoa_tb1">
+          <End Role="a1_pessoa_tb" Type="Self.a1_pessoa_tb" Multiplicity="1" />
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a1_pessoa_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Principal>
+            <Dependent Role="a4_usuario_tb">
+              <PropertyRef Name="ID_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a10_orcamento_tb" Type="Self.a10_orcamento_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a10_orcamento_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A11_SESSAO_TB_A4_USUARIO_TB1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a11_sessao_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_TAREFA_TB_a9_sessao_tb1">
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="1" />
+          <End Role="a12_tarefa_tb" Type="Self.a12_tarefa_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a11_sessao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Principal>
+            <Dependent Role="a12_tarefa_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A20_avaliacao_tb_a9_sessao_tb1">
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="1" />
+          <End Role="a17_avaliacao_tb" Type="Self.a17_avaliacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a11_sessao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Principal>
+            <Dependent Role="a17_avaliacao_tb">
+              <PropertyRef Name="ID_SESSAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIVIDE">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a11_sessao_tb" Type="Self.a11_sessao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a11_sessao_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_TAREFA_TB_a17_meta1">
+          <End Role="a16_meta_tb" Type="Self.a16_meta_tb" Multiplicity="1" />
+          <End Role="a12_tarefa_tb" Type="Self.a12_tarefa_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a16_meta_tb">
+              <PropertyRef Name="ID_META" />
+            </Principal>
+            <Dependent Role="a12_tarefa_tb">
+              <PropertyRef Name="ID_META" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1">
+          <End Role="a13_plano_acao_tb" Type="Self.a13_plano_acao_tb" Multiplicity="1" />
+          <End Role="a15_objetivo_tb" Type="Self.a15_objetivo_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a13_plano_acao_tb">
+              <PropertyRef Name="ID_PLANO_ACAO" />
+            </Principal>
+            <Dependent Role="a15_objetivo_tb">
+              <PropertyRef Name="ID_PLANO_ACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GERA">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="a13_plano_acao_tb" Type="Self.a13_plano_acao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="a13_plano_acao_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPOE">
+          <End Role="a15_objetivo_tb" Type="Self.a15_objetivo_tb" Multiplicity="1" />
+          <End Role="a16_meta_tb" Type="Self.a16_meta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a15_objetivo_tb">
+              <PropertyRef Name="ID_OBJETIVO" />
+            </Principal>
+            <Dependent Role="a16_meta_tb">
+              <PropertyRef Name="ID_OBJETIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A17_AVALIACAO_TB_A4_USUARIO_TB1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a17_avaliacao_tb" Type="Self.a17_avaliacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a17_avaliacao_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A19_FERRAMENTA_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A21_questao_tb_a10_ferramenta_tb1">
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="1" />
+          <End Role="a20_questao_tb" Type="Self.a20_questao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Principal>
+            <Dependent Role="a20_questao_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1">
+          <End Role="a19_ferramenta_tb" Type="Self.a19_ferramenta_tb" Multiplicity="1" />
+          <End Role="t8_preenchimento_ferramenta_tb" Type="Self.t8_preenchimento_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a19_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Principal>
+            <Dependent Role="t8_preenchimento_ferramenta_tb">
+              <PropertyRef Name="ID_FERRAMENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A22_resposta_tb_A21_questao_tb1">
+          <End Role="a20_questao_tb" Type="Self.a20_questao_tb" Multiplicity="1" />
+          <End Role="a21_resposta_tb" Type="Self.a21_resposta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a20_questao_tb">
+              <PropertyRef Name="ID_QUESTAO" />
+            </Principal>
+            <Dependent Role="a21_resposta_tb">
+              <PropertyRef Name="ID_QUESTAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a24_mensagem_tb_usuarios">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a22_mensagem_tb" Type="Self.a22_mensagem_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a22_mensagem_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a23_especialidade_tb" Type="Self.a23_especialidade_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a23_especialidade_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A22_FORMACAO_TB_A5_COACH_TB1">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a24_formacao_tb" Type="Self.a24_formacao_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a24_formacao_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_usuarios1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a6_coachee_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a5_coach_tb_usuarios1">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="1" />
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="a5_coach_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Claims">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t2_claims_tb" Type="Self.t2_claims_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t2_claims_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Logins">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t1_logins_tb" Type="Self.t1_logins_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t1_logins_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityUser_Roles">
+          <End Role="a4_usuario_tb" Type="Self.a4_usuario_tb" Multiplicity="0..1" />
+          <End Role="t4_usuario_papel_tb" Type="Self.t4_usuario_papel_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a4_usuario_tb">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="t4_usuario_papel_tb">
+              <PropertyRef Name="IDENTITYUSER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORIENTA">
+          <End Role="a5_coach_tb" Type="Self.a5_coach_tb" Multiplicity="1" />
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a5_coach_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Principal>
+            <Dependent Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_COACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="t8_preenchimento_ferramenta_tb" Type="Self.t8_preenchimento_ferramenta_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="t8_preenchimento_ferramenta_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="a8_fragilidade_tb" Type="Self.a8_fragilidade_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="a8_fragilidade_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CARACTERIZA_PONTOS_FORTES">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="1" />
+          <End Role="a7_ponto_forte_tb" Type="Self.a7_ponto_forte_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a6_coachee_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Principal>
+            <Dependent Role="a7_ponto_forte_tb">
+              <PropertyRef Name="ID_COACHEE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AVALIA">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="1" />
+          <End Role="t5_indicador_desempenho_tb" Type="Self.t5_indicador_desempenho_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="a9_processo_coaching_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Principal>
+            <Dependent Role="t5_indicador_desempenho_tb">
+              <PropertyRef Name="ID_PROCESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IdentityRole_Users">
+          <End Role="t3_papel_tb" Type="Self.t3_papel_tb" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="t4_usuario_papel_tb" Type="Self.t4_usuario_papel_tb" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t3_papel_tb">
+              <PropertyRef Name="ID_PAPEL" />
+            </Principal>
+            <Dependent Role="t4_usuario_papel_tb">
+              <PropertyRef Name="ID_PAPEL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="t6_participante_tb">
+          <End Role="a6_coachee_tb" Type="Self.a6_coachee_tb" Multiplicity="*" />
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="t7_servico_processo_tb">
+          <End Role="a9_processo_coaching_tb" Type="Self.a9_processo_coaching_tb" Multiplicity="*" />
+          <End Role="a18_servico_tb" Type="Self.a18_servico_tb" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="coaching_planEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="a1_pessoa_tb" EntityType="Self.a1_pessoa_tb" />
+          <EntitySet Name="a10_orcamento_tb" EntityType="Self.a10_orcamento_tb" />
+          <EntitySet Name="a11_sessao_tb" EntityType="Self.a11_sessao_tb" />
+          <EntitySet Name="a12_tarefa_tb" EntityType="Self.a12_tarefa_tb" />
+          <EntitySet Name="a13_plano_acao_tb" EntityType="Self.a13_plano_acao_tb" />
+          <EntitySet Name="a15_objetivo_tb" EntityType="Self.a15_objetivo_tb" />
+          <EntitySet Name="a16_meta_tb" EntityType="Self.a16_meta_tb" />
+          <EntitySet Name="a17_avaliacao_tb" EntityType="Self.a17_avaliacao_tb" />
+          <EntitySet Name="a18_servico_tb" EntityType="Self.a18_servico_tb" />
+          <EntitySet Name="a19_ferramenta_tb" EntityType="Self.a19_ferramenta_tb" />
+          <EntitySet Name="a2_telefone_tb" EntityType="Self.a2_telefone_tb" />
+          <EntitySet Name="a20_questao_tb" EntityType="Self.a20_questao_tb" />
+          <EntitySet Name="a21_resposta_tb" EntityType="Self.a21_resposta_tb" />
+          <EntitySet Name="a22_mensagem_tb" EntityType="Self.a22_mensagem_tb" />
+          <EntitySet Name="a23_especialidade_tb" EntityType="Self.a23_especialidade_tb" />
+          <EntitySet Name="a24_formacao_tb" EntityType="Self.a24_formacao_tb" />
+          <EntitySet Name="a3_endereco_tb" EntityType="Self.a3_endereco_tb" />
+          <EntitySet Name="a4_usuario_tb" EntityType="Self.a4_usuario_tb" />
+          <EntitySet Name="a5_coach_tb" EntityType="Self.a5_coach_tb" />
+          <EntitySet Name="a6_coachee_tb" EntityType="Self.a6_coachee_tb" />
+          <EntitySet Name="a7_ponto_forte_tb" EntityType="Self.a7_ponto_forte_tb" />
+          <EntitySet Name="a8_fragilidade_tb" EntityType="Self.a8_fragilidade_tb" />
+          <EntitySet Name="a9_processo_coaching_tb" EntityType="Self.a9_processo_coaching_tb" />
+          <EntitySet Name="t1_logins_tb" EntityType="Self.t1_logins_tb" />
+          <EntitySet Name="t2_claims_tb" EntityType="Self.t2_claims_tb" />
+          <EntitySet Name="t3_papel_tb" EntityType="Self.t3_papel_tb" />
+          <EntitySet Name="t4_usuario_papel_tb" EntityType="Self.t4_usuario_papel_tb" />
+          <EntitySet Name="t5_indicador_desempenho_tb" EntityType="Self.t5_indicador_desempenho_tb" />
+          <EntitySet Name="t8_preenchimento_ferramenta_tb" EntityType="Self.t8_preenchimento_ferramenta_tb" />
+          <AssociationSet Name="fk_a2_telefone_tb_a1_pessoa_tb1" Association="Self.fk_a2_telefone_tb_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a2_telefone_tb" EntitySet="a2_telefone_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a3_endereco_tb_a1_pessoa_tb1" Association="Self.fk_a3_endereco_tb_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a3_endereco_tb" EntitySet="a3_endereco_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuarios_a1_pessoa_tb1" Association="Self.fk_usuarios_a1_pessoa_tb1">
+            <End Role="a1_pessoa_tb" EntitySet="a1_pessoa_tb" />
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1" Association="Self.fk_a11_orcamento_tb_A9_PROCESSO_COACHING_TB1">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a10_orcamento_tb" EntitySet="a10_orcamento_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A11_SESSAO_TB_A4_USUARIO_TB1" Association="Self.fk_A11_SESSAO_TB_A4_USUARIO_TB1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_TAREFA_TB_a9_sessao_tb1" Association="Self.fk_A19_TAREFA_TB_a9_sessao_tb1">
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+            <End Role="a12_tarefa_tb" EntitySet="a12_tarefa_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A20_avaliacao_tb_a9_sessao_tb1" Association="Self.fk_A20_avaliacao_tb_a9_sessao_tb1">
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+            <End Role="a17_avaliacao_tb" EntitySet="a17_avaliacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIVIDE" Association="Self.FK_DIVIDE">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a11_sessao_tb" EntitySet="a11_sessao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_TAREFA_TB_a17_meta1" Association="Self.fk_A19_TAREFA_TB_a17_meta1">
+            <End Role="a16_meta_tb" EntitySet="a16_meta_tb" />
+            <End Role="a12_tarefa_tb" EntitySet="a12_tarefa_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1" Association="Self.fk_A15_OBJETIVO_TB_A13_PLANO_ACAO_TB1">
+            <End Role="a13_plano_acao_tb" EntitySet="a13_plano_acao_tb" />
+            <End Role="a15_objetivo_tb" EntitySet="a15_objetivo_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GERA" Association="Self.FK_GERA">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a13_plano_acao_tb" EntitySet="a13_plano_acao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPOE" Association="Self.FK_COMPOE">
+            <End Role="a15_objetivo_tb" EntitySet="a15_objetivo_tb" />
+            <End Role="a16_meta_tb" EntitySet="a16_meta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A17_AVALIACAO_TB_A4_USUARIO_TB1" Association="Self.fk_A17_AVALIACAO_TB_A4_USUARIO_TB1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a17_avaliacao_tb" EntitySet="a17_avaliacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A19_FERRAMENTA_TB_A5_COACH_TB1" Association="Self.fk_A19_FERRAMENTA_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A21_questao_tb_a10_ferramenta_tb1" Association="Self.fk_A21_questao_tb_a10_ferramenta_tb1">
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+            <End Role="a20_questao_tb" EntitySet="a20_questao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1" Association="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a10_ferramenta_tb1">
+            <End Role="a19_ferramenta_tb" EntitySet="a19_ferramenta_tb" />
+            <End Role="t8_preenchimento_ferramenta_tb" EntitySet="t8_preenchimento_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A22_resposta_tb_A21_questao_tb1" Association="Self.fk_A22_resposta_tb_A21_questao_tb1">
+            <End Role="a20_questao_tb" EntitySet="a20_questao_tb" />
+            <End Role="a21_resposta_tb" EntitySet="a21_resposta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a24_mensagem_tb_usuarios" Association="Self.fk_a24_mensagem_tb_usuarios">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a22_mensagem_tb" EntitySet="a22_mensagem_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1" Association="Self.fk_A23_ESPECIALIDADE_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a23_especialidade_tb" EntitySet="a23_especialidade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A22_FORMACAO_TB_A5_COACH_TB1" Association="Self.fk_A22_FORMACAO_TB_A5_COACH_TB1">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a24_formacao_tb" EntitySet="a24_formacao_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_usuarios1" Association="Self.fk_a4_coachee_tb_usuarios1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a5_coach_tb_usuarios1" Association="Self.fk_a5_coach_tb_usuarios1">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Claims" Association="Self.IdentityUser_Claims">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t2_claims_tb" EntitySet="t2_claims_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Logins" Association="Self.IdentityUser_Logins">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t1_logins_tb" EntitySet="t1_logins_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityUser_Roles" Association="Self.IdentityUser_Roles">
+            <End Role="a4_usuario_tb" EntitySet="a4_usuario_tb" />
+            <End Role="t4_usuario_papel_tb" EntitySet="t4_usuario_papel_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORIENTA" Association="Self.FK_ORIENTA">
+            <End Role="a5_coach_tb" EntitySet="a5_coach_tb" />
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1" Association="Self.fk_a4_coachee_tb_has_a10_ferramenta_tb_a4_coachee_tb1">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="t8_preenchimento_ferramenta_tb" EntitySet="t8_preenchimento_ferramenta_tb" />
+          </AssociationSet>
+          <AssociationSet Name="fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1" Association="Self.fk_A8_FRAGILIDADE_TB_A6_COACHEE_TB1">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="a8_fragilidade_tb" EntitySet="a8_fragilidade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CARACTERIZA_PONTOS_FORTES" Association="Self.FK_CARACTERIZA_PONTOS_FORTES">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="a7_ponto_forte_tb" EntitySet="a7_ponto_forte_tb" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AVALIA" Association="Self.FK_AVALIA">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="t5_indicador_desempenho_tb" EntitySet="t5_indicador_desempenho_tb" />
+          </AssociationSet>
+          <AssociationSet Name="IdentityRole_Users" Association="Self.IdentityRole_Users">
+            <End Role="t3_papel_tb" EntitySet="t3_papel_tb" />
+            <End Role="t4_usuario_papel_tb" EntitySet="t4_usuario_papel_tb" />
+          </AssociationSet>
+          <AssociationSet Name="t6_participante_tb" Association="Self.t6_participante_tb">
+            <End Role="a6_coachee_tb" EntitySet="a6_coachee_tb" />
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+          </AssociationSet>
+          <AssociationSet Name="t7_servico_processo_tb" Association="Self.t7_servico_processo_tb">
+            <End Role="a9_processo_coaching_tb" EntitySet="a9_processo_coaching_tb" />
+            <End Role="a18_servico_tb" EntitySet="a18_servico_tb" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="coaching_planModelStoreContainer" CdmEntityContainer="coaching_planEntities">
+          <EntitySetMapping Name="a1_pessoa_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a1_pessoa_tb">
+              <MappingFragment StoreEntitySet="a1_pessoa_tb">
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="NOME_PESSOA" ColumnName="NOME_PESSOA" />
+                <ScalarProperty Name="CPF_PESSOA" ColumnName="CPF_PESSOA" />
+                <ScalarProperty Name="DATA_NASC_PESSOA" ColumnName="DATA_NASC_PESSOA" />
+                <ScalarProperty Name="GENERO_PESSOA" ColumnName="GENERO_PESSOA" />
+                <ScalarProperty Name="ATIVO_PESSOA" ColumnName="ATIVO_PESSOA" />
+                <ScalarProperty Name="FOTO_PESSOA" ColumnName="FOTO_PESSOA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a10_orcamento_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a10_orcamento_tb">
+              <MappingFragment StoreEntitySet="a10_orcamento_tb">
+                <ScalarProperty Name="ID_PROPOSTA" ColumnName="ID_PROPOSTA" />
+                <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+                <ScalarProperty Name="PROPOSTA" ColumnName="PROPOSTA" />
+                <ScalarProperty Name="PRECO_PROPOSTA" ColumnName="PRECO_PROPOSTA" />
+                <ScalarProperty Name="DATA_PROPOSTA" ColumnName="DATA_PROPOSTA" />
+                <ScalarProperty Name="PRECO_SESSAO" ColumnName="PRECO_SESSAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a11_sessao_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a11_sessao_tb">
+              <MappingFragment StoreEntitySet="a11_sessao_tb">
+                <ScalarProperty Name="ID_SESSAO" ColumnName="ID_SESSAO" />
+                <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="TEMA_SESSAO" ColumnName="TEMA_SESSAO" />
+                <ScalarProperty Name="DATA_SESSAO" ColumnName="DATA_SESSAO" />
+                <ScalarProperty Name="INICIO_SESSAO" ColumnName="INICIO_SESSAO" />
+                <ScalarProperty Name="FIM_SESSAO" ColumnName="FIM_SESSAO" />
+                <ScalarProperty Name="CLASSIFICACAO_SESSAO" ColumnName="CLASSIFICACAO_SESSAO" />
+                <ScalarProperty Name="OBSERVACAO_SESSAO" ColumnName="OBSERVACAO_SESSAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a12_tarefa_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a12_tarefa_tb">
+              <MappingFragment StoreEntitySet="a12_tarefa_tb">
+                <ScalarProperty Name="ID_TAREFA" ColumnName="ID_TAREFA" />
+                <ScalarProperty Name="ID_SESSAO" ColumnName="ID_SESSAO" />
+                <ScalarProperty Name="ID_META" ColumnName="ID_META" />
+                <ScalarProperty Name="DATA_INICIO" ColumnName="DATA_INICIO" />
+                <ScalarProperty Name="DATA_REALIZACAO" ColumnName="DATA_REALIZACAO" />
+                <ScalarProperty Name="DATA_VERIFICACAO" ColumnName="DATA_VERIFICACAO" />
+                <ScalarProperty Name="DESCRICAO_TAREFA" ColumnName="DESCRICAO_TAREFA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a13_plano_acao_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a13_plano_acao_tb">
+              <MappingFragment StoreEntitySet="a13_plano_acao_tb">
+                <ScalarProperty Name="ID_PLANO_ACAO" ColumnName="ID_PLANO_ACAO" />
+                <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+                <ScalarProperty Name="DESCRICAO_PLANO_ACAO" ColumnName="DESCRICAO_PLANO_ACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a15_objetivo_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a15_objetivo_tb">
+              <MappingFragment StoreEntitySet="a15_objetivo_tb">
+                <ScalarProperty Name="ID_OBJETIVO" ColumnName="ID_OBJETIVO" />
+                <ScalarProperty Name="DESCRICAO_OBJETIVO" ColumnName="DESCRICAO_OBJETIVO" />
+                <ScalarProperty Name="ID_PLANO_ACAO" ColumnName="ID_PLANO_ACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a16_meta_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a16_meta_tb">
+              <MappingFragment StoreEntitySet="a16_meta_tb">
+                <ScalarProperty Name="ID_META" ColumnName="ID_META" />
+                <ScalarProperty Name="ID_OBJETIVO" ColumnName="ID_OBJETIVO" />
+                <ScalarProperty Name="PRAZO_META" ColumnName="PRAZO_META" />
+                <ScalarProperty Name="DESC_META" ColumnName="DESC_META" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a17_avaliacao_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a17_avaliacao_tb">
+              <MappingFragment StoreEntitySet="a17_avaliacao_tb">
+                <ScalarProperty Name="ID_AVALIACAO" ColumnName="ID_AVALIACAO" />
+                <ScalarProperty Name="ID_SESSAO" ColumnName="ID_SESSAO" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="NOTA_AVALIACAO" ColumnName="NOTA_AVALIACAO" />
+                <ScalarProperty Name="OBSERVACAO_AVALIACAO" ColumnName="OBSERVACAO_AVALIACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a18_servico_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a18_servico_tb">
+              <MappingFragment StoreEntitySet="a18_servico_tb">
+                <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+                <ScalarProperty Name="NOME_SERVICO" ColumnName="NOME_SERVICO" />
+                <ScalarProperty Name="PRECO_SERVICO" ColumnName="PRECO_SERVICO" />
+                <ScalarProperty Name="DESC_SERVICO" ColumnName="DESC_SERVICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a19_ferramenta_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a19_ferramenta_tb">
+              <MappingFragment StoreEntitySet="a19_ferramenta_tb">
+                <ScalarProperty Name="ID_FERRAMENTA" ColumnName="ID_FERRAMENTA" />
+                <ScalarProperty Name="NOME_FERRAMENTA" ColumnName="NOME_FERRAMENTA" />
+                <ScalarProperty Name="TIPO_FERRAMENTA" ColumnName="TIPO_FERRAMENTA" />
+                <ScalarProperty Name="ID_COACH" ColumnName="ID_COACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a2_telefone_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a2_telefone_tb">
+              <MappingFragment StoreEntitySet="a2_telefone_tb">
+                <ScalarProperty Name="ID_TELEFONE" ColumnName="ID_TELEFONE" />
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="DDD_TELEFONE" ColumnName="DDD_TELEFONE" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="DESCRICAO_TELEFONE" ColumnName="DESCRICAO_TELEFONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a20_questao_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a20_questao_tb">
+              <MappingFragment StoreEntitySet="a20_questao_tb">
+                <ScalarProperty Name="ID_QUESTAO" ColumnName="ID_QUESTAO" />
+                <ScalarProperty Name="ID_FERRAMENTA" ColumnName="ID_FERRAMENTA" />
+                <ScalarProperty Name="TIPO_RESPOSTA" ColumnName="TIPO_RESPOSTA" />
+                <ScalarProperty Name="TIPO_QUESTAO" ColumnName="TIPO_QUESTAO" />
+                <ScalarProperty Name="FASE_QUESTAO" ColumnName="FASE_QUESTAO" />
+                <ScalarProperty Name="PASSO_QUESTAO" ColumnName="PASSO_QUESTAO" />
+                <ScalarProperty Name="ENUNCIADO_QUESTAO" ColumnName="ENUNCIADO_QUESTAO" />
+                <ScalarProperty Name="INSTRUNCAO_QUESTAO" ColumnName="INSTRUNCAO_QUESTAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a21_resposta_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a21_resposta_tb">
+              <MappingFragment StoreEntitySet="a21_resposta_tb">
+                <ScalarProperty Name="ID_RESPOSTA" ColumnName="ID_RESPOSTA" />
+                <ScalarProperty Name="ID_QUESTAO" ColumnName="ID_QUESTAO" />
+                <ScalarProperty Name="RESPOSTA" ColumnName="RESPOSTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a22_mensagem_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a22_mensagem_tb">
+              <MappingFragment StoreEntitySet="a22_mensagem_tb">
+                <ScalarProperty Name="ID_MENSAGEM" ColumnName="ID_MENSAGEM" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ASSUNTO_MENSAGEM" ColumnName="ASSUNTO_MENSAGEM" />
+                <ScalarProperty Name="MENSAGEM" ColumnName="MENSAGEM" />
+                <ScalarProperty Name="DESTINO_MENSAGEM" ColumnName="DESTINO_MENSAGEM" />
+                <ScalarProperty Name="DATA_MENSAGEM" ColumnName="DATA_MENSAGEM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a23_especialidade_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a23_especialidade_tb">
+              <MappingFragment StoreEntitySet="a23_especialidade_tb">
+                <ScalarProperty Name="ID_ESPECIALIDADE" ColumnName="ID_ESPECIALIDADE" />
+                <ScalarProperty Name="NOME_ESPECIALIDADE" ColumnName="NOME_ESPECIALIDADE" />
+                <ScalarProperty Name="DESCRICAO_ESPECIALIDADE" ColumnName="DESCRICAO_ESPECIALIDADE" />
+                <ScalarProperty Name="ID_COACH" ColumnName="ID_COACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a24_formacao_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a24_formacao_tb">
+              <MappingFragment StoreEntitySet="a24_formacao_tb">
+                <ScalarProperty Name="ID_FORMACAO" ColumnName="ID_FORMACAO" />
+                <ScalarProperty Name="NOME_FORMACAO" ColumnName="NOME_FORMACAO" />
+                <ScalarProperty Name="DESCRICAO_FORMACAO" ColumnName="DESCRICAO_FORMACAO" />
+                <ScalarProperty Name="ID_COACH" ColumnName="ID_COACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a3_endereco_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a3_endereco_tb">
+              <MappingFragment StoreEntitySet="a3_endereco_tb">
+                <ScalarProperty Name="ID_ENDERECO" ColumnName="ID_ENDERECO" />
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="CEP_ENDERECO" ColumnName="CEP_ENDERECO" />
+                <ScalarProperty Name="ESTADO_ENDERECO" ColumnName="ESTADO_ENDERECO" />
+                <ScalarProperty Name="CIDADE_ENDERECO" ColumnName="CIDADE_ENDERECO" />
+                <ScalarProperty Name="RUA_ENDERECO" ColumnName="RUA_ENDERECO" />
+                <ScalarProperty Name="NUMERO_ENDERECO" ColumnName="NUMERO_ENDERECO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a4_usuario_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a4_usuario_tb">
+              <MappingFragment StoreEntitySet="a4_usuario_tb">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ID_PESSOA" ColumnName="ID_PESSOA" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="EMAILCONFIRMADO" ColumnName="EMAILCONFIRMADO" />
+                <ScalarProperty Name="PASSWORDHASH" ColumnName="PASSWORDHASH" />
+                <ScalarProperty Name="SECURITYSTAMP" ColumnName="SECURITYSTAMP" />
+                <ScalarProperty Name="NUMEROTELEFONE" ColumnName="NUMEROTELEFONE" />
+                <ScalarProperty Name="NUMEROTELEFONECONFIRMADO" ColumnName="NUMEROTELEFONECONFIRMADO" />
+                <ScalarProperty Name="TWOFACTORENABLE" ColumnName="TWOFACTORENABLE" />
+                <ScalarProperty Name="LOCKOUTENDDATEUTC" ColumnName="LOCKOUTENDDATEUTC" />
+                <ScalarProperty Name="LOCKOUTENABLE" ColumnName="LOCKOUTENABLE" />
+                <ScalarProperty Name="ACESSFAILEDCOUNT" ColumnName="ACESSFAILEDCOUNT" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="DISCRIMINATOR" ColumnName="DISCRIMINATOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a5_coach_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a5_coach_tb">
+              <MappingFragment StoreEntitySet="a5_coach_tb">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ID_COACH" ColumnName="ID_COACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a6_coachee_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a6_coachee_tb">
+              <MappingFragment StoreEntitySet="a6_coachee_tb">
+                <ScalarProperty Name="ID_COACHEE" ColumnName="ID_COACHEE" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="PROFISSAO_COACHEE" ColumnName="PROFISSAO_COACHEE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a7_ponto_forte_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a7_ponto_forte_tb">
+              <MappingFragment StoreEntitySet="a7_ponto_forte_tb">
+                <ScalarProperty Name="ID_PONTO_FORTE" ColumnName="ID_PONTO_FORTE" />
+                <ScalarProperty Name="ID_COACHEE" ColumnName="ID_COACHEE" />
+                <ScalarProperty Name="PONTO_FORTE" ColumnName="PONTO_FORTE" />
+                <ScalarProperty Name="CLASSE_PONTO_FORTE" ColumnName="CLASSE_PONTO_FORTE" />
+                <ScalarProperty Name="DESCRICAO_PONTO_FORTE" ColumnName="DESCRICAO_PONTO_FORTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a8_fragilidade_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a8_fragilidade_tb">
+              <MappingFragment StoreEntitySet="a8_fragilidade_tb">
+                <ScalarProperty Name="ID_FRAGILIDADE" ColumnName="ID_FRAGILIDADE" />
+                <ScalarProperty Name="ID_COACHEE" ColumnName="ID_COACHEE" />
+                <ScalarProperty Name="FRAGILIDADE" ColumnName="FRAGILIDADE" />
+                <ScalarProperty Name="DESCRICAO_FRAGILIDADE" ColumnName="DESCRICAO_FRAGILIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="a9_processo_coaching_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.a9_processo_coaching_tb">
+              <MappingFragment StoreEntitySet="a9_processo_coaching_tb">
+                <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+                <ScalarProperty Name="ID_COACH" ColumnName="ID_COACH" />
+                <ScalarProperty Name="DATA_INICIO_PROCESSO" ColumnName="DATA_INICIO_PROCESSO" />
+                <ScalarProperty Name="DATA_FIM_PROCESSO" ColumnName="DATA_FIM_PROCESSO" />
+                <ScalarProperty Name="MODALIDADE_PROCESSO" ColumnName="MODALIDADE_PROCESSO" />
+                <ScalarProperty Name="OBSERVACAO_PROCESSO" ColumnName="OBSERVACAO_PROCESSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t1_logins_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t1_logins_tb">
+              <MappingFragment StoreEntitySet="t1_logins_tb">
+                <ScalarProperty Name="LOGINPROVIDER" ColumnName="LOGINPROVIDER" />
+                <ScalarProperty Name="PROVIDERKEY" ColumnName="PROVIDERKEY" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="IDENTITYUSER_ID" ColumnName="IDENTITYUSER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t2_claims_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t2_claims_tb">
+              <MappingFragment StoreEntitySet="t2_claims_tb">
+                <ScalarProperty Name="ID_CLAIMS" ColumnName="ID_CLAIMS" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="CLAIMTYPE" ColumnName="CLAIMTYPE" />
+                <ScalarProperty Name="CLAIMVALUE" ColumnName="CLAIMVALUE" />
+                <ScalarProperty Name="IDENTITYUSER_ID" ColumnName="IDENTITYUSER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t3_papel_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t3_papel_tb">
+              <MappingFragment StoreEntitySet="t3_papel_tb">
+                <ScalarProperty Name="ID_PAPEL" ColumnName="ID_PAPEL" />
+                <ScalarProperty Name="NOME_PAPEL" ColumnName="NOME_PAPEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t4_usuario_papel_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t4_usuario_papel_tb">
+              <MappingFragment StoreEntitySet="t4_usuario_papel_tb">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ID_PAPEL" ColumnName="ID_PAPEL" />
+                <ScalarProperty Name="IDENTITYUSER_ID" ColumnName="IDENTITYUSER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t5_indicador_desempenho_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t5_indicador_desempenho_tb">
+              <MappingFragment StoreEntitySet="t5_indicador_desempenho_tb">
+                <ScalarProperty Name="ID_INDICADOR" ColumnName="ID_INDICADOR" />
+                <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+                <ScalarProperty Name="INDICADOR" ColumnName="INDICADOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t8_preenchimento_ferramenta_tb">
+            <EntityTypeMapping TypeName="coaching_planModel.t8_preenchimento_ferramenta_tb">
+              <MappingFragment StoreEntitySet="t8_preenchimento_ferramenta_tb">
+                <ScalarProperty Name="ID_COACHEE" ColumnName="ID_COACHEE" />
+                <ScalarProperty Name="ID_FERRAMENTA" ColumnName="ID_FERRAMENTA" />
+                <ScalarProperty Name="Data_Avaliação" ColumnName="Data_Avaliação" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="t6_participante_tb" TypeName="coaching_planModel.t6_participante_tb" StoreEntitySet="t6_participante_tb">
+            <EndProperty Name="a6_coachee_tb">
+              <ScalarProperty Name="ID_COACHEE" ColumnName="ID_COACHEE" />
+            </EndProperty>
+            <EndProperty Name="a9_processo_coaching_tb">
+              <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="t7_servico_processo_tb" TypeName="coaching_planModel.t7_servico_processo_tb" StoreEntitySet="t7_servico_processo_tb">
+            <EndProperty Name="a9_processo_coaching_tb">
+              <ScalarProperty Name="ID_PROCESSO" ColumnName="ID_PROCESSO" />
+            </EndProperty>
+            <EndProperty Name="a18_servico_tb">
+              <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

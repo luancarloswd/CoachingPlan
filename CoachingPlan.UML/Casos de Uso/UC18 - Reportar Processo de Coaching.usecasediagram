@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="28a8c31d-fd30-48f1-ac3f-5963262778c9" name="UC18 - Reportar Processo de Coaching" linkedPackageId="f2744fbc-8dc2-48e8-b4e6-3e03e47bf0e9" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f418ea28-7357-4832-9195-21ea8840a99f" name="UC18-Reportar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="04515d25-1b5f-4cda-8607-76755bf5385c" />
+        <extendedCases>
+          <extend Id="cd765adb-2cf3-478b-b35c-cfca4586f606">
+            <useCaseMoniker Id="5ec90506-7bbd-4794-aacd-ea17ea4d6291" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="7497d62b-5400-4e4c-a6a5-c6fd93187a51" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="625f3a8a-d9fa-4eba-95ee-c3b74ed886a5" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="3ebf74b5-2e3b-48e1-aced-bbda7753554c" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="UC12-Acompanhar Processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5ec90506-7bbd-4794-aacd-ea17ea4d6291" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6bc09bc2-a9c9-4cb5-bbd0-b079cc9b05ac" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a67fe57-a7be-4803-bbdc-dd2b54aa1824" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49b891d5-ab60-409a-8bc7-0edbad5dc430" name="UC12-Acompanhar Processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0873addf-7adb-4215-9ce2-94072a4d78b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="592dc6e2-a1e5-4ba5-b91f-c0a391029ad2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="244f2602-9e89-44b3-9e3e-cc92da1bf706" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="28bb34c0-a88c-4010-8f23-bd62a8ba6654" isSubstitutable="false">
+            <actorMoniker Id="625f3a8a-d9fa-4eba-95ee-c3b74ed886a5" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="d85dba50-30d9-4d11-92f6-652a5686556f" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="024fb163-b916-445f-a92b-d7b6dab3740a" isSubstitutable="false">
+            <actorMoniker Id="244f2602-9e89-44b3-9e3e-cc92da1bf706" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5ec90506-7bbd-4794-aacd-ea17ea4d6291" name="UC12-Acompanhar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="f2744fbc-8dc2-48e8-b4e6-3e03e47bf0e9" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c72b5fbf-98b0-4825-9be1-79b1f3252b30">
+        <profileInstance Id="40c0b18f-8491-4cd4-a2dd-44bfac06c60f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="92803e07-46a2-4e65-a68e-a22fb522ab12">
+        <profileInstance Id="29d22d1f-4714-458a-a893-8ec6d54a1350" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

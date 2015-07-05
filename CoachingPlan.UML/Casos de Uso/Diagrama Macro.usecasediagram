@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bae9daf2-fb8f-495a-a14c-1790d59437dd" name="Diagrama Macro" linkedPackageId="b922cc4e-b895-4bf4-b636-13cc7950e05c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="017c602d-e8ff-489b-a42d-f092645e7c97" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="5ccd8f7c-536c-48b5-874f-7971ba708079" isSubstitutable="false">
+            <actorMoniker Id="92130e6c-1c1d-4c49-927b-ce3e872e0f5c" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="7b382a1b-470e-43b6-8f2f-58c405734e10" isDerived="false" sourceEndRoleName="Administrador" targetEndRoleName="Manter Usuário" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="00ac8a65-85d7-4498-95c8-ae355af7d6ad" LastKnownName="UC01-Manter Usuário" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="172120c8-185b-43e4-b295-94371834e1c4" name="Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43e11bf2-37ac-44fb-9c79-c7e3297035b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d3067a40-794d-42e3-b45a-4e40d7901419" name="Manter Usuário" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9e47f15c-809c-455f-b9e0-2bd313539c53" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c39cf225-9e95-4a65-a17c-7f11fe517320" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="92130e6c-1c1d-4c49-927b-ce3e872e0f5c" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="b4aa24c9-df77-4010-afb2-dcd205f19e37" isSubstitutable="false">
+            <actorMoniker Id="3eaa7ce2-0078-4327-9527-62d64a5df1f6" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="c33fcd64-1992-4770-a47a-b4309187b593" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Manter Ferramenta de avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="92c9be89-211b-46d1-89e3-1789ca1520e0" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fa348486-7be7-4c26-82b5-f9eebf5562a8" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="00b8c9e1-7115-4244-ae9c-9f58cf24764f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3898c0e7-f206-43e0-aa30-f3305a35f8f3" name="Manter Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc9d4034-009a-4ff6-8805-36c946ebcc15" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="47b2163c-2936-4c63-bdcc-f4771bdef7bb" />
+          </association>
+          <association Id="c66430cd-77fe-4dd2-be72-2d64d4ebd494" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Manter Serviços" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f14a24ba-8bf1-4beb-a93d-bcbe27da1d0c" LastKnownName="UC06-Manter Serviço" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fb7152b8-42d7-4c60-8d8f-0e3b1b268054" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="defee127-6a47-4c73-8eb9-dd62558925b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4676ef58-d1cb-4750-bcd4-61d3e1499bdd" name="Manter Serviços" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0fcc71ef-9bfb-4ae5-846b-e66c6f0fda5d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e64aecb0-6f0a-402d-bcc5-0ddd50241d7f" />
+          </association>
+          <association Id="6675f00b-6309-41dd-9499-fbb544032be3" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="Gerar Resultado de Avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec88f5e0-51ab-4694-b642-3485b8d6b816" LastKnownName="UC16-Analisar Resultado de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c389800f-fd1e-4fc0-a462-3485667918f3" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2744e875-8b1e-4baa-abf0-247371918b7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6048ae94-47a8-4e52-9736-d88f2cf76410" name="Gerar Resultado de Avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6970ea35-d779-4f87-b00d-413a90dbddf1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="71c07433-8c82-4fdd-8662-6b306cf9cac7" />
+          </association>
+          <association Id="43dc48d6-fdb3-493f-bb7e-d69e0ac36fbf" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC04-Acompanhar processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="48087ba2-6220-46b3-9f17-aade09b23bb2" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="30285b91-bc75-42ae-abc1-30f238fe12b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54d4c8cd-7c22-4321-9e69-0ff1bc8fb804" name="UC04-Acompanhar processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bf012a28-eaa6-4eee-914f-cb8730402abe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ffb7b9f5-e1f4-48de-b9d0-eed1237e916a" />
+          </association>
+          <association Id="232dcc63-82da-4924-b958-496405f0d024" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC16-Gerar Relatórios" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c2c22f11-58da-4787-bfd3-a585967f5a30" LastKnownName="UC17-Gerar Relatórios" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cf9a5820-7988-403f-af46-09fe809cf814" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d9feab4-8d01-4d25-9d13-1d9af3a21b6e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0b8b6e9a-a7d8-483d-99f0-31ae89409b1b" name="UC16-Gerar Relatórios" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b2a2fa6-bfd9-4834-8b29-366ae9ab55fc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe96b236-4048-4670-ac88-cd3a54ad574a" />
+          </association>
+          <association Id="cbc17819-5e66-45b4-a996-03bf86e609d0" isDerived="false" sourceEndRoleName="Coach" targetEndRoleName="UC03-Manter Coachee" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="eb5489f6-1ef1-4100-8721-850df848bba0" LastKnownName="UC03-Manter Coachee" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eefd1a69-443c-46e0-b61d-ae77a966597d" name="Coach" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ea9c3b79-3ce5-4100-b611-f33cc5e2e88b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cb9d0038-9998-4e89-bf61-25e258c8addf" name="UC03-Manter Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bbd5c417-956d-4ee2-a03b-198e255c82b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48733aca-3667-4ead-af71-213e37b5e543" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="3eaa7ce2-0078-4327-9527-62d64a5df1f6" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="ffd66256-6235-4e89-8579-a0b8ba37e368" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Acessar sistema" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6645bebb-ade2-45c0-8057-707db038d908" LastKnownName="UC04-Acessar sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9df16009-25b3-40a9-9744-79b9bdc20ee1" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2570ab3d-47f1-402c-b96f-fd0e74dd6d41" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="325aa437-1436-42d0-9725-9e02f3e2b2b2" name="Acessar sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="63e6de6b-e59f-46ed-ade1-0d28d7162844" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe3eb513-bdf4-4dde-9564-36eb12fe6f82" />
+          </association>
+          <association Id="db8fb329-418d-48e8-a71d-c13351c82105" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Preencher Ferramenta de avaliação" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f6871fbf-da38-45a6-afc1-20e752dcee0c" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="676ae616-05e4-437e-b7ed-d0b7d6a22857" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e7d23311-e8ce-49c7-aab1-13fdea132dcc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26a039fc-c63b-4e5b-b98e-fcf801face3d" name="Preencher Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4db8d866-2b40-4638-b53b-5ecec6d7942d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e2c035b-a12a-49ef-a8fb-f923a5ad0fc9" />
+          </association>
+          <association Id="9f1c9263-1e5f-429e-b194-3c337b17c400" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Avaliar Sessão" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1ff06eff-ce40-4d1a-80de-51fcdc5b7eda" LastKnownName="UC14-Avaliar Sessão" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="19564bbb-ca1e-48e7-b39b-05fc71c2aceb" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c2522465-538b-4a5b-98c8-42f6b78914ba" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4a3d09a4-6134-43ee-8332-a1b6d2036190" name="Avaliar Sessão" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="64a3ff79-7065-488b-9245-4b78e49600b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e0645870-6eee-4996-a3a2-3e55f3e225c3" />
+          </association>
+          <association Id="d5442651-bc3b-45a1-8751-e32cf9ce9d14" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="UC12-Acompanhar Processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3825b43a-6c87-4ee1-92e7-843dfb403fcd" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b9b01fb-710b-4c84-a5ca-8b1a6c010ea7" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a67fe57-a7be-4803-bbdc-dd2b54aa1824" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8743b36e-fde6-4794-9e6e-bfd7afaebec1" name="UC12-Acompanhar Processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0873addf-7adb-4215-9ce2-94072a4d78b8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="592dc6e2-a1e5-4ba5-b91f-c0a391029ad2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="e68b1ad5-76da-4c7b-b262-b8fc56c1b21e" name="Gerenciador de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="447649de-aa25-4042-b543-36a3bb7a1203" />
+        <targetEnds>
+          <association Id="4612097c-fbea-4650-801b-4117f7745d37" isDerived="false" sourceEndRoleName="Secretária" targetEndRoleName="Acessar sistema" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6645bebb-ade2-45c0-8057-707db038d908" LastKnownName="UC04-Acessar sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43a965a8-bc2e-4000-80b5-ace501059caf" name="Secretária" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8a4fa9bf-fbde-4b16-9da1-3ab307f21157" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="415ab8ce-5e6b-475f-b729-cdfe97e7153d" name="Acessar sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="97488d5d-18ae-4d7a-8860-1577c7d2ff6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e2070a5b-8962-4532-aca5-b29de56830f1" />
+          </association>
+          <association Id="cac4ce06-2054-465c-82f3-a91eeb2e745c" isDerived="false" sourceEndRoleName="Secretária" targetEndRoleName="Gerenciar sessão de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="01d684e5-92d1-402c-8784-985793ecc4ce" LastKnownName="UC11-Gerenciar Sessões de Coaching" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a167b38e-b267-47b3-8249-d4f8881202d0" name="Secretária" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="14821d39-1ea4-48e6-b624-8112d3dbee66" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3085fb18-94bb-43a2-b04b-7c0ff169cf80" name="Gerenciar sessão de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0673c3e7-d0b1-462e-8027-0c9d050a1058" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6a18048b-850b-4d77-be63-827d0fe7b2f3" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="00ac8a65-85d7-4498-95c8-ae355af7d6ad" name="UC01-Manter Usuário" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d553b200-cf08-4830-9277-1fb09f08909f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cef88983-24d3-4c94-b951-fdba7b968394" name="UC02-Manter Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299" />
+        <extendedCases>
+          <extend Id="fd3b551e-a163-407b-81b5-55ac29046770">
+            <useCaseMoniker Id="00ac8a65-85d7-4498-95c8-ae355af7d6ad" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="538fa478-a8e8-4b03-81de-b7b29e943220" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="eb5489f6-1ef1-4100-8721-850df848bba0" name="UC03-Manter Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="15788fdf-0c65-4e3c-8e36-0fcf63c20931" />
+        <extendedCases>
+          <extend Id="4f22ae54-4342-4297-aedc-36eacf7b49fc">
+            <useCaseMoniker Id="00ac8a65-85d7-4498-95c8-ae355af7d6ad" LastKnownName="UC01-Manter Usuário" />
+            <elementDefinition Id="951737c1-97aa-4208-91f9-0cbf6ad9247a" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6645bebb-ade2-45c0-8057-707db038d908" name="UC04-Acessar sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f1ea7705-55c7-4c7c-92c0-99d0de83fc3a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8531fe84-900f-4bd7-a4b7-587cc47c4e8c" name="UC09-Gerar Orçamento" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fdb29997-fa65-4093-9a66-db047040d85a" />
+        <extendedCases>
+          <extend Id="efaf16f4-67c9-4a40-8c09-505dda30d161">
+            <useCaseMoniker Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="54765db1-b4ad-4416-8626-8315d168fe04" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="06067720-a90e-4ba2-85eb-104dc6d2fad4" name="UC10-Gerar plano de Ação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6c3f904a-f0f7-484a-86b4-73609a580b9f" />
+        <extendedCases>
+          <extend Id="2928c377-531a-405b-9e96-c7feafed9793">
+            <useCaseMoniker Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="03d0f86b-107b-426e-8ca2-bbe832b77a51" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c2c22f11-58da-4787-bfd3-a585967f5a30" name="UC17-Gerar Relatórios" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="78dc03f5-9a26-4e13-8c2d-732a43110a3d" />
+        <extendedCases>
+          <extend Id="4bbe68a5-8088-40de-9a4b-9acf63bdfc34">
+            <useCaseMoniker Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="ece263ff-8da4-4f1a-b37b-f446b273b9f0" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="01d684e5-92d1-402c-8784-985793ecc4ce" name="UC11-Gerenciar Sessões de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c26e886c-9827-49bb-bed1-1f21f8974a38" />
+        <extendedCases>
+          <extend Id="fdae5eb8-aae1-4a6c-8a38-b16be035c960">
+            <useCaseMoniker Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" LastKnownName="UC08-Planejar Processo de Coaching" />
+            <elementDefinition Id="427b9d3a-4f83-46a9-941f-64318244025e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="92c9be89-211b-46d1-89e3-1789ca1520e0" name="UC07-Manter Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f14a24ba-8bf1-4beb-a93d-bcbe27da1d0c" name="UC06-Manter Serviço" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d0467f3-cf41-404c-ad0f-ded4aaa63a8c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f6871fbf-da38-45a6-afc1-20e752dcee0c" name="UC15-Preencher Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17a67882-440a-47aa-b896-4d8f5b2849e4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="977eaaa6-5a5f-40e6-afdc-cce53c8d7211" name="UC18-Reportar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="04515d25-1b5f-4cda-8607-76755bf5385c" />
+        <extendedCases>
+          <extend Id="4f330b5e-53bb-4a32-ae4f-083570a96366">
+            <useCaseMoniker Id="3825b43a-6c87-4ee1-92e7-843dfb403fcd" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="7497d62b-5400-4e4c-a6a5-c6fd93187a51" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b7bb1298-c53d-4b1d-b115-18283277afd5" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
+        <extendedCases>
+          <extend Id="54d6c129-9908-4d88-b878-2e0c05e12d6d">
+            <useCaseMoniker Id="3825b43a-6c87-4ee1-92e7-843dfb403fcd" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="7f590421-8ec4-4e6c-984d-c00358761dd4" />
+          </extend>
+          <extend Id="7c9e96de-3126-4fd5-94c7-b2805cc69ace">
+            <useCaseMoniker Id="01d684e5-92d1-402c-8784-985793ecc4ce" LastKnownName="UC11-Gerenciar Sessões de Coaching" />
+            <elementDefinition Id="f7be6f4b-1239-41fc-a2a8-6d393ae6ec30" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1ff06eff-ce40-4d1a-80de-51fcdc5b7eda" name="UC14-Avaliar Sessão" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c936f273-4317-4b2c-bef2-1c58362434f1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ec88f5e0-51ab-4694-b642-3485b8d6b816" name="UC16-Analisar Resultado de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="235789d3-5cfd-4cc1-a147-5ef1ed371aed" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0d81ba19-6bce-48a6-898a-319506fd6c4c" name="UC08-Planejar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="48fd86b5-8ac0-4305-ac7d-6db860192ddd" name="UC05-Recuperar Senha" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ac017a2c-8755-4bb7-a7fd-e2fe72ebf55b" />
+        <extendedCases>
+          <extend Id="596db410-2996-4fd7-a583-6349851691aa">
+            <useCaseMoniker Id="6645bebb-ade2-45c0-8057-707db038d908" LastKnownName="UC04-Acessar sistema" />
+            <elementDefinition Id="ed220366-229a-41bf-84c6-bca845aec7f5" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3825b43a-6c87-4ee1-92e7-843dfb403fcd" name="UC12-Acompanhar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b922cc4e-b895-4bf4-b636-13cc7950e05c" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="d7ad154f-0af0-4106-9ad4-57dd22c08f60">
+        <profileInstance Id="be266231-3562-4804-91ed-ea975fa9df19" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2edf12aa-8dba-4bb4-8562-8560b56a3585">
+        <profileInstance Id="ef6d1c71-11ea-4f46-a273-7ea641ca2872" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

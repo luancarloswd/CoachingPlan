@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d6c24257-d03a-4f1a-b66b-4d3ec4f4981c"
+  name="UC15 - Preecher Ferramenta de Avaliação" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="17a67882-440a-47aa-b896-4d8f5b2849e4"
+        name="UC15-Preencher Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d2fe39e0-2b0c-42b7-ae93-96d6af67651b"
+        name="Cadastrar Respostas"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d83281d7-3a04-47ca-8843-eb63ad29e794">
+            <useCaseMoniker
+              Id="17a67882-440a-47aa-b896-4d8f5b2849e4"
+              LastKnownName="UC15-Preencher Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1934.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="35c51f97-d737-48a8-a622-4f6bb2a17931"
+        name="Editar Respostas"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="ac797049-9341-49a2-a98a-1c008bfa67bd">
+            <useCaseMoniker
+              Id="17a67882-440a-47aa-b896-4d8f5b2849e4"
+              LastKnownName="UC15-Preencher Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1934.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ca54088d-6d00-4f42-a5b5-4caa38510ce8"
+  name="UC11 - Gerenciar Sessões de Coaching" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+        name="UC11-Gerenciar Sessões de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="427b9d3a-4f83-46a9-941f-64318244025e">
+            <useCaseMoniker
+              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
+              LastKnownName="UC08-Planejar Processo de Coaching"
+              LastKnownLocation="Package_1929.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a2f6b9f6-95b8-4a53-b3d0-f7ac63591184"
+        name="Cadastrar Sessão de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="87d5e21f-5087-40f4-904b-09dc276d7b60">
+            <useCaseMoniker
+              Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+              LastKnownName="UC11-Gerenciar Sessões de Coaching"
+              LastKnownLocation="Package_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ac00f7e7-d866-40cf-843d-4dff53cd12c8"
+        name="Editar Sessão de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="13c2c0db-ce29-4dcc-b221-d4a24cbe1524">
+            <useCaseMoniker
+              Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+              LastKnownName="UC11-Gerenciar Sessões de Coaching"
+              LastKnownLocation="Package_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3ec73c79-6864-4892-b8b3-476cd9a2121b"
+        name="Excluir Sessão de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="58d7766d-5821-4d47-b44b-b960375c02fd">
+            <useCaseMoniker
+              Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+              LastKnownName="UC11-Gerenciar Sessões de Coaching"
+              LastKnownLocation="Package_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c650d8e7-fc25-4073-b1cd-cf3b84a98788"
+        name="Visualizar Sesão de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="713073ed-5107-463c-adf8-8020e8559aae">
+            <useCaseMoniker
+              Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+              LastKnownName="UC11-Gerenciar Sessões de Coaching"
+              LastKnownLocation="Package_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="88187d26-df2a-46ba-a605-4639e8c7f76a"
+        name="Pesquisar Sessão de Coaching"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d52867ea-277c-4ee0-a27e-9bfaf30bf238">
+            <useCaseMoniker
+              Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
+              LastKnownName="UC11-Gerenciar Sessões de Coaching"
+              LastKnownLocation="Package_1932.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

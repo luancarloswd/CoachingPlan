@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="59a5baca-23fb-42d3-90a3-de953a08a9e4" name="UC05 - Recuperar Senha" linkedPackageId="51641e83-249a-49c0-8669-d5614579630e" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="df266cca-6920-433a-8a12-f7b036efcd5c">
+      <profileInstance Id="ff180bb9-435c-4d32-af70-4c7d9ff94eff" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="773a283c-8ff9-4d9f-aa34-53caa3829f63">
+      <profileInstance Id="77ffdcfa-648a-4362-8fbf-b7d8c6f12a01" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a4e115f6-877e-4165-9210-a69f897d1e7e" name="Gerenciador de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="447649de-aa25-4042-b543-36a3bb7a1203" />
+        <targetEnds>
+          <association Id="15f71ea9-e493-4565-abcd-030968538b95" isDerived="false" sourceEndRoleName="Secretária" targetEndRoleName="Acessar sistema" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5e410fda-273d-4dfd-91ab-374fcffb9d09" LastKnownName="UC04-Acessar sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a964b9c-08c2-44e8-815c-ef92515c9745" name="Secretária" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8a4fa9bf-fbde-4b16-9da1-3ab307f21157" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1e877bbb-6778-4c5e-977c-f10335dfa830" name="Acessar sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="97488d5d-18ae-4d7a-8860-1577c7d2ff6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e2070a5b-8962-4532-aca5-b29de56830f1" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="05488609-bdbe-49fc-8aa8-383ea201f1f3" name="Coachee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
+        <targetEnds>
+          <association Id="6254d195-bea8-4b38-99ab-dc4c61fcb3a0" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Acessar sistema" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5e410fda-273d-4dfd-91ab-374fcffb9d09" LastKnownName="UC04-Acessar sistema" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="17ed92f7-9ec8-413f-8a1b-26e6b71e8db9" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2570ab3d-47f1-402c-b96f-fd0e74dd6d41" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="77b80435-2041-4bb5-9bce-1729a7dca593" name="Acessar sistema" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="63e6de6b-e59f-46ed-ade1-0d28d7162844" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe3eb513-bdf4-4dde-9564-36eb12fe6f82" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="0a275231-0e81-486a-8a01-755bb13ee3fd" name="Coach" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b903d75f-1c02-4bf9-9790-1688b1ac7637" />
+        <generalsInternal>
+          <generalization Id="1dd2afc0-c068-4cb9-af97-e39a0ba0168d" isSubstitutable="false">
+            <actorMoniker Id="05488609-bdbe-49fc-8aa8-383ea201f1f3" LastKnownName="Coachee" />
+            <elementDefinition Id="f05e2b86-6898-4e9e-aa25-e0fe7e0cd373" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="59a5bcd3-b225-4127-beaf-690e1e7db746" name="Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1b684e9-8d31-466c-9cc6-b11691342c0c" />
+        <generalsInternal>
+          <generalization Id="ebfd038d-6f1e-4263-8d24-016ff4bf1d19" isSubstitutable="false">
+            <actorMoniker Id="0a275231-0e81-486a-8a01-755bb13ee3fd" LastKnownName="Coach" />
+            <elementDefinition Id="6cc55900-c8df-4acf-bcd7-62392f6132e6" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5e410fda-273d-4dfd-91ab-374fcffb9d09" name="UC04-Acessar sistema" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f1ea7705-55c7-4c7c-92c0-99d0de83fc3a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="88a5bf2d-4619-49cf-bb19-647d38eeff6c" name="UC05-Recuperar Senha" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ac017a2c-8755-4bb7-a7fd-e2fe72ebf55b" />
+        <extendedCases>
+          <extend Id="9dc1c3d0-f5ae-4ab1-8cd8-630769b546d4">
+            <useCaseMoniker Id="5e410fda-273d-4dfd-91ab-374fcffb9d09" LastKnownName="UC04-Acessar sistema" />
+            <elementDefinition Id="ed220366-229a-41bf-84c6-bca845aec7f5" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="51641e83-249a-49c0-8669-d5614579630e" name="CoachingPlan">
+    <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+  </package>
+</useCaseModelRoot>

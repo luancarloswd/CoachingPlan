@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0949580b-1b62-42ea-b048-9fee2e652798"
+  name="UC02 - Manter Coach" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+        name="UC02-Manter Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="538fa478-a8e8-4b03-81de-b7b29e943220">
+            <useCaseMoniker
+              Id="d553b200-cf08-4830-9277-1fb09f08909f"
+              LastKnownName="UC01-Manter Usuário"
+              LastKnownLocation="Package_2032.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5a7aa038-862a-4172-b977-d944dae40e9e"
+        name="Cadastrar Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="3729a9c4-32d2-4d41-9914-51b71990cb25">
+            <useCaseMoniker
+              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+              LastKnownName="UC02-Manter Coach"
+              LastKnownLocation="Package_1926.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8c199514-8aea-4f92-8730-cdcfeeb6eff4"
+        name="Editar Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="34619348-5b05-463d-b424-9fdadfc6c51b">
+            <useCaseMoniker
+              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+              LastKnownName="UC02-Manter Coach"
+              LastKnownLocation="Package_1926.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bd8c3765-df48-456c-98db-85d4dfb513c1"
+        name="Pesquisar Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="b7f67f7e-0a11-46af-940d-b05996bc2fd6">
+            <useCaseMoniker
+              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+              LastKnownName="UC02-Manter Coach"
+              LastKnownLocation="Package_1926.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cfd60002-61f4-496c-ac83-c83b503d998d"
+        name="Visualizar Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="3d1b1ba6-9c37-4000-9b29-b7106407eca9">
+            <useCaseMoniker
+              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+              LastKnownName="UC02-Manter Coach"
+              LastKnownLocation="Package_1926.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0bfe3882-6bfe-4e53-b2fd-fd00a3c61440"
+        name="Excluir Coach"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="ba73af79-0886-499a-bbe0-7ba313fa8ce2">
+            <useCaseMoniker
+              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
+              LastKnownName="UC02-Manter Coach"
+              LastKnownLocation="Package_1926.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

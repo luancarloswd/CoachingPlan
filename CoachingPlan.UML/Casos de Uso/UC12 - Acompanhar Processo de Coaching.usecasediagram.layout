@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UC12 - Acompanhar Processo de Coaching">
+  <useCaseModelRootMoniker Id="d31f25bf-e37f-4b9d-86bb-1d4e46ffc294" />
+  <nestedChildShapes>
+    <useCaseShape Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" absoluteBounds="4.125, 3, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <actorShape Id="b4518b69-786b-4910-bc41-6fcff359542e" absoluteBounds="5.875, 3.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="40697959-5a34-4d3b-9975-3d3ba4ae2d3a" LastKnownName="Coachee" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(5.875 : 3.38541666666667); (5.12443406886221 : 3.41669024713074)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="b65c04fa-151c-40f5-ba2b-1da8400b4f2d" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="b4518b69-786b-4910-bc41-6fcff359542e" />
+        <useCaseShapeMoniker Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <actorShape Id="258231a3-e59e-4d3d-87a3-5b27890bb73a" absoluteBounds="7.125, 3.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="6e730f83-fde2-495a-88ae-770c64a6ad8b" LastKnownName="Coach" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(7.125 : 3.375); (6.375 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="eebb3910-f11d-425f-917a-b0e48bcf416a" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="258231a3-e59e-4d3d-87a3-5b27890bb73a" />
+        <actorShapeMoniker Id="b4518b69-786b-4910-bc41-6fcff359542e" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <actorShape Id="5554ad1b-e216-4232-ab04-2c249ac21588" absoluteBounds="8.25, 3.125, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="9c2bb446-e04c-4767-b781-d394de726c45" LastKnownName="Administrador" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(8.25 : 3.375); (7.625 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="c728f167-8c53-47c9-9bfc-67c93aead6eb" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="5554ad1b-e216-4232-ab04-2c249ac21588" />
+        <actorShapeMoniker Id="258231a3-e59e-4d3d-87a3-5b27890bb73a" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <useCaseShape Id="0fb15780-2433-4145-adfc-b898f88fafdb" absoluteBounds="2, 3, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="4ac33553-9c25-48f7-a533-ca2efb6290be" LastKnownName="UC13-Visualizar Agenda de Sessões" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <extendConnector edgePoints="[(3 : 3.4375); (4.125 : 3.4375)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="81e12217-9b04-4789-8f73-6be29ef08924" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="0fb15780-2433-4145-adfc-b898f88fafdb" />
+        <useCaseShapeMoniker Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" />
+      </nodes>
+    </extendConnector>
+    <useCaseShape Id="b339793d-d114-4ae4-86f5-d2e94e4f6be8" absoluteBounds="4.75, 4, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="d0c0eda6-7899-4a47-a569-9b60787e593f" LastKnownName="Visualizar Resultado Ferramenta de Avaliação" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseDependencyConnector edgePoints="[(5.01009382902864 : 4.05365012644583); (4.86490617097135 : 3.82134987355417)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+      <dependencyMoniker Id="93d3857b-2f2d-4e2f-833a-a349ae8d3625" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="b339793d-d114-4ae4-86f5-d2e94e4f6be8" />
+        <useCaseShapeMoniker Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <useCaseShape Id="c4b19a40-f5f4-4d0b-afd6-8fc841357d38" absoluteBounds="3.125, 4, 1, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="715b959b-0189-44ed-8868-c2533b3ffee8" LastKnownName="Visualizar Processo de Coaching" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseDependencyConnector edgePoints="[(3.93734752377721 : 4.08217419645886); (4.28384087481999 : 3.75733667985626)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+      <dependencyMoniker Id="71061cdd-ba6c-41c8-ba96-0a400f55a19f" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="c4b19a40-f5f4-4d0b-afd6-8fc841357d38" />
+        <useCaseShapeMoniker Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" />
+      </nodes>
+    </useCaseDependencyConnector>
+    <useCaseShape Id="1a1e6a1f-f550-4c61-972a-4abc09d3f3d4" absoluteBounds="5.625, 1.625, 1, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="68463c75-e771-4b7b-b4c0-bc10b03779ac" LastKnownName="UC18-Reportar Processo de Coaching" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <extendConnector edgePoints="[(5.77976212665875 : 2.37896805056281); (4.97023787334125 : 3.12103194943719)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="f1f37368-fdd1-48cd-aead-98e69da453f0" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="1a1e6a1f-f550-4c61-972a-4abc09d3f3d4" />
+        <useCaseShapeMoniker Id="644f83f4-631a-4b0f-9ef2-aae27cd28552" />
+      </nodes>
+    </extendConnector>
+  </nestedChildShapes>
+</useCaseDiagram>
