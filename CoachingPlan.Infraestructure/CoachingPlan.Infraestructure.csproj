@@ -211,6 +211,7 @@
     <Compile Include="Data\Map\PessoaMap.cs" />
     <Compile Include="Data\Map\TelefoneMap.cs" />
     <Compile Include="Data\MySqlHistoryContext.cs" />
+    <Compile Include="Data\MySqlInitializer.cs" />
     <Compile Include="Identity\ApplicationCookieIdentityValidator.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -292,9 +293,6 @@
       <Project>{981571ff-7c77-4f43-bff3-e9692fdab8fb}</Project>
       <Name>CoachingPlan.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

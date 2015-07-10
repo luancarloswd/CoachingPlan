@@ -5,6 +5,8 @@ using CoachingPlan.Domain.Models;
 using CoachingPlan.Resources.Messages;
 using System;
 using System.Collections.Generic;
+using CoachingPlan.Domain.Enums;
+
 namespace CoachingPlan.Business.Services
 {
     public class PessoaService : IPessoaService
@@ -24,11 +26,12 @@ namespace CoachingPlan.Business.Services
             return Pessoa;
         }
 
-        public void Register(Pessoa Pessoa)
+        public void Register(string nome, string cpf, DateTime dataNacimneto, EGenero.Genero genero, bool status, string foto = null)
         {
-            Pessoa.Validate();
+            Pessoa pessoa = new Pessoa(nome, cpf, dataNacimneto, genero, status, foto);
+            pessoa.Validate();
 
-            _repository.Create(Pessoa);
+            _repository.Create(pessoa);
         }
 
         public void ChageInformation(Guid id, Pessoa pessoa)

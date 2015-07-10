@@ -14,9 +14,9 @@ namespace CoachingPlan.Business.Services
 {
     public class UsuarioService : IUsuarioService
     {
-        private IUsuarioRepository _repository;
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        readonly private IUsuarioRepository _repository;
+        readonly private ApplicationSignInManager _signInManager;
+        readonly private ApplicationUserManager _userManager;
         public UsuarioService(IUsuarioRepository repository, ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             _userManager = _userManager ?? userManager;
@@ -64,12 +64,12 @@ namespace CoachingPlan.Business.Services
 
         public ICollection<Usuario> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
         public Usuario GetOne(string id)
         {
-            throw new NotImplementedException();
+            return _repository.GetOne(id);
         }
 
         public void LogOff()
@@ -98,7 +98,13 @@ namespace CoachingPlan.Business.Services
 
         public void Register(string email, string userName, string password)
         {
-            throw new NotImplementedException();
+
+            Usuario user = new Usuario();
+            user.Email = "luancarloshs@gmail.com";
+            user.EmailConfirmed = false;
+            user.PasswordHash = "AFPHuiThUBqwGJbE8do6y+plFs7i7k0fWMx+uupaC12/+zJ242roQYqnGC45Tl4J1A==";
+            user.SecurityStamp = "909a8cfe-bd6b-40e0-a588-cefe4b607be4";
+            user.PhoneNumberConfirmed = false;
         }
 
         public void Remove(string id)

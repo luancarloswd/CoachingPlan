@@ -1,7 +1,5 @@
 ﻿using CoachingPlan.Domain.Models;
-using System.Data.Entity;
-using System.Security.Claims;
-using System.Threading.Tasks;
+using System.Web;
 using Microsoft.Owin.Security;
 using Microsoft.Owin;
 using Microsoft.AspNet.Identity.Owin;

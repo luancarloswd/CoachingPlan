@@ -24,8 +24,9 @@ namespace CoachingPlan.Business.Services
             return Telefone;
         }
 
-        public void Register(Telefone telefone)
+        public void Register(string ddd, string numero, string descricao = null)
         {
+            Telefone telefone = new Telefone(ddd, numero, descricao);
             telefone.Validate();
 
             _repository.Create(telefone);

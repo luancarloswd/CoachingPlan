@@ -7,7 +7,10 @@ using Microsoft.Owin.Security.OAuth;
 using Microsoft.Practices.Unity;
 using Owin;
 using System;
+using Microsoft.AspNet.Identity.Owin;
 using System.Web.Http;
+using CoachingPlan.Infraestructure.Data;
+using CoachingPlan.Infraestructure.Identity;
 
 namespace CoachingPlan.API
 {
@@ -15,6 +18,10 @@ namespace CoachingPlan.API
     {
         public void Configuration(IAppBuilder app)
         {
+            app.CreatePerOwinContext(AppDataContext.Create);
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
+            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
             HttpConfiguration config = new HttpConfiguration();
 
             var container = new UnityContainer();
@@ -22,6 +29,7 @@ namespace CoachingPlan.API
             config.DependencyResolver = new UnityResolver(container);
 
             ConfigureWebApi(config);
+            ConfigureOAuth(app, container.Resolve<IUsuarioService>());
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);

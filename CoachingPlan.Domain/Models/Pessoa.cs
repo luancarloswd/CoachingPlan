@@ -10,15 +10,15 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Pessoa(){}
-        public Pessoa(Pessoa pessoa)
+        public Pessoa(string nome, string cpf, DateTime dataNacimneto, EGenero.Genero genero, bool status, string foto = null)
         {
             this.Id = Guid.NewGuid();
-            this.Nome = pessoa.Nome;
-            this.CPF = pessoa.CPF;
-            this.DataNascimento = pessoa.DataNascimento;
-            this.Genero = pessoa.Genero;
-            this.Status = pessoa.Status;
-            this.Foto = pessoa.Foto;
+            this.Nome = nome;
+            this.CPF = cpf;
+            this.DataNascimento = dataNacimneto;
+            this.Genero = genero;
+            this.Status = status;
+            this.Foto = foto;
             this.Telefone = new HashSet<Telefone>();
             this.Endereco = new HashSet<Endereco>();
             this.Usuario = new HashSet<Usuario>();
@@ -66,7 +66,7 @@ namespace CoachingPlan.Domain.Models
             AssertionConcern.AssertArgumentLength(this.Nome, 5, 65, Errors.InvalidNome);
             CPFAssertionConcern.AssertIsValid(this.CPF);
             AssertionConcern.AssertArgumentNotNull(this.CPF, Errors.InvalidCPF);
-            AssertionConcern.AssertArgumentLength(this.Nome, 11, 11, Errors.InvalidCPF);
+            AssertionConcern.AssertArgumentLength(this.CPF, 11, 11, Errors.InvalidCPF);
             AssertionConcern.AssertArgumentNotNull(this.DataNascimento, Errors.InvalidDataNascimento);
             AssertionConcern.AssertArgumentNotNull(this.Genero, Errors.InvalidGenero);
             AssertionConcern.AssertArgumentNotNull(this.Status, Errors.InvalidStatus);

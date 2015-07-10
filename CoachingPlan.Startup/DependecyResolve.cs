@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System.Data.Entity;
+using System.Web;
+using Microsoft.Practices.Unity;
 using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Infraestructure.Repositories;
@@ -6,6 +8,11 @@ using CoachingPlan.Domain.Models;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Business.Services;
 using CoachingPlan.Infraestructure.Identity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
+using Microsoft.Owin.Security;
+
 
 namespace CoachingPlan.Startup
 {
@@ -42,7 +49,15 @@ namespace CoachingPlan.Startup
 
             //Identity
             container.RegisterType<ApplicationSignInManager, ApplicationSignInManager>(new HierarchicalLifetimeManager());
-
+            container.RegisterType<ApplicationUserManager, ApplicationUserManager>(new HierarchicalLifetimeManager());
+            container.RegisterType(typeof(UserManager<>),
+            new InjectionConstructor(typeof(IUserStore<>)));
+            container.RegisterType<Microsoft.AspNet.Identity.IUser>(new InjectionFactory(c => c.Resolve<Microsoft.AspNet.Identity.IUser>()));
+            container.RegisterType(typeof(IUserStore<>), typeof(UserStore<>));
+            container.RegisterType<IdentityUser, Usuario>(new ContainerControlledLifetimeManager());
+            container.RegisterType<DbContext, AppDataContext>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => new OwinContext().Authentication));
+            
             //Models
             container.RegisterType<Telefone, Telefone>(new HierarchicalLifetimeManager());
             container.RegisterType<Endereco, Endereco>(new HierarchicalLifetimeManager());
