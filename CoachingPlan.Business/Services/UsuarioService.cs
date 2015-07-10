@@ -9,18 +9,20 @@ using System;
 using Microsoft.AspNet.Identity.Owin;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CoachingPlan.Domain.Enums;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+
 
 namespace CoachingPlan.Business.Services
 {
     public class UsuarioService : IUsuarioService
     {
         readonly private IUsuarioRepository _repository;
-        readonly private ApplicationSignInManager _signInManager;
         readonly private ApplicationUserManager _userManager;
-        public UsuarioService(IUsuarioRepository repository, ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public UsuarioService(IUsuarioRepository repository, ApplicationUserManager userManager)
         {
-            _userManager = _userManager ?? userManager;
-            _signInManager = _signInManager ?? signInManager;
+            _userManager = userManager;
             _repository = repository;
         }
 
@@ -77,34 +79,31 @@ namespace CoachingPlan.Business.Services
             throw new NotImplementedException();
         }
 
-        public async Task<Usuario> Login(string email, string password, bool remeberme)
+        public Usuario Login(string email, string password, bool remeberme)
         {
-            var result = await _signInManager.PasswordSignInAsync(email, password, remeberme, shouldLockout: true);
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    var usuario = GetByEmail(email);
-                    return usuario;
-                case SignInStatus.LockedOut:
-                    throw new Exception(Errors.LockedOut);
-                case SignInStatus.RequiresVerification:
-                    throw new Exception(Errors.RequiresVerification);
-                case SignInStatus.Failure:
-                    throw new Exception(Errors.Failure);
-                default:
-                    throw new Exception(Errors.Failure);
-            }
+           throw new NotImplementedException();
         }
 
         public void Register(string email, string userName, string password)
         {
+            Usuario user = new Usuario
+            {
+                Pessoa =
+                    new Pessoa("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
+                UserName = userName,
+                Email = email,
+                PasswordHash = password
+            };
+            _repository.Create(user);
 
-            Usuario user = new Usuario();
-            user.Email = "luancarloshs@gmail.com";
-            user.EmailConfirmed = false;
-            user.PasswordHash = "AFPHuiThUBqwGJbE8do6y+plFs7i7k0fWMx+uupaC12/+zJ242roQYqnGC45Tl4J1A==";
-            user.SecurityStamp = "909a8cfe-bd6b-40e0-a588-cefe4b607be4";
-            user.PhoneNumberConfirmed = false;
+            //if (!result.Succeeded)
+            //{
+            //    foreach (string erro in result.Errors )
+            //    {
+            //        throw new Exception(erro);
+            //    }
+            //}
+                
         }
 
         public void Remove(string id)

@@ -225,4 +225,7 @@
   <data name="InvalidCredentials" xml:space="preserve">
     <value>Dados Inválidos</value>
   </data>
+  <data name="RegistrationFailure" xml:space="preserve">
+    <value>Registro falhou</value>
+  </data>
 </root>

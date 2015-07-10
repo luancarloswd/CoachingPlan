@@ -26,6 +26,15 @@ namespace CoachingPlan.Domain.Models
         #region Properties
         public override string Email { get; set; }
         public override string UserName { get; set; }
+        public override bool EmailConfirmed { get; set; }
+        public override string PasswordHash { get; set; }
+        public override string SecurityStamp { get; set; }
+        public override string PhoneNumber { get; set; }
+        public override bool PhoneNumberConfirmed { get; set; }
+        public override bool TwoFactorEnabled { get; set; }
+        public override DateTime? LockoutEndDateUtc { get; set; }
+        public override bool LockoutEnabled { get; set; }
+        public override int AccessFailedCount { get; set; }
         public virtual Pessoa Pessoa { get;  set; }
         //public virtual ICollection<Sessao> Sessao { get; set; }
         //public virtual ICollection<Avaliacao> Avaliacao { get; set; }

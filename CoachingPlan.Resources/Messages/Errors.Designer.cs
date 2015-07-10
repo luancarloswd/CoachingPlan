@@ -322,6 +322,15 @@ namespace CoachingPlan.Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registro falhou.
+        /// </summary>
+        public static string RegistrationFailure {
+            get {
+                return ResourceManager.GetString("RegistrationFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Verificação necessária.
         /// </summary>
         public static string RequiresVerification {

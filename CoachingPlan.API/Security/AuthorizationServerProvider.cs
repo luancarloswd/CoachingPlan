@@ -33,24 +33,9 @@ namespace CoachingPlan.API.Security
 
             try
             {
-               ICollection<Usuario> users =  _service.GetAll();
-                var user = _service.Login(context.UserName, context.Password, false);
-
-                if (user.Result == null)
-                {
-                    context.SetError("invalid_grant", Errors.InvalidCredentials);
-                    return;
-                }
-
-                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-
-                identity.AddClaim(new Claim(ClaimTypes.Name, user.Result.Email));
-                identity.AddClaim(new Claim(ClaimTypes.GivenName, user.Result.UserName));
-
-                GenericPrincipal principal = new GenericPrincipal(identity, null);
-                Thread.CurrentPrincipal = principal;
-
-                context.Validated(identity);
+               _service.Register(context.UserName, context.UserName, context.Password);
+                ICollection<Usuario> users = _service.GetAll();
+                
             }
             catch (Exception ex)
             {

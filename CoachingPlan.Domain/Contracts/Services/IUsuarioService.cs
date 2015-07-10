@@ -12,7 +12,7 @@ namespace CoachingPlan.Domain.Contracts.Services
         void Remove(string id);
         ICollection<Usuario> GetAll();
         void Register(string email, string userName, string password);
-        Task<Usuario> Login(string email, string password, bool remeberme);
+        Usuario Login(string email, string password, bool remeberme);
         bool VerifyCode(string provider, string returnUrl, bool rememberMe);
         bool ConfirmEmail(string userId, string code);
         string ForgotPassword(string email);

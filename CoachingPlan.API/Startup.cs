@@ -18,10 +18,6 @@ namespace CoachingPlan.API
     {
         public void Configuration(IAppBuilder app)
         {
-            app.CreatePerOwinContext(AppDataContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
             HttpConfiguration config = new HttpConfiguration();
 
             var container = new UnityContainer();
