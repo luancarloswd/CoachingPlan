@@ -9,10 +9,10 @@ using MySql.Data.Entity;
 
 namespace CoachingPlan.Infraestructure.Data
 {
-    public class AppDataContext : IdentityDbContext
+    public class AppDataContext : IdentityDbContext<Usuario>
     {
         public AppDataContext()
-            :base("AppConnectionString")
+            : base("AppConnectionString", throwIfV1Schema: true)
         {
             Database.SetInitializer(new MySqlInitializer());
             Configuration.LazyLoadingEnabled = false;
@@ -26,14 +26,14 @@ namespace CoachingPlan.Infraestructure.Data
         public DbSet<Telefone> Telefone { get; set; }
         public DbSet<Endereco> Endereco { get; set; }
         public DbSet<Pessoa> Pessoa { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        //public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Coach> Coach { get; set; }
         public DbSet<Coachee> Coachee { get; set; }
         public DbSet<Especialidade> Especialidade { get; set; }
         public DbSet<Formacao> Formacao { get; set; }
         public DbSet<PontoForte> PontoForte { get; set; }
         public DbSet<Fragilidade> Fragilidade { get; set; }
-        public DbSet<Dispositivo> Dispositivo { get; set; }
+      //  public DbSet<Dispositivo> Dispositivo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,11 +42,19 @@ namespace CoachingPlan.Infraestructure.Data
             modelBuilder.Configurations.Add(new TelefoneMap());
             modelBuilder.Configurations.Add(new EnderecoMap());
             modelBuilder.Configurations.Add(new PessoaMap());
-            modelBuilder.Configurations.Add(new UsuarioMap());
+          //  modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Entity<IdentityUser>()
                 .ToTable("a4_usuario_tb")
                 .Property(x => x.Id).HasMaxLength(200);
             modelBuilder.Entity<IdentityUser>()
+                .Property(x => x.UserName).HasMaxLength(200);
+            modelBuilder.Entity<Usuario>()
+                .ToTable("a4_usuario_tb")
+                .HasRequired<Pessoa>(s => s.Pessoa)
+                .WithMany(s => s.Usuario);
+            modelBuilder.Entity<Usuario>()
+                .Property(x => x.Id).HasMaxLength(200);
+            modelBuilder.Entity<Usuario>()
                 .Property(x => x.UserName).HasMaxLength(200);
             modelBuilder.Entity<IdentityUserLogin>()
                 .ToTable("t1_logins_tb")
@@ -76,8 +84,6 @@ namespace CoachingPlan.Infraestructure.Data
             modelBuilder.Configurations.Add(new EspecialidadeMap());
             modelBuilder.Configurations.Add(new PontoForteMap());
             modelBuilder.Configurations.Add(new FragilidadeMap());
-            modelBuilder.Configurations.Add(new DispositivoMap());
-
         }
         public static AppDataContext Create()
         {

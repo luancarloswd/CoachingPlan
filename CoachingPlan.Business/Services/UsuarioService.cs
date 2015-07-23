@@ -3,7 +3,7 @@ using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure;
-using CoachingPlan.Infraestructure.Identity;
+
 using CoachingPlan.Resources.Messages;
 using System;
 using Microsoft.AspNet.Identity.Owin;
@@ -19,10 +19,10 @@ namespace CoachingPlan.Business.Services
     public class UsuarioService : IUsuarioService
     {
         readonly private IUsuarioRepository _repository;
-        readonly private ApplicationUserManager _userManager;
-        public UsuarioService(IUsuarioRepository repository, ApplicationUserManager userManager)
+       // readonly private ApplicationUserManager _userManager;
+        public UsuarioService(IUsuarioRepository repository)
         {
-            _userManager = userManager;
+           // _userManager = userManager;
             _repository = repository;
         }
 
@@ -86,15 +86,8 @@ namespace CoachingPlan.Business.Services
 
         public void Register(string email, string userName, string password)
         {
-            Usuario user = new Usuario
-            {
-                Pessoa =
-                    new Pessoa("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
-                UserName = userName,
-                Email = email,
-                PasswordHash = password
-            };
-            _repository.Create(user);
+            
+            _repository.Create(new Usuario());
 
             //if (!result.Succeeded)
             //{
@@ -103,7 +96,7 @@ namespace CoachingPlan.Business.Services
             //        throw new Exception(erro);
             //    }
             //}
-                
+
         }
 
         public void Remove(string id)

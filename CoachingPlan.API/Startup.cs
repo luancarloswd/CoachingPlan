@@ -10,7 +10,7 @@ using System;
 using Microsoft.AspNet.Identity.Owin;
 using System.Web.Http;
 using CoachingPlan.Infraestructure.Data;
-using CoachingPlan.Infraestructure.Identity;
+
 
 namespace CoachingPlan.API
 {

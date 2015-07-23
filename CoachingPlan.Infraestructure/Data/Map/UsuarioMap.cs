@@ -12,25 +12,6 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasRequired<Pessoa>(s => s.Pessoa)
                 .WithMany(s => s.Usuario);
 
-            Property(x => x.Id)
-                .HasColumnName("Id_Usuario")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
-            Property(x => x.Email)
-                .HasColumnName("Email")
-                .IsRequired();
-
-            Property(x => x.EmailConfirmed)
-                .HasColumnName("Email_Confirmado")
-                .IsRequired();
-
-            Property(x => x.PhoneNumber)
-                .HasColumnName("Numero_Telefone");
-
-            Property(x => x.PhoneNumberConfirmed)
-                .HasColumnName("Numero_Telefone_Confirmado");
-
-
         }
     }
 }
