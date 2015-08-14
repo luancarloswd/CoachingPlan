@@ -6,11 +6,11 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IUsuarioRepository : IDisposable
     {
-        Usuario GetOne(string id);
-        Usuario GetOneByEmail(string email);
-        List<Usuario> GetAll();
-        void Create(Usuario Usuario);
-        void Update(Usuario Usuario);
-        void Delete(Usuario Usuario);
+        User GetOne(string id);
+        User GetOneByEmail(string email);
+        List<User> GetAll();
+        void Create(User Usuario);
+        void Update(User Usuario);
+        void Delete(User Usuario);
     }
 }

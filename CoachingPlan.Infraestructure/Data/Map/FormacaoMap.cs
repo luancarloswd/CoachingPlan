@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class FormacaoMap : EntityTypeConfiguration<Formacao>
+    public class FormacaoMap : EntityTypeConfiguration<Formation>
     {
         public FormacaoMap()
         {
@@ -21,7 +21,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasMaxLength(45)
                 .IsRequired();
 
-            Property(X => X.Descricao)
+            Property(X => X.Description)
                 .HasColumnName("Descricao_Formacao")
                 .IsOptional();
         }

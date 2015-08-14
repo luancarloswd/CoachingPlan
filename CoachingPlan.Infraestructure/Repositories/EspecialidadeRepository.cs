@@ -16,30 +16,30 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Especialidade GetOne(Guid id)
+        public Speciality GetOne(Guid id)
         {
             return _context.Especialidade.Where(x => x.Id == id).FirstOrDefault();
         }
 
 
-        public List<Especialidade> GetAll()
+        public List<Speciality> GetAll()
         {
             return _context.Especialidade.ToList();
         }
 
-        public void Create(Especialidade Especialidade)
+        public void Create(Speciality Especialidade)
         {
             _context.Especialidade.Add(Especialidade);
             _context.SaveChanges();
         }
 
-        public void Update(Especialidade Especialidade)
+        public void Update(Speciality Especialidade)
         {
-            _context.Entry<Especialidade>(Especialidade).State = EntityState.Modified;
+            _context.Entry<Speciality>(Especialidade).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Especialidade Especialidade)
+        public void Delete(Speciality Especialidade)
         {
             _context.Especialidade.Remove(Especialidade);
             _context.SaveChanges();

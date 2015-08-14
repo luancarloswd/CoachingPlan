@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IFormacaoService : IDisposable
     {
-        Formacao GetOne(Guid id);
-        void Register(Formacao Formacao);
-        void ChageInformation(Guid id, Formacao Formacao);
+        Formation GetOne(Guid id);
+        void Register(Formation Formacao);
+        void ChageInformation(Guid id, Formation Formacao);
         void Remove(Guid id);
-        ICollection<Formacao> GetAll(); 
+        ICollection<Formation> GetAll(); 
     }
 }

@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IEnderecoService : IDisposable
     {
-        Endereco GetOne(Guid id);
-        void Register(Endereco endereco);
-        void ChageInformation(Guid id, Endereco endereco);
+        Address GetOne(Guid id);
+        void Register(Address endereco);
+        void ChageInformation(Guid id, Address endereco);
         void Remove(Guid id);
-        ICollection<Endereco> GetAll(); 
+        ICollection<Address> GetAll(); 
     }
 }

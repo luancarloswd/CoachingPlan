@@ -16,29 +16,29 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Endereco GetOne(Guid id)
+        public Address GetOne(Guid id)
         {
             return _context.Endereco.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public List<Endereco> GetAll()
+        public List<Address> GetAll()
         {
             return _context.Endereco.ToList();
         }
 
-        public void Create(Endereco Endereco)
+        public void Create(Address Endereco)
         {
             _context.Endereco.Add(Endereco);
             _context.SaveChanges();
         }
 
-        public void Update(Endereco Endereco)
+        public void Update(Address Endereco)
         {
-            _context.Entry<Endereco>(Endereco).State = EntityState.Modified;
+            _context.Entry<Address>(Endereco).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Endereco Endereco)
+        public void Delete(Address Endereco)
         {
             _context.Endereco.Remove(Endereco);
             _context.SaveChanges();

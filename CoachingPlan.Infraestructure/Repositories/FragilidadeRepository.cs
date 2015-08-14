@@ -16,28 +16,28 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Fragilidade GetOne(Guid id)
+        public Weakness GetOne(Guid id)
         {
             return _context.Fragilidade.Where(x => x.Id == id).FirstOrDefault();
         }
-        public List<Fragilidade> GetAll()
+        public List<Weakness> GetAll()
         {
             return _context.Fragilidade.ToList();
         }
 
-        public void Create(Fragilidade Fragilidade)
+        public void Create(Weakness Fragilidade)
         {
             _context.Fragilidade.Add(Fragilidade);
             _context.SaveChanges();
         }
 
-        public void Update(Fragilidade Fragilidade)
+        public void Update(Weakness Fragilidade)
         {
-            _context.Entry<Fragilidade>(Fragilidade).State = EntityState.Modified;
+            _context.Entry<Weakness>(Fragilidade).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Fragilidade Fragilidade)
+        public void Delete(Weakness Fragilidade)
         {
             _context.Fragilidade.Remove(Fragilidade);
             _context.SaveChanges();

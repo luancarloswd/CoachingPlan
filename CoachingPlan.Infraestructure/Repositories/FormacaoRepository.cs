@@ -16,29 +16,29 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Formacao GetOne(Guid id)
+        public Formation GetOne(Guid id)
         {
             return _context.Formacao.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public List<Formacao> GetAll()
+        public List<Formation> GetAll()
         {
             return _context.Formacao.ToList();
         }
 
-        public void Create(Formacao Formacao)
+        public void Create(Formation Formacao)
         {
             _context.Formacao.Add(Formacao);
             _context.SaveChanges();
         }
 
-        public void Update(Formacao Formacao)
+        public void Update(Formation Formacao)
         {
-            _context.Entry<Formacao>(Formacao).State = EntityState.Modified;
+            _context.Entry<Formation>(Formacao).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Formacao Formacao)
+        public void Delete(Formation Formacao)
         {
             _context.Formacao.Remove(Formacao);
             _context.SaveChanges();

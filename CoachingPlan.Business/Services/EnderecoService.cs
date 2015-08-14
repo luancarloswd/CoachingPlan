@@ -15,7 +15,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public Endereco GetOne(Guid id)
+        public Address GetOne(Guid id)
         {
             var Endereco = _repository.GetOne(id);
             if (Endereco == null)
@@ -24,23 +24,23 @@ namespace CoachingPlan.Business.Services
             return Endereco;
         }
 
-        public void Register(Endereco Endereco)
+        public void Register(Address Endereco)
         {
             Endereco.Validate();
 
             _repository.Create(Endereco);
         }
 
-        public void ChageInformation(Guid id, Endereco endereco)
+        public void ChageInformation(Guid id, Address endereco)
         {
             var Endereco = GetOne(id);
 
-            Endereco.ChangeTipo(endereco.Tipo);
+            Endereco.ChangeTipo(endereco.Type);
             Endereco.ChangeCEP(endereco.CEP);
-            Endereco.ChangeCidade(endereco.Cidade);
-            Endereco.ChangeEstado(endereco.Estado);
+            Endereco.ChangeCidade(endereco.City);
+            Endereco.ChangeEstado(endereco.State);
             Endereco.ChangeNumero(endereco.Numero);
-            Endereco.ChangeRua(endereco.Rua);
+            Endereco.ChangeRua(endereco.Street);
             Endereco.Validate();
 
             _repository.Update(Endereco);
@@ -51,7 +51,7 @@ namespace CoachingPlan.Business.Services
             var Endereco = GetOne(id);
             _repository.Delete(Endereco);
         }
-        public ICollection<Endereco> GetAll()
+        public ICollection<Address> GetAll()
         {
             return _repository.GetAll();
         }

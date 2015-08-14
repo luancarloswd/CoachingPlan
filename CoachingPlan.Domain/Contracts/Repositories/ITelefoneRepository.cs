@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface ITelefoneRepository : IDisposable
     {
-        Telefone GetOne(Guid id);
-        List<Telefone> GetAll();
-        void Create(Telefone Telefone);
-        void Update(Telefone Telefone);
-        void Delete(Telefone Telefone);
+        Phone GetOne(Guid id);
+        List<Phone> GetAll();
+        void Create(Phone Telefone);
+        void Update(Phone Telefone);
+        void Delete(Phone Telefone);
     }
 }

@@ -14,7 +14,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public Fragilidade GetOne(Guid id)
+        public Weakness GetOne(Guid id)
         {
             var Fragilidade = _repository.GetOne(id);
             if (Fragilidade == null)
@@ -23,14 +23,14 @@ namespace CoachingPlan.Business.Services
             return Fragilidade;
         }
 
-        public void Register(Fragilidade Fragilidade)
+        public void Register(Weakness Fragilidade)
         {
             Fragilidade.Validate();
 
             _repository.Create(Fragilidade);
         }
 
-        public void ChageInformation(Guid id, Fragilidade fragilidade)
+        public void ChageInformation(Guid id, Weakness fragilidade)
         {
             var Fragilidade = GetOne(id);
 
@@ -46,7 +46,7 @@ namespace CoachingPlan.Business.Services
             var Fragilidade = GetOne(id);
             _repository.Delete(Fragilidade);
         }
-        public ICollection<Fragilidade> GetAll()
+        public ICollection<Weakness> GetAll()
         {
             return _repository.GetAll();
         }

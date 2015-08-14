@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class PontoForteMap : EntityTypeConfiguration<PontoForte>
+    public class PontoForteMap : EntityTypeConfiguration<StrongPoint>
     {
         public PontoForteMap()
         {
@@ -16,12 +16,12 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Id_Ponto_Forte")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Nome)
+            Property(x => x.Name)
                 .HasColumnName("Nome_Ponto_Foret")
                 .HasMaxLength(30)
                 .IsRequired();
 
-            Property(x => x.Descricao)
+            Property(x => x.Description)
                 .HasColumnName("Descricao_Ponto_Forte")
                 .IsOptional();
         }

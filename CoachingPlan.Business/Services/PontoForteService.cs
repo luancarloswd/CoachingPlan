@@ -14,7 +14,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public PontoForte GetOne(Guid id)
+        public StrongPoint GetOne(Guid id)
         {
             var PontoForte = _repository.GetOne(id);
             if (PontoForte == null)
@@ -23,20 +23,20 @@ namespace CoachingPlan.Business.Services
             return PontoForte;
         }
 
-        public void Register(PontoForte PontoForte)
+        public void Register(StrongPoint PontoForte)
         {
             PontoForte.Validate();
 
             _repository.Create(PontoForte);
         }
 
-        public void ChageInformation(Guid id, PontoForte pontoForte)
+        public void ChageInformation(Guid id, StrongPoint pontoForte)
         {
             var PontoForte = GetOne(id);
 
-            PontoForte.ChangeStrongPoing(pontoForte.Nome);
-            PontoForte.ChangeClass(pontoForte.Classe);
-            PontoForte.ChangeDescription(pontoForte.Descricao);
+            PontoForte.ChangeStrongPoing(pontoForte.Name);
+            PontoForte.ChangeClass(pontoForte.Class);
+            PontoForte.ChangeDescription(pontoForte.Description);
             PontoForte.Validate();
 
             _repository.Update(PontoForte);
@@ -47,7 +47,7 @@ namespace CoachingPlan.Business.Services
             var PontoForte = GetOne(id);
             _repository.Delete(PontoForte);
         }
-        public ICollection<PontoForte> GetAll()
+        public ICollection<StrongPoint> GetAll()
         {
             return _repository.GetAll();
         }

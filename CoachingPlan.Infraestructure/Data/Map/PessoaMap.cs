@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class PessoaMap : EntityTypeConfiguration<Pessoa>
+    public class PessoaMap : EntityTypeConfiguration<People>
     {
         public PessoaMap()
         {
@@ -14,7 +14,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Id_Pessoa")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Nome)
+            Property(x => x.Name)
                 .HasColumnName("Nome_Pessoa")
                 .HasMaxLength(65)
                 .IsRequired();
@@ -29,7 +29,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .IsFixedLength()
                 .IsRequired();
 
-            Property(x => x.DataNascimento)
+            Property(x => x.BirthDate)
                .HasColumnName("Data_Nascimento_Pessoa")
                .HasColumnType("Date")
                .IsRequired();

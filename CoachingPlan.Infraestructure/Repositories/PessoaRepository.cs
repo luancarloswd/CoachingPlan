@@ -16,29 +16,29 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Pessoa GetOne(Guid id)
+        public People GetOne(Guid id)
         {
             return _context.Pessoa.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public List<Pessoa> GetAll()
+        public List<People> GetAll()
         {
             return _context.Pessoa.ToList();
         }
 
-        public void Create(Pessoa Pessoa)
+        public void Create(People Pessoa)
         {
             _context.Pessoa.Add(Pessoa);
             _context.SaveChanges();
         }
 
-        public void Update(Pessoa Pessoa)
+        public void Update(People Pessoa)
         {
-            _context.Entry<Pessoa>(Pessoa).State = EntityState.Modified;
+            _context.Entry<People>(Pessoa).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Pessoa Pessoa)
+        public void Delete(People Pessoa)
         {
             _context.Pessoa.Remove(Pessoa);
             _context.SaveChanges();

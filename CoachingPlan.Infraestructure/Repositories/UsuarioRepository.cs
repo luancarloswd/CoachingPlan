@@ -21,40 +21,40 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public Usuario GetOne(string id)
+        public User GetOne(string id)
         {
-            return new Usuario();
+            return new User();
         }
-        public Usuario GetOneByEmail(string email)
+        public User GetOneByEmail(string email)
         {
-            return new Usuario();
+            return new User();
         }
-        public List<Usuario> GetAll()
+        public List<User> GetAll()
         {
-            return new List<Usuario>();
+            return new List<User>();
         }
 
-        public void Create(Usuario Usuario)
+        public void Create(User Usuario)
         {
-            var manager = new UserManager<Usuario>(new UserStore<Usuario>(new AppDataContext()));
+            var manager = new UserManager<User>(new UserStore<User>(new AppDataContext()));
  
-            manager.Create(new Usuario()
+            manager.Create(new User()
             {
                 Pessoa =
-                    new Pessoa("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
+                    new People("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
                 UserName = "teste",
                 Email = "teste",
             }, "@teste");
 
         }
 
-        public void Update(Usuario Usuario)
+        public void Update(User Usuario)
         {
-            _context.Entry<Usuario>(Usuario).State = EntityState.Modified;
+            _context.Entry<User>(Usuario).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(Usuario Usuario)
+        public void Delete(User Usuario)
         {
            
             _context.SaveChanges();

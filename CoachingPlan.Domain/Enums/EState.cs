@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoachingPlan.Domain.Enums
+﻿namespace CoachingPlan.Domain.Enums
 {
-    public class EEstado
+    public class EState
     {
-        public enum Estados
+        public enum States
         {
             AC, // Acre
             AL, // Alagoas

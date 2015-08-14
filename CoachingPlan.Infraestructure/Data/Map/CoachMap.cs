@@ -9,7 +9,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
         public CoachMap()
         {
             ToTable("a5_coach_tb")
-                .HasRequired<Usuario>(s => s.Usuario)
+                .HasRequired<User>(s => s.Usuario)
                 .WithMany(s => s.Coach);
 
             Property(x => x.Id)

@@ -16,28 +16,28 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             this._context = context;
         }
-        public PontoForte GetOne(Guid id)
+        public StrongPoint GetOne(Guid id)
         {
             return _context.PontoForte.Where(x => x.Id == id).FirstOrDefault();
         }
-        public List<PontoForte> GetAll()
+        public List<StrongPoint> GetAll()
         {
             return _context.PontoForte.ToList();
         }
 
-        public void Create(PontoForte PontoForte)
+        public void Create(StrongPoint PontoForte)
         {
             _context.PontoForte.Add(PontoForte);
             _context.SaveChanges();
         }
 
-        public void Update(PontoForte PontoForte)
+        public void Update(StrongPoint PontoForte)
         {
-            _context.Entry<PontoForte>(PontoForte).State = EntityState.Modified;
+            _context.Entry<StrongPoint>(PontoForte).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(PontoForte PontoForte)
+        public void Delete(StrongPoint PontoForte)
         {
             _context.PontoForte.Remove(PontoForte);
             _context.SaveChanges();

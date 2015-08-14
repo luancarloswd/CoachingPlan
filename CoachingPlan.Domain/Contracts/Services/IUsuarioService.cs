@@ -7,12 +7,12 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IUsuarioService : IDisposable
     {
-        Usuario GetOne(string id);
-        Usuario GetByEmail(string email);
+        User GetOne(string id);
+        User GetByEmail(string email);
         void Remove(string id);
-        ICollection<Usuario> GetAll();
+        ICollection<User> GetAll();
         void Register(string email, string userName, string password);
-        Usuario Login(string email, string password, bool remeberme);
+        User Login(string email, string password, bool remeberme);
         bool VerifyCode(string provider, string returnUrl, bool rememberMe);
         bool ConfirmEmail(string userId, string code);
         string ForgotPassword(string email);

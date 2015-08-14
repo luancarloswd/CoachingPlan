@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IEspecialidadeRepository : IDisposable
     {
-        Especialidade GetOne(Guid id);
-        List<Especialidade> GetAll();
-        void Create(Especialidade Especialidade);
-        void Update(Especialidade Especialidade);
-        void Delete(Especialidade Especialidade);
+        Speciality GetOne(Guid id);
+        List<Speciality> GetAll();
+        void Create(Speciality Especialidade);
+        void Update(Speciality Especialidade);
+        void Delete(Speciality Especialidade);
     }
 }

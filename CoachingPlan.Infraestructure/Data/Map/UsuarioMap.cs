@@ -4,12 +4,12 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class UsuarioMap : EntityTypeConfiguration<Usuario>
+    public class UsuarioMap : EntityTypeConfiguration<User>
     {
         public UsuarioMap()
         {
             ToTable("a4_usuario_tb")
-                .HasRequired<Pessoa>(s => s.Pessoa)
+                .HasRequired<People>(s => s.Pessoa)
                 .WithMany(s => s.Usuario);
 
         }

@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IEspecialidadeService : IDisposable
     {
-        Especialidade GetOne(Guid id);
-        void Register(Especialidade Especialidade);
-        void ChageInformation(Guid id, Especialidade Especialidade);
+        Speciality GetOne(Guid id);
+        void Register(Speciality Especialidade);
+        void ChageInformation(Guid id, Speciality Especialidade);
         void Remove(Guid id);
-        ICollection<Especialidade> GetAll(); 
+        ICollection<Speciality> GetAll(); 
     }
 }

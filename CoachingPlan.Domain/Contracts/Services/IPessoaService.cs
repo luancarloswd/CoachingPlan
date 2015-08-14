@@ -7,10 +7,10 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IPessoaService : IDisposable
     {
-        Pessoa GetOne(Guid id);
+        People GetOne(Guid id);
         void Register(string nome, string cpf, DateTime dataNacimneto, EGenero.Genero genero, bool status, string foto = null);
-        void ChageInformation(Guid id, Pessoa Pessoa);
+        void ChageInformation(Guid id, People Pessoa);
         void Remove(Guid id);
-        ICollection<Pessoa> GetAll(); 
+        ICollection<People> GetAll(); 
     }
 }

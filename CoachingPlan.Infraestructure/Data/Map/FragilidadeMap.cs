@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class FragilidadeMap : EntityTypeConfiguration<Fragilidade>
+    public class FragilidadeMap : EntityTypeConfiguration<Weakness>
     {
         public FragilidadeMap()
         {

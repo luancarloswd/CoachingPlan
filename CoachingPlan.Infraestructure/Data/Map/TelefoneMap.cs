@@ -4,12 +4,12 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class TelefoneMap : EntityTypeConfiguration<Telefone>
+    public class TelefoneMap : EntityTypeConfiguration<Phone>
     {
         public TelefoneMap()
         {
             ToTable("a2_telefone_tb")
-                .HasRequired<Pessoa>(s => s.Pessoa)
+                .HasRequired<People>(s => s.People)
                 .WithMany(s => s.Telefone);
 
 
@@ -29,7 +29,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .IsFixedLength()
                 .IsRequired();
 
-            Property(x => x.Descricao)
+            Property(x => x.Description)
                 .HasColumnName("Descricao_Telefone");
         }
     }

@@ -31,9 +31,9 @@ namespace CoachingPlan.Business.Services
             _repository.Dispose();
         }
 
-        public Usuario GetByEmail(string email)
+        public User GetByEmail(string email)
         {
-            Usuario user = _repository.GetOneByEmail(email);
+            User user = _repository.GetOneByEmail(email);
             if (user == null)
                 throw new Exception(Errors.UserNotFound);
 
@@ -64,12 +64,12 @@ namespace CoachingPlan.Business.Services
             throw new NotImplementedException();
         }
 
-        public ICollection<Usuario> GetAll()
+        public ICollection<User> GetAll()
         {
             return _repository.GetAll();
         }
 
-        public Usuario GetOne(string id)
+        public User GetOne(string id)
         {
             return _repository.GetOne(id);
         }
@@ -79,7 +79,7 @@ namespace CoachingPlan.Business.Services
             throw new NotImplementedException();
         }
 
-        public Usuario Login(string email, string password, bool remeberme)
+        public User Login(string email, string password, bool remeberme)
         {
            throw new NotImplementedException();
         }
@@ -87,7 +87,7 @@ namespace CoachingPlan.Business.Services
         public void Register(string email, string userName, string password)
         {
             
-            _repository.Create(new Usuario());
+            _repository.Create(new User());
 
             //if (!result.Succeeded)
             //{

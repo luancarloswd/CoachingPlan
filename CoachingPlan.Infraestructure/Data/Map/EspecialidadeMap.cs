@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class EspecialidadeMap : EntityTypeConfiguration<Especialidade>
+    public class EspecialidadeMap : EntityTypeConfiguration<Speciality>
     {
         public EspecialidadeMap()
         {
@@ -16,12 +16,12 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Id_Especialidde")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Nome)
+            Property(x => x.Name)
                 .HasColumnName("Nome_Especialidade")
                 .HasMaxLength(45)
                 .IsRequired();
 
-            Property(x => x.Descricao)
+            Property(x => x.Description)
                 .HasColumnName("Descricao_Especialidade")
                 .IsOptional();
         }

@@ -1,32 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoachingPlan.Domain.Models
 {
     public class Coach
     {
         #region Ctor
-        //protected Coach(){}
         public Coach()
         {
             this.Id = Guid.NewGuid();
-            //this.Ferramenta_Avaliacao = new HashSet<Ferramenta_Avaliacao>();
-            this.Especialidade = new HashSet<Especialidade>();
-            this.Formacao = new HashSet<Formacao>();
-            //this.Processo_Coaching = new HashSet<Processo_Coaching>();
+            this.EvaluationTool = new HashSet<EvaluationTool>();
+            this.Speciality = new HashSet<Speciality>();
+            this.Formation = new HashSet<Formation>();
+            this.CoachingProcess = new HashSet<CoachingProcess>();
         }
         #endregion
+
         #region Properties
         public Guid Id { get; private set; }
-        //public virtual ICollection<Ferramenta_Avaliacao> Ferramenta_Avaliacao { get; set; }
-        public virtual ICollection<Especialidade> Especialidade { get; set; }
-        public virtual ICollection<Formacao> Formacao { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        //public virtual ICollection<Processo_Coaching> Processo_Coaching { get; set; }
+        public virtual ICollection<EvaluationTool> EvaluationTool { get; private set; }
+        public virtual ICollection<Speciality> Speciality { get; private set; }
+        public virtual ICollection<Formation> Formation { get; private set; }
+        public virtual User User { get; private set; }
+        public virtual ICollection<CoachingProcess> CoachingProcess { get; private set; }
         #endregion
+
         #region Methods
         #endregion
     }

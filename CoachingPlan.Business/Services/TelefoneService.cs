@@ -15,7 +15,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public Telefone GetOne(Guid id)
+        public Phone GetOne(Guid id)
         {
             var Telefone = _repository.GetOne(id);
             if (Telefone == null)
@@ -26,19 +26,19 @@ namespace CoachingPlan.Business.Services
 
         public void Register(string ddd, string numero, string descricao = null)
         {
-            Telefone telefone = new Telefone(ddd, numero, descricao);
+            Phone telefone = new Phone(ddd, numero, descricao);
             telefone.Validate();
 
             _repository.Create(telefone);
         }
 
-        public void ChageInformation(Guid id, Telefone telefone)
+        public void ChageInformation(Guid id, Phone telefone)
         {
             var Telefone = GetOne(id);
 
             Telefone.ChangeDDD(telefone.DDD);
             Telefone.ChangeNumber(telefone.Numero);
-            Telefone.ChangeDescription(telefone.Descricao);
+            Telefone.ChangeDescription(telefone.Description);
             Telefone.Validate();
 
             _repository.Update(telefone);
@@ -49,7 +49,7 @@ namespace CoachingPlan.Business.Services
             var Telefone = GetOne(id);
             _repository.Delete(Telefone);
         }
-        public ICollection<Telefone> GetAll()
+        public ICollection<Phone> GetAll()
         {
             return _repository.GetAll();
         }

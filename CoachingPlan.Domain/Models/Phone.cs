@@ -4,44 +4,46 @@ using System;
 
 namespace CoachingPlan.Domain.Models
 {
-    public class Telefone
+    public class Phone
     {
         #region Ctor
-        protected Telefone (){ }
-        public Telefone(string ddd, string numero, string descricao = null)
+        protected Phone (){ }
+        public Phone(string ddd, string number, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.DDD = ddd;
-            this.Numero = numero;
-            this.Descricao = descricao;
+            this.Number = number;
+            this.Description = description;
         }
         #endregion
+
         #region Properties
         public Guid Id { get; private set; }
         public string DDD { get; private set; }
-        public string Numero { get; private set; }
-        public string Descricao { get; private set; }
-        public virtual Pessoa Pessoa { get; set; }
+        public string Number { get; private set; }
+        public string Description { get; private set; }
+        public virtual People People { get; set; }
         #endregion
+        
         #region Methods
-        public void ChangeDescription(string descricao)
+        public void ChangeDescription(string description)
         {
-            this.Descricao = descricao;
+            this.Description = description;
         }
         public void ChangeDDD(string DDD)
         {
             this.DDD = DDD;
         }
-        public void ChangeNumber(string numero)
+        public void ChangeNumber(string number)
         {
-            this.Numero = numero;
+            this.Number = number;
         }
         public void Validate()
         {
             AssertionConcern.AssertArgumentNotNull(this.DDD, Errors.InvalidDDD);
             AssertionConcern.AssertArgumentLength(this.DDD, 2, 2, Errors.InvalidDDD);
-            AssertionConcern.AssertArgumentNotNull(this.Numero, Errors.InvalidTelefone);
-            AssertionConcern.AssertArgumentLength(this.Numero, 8, 8, Errors.InvalidTelefone);
+            AssertionConcern.AssertArgumentNotNull(this.Number, Errors.InvalidTelefone);
+            AssertionConcern.AssertArgumentLength(this.Number, 8, 8, Errors.InvalidTelefone);
         }
 
         #endregion

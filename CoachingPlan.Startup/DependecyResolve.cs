@@ -56,10 +56,10 @@ namespace CoachingPlan.Startup
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => new OwinContext().Authentication));
             
             //Models
-            container.RegisterType<Usuario, Usuario>(new HierarchicalLifetimeManager());
-            container.RegisterType<Pessoa, Pessoa>(new HierarchicalLifetimeManager());
-            container.RegisterType<Telefone, Telefone>(new HierarchicalLifetimeManager());
-            container.RegisterType<Endereco, Endereco>(new HierarchicalLifetimeManager());
+            container.RegisterType<User, User>(new HierarchicalLifetimeManager());
+            container.RegisterType<People, People>(new HierarchicalLifetimeManager());
+            container.RegisterType<Phone, Phone>(new HierarchicalLifetimeManager());
+            container.RegisterType<Address, Address>(new HierarchicalLifetimeManager());
         }
     }
 }

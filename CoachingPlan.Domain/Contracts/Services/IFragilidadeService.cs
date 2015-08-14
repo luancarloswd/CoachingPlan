@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Services
 {
     public interface IFragilidadeService : IDisposable
     {
-        Fragilidade GetOne(Guid id);
-        void Register(Fragilidade Fragilidade);
-        void ChageInformation(Guid id, Fragilidade Fragilidade);
+        Weakness GetOne(Guid id);
+        void Register(Weakness Fragilidade);
+        void ChageInformation(Guid id, Weakness Fragilidade);
         void Remove(Guid id);
-        ICollection<Fragilidade> GetAll(); 
+        ICollection<Weakness> GetAll(); 
     }
 }

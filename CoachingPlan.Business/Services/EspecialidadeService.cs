@@ -14,7 +14,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public Especialidade GetOne(Guid id)
+        public Speciality GetOne(Guid id)
         {
             var Especialidade = _repository.GetOne(id);
             if (Especialidade == null)
@@ -23,19 +23,19 @@ namespace CoachingPlan.Business.Services
             return Especialidade;
         }
 
-        public void Register(Especialidade Especialidade)
+        public void Register(Speciality Especialidade)
         {
             Especialidade.Validate();
 
             _repository.Create(Especialidade);
         }
 
-        public void ChageInformation(Guid id, Especialidade especialidade)
+        public void ChageInformation(Guid id, Speciality especialidade)
         {
             var Especialidade = GetOne(id);
 
-            Especialidade.ChangeSpecialty(especialidade.Nome);
-            Especialidade.ChangeDescription(especialidade.Descricao);
+            Especialidade.ChangeSpecialty(especialidade.Name);
+            Especialidade.ChangeDescription(especialidade.Description);
             Especialidade.Validate();
 
             _repository.Update(Especialidade);
@@ -46,7 +46,7 @@ namespace CoachingPlan.Business.Services
             var Especialidade = GetOne(id);
             _repository.Delete(Especialidade);
         }
-        public ICollection<Especialidade> GetAll()
+        public ICollection<Speciality> GetAll()
         {
             return _repository.GetAll();
         }

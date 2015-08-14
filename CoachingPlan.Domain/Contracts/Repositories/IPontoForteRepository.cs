@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IPontoForteRepository : IDisposable
     {
-        PontoForte GetOne(Guid id);
-        List<PontoForte> GetAll();
-        void Create(PontoForte PontoForte);
-        void Update(PontoForte PontoForte);
-        void Delete(PontoForte PontoForte);
+        StrongPoint GetOne(Guid id);
+        List<StrongPoint> GetAll();
+        void Create(StrongPoint PontoForte);
+        void Update(StrongPoint PontoForte);
+        void Delete(StrongPoint PontoForte);
     }
 }

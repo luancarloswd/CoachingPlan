@@ -34,7 +34,7 @@ namespace CoachingPlan.API.Security
             try
             {
                _service.Register(context.UserName, context.UserName, context.Password);
-                ICollection<Usuario> users = _service.GetAll();
+                ICollection<User> users = _service.GetAll();
                 
             }
             catch (Exception ex)

@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IFormacaoRepository : IDisposable
     {
-        Formacao GetOne(Guid id);
-        List<Formacao> GetAll();
-        void Create(Formacao Formacao);
-        void Update(Formacao Formacao);
-        void Delete(Formacao Formacao);
+        Formation GetOne(Guid id);
+        List<Formation> GetAll();
+        void Create(Formation Formacao);
+        void Update(Formation Formacao);
+        void Delete(Formation Formacao);
     }
 }

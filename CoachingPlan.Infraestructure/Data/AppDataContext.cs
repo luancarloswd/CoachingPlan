@@ -9,7 +9,7 @@ using MySql.Data.Entity;
 
 namespace CoachingPlan.Infraestructure.Data
 {
-    public class AppDataContext : IdentityDbContext<Usuario>
+    public class AppDataContext : IdentityDbContext<User>
     {
         public AppDataContext()
             : base("AppConnectionString", throwIfV1Schema: true)
@@ -23,17 +23,16 @@ namespace CoachingPlan.Infraestructure.Data
         {
                DbConfiguration.SetConfiguration(new MySqlEFConfiguration()); 
         }
-        public DbSet<Telefone> Telefone { get; set; }
-        public DbSet<Endereco> Endereco { get; set; }
-        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Phone> Telefone { get; set; }
+        public DbSet<Address> Endereco { get; set; }
+        public DbSet<People> Pessoa { get; set; }
         //public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Coach> Coach { get; set; }
         public DbSet<Coachee> Coachee { get; set; }
-        public DbSet<Especialidade> Especialidade { get; set; }
-        public DbSet<Formacao> Formacao { get; set; }
-        public DbSet<PontoForte> PontoForte { get; set; }
-        public DbSet<Fragilidade> Fragilidade { get; set; }
-      //  public DbSet<Dispositivo> Dispositivo { get; set; }
+        public DbSet<Speciality> Especialidade { get; set; }
+        public DbSet<Formation> Formacao { get; set; }
+        public DbSet<StrongPoint> PontoForte { get; set; }
+        public DbSet<Weakness> Fragilidade { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,13 +47,13 @@ namespace CoachingPlan.Infraestructure.Data
                 .Property(x => x.Id).HasMaxLength(200);
             modelBuilder.Entity<IdentityUser>()
                 .Property(x => x.UserName).HasMaxLength(200);
-            modelBuilder.Entity<Usuario>()
+            modelBuilder.Entity<User>()
                 .ToTable("a4_usuario_tb")
-                .HasRequired<Pessoa>(s => s.Pessoa)
+                .HasRequired<People>(s => s.Pessoa)
                 .WithMany(s => s.Usuario);
-            modelBuilder.Entity<Usuario>()
+            modelBuilder.Entity<User>()
                 .Property(x => x.Id).HasMaxLength(200);
-            modelBuilder.Entity<Usuario>()
+            modelBuilder.Entity<User>()
                 .Property(x => x.UserName).HasMaxLength(200);
             modelBuilder.Entity<IdentityUserLogin>()
                 .ToTable("t1_logins_tb")

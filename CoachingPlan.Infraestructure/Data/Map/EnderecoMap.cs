@@ -4,12 +4,12 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class EnderecoMap : EntityTypeConfiguration<Endereco>
+    public class EnderecoMap : EntityTypeConfiguration<Address>
     {
         public EnderecoMap()
         {
             ToTable("a3_Endereco_tb")
-                .HasRequired<Pessoa>(s => s.Pessoa)
+                .HasRequired<People>(s => s.Pessoa)
                 .WithMany(s => s.Endereco);;
 
             Property(x => x.Id)
@@ -22,16 +22,16 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .IsFixedLength()
                 .IsRequired();
 
-            Property(x => x.Estado)
+            Property(x => x.State)
                             .HasColumnName("Estado_Endereco")
                             .IsRequired();
 
-            Property(x => x.Cidade)
+            Property(x => x.City)
                 .HasColumnName("Cidade_Endereco")
                 .HasMaxLength(35)
                 .IsRequired();
 
-            Property(x => x.Rua)
+            Property(x => x.Street)
                 .HasColumnName("Rua_Endereco")
                 .HasMaxLength(70)
                 .IsRequired();
@@ -40,11 +40,11 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Numero_Endereco")
                 .IsRequired();
 
-            Property(x => x.Tipo)
+            Property(x => x.Type)
                 .HasColumnName("Tipo_Endereco")
                 .IsRequired();
 
-            Property(x => x.Descricao)
+            Property(x => x.Description)
                 .HasColumnName("Descricao_Endereco")
                 .HasMaxLength(40);
         }

@@ -14,7 +14,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public Formacao GetOne(Guid id)
+        public Formation GetOne(Guid id)
         {
             var Formacao = _repository.GetOne(id);
             if (Formacao == null)
@@ -23,19 +23,19 @@ namespace CoachingPlan.Business.Services
             return Formacao;
         }
 
-        public void Register(Formacao Formacao)
+        public void Register(Formation Formacao)
         {
             Formacao.Validate();
 
             _repository.Create(Formacao);
         }
 
-        public void ChageInformation(Guid id, Formacao formacao)
+        public void ChageInformation(Guid id, Formation formacao)
         {
             var Formacao = GetOne(id);
 
             Formacao.ChangeTraining(Formacao.Nome);
-            Formacao.ChangeDescription(Formacao.Descricao);
+            Formacao.ChangeDescription(Formacao.Description);
             Formacao.Validate();
 
             _repository.Update(Formacao);
@@ -46,7 +46,7 @@ namespace CoachingPlan.Business.Services
             var Formacao = GetOne(id);
             _repository.Delete(Formacao);
         }
-        public ICollection<Formacao> GetAll()
+        public ICollection<Formation> GetAll()
         {
             return _repository.GetAll();
         }

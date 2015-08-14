@@ -1,27 +1,22 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoachingPlan.Domain.Models
 {
-    public class Usuario : IdentityUser
+    public class User : IdentityUser
     {
         #region Ctor
-        //protected Usuario() { }
-        public Usuario() 
+        public User() 
         {
-            //this.Sessao = new HashSet<Sessao>();
-            //this.Avaliacao = new HashSet<Avaliacao>();
-            //this.Mensagem = new HashSet<Mensagem>();
+            this.Session = new HashSet<Session>();
+            this.Evaluation = new HashSet<Evaluation>();
+            this.Message = new HashSet<Message>();
             this.Coachee = new HashSet<Coachee>();
             this.Coach = new HashSet<Coach>();
         }
         #endregion
+
         #region Properties
 
         public override string Id{ get; set; }
@@ -36,14 +31,15 @@ namespace CoachingPlan.Domain.Models
         public override DateTime? LockoutEndDateUtc { get; set; }
         public override bool LockoutEnabled { get; set; }
         public override int AccessFailedCount { get; set; }
-        public virtual Pessoa Pessoa { get;  set; }
-        //public virtual ICollection<Sessao> Sessao { get; set; }
-        //public virtual ICollection<Avaliacao> Avaliacao { get; set; }
-        //public virtual ICollection<Mensagem> Mensagem { get; set; }
-        public virtual ICollection<Coachee> Coachee { get; set; }
-        public virtual ICollection<Coach> Coach { get; set; }
+        public virtual People Pessoa { get;  set; }
+        public virtual ICollection<Session> Session { get; private set; }
+        public virtual ICollection<Evaluation> Evaluation { get; private set; }
+        public virtual ICollection<Message> Message { get; private set; }
+        public virtual ICollection<Coachee> Coachee { get; private set; }
+        public virtual ICollection<Coach> Coach { get; private set; }
       
         #endregion
+
         #region Methods
       
         #endregion

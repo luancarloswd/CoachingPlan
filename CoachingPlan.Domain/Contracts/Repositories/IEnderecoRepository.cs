@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IEnderecoRepository : IDisposable
     {
-        Endereco GetOne(Guid id);
-        List<Endereco> GetAll();
-        void Create(Endereco Endereco);
-        void Update(Endereco Endereco);
-        void Delete(Endereco Endereco);
+        Address GetOne(Guid id);
+        List<Address> GetAll();
+        void Create(Address Endereco);
+        void Update(Address Endereco);
+        void Delete(Address Endereco);
     }
 }
