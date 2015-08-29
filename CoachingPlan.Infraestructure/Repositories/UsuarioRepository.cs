@@ -13,56 +13,56 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
-    {
-        private AppDataContext _context;
+    //public class UsuarioRepository : IUsuarioRepository
+    //{
+    //    private AppDataContext _context;
 
-        public UsuarioRepository(AppDataContext context)
-        {
-            this._context = context;
-        }
-        public User GetOne(string id)
-        {
-            return new User();
-        }
-        public User GetOneByEmail(string email)
-        {
-            return new User();
-        }
-        public List<User> GetAll()
-        {
-            return new List<User>();
-        }
+    //    public UsuarioRepository(AppDataContext context)
+    //    {
+    //        this._context = context;
+    //    }
+    //    public User GetOne(string id)
+    //    {
+    //        return new User();
+    //    }
+    //    public User GetOneByEmail(string email)
+    //    {
+    //        return new User();
+    //    }
+    //    public List<User> GetAll()
+    //    {
+    //        return new List<User>();
+    //    }
 
-        public void Create(User Usuario)
-        {
-            var manager = new UserManager<User>(new UserStore<User>(new AppDataContext()));
+    //    public void Create(User Usuario)
+    //    {
+    //        var manager = new UserManager<User>(new UserStore<User>(new AppDataContext()));
  
-            manager.Create(new User()
-            {
-                Pessoa =
-                    new People("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
-                UserName = "teste",
-                Email = "teste",
-            }, "@teste");
+    //        manager.Create(new User()
+    //        {
+    //            Pessoa =
+    //                new Person("Luan Carlos Sousa Santos", "10559753659", DateTime.Now, EGenero.Genero.M, true, null),
+    //            UserName = "teste",
+    //            Email = "teste",
+    //        }, "@teste");
 
-        }
+    //    }
 
-        public void Update(User Usuario)
-        {
-            _context.Entry<User>(Usuario).State = EntityState.Modified;
-            _context.SaveChanges();
-        }
+    //    public void Update(User Usuario)
+    //    {
+    //        _context.Entry<User>(Usuario).State = EntityState.Modified;
+    //        _context.SaveChanges();
+    //    }
 
-        public void Delete(User Usuario)
-        {
+    //    public void Delete(User Usuario)
+    //    {
            
-            _context.SaveChanges();
-        }
+    //        _context.SaveChanges();
+    //    }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-    }
+    //    public void Dispose()
+    //    {
+    //        _context.Dispose();
+    //    }
+    //}
 }

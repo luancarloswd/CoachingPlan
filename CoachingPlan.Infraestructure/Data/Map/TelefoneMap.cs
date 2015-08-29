@@ -9,15 +9,15 @@ namespace CoachingPlan.Infraestructure.Data.Map
         public TelefoneMap()
         {
             ToTable("a2_telefone_tb")
-                .HasRequired<People>(s => s.People)
-                .WithMany(s => s.Telefone);
+                .HasRequired<Person>(s => s.Person)
+                .WithMany(s => s.Phone);
 
 
             Property(x => x.Id)
                 .HasColumnName("Id_Telefone")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Numero)
+            Property(x => x.Number)
                 .HasColumnName("Numero_Telefone")
                 .HasMaxLength(8)
                 .IsFixedLength()

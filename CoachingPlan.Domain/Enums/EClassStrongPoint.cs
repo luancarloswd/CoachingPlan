@@ -1,12 +1,10 @@
 ﻿namespace CoachingPlan.Domain.Enums
 {
-    public class EClassStrongPoint
+    public enum EClassStrongPoint
     {
-        public enum Class
-        {
-            Ability,
-            Talent,
-            Competence
-        }
+        Ability = 1,
+        Talent = 2,
+        Competence = 3
     }
+
 }

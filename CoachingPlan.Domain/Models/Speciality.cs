@@ -8,10 +8,12 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Speciality(){}
-        public Speciality(string name, string description = null)
+        public Speciality(string name, Coach coach, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
+            this.Coach = coach;
+            this.IdCoach = coach.Id;
             this.Description = description;
         }
         #endregion
@@ -20,6 +22,7 @@ namespace CoachingPlan.Domain.Models
         public Guid Id { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
+        public Guid IdCoach { get; private set; }
 
         public virtual Coach Coach { get; set; }
         #endregion
@@ -28,6 +31,7 @@ namespace CoachingPlan.Domain.Models
         public void ChangeName(string name)
         {
             this.Name = name;
+            this.Validate();
         }
         public void ChangeDescription(string description)
         {

@@ -23,28 +23,28 @@ namespace CoachingPlan.Startup
             container.RegisterType<AppDataContext, AppDataContext>(new HierarchicalLifetimeManager());
 
             //repositories
-            container.RegisterType<ITelefoneRepository, TelefoneRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IEnderecoRepository, EnderecoRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPessoaRepository, PessoaRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IUsuarioRepository, UsuarioRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ICoachRepository, CoachRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ICoacheeRepository, CoacheeRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IFragilidadeRepository, FragilidadeRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPontoForteRepository, PontoForteRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IEspecialidadeRepository, EspecialidadeRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IFormacaoRepository, FormacaoRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<ITelefoneRepository, TelefoneRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IEnderecoRepository, EnderecoRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IPessoaRepository, PessoaRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IUsuarioRepository, UsuarioRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<ICoachRepository, CoachRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<ICoacheeRepository, CoacheeRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IFragilidadeRepository, FragilidadeRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IPontoForteRepository, PontoForteRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IEspecialidadeRepository, EspecialidadeRepository>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IFormacaoRepository, FormacaoRepository>(new HierarchicalLifetimeManager());
 
-            //Services
-            container.RegisterType<ITelefoneService, TelefoneService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IEnderecoService, EnderecoService>(new HierarchicalLifetimeManager());
+            ////Services
+            //container.RegisterType<ITelefoneService, TelefoneService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IEnderecoService, EnderecoService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPessoaService, PessoaService>(new HierarchicalLifetimeManager());
             container.RegisterType<IUsuarioService, UsuarioService>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoachService, CoachService>(new HierarchicalLifetimeManager());
-            container.RegisterType<ICoacheeService, CoacheeService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IFragilidadeService, FragilidadeService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPontoForteService, PontoForteService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IEspecialidadeService, EspecialidadeService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IFormacaoService, FormacaoService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<ICoacheeService, CoacheeService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IFragilidadeService, FragilidadeService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IPontoForteService, PontoForteService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IEspecialidadeService, EspecialidadeService>(new HierarchicalLifetimeManager());
+            //container.RegisterType<IFormacaoService, FormacaoService>(new HierarchicalLifetimeManager());
 
             //Identity
             container.RegisterType(typeof(UserManager<>),
@@ -57,7 +57,7 @@ namespace CoachingPlan.Startup
             
             //Models
             container.RegisterType<User, User>(new HierarchicalLifetimeManager());
-            container.RegisterType<People, People>(new HierarchicalLifetimeManager());
+            container.RegisterType<Person, Person>(new HierarchicalLifetimeManager());
             container.RegisterType<Phone, Phone>(new HierarchicalLifetimeManager());
             container.RegisterType<Address, Address>(new HierarchicalLifetimeManager());
         }

@@ -8,16 +8,19 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Weakness(){}
-        public Weakness(string name, string description = null)
+        public Weakness(string name, Coachee coachee, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
+            this.Coachee = coachee;
+            this.IdCoachee = coachee.Id;
             this.Description = description;
         }
         #endregion
 
         #region Properties
         public Guid Id { get; private set; }
+        public Guid IdCoachee { get; private set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
 

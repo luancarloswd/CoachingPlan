@@ -9,8 +9,8 @@ namespace CoachingPlan.Infraestructure.Data.Map
         public EnderecoMap()
         {
             ToTable("a3_Endereco_tb")
-                .HasRequired<People>(s => s.Pessoa)
-                .WithMany(s => s.Endereco);;
+                .HasRequired<Person>(s => s.Person)
+                .WithMany(s => s.Address);;
 
             Property(x => x.Id)
                 .HasColumnName("Id_Endereco")
@@ -36,7 +36,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasMaxLength(70)
                 .IsRequired();
 
-            Property(x => x.Numero)
+            Property(x => x.Number)
                 .HasColumnName("Numero_Endereco")
                 .IsRequired();
 

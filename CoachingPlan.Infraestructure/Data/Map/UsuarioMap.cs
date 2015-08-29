@@ -9,8 +9,8 @@ namespace CoachingPlan.Infraestructure.Data.Map
         public UsuarioMap()
         {
             ToTable("a4_usuario_tb")
-                .HasRequired<People>(s => s.Pessoa)
-                .WithMany(s => s.Usuario);
+                .HasRequired<Person>(s => s.People)
+                .WithMany(s => s.User);
 
         }
     }

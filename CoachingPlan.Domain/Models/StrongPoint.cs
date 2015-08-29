@@ -9,9 +9,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected StrongPoint() {}
-        public StrongPoint(string name, EClassStrongPoint.Class classStrongPoint, string description = null)
+        public StrongPoint(string name, EClassStrongPoint classStrongPoint, Coachee coachee, string description = null)
         {
             this.Id = Guid.NewGuid();
+            this.Coachee = coachee;
+            this.IdCoachee = coachee.Id;
             this.Name = name;
             this.Class = classStrongPoint;
             this.Description = description;
@@ -20,8 +22,9 @@ namespace CoachingPlan.Domain.Models
 
         #region Properties
         public Guid Id { get; private set; }
+        public Guid IdCoachee { get; private set; }
         public string Name { get; private set; }
-        public EClassStrongPoint.Class Class { get; private set; }
+        public EClassStrongPoint Class { get; private set; }
         public string Description { get; private set; }
 
         public virtual Coachee Coachee { get; set; }
@@ -31,10 +34,12 @@ namespace CoachingPlan.Domain.Models
         public void ChangeName(string name)
         {
             this.Name = name;
+            this.Validate();
         }
-        public void ChangeClass(EClassStrongPoint.Class classStrongPoint)
+        public void ChangeClass(EClassStrongPoint classStrongPoint)
         {
             this.Class = classStrongPoint;
+            this.Validate();
         }
         public void ChangeDescription(string descricao)
         {

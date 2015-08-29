@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="17072475-2539-4f81-83eb-5ea687dc52e5"
   name="UC13 - Visualizar Agenda de Sessões" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -10,22 +10,22 @@
         name="UC13-Visualizar Agenda de Sessões"
         isAbstract="false"
         isLeaf="false">
-        <extendedCases>
-          <extend
-            Id="7f590421-8ec4-4e6c-984d-c00358761dd4">
-            <useCaseMoniker
-              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
-              LastKnownName="UC12-Acompanhar Processo de Coaching"
-              LastKnownLocation="Package1_1932.uml" />
-          </extend>
-          <extend
-            Id="f7be6f4b-1239-41fc-a2a8-6d393ae6ec30">
+        <additions>
+          <include
+            Id="8cc659e5-5b8d-468e-a1d7-2ab2fd5380ac">
             <useCaseMoniker
               Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
               LastKnownName="UC11-Gerenciar Sessões de Coaching"
               LastKnownLocation="Package_1932.uml" />
-          </extend>
-        </extendedCases>
+          </include>
+          <include
+            Id="03c7598a-3ff0-419b-8a89-2492870f12a0">
+            <useCaseMoniker
+              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
+              LastKnownName="UC12-Acompanhar Processo de Coaching"
+              LastKnownLocation="Package1_1932.uml" />
+          </include>
+        </additions>
       </useCase>
     </packageHasNamedElement>
   </packagedElements>

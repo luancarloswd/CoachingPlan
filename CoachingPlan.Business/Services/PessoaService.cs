@@ -17,7 +17,7 @@ namespace CoachingPlan.Business.Services
             _repository = repository;
         }
 
-        public People GetOne(Guid id)
+        public Person GetOne(Guid id)
         {
             var Pessoa = _repository.GetOne(id);
             if (Pessoa == null)
@@ -26,22 +26,22 @@ namespace CoachingPlan.Business.Services
             return Pessoa;
         }
 
-        public void Register(string nome, string cpf, DateTime dataNacimneto, EGenero.Genero genero, bool status, string foto = null)
+        public void Register(string nome, string cpf, DateTime dataNacimneto,EGenre genero, bool status, string foto = null)
         {
-            People pessoa = new People(nome, cpf, dataNacimneto, genero, status, foto);
+            Person pessoa = new Person(nome, cpf, dataNacimneto, genero, status, foto);
             pessoa.Validate();
 
             _repository.Create(pessoa);
         }
 
-        public void ChageInformation(Guid id, People pessoa)
+        public void ChageInformation(Guid id, Person pessoa)
         {
             var Pessoa = GetOne(id);
 
             Pessoa.ChangeCPF(pessoa.CPF);
-            Pessoa.ChangeDataNascimento(pessoa.BirthDate);
-            Pessoa.ChangeFoto(pessoa.Foto);
-            Pessoa.ChangeNome(pessoa.Name);
+            Pessoa.ChangeBirthDate(pessoa.BirthDate);
+            Pessoa.ChangePhotograph(pessoa.Photograph);
+            Pessoa.ChangeName(pessoa.Name);
             Pessoa.ChangeStatus(pessoa.Status);
             Pessoa.Validate();
 
@@ -53,7 +53,7 @@ namespace CoachingPlan.Business.Services
             var Pessoa = GetOne(id);
             _repository.Delete(Pessoa);
         }
-        public ICollection<People> GetAll()
+        public ICollection<Person> GetAll()
         {
             return _repository.GetAll();
         }

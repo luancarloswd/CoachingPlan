@@ -10,18 +10,18 @@ namespace CoachingPlan.Infraestructure.Data.Map
         {
             ToTable("a10_fragilidade_tb")
                 .HasRequired<Coachee>(s => s.Coachee)
-                .WithMany(s => s.Fragilidade);
+                .WithMany(s => s.Weakness);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Fragilidade")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Nome)
+            Property(x => x.Name)
                 .HasColumnName("Nome_Fragilidade")
                 .HasMaxLength(30)
                 .IsRequired();
 
-            Property(x => x.Descricao)
+            Property(x => x.Description)
                 .HasColumnName("Descricao_Fragilidade")
                 .IsOptional();
         }

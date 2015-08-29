@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AppDataContext.cs" />
+    <Compile Include="Data\Map\ActionPlanMap.cs" />
     <Compile Include="Data\Map\DispositivoMap.cs" />
     <Compile Include="Data\Map\FormacaoMap.cs" />
     <Compile Include="Data\Map\PontoForteMap.cs" />
@@ -90,7 +91,7 @@
     <Compile Include="Data\Map\EspecialidadeMap.cs" />
     <Compile Include="Data\Map\FragilidadeMap.cs" />
     <Compile Include="Data\Map\UsuarioMap.cs" />
-    <Compile Include="Data\Map\PessoaMap.cs" />
+    <Compile Include="Data\Map\PersonMap.cs" />
     <Compile Include="Data\Map\TelefoneMap.cs" />
     <Compile Include="Data\MySqlHistoryContext.cs" />
     <Compile Include="Data\MySqlInitializer.cs" />

@@ -117,74 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InvalidCEP" xml:space="preserve">
-    <value>CEP inválido</value>
-  </data>
-  <data name="InvalidCidade" xml:space="preserve">
-    <value>Cidade inválida</value>
-  </data>
-  <data name="InvalidCNPJ" xml:space="preserve">
-    <value>CNPJ inválido</value>
-  </data>
-  <data name="InvalidCPF" xml:space="preserve">
-    <value>CPF inválido</value>
-  </data>
-  <data name="InvalidDataNascimento" xml:space="preserve">
-    <value>Data de nascimento inválida</value>
-  </data>
-  <data name="InvalidDDD" xml:space="preserve">
-    <value>O valor do DDD deve conter 2 digítos</value>
-  </data>
-  <data name="InvalidDescricao" xml:space="preserve">
-    <value>Descriçaõ inválida</value>
-  </data>
-  <data name="InvalidEmail" xml:space="preserve">
-    <value>E-mail inválido</value>
-  </data>
-  <data name="InvalidEstado" xml:space="preserve">
-    <value>Estado inválido</value>
-  </data>
-  <data name="InvalidGenero" xml:space="preserve">
-    <value>Gênero inválido</value>
-  </data>
-  <data name="InvalidNome" xml:space="preserve">
-    <value>Nome inválido</value>
-  </data>
-  <data name="InvalidNumero" xml:space="preserve">
-    <value>Número inválido</value>
-  </data>
-  <data name="InvalidRua" xml:space="preserve">
-    <value>Rua inválida</value>
-  </data>
-  <data name="InvalidStatus" xml:space="preserve">
-    <value>Status inválido</value>
-  </data>
-  <data name="InvalidStrongPoint" xml:space="preserve">
-    <value>Ponto forte inválido</value>
-  </data>
-  <data name="InvalidTelefone" xml:space="preserve">
-    <value>O valor do número de telefone deve conter 8 digítos</value>
-  </data>
-  <data name="InvalidTipoEndereco" xml:space="preserve">
-    <value>Tipo de endereço inválido</value>
-  </data>
-  <data name="InvalidWeakness" xml:space="preserve">
-    <value>Fragilidade inválida</value>
-  </data>
-  <data name="TelefoneNotFound" xml:space="preserve">
-    <value>Telefone não encontrado</value>
-  </data>
-  <data name="InvalidClassStrongPoint" xml:space="preserve">
-    <value>Classe inválide</value>
-  </data>
-  <data name="InvalidProfession" xml:space="preserve">
-    <value>Profissão inválida</value>
-  </data>
-  <data name="InvalidSpecialty" xml:space="preserve">
-    <value>Especialidade inválida</value>
-  </data>
-  <data name="InvalidTraining" xml:space="preserve">
-    <value>Formação inválida</value>
+  <data name="AddressNotFound" xml:space="preserve">
+    <value>Endereço não encontrado</value>
   </data>
   <data name="CoacheeNotFound" xml:space="preserve">
     <value>Coachee não encontrado</value>
@@ -192,17 +126,98 @@
   <data name="CoachNotFound" xml:space="preserve">
     <value>Coach não encontrado</value>
   </data>
-  <data name="EnderecoNotFound" xml:space="preserve">
-    <value>Endereço não encontrado</value>
+  <data name="Failure" xml:space="preserve">
+    <value>Login falhou</value>
+  </data>
+  <data name="InvalidAddresType" xml:space="preserve">
+    <value>Tipo de endereço inválido</value>
+  </data>
+  <data name="InvalidBirthDate" xml:space="preserve">
+    <value>Data de nascimento inválida</value>
+  </data>
+  <data name="InvalidCEP" xml:space="preserve">
+    <value>CEP inválido</value>
+  </data>
+  <data name="InvalidCity" xml:space="preserve">
+    <value>Cidade inválida</value>
+  </data>
+  <data name="InvalidClassStrongPoint" xml:space="preserve">
+    <value>Classe inválide</value>
+  </data>
+  <data name="InvalidCNPJ" xml:space="preserve">
+    <value>CNPJ inválido</value>
+  </data>
+  <data name="InvalidCPF" xml:space="preserve">
+    <value>CPF inválido</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Dados Inválidos</value>
+  </data>
+  <data name="InvalidDDD" xml:space="preserve">
+    <value>O valor do DDD deve conter 2 digítos</value>
+  </data>
+  <data name="InvalidDescription" xml:space="preserve">
+    <value>Descriçaõ inválida</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>E-mail inválido</value>
+  </data>
+  <data name="InvalidGenre" xml:space="preserve">
+    <value>Gênero inválido</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Nome inválido</value>
+  </data>
+  <data name="InvalidNumber" xml:space="preserve">
+    <value>Número inválido</value>
+  </data>
+  <data name="InvalidPhone" xml:space="preserve">
+    <value>O valor do número de telefone deve conter 8 digítos</value>
+  </data>
+  <data name="InvalidProfession" xml:space="preserve">
+    <value>Profissão inválida</value>
+  </data>
+  <data name="InvalidSpecialty" xml:space="preserve">
+    <value>Especialidade inválida</value>
+  </data>
+  <data name="InvalidState" xml:space="preserve">
+    <value>Estado inválido</value>
+  </data>
+  <data name="InvalidStatus" xml:space="preserve">
+    <value>Status inválido</value>
+  </data>
+  <data name="InvalidStreet" xml:space="preserve">
+    <value>Rua inválida</value>
+  </data>
+  <data name="InvalidStrongPoint" xml:space="preserve">
+    <value>Ponto forte inválido</value>
+  </data>
+  <data name="InvalidTraining" xml:space="preserve">
+    <value>Formação inválida</value>
+  </data>
+  <data name="InvalidWeakness" xml:space="preserve">
+    <value>Fragilidade inválida</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>Usuário bloqueado</value>
   </data>
   <data name="PersonNotFound" xml:space="preserve">
     <value>Pessoa não encontrada</value>
+  </data>
+  <data name="RegistrationFailure" xml:space="preserve">
+    <value>Registro falhou</value>
+  </data>
+  <data name="RequiresVerification" xml:space="preserve">
+    <value>Verificação necessária</value>
   </data>
   <data name="SpecialtyNotFound" xml:space="preserve">
     <value>Especialidade não encontrada</value>
   </data>
   <data name="StrongPointNotFound" xml:space="preserve">
     <value>Ponto Forte não encontrado</value>
+  </data>
+  <data name="PhoneNotFound" xml:space="preserve">
+    <value>Telefone não encontrado</value>
   </data>
   <data name="TrainingNotFound" xml:space="preserve">
     <value>Formação não encontrada</value>
@@ -213,19 +228,88 @@
   <data name="WeaknessNotFound" xml:space="preserve">
     <value>Fragilidade não encontrada</value>
   </data>
-  <data name="Failure" xml:space="preserve">
-    <value>Login falhou</value>
+  <data name="BodyMessageIsRequired" xml:space="preserve">
+    <value>O campo corpo da menssagem é necessário</value>
   </data>
-  <data name="LockedOut" xml:space="preserve">
-    <value>Usuário bloqueado</value>
+  <data name="ClassificationIsRequired" xml:space="preserve">
+    <value>O campo classificação é necessário</value>
   </data>
-  <data name="RequiresVerification" xml:space="preserve">
-    <value>Verificação necessária</value>
+  <data name="DataIsRequired" xml:space="preserve">
+    <value>O campo data é necessário</value>
   </data>
-  <data name="InvalidCredentials" xml:space="preserve">
-    <value>Dados Inválidos</value>
+  <data name="DateIsRequired" xml:space="preserve">
+    <value>O campo data é necessário</value>
   </data>
-  <data name="RegistrationFailure" xml:space="preserve">
-    <value>Registro falhou</value>
+  <data name="DestinationIsRequired" xml:space="preserve">
+    <value>O campo destinatário é necessário</value>
+  </data>
+  <data name="EndTimeIsRequired" xml:space="preserve">
+    <value>O campo fim é necessário</value>
+  </data>
+  <data name="InvalidBodyMessage" xml:space="preserve">
+    <value>Corpo da mensagem inválido</value>
+  </data>
+  <data name="InvalidSubject" xml:space="preserve">
+    <value>Assunto inválido</value>
+  </data>
+  <data name="InvalidTheme" xml:space="preserve">
+    <value>Tema inválido</value>
+  </data>
+  <data name="ModeIsRequired" xml:space="preserve">
+    <value>O campo modo é necessário</value>
+  </data>
+  <data name="NoteIsRequired" xml:space="preserve">
+    <value>O campo nota é necessário</value>
+  </data>
+  <data name="PriceIsRequired" xml:space="preserve">
+    <value>O campo preço é necessário</value>
+  </data>
+  <data name="ProposalIsRequired" xml:space="preserve">
+    <value>O campo proposta é necessário</value>
+  </data>
+  <data name="SessionPriceIsRequired" xml:space="preserve">
+    <value>O campo preço da sessão é necessário</value>
+  </data>
+  <data name="StartDateIsRequired" xml:space="preserve">
+    <value>O campo  data inicial é necessário</value>
+  </data>
+  <data name="StartTimeIsRequired" xml:space="preserve">
+    <value>O campo início é necessário</value>
+  </data>
+  <data name="SujectIsRequired" xml:space="preserve">
+    <value>O campo assunto é necessário</value>
+  </data>
+  <data name="TermGoalIsRequired" xml:space="preserve">
+    <value>O campo prazo é necessário</value>
+  </data>
+  <data name="VerificationDataIsRequired" xml:space="preserve">
+    <value>O campo data de verificação é necessário</value>
+  </data>
+  <data name="EnuciationIsRequired" xml:space="preserve">
+    <value>O campo enunciado é necesário</value>
+  </data>
+  <data name="IndicatorIsRequired" xml:space="preserve">
+    <value>O campo indicador é necessário</value>
+  </data>
+  <data name="InvalidEnunciation" xml:space="preserve">
+    <value>Enunciado inválido</value>
+  </data>
+  <data name="InvalidIndicator" xml:space="preserve">
+    <value>Indicador inválido</value>
+  </data>
+  <data name="InvalidReply" xml:space="preserve">
+    <value>Resposta inválida</value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>O campo nme é necessário</value>
+  </data>
+  <data name="ReplyIsRequired" xml:space="preserve">
+    <value>O campo resposta é necessário</value>
+  </data>
+  <data name="TypeIsRequired" xml:space="preserve">
+    <value>O campo tipo é necessário</value>
+  </data>
+  <data name="ValueIsRequired" xml:space="preserve">
+    <value>O campo valor é necessário</value>
   </data>
 </root>

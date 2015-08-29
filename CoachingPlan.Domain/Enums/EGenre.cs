@@ -1,11 +1,8 @@
 ﻿namespace CoachingPlan.Domain.Enums
 {
-    public class EGenre
+    public enum EGenre
     {
-        public enum Genre
-        {
-            M,
-            F
-        }
+        M = 1,
+        F = 2
     }
 }

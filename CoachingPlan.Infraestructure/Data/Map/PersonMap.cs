@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class PessoaMap : EntityTypeConfiguration<People>
+    public class PersonMap : EntityTypeConfiguration<Person>
     {
-        public PessoaMap()
+        public PersonMap()
         {
             ToTable("a1_pessoa_tb");
 
@@ -19,7 +19,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasMaxLength(65)
                 .IsRequired();
 
-            Property(X => X.Genero)
+            Property(X => X.Genre)
                 .HasColumnName("Genero_Pessoa")
                 .IsRequired();
 
@@ -38,7 +38,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Status_Pessoa")
                 .IsRequired();
 
-            Property(x => x.Foto)
+            Property(x => x.Photograph)
                 .HasColumnName("Foto_Pessoa");
         }
     }

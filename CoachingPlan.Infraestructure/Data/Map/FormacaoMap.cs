@@ -10,13 +10,13 @@ namespace CoachingPlan.Infraestructure.Data.Map
         {
             ToTable("a8_formacao_tb")
                 .HasRequired<Coach>(s => s.Coach)
-                .WithMany(s => s.Formacao);
+                .WithMany(s => s.Formation);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Formacao")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(x => x.Nome)
+            Property(x => x.Name)
                 .HasColumnName("Nome_Formacao")
                 .HasMaxLength(45)
                 .IsRequired();

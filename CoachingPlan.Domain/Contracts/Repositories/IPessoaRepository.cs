@@ -6,10 +6,10 @@ namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IPessoaRepository : IDisposable
     {
-        People GetOne(Guid id);
-        List<People> GetAll();
-        void Create(People Pessoa);
-        void Update(People Pessoa);
-        void Delete(People Pessoa);
+        Person GetOne(Guid id);
+        List<Person> GetAll();
+        void Create(Person Pessoa);
+        void Update(Person Pessoa);
+        void Delete(Person Pessoa);
     }
 }

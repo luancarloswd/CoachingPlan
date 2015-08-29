@@ -10,7 +10,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
         {
             ToTable("a7_especialidade_tb")
                 .HasRequired<Coach>(s => s.Coach)
-                .WithMany(s => s.Especialidade);
+                .WithMany(s => s.Speciality);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Especialidde")
