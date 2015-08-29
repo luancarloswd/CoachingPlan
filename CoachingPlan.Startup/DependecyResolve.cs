@@ -1,9 +1,6 @@
 ﻿using System.Data.Entity;
-using System.Web;
 using Microsoft.Practices.Unity;
 using CoachingPlan.Infraestructure.Data;
-using CoachingPlan.Domain.Contracts.Repositories;
-using CoachingPlan.Infraestructure.Repositories;
 using CoachingPlan.Domain.Models;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Business.Services;

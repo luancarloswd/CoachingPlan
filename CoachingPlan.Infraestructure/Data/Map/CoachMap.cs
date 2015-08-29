@@ -9,12 +9,26 @@ namespace CoachingPlan.Infraestructure.Data.Map
         public CoachMap()
         {
             ToTable("a5_coach_tb")
-                .HasRequired<User>(s => s.User)
-                .WithMany(s => s.Coach);
+                .HasMany(t => t.CoachingProcess)
+                .WithMany(t => t.Coach)
+                .Map(m =>
+                {
+                    m.ToTable("t7_coach_processo_tb");
+                    m.MapLeftKey("a5_Id_Coach_t7");
+                    m.MapRightKey("a11_Id_Processo_t7");
+                });
+
+            HasRequired<User>(s => s.User)
+                .WithMany(s => s.Coach)
+                .HasForeignKey(s => s.IdUser);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Coach")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(x => x.IdUser)
+                .HasColumnName("a4_Id_Usuario_a5")
+                .IsRequired();
         }
     }
 }

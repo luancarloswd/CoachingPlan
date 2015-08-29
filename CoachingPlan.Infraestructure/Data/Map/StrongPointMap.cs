@@ -4,21 +4,30 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class PontoForteMap : EntityTypeConfiguration<StrongPoint>
+    public class StrongPointMap : EntityTypeConfiguration<StrongPoint>
     {
-        public PontoForteMap()
+        public StrongPointMap()
         {
             ToTable("a9_ponto_forte_tb")
                 .HasRequired<Coachee>(s => s.Coachee)
-                .WithMany(s => s.StrongPoint);
+                .WithMany(s => s.StrongPoint)
+                .HasForeignKey(x => x.IdCoachee);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Ponto_Forte")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            Property(x => x.IdCoachee)
+                .HasColumnName("a8_Id_Coachee_a9")
+                .IsRequired();
+
             Property(x => x.Name)
-                .HasColumnName("Nome_Ponto_Foret")
+                .HasColumnName("Nome_Ponto_Forte")
                 .HasMaxLength(30)
+                .IsRequired();
+
+            Property(x => x.Class)
+                .HasColumnName("Classe_Ponto_Forte")
                 .IsRequired();
 
             Property(x => x.Description)

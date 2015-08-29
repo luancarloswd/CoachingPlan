@@ -4,17 +4,22 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class EspecialidadeMap : EntityTypeConfiguration<Speciality>
+    public class SpecialityMap : EntityTypeConfiguration<Speciality>
     {
-        public EspecialidadeMap()
+        public SpecialityMap()
         {
             ToTable("a7_especialidade_tb")
                 .HasRequired<Coach>(s => s.Coach)
-                .WithMany(s => s.Speciality);
+                .WithMany(s => s.Speciality)
+                .HasForeignKey(x => x.IdCoach);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Especialidde")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(x => x.IdCoach)
+                .HasColumnName("a5_Id_Coach_a7")
+                .IsRequired();
 
             Property(x => x.Name)
                 .HasColumnName("Nome_Especialidade")

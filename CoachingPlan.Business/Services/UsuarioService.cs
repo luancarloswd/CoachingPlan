@@ -86,8 +86,8 @@ namespace CoachingPlan.Business.Services
 
         public void Register(string email, string userName, string password)
         {
-            
-            _repository.Create(new User());
+
+            throw new NotImplementedException();
 
             //if (!result.Succeeded)
             //{

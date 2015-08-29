@@ -81,20 +81,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AppDataContext.cs" />
+    <Compile Include="Data\Map\FilledToolMap.cs" />
+    <Compile Include="Data\Map\MessageMap.cs" />
+    <Compile Include="Data\Map\ReplyMap.cs" />
+    <Compile Include="Data\Map\QuestionMap.cs" />
+    <Compile Include="Data\Map\EvaluationToolMap.cs" />
+    <Compile Include="Data\Map\PerformanceIndicatorMap.cs" />
+    <Compile Include="Data\Map\BudgetMap.cs" />
+    <Compile Include="Data\Map\ServiceMap.cs" />
+    <Compile Include="Data\Map\JobMap.cs" />
+    <Compile Include="Data\Map\MarkMap.cs" />
+    <Compile Include="Data\Map\ObjectiveMap.cs" />
     <Compile Include="Data\Map\ActionPlanMap.cs" />
-    <Compile Include="Data\Map\DispositivoMap.cs" />
-    <Compile Include="Data\Map\FormacaoMap.cs" />
-    <Compile Include="Data\Map\PontoForteMap.cs" />
+    <Compile Include="Data\Map\FormationMap.cs" />
+    <Compile Include="Data\Map\EvaluationMap.cs" />
+    <Compile Include="Data\Map\SessionMap.cs" />
+    <Compile Include="Data\Map\StrongPointMap.cs" />
     <Compile Include="Data\Map\CoacheeMap.cs" />
-    <Compile Include="Data\Map\EnderecoMap.cs" />
+    <Compile Include="Data\Map\AddressMap.cs" />
     <Compile Include="Data\Map\CoachMap.cs" />
-    <Compile Include="Data\Map\EspecialidadeMap.cs" />
-    <Compile Include="Data\Map\FragilidadeMap.cs" />
-    <Compile Include="Data\Map\UsuarioMap.cs" />
+    <Compile Include="Data\Map\SpecialityMap.cs" />
+    <Compile Include="Data\Map\CoachingProcesMap.cs" />
+    <Compile Include="Data\Map\WeaknessMap.cs" />
+    <Compile Include="Data\Map\UserMap.cs" />
     <Compile Include="Data\Map\PersonMap.cs" />
-    <Compile Include="Data\Map\TelefoneMap.cs" />
+    <Compile Include="Data\Map\PhoneMap.cs" />
     <Compile Include="Data\MySqlHistoryContext.cs" />
     <Compile Include="Data\MySqlInitializer.cs" />
+    <Compile Include="Migrations\201508291256457_v1.cs" />
+    <Compile Include="Migrations\201508291256457_v1.Designer.cs">
+      <DependentUpon>201508291256457_v1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\FormacaoRepository.cs" />
@@ -123,6 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Identity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201508291256457_v1.resx">
+      <DependentUpon>201508291256457_v1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,17 +4,21 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
 {
-    public class FragilidadeMap : EntityTypeConfiguration<Weakness>
+    public class WeaknessMap : EntityTypeConfiguration<Weakness>
     {
-        public FragilidadeMap()
+        public WeaknessMap()
         {
             ToTable("a10_fragilidade_tb")
                 .HasRequired<Coachee>(s => s.Coachee)
-                .WithMany(s => s.Weakness);
+                .WithMany(s => s.Weakness)
+                .HasForeignKey(x => x.IdCoachee);
 
             Property(x => x.Id)
                 .HasColumnName("Id_Fragilidade")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(x => x.IdCoachee)
+                .HasColumnName("a8_Id_Coachee_a10");
 
             Property(x => x.Name)
                 .HasColumnName("Nome_Fragilidade")

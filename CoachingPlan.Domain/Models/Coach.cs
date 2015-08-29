@@ -44,9 +44,9 @@ namespace CoachingPlan.Domain.Models
         {
             this.CoachingProcess.Remove(coachingProcess);
         }
-        public void AddEvaluationTool(string name, ETypeEvaluationTool type, Coach coach)
+        public void AddEvaluationTool(string name, ETypeEvaluationTool type)
         {
-            EvaluationTool evaluationTool = new EvaluationTool(name, type, coach);
+            EvaluationTool evaluationTool = new EvaluationTool(name, type);
             evaluationTool.Validate();
             this.EvaluationTool.Add(evaluationTool  );
         }
