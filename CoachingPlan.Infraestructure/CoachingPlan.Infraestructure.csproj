@@ -104,7 +104,6 @@
     <Compile Include="Data\Map\SpecialityMap.cs" />
     <Compile Include="Data\Map\CoachingProcesMap.cs" />
     <Compile Include="Data\Map\WeaknessMap.cs" />
-    <Compile Include="Data\Map\UserMap.cs" />
     <Compile Include="Data\Map\PersonMap.cs" />
     <Compile Include="Data\Map\PhoneMap.cs" />
     <Compile Include="Data\MySqlHistoryContext.cs" />

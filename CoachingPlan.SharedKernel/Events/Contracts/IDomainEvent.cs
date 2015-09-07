@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CoachingPlan.SharedKernel.Events.Contracts
 {
-    public interface IDomainEvent
+    public interface IDomainEvent 
     {
-        DateTime DateOcurred { get;}
+        DateTime DateOccurred { get; }
     }
 }

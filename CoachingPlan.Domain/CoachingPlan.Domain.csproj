@@ -68,7 +68,7 @@
     <Compile Include="Contracts\Services\IActionPlanService.cs" />
     <Compile Include="Contracts\Services\ICoacheeService.cs" />
     <Compile Include="Contracts\Services\ICoachService.cs" />
-    <Compile Include="Contracts\Services\IUsuarioService.cs" />
+    <Compile Include="Contracts\Services\IUserApplicationService.cs" />
     <Compile Include="Contracts\Services\IFormacaoService.cs" />
     <Compile Include="Contracts\Services\IPontoForteService.cs" />
     <Compile Include="Contracts\Services\IEspecialidadeService.cs" />
@@ -139,15 +139,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Fakes Include="Fakes\CoachingPlan.SharedKernel.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoachingPlan.SharedKernel\CoachingPlan.SharedKernel.csproj">
-      <Project>{21d6c7d6-d968-4935-8e35-d55ec88716ce}</Project>
+      <Project>{b2e14f3c-dfea-49f5-bdb1-874dc4a47eb0}</Project>
       <Name>CoachingPlan.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -200,14 +200,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_start\UnityConfig.cs" />
-    <Compile Include="Controllers\TesteController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Helpers\CompressionHelper.cs" />
-    <Compile Include="Helpers\UnityResolver.cs" />
+    <Compile Include="Helpers\DomainEventsContainer.cs" />
+    <Compile Include="Helpers\UnityResolverHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\AuthorizationServerProvider.cs" />
+    <Compile Include="Security\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CoachingPlan.CrossCutting\CoachingPlan.CrossCutting.csproj">
+      <Project>{445944eb-873d-4265-a01b-181ffcdc0b1c}</Project>
+      <Name>CoachingPlan.CrossCutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoachingPlan.Domain\CoachingPlan.Domain.csproj">
       <Project>{981571ff-7c77-4f43-bff3-e9692fdab8fb}</Project>
       <Name>CoachingPlan.Domain</Name>
@@ -215,6 +220,10 @@
     <ProjectReference Include="..\CoachingPlan.Infraestructure\CoachingPlan.Infraestructure.csproj">
       <Project>{DF8E49E8-2723-41C6-B598-E34581AE55F3}</Project>
       <Name>CoachingPlan.Infraestructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoachingPlan.SharedKernel\CoachingPlan.SharedKernel.csproj">
+      <Project>{b2e14f3c-dfea-49f5-bdb1-874dc4a47eb0}</Project>
+      <Name>CoachingPlan.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
