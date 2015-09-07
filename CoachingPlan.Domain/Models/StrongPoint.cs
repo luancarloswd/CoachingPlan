@@ -1,6 +1,5 @@
 ﻿using CoachingPlan.Domain.Enums;
-using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -9,11 +8,10 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected StrongPoint() {}
-        public StrongPoint(string name, EClassStrongPoint classStrongPoint, Coachee coachee, string description = null)
+        public StrongPoint(string name, EClassStrongPoint classStrongPoint, Guid idCoachee, string description = null)
         {
             this.Id = Guid.NewGuid();
-            this.Coachee = coachee;
-            this.IdCoachee = coachee.Id;
+            this.IdCoachee = idCoachee;
             this.Name = name;
             this.Class = classStrongPoint;
             this.Description = description;
@@ -33,13 +31,15 @@ namespace CoachingPlan.Domain.Models
         #region Methods
         public void ChangeName(string name)
         {
+            if (!this.ChangeNameScopeIsValid(name))
+                return;
             this.Name = name;
-            this.Validate();
         }
         public void ChangeClass(EClassStrongPoint classStrongPoint)
         {
+            if (!this.ChangeClassScopeIsValid(classStrongPoint))
+                return;
             this.Class = classStrongPoint;
-            this.Validate();
         }
         public void ChangeDescription(string descricao)
         {
@@ -47,9 +47,8 @@ namespace CoachingPlan.Domain.Models
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Name, Errors.InvalidStrongPoint);
-            AssertionConcern.AssertArgumentLength(this.Name, 2, 50, Errors.InvalidStrongPoint);
-            AssertionConcern.AssertArgumentNotNull(this.Class, Errors.InvalidClassStrongPoint);
+            if (!this.CreateStrongPointScopeIsValid())
+                return;
         }
         #endregion
     }

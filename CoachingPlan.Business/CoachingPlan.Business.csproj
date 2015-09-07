@@ -99,10 +99,6 @@
       <Project>{df8e49e8-2723-41c6-b598-e34581ae55f3}</Project>
       <Name>CoachingPlan.Infraestructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CoachingPlan.Resources\CoachingPlan.Resources.csproj">
-      <Project>{e2834bee-2bf1-4489-be52-e39ab7ae5a0e}</Project>
-      <Name>CoachingPlan.Resources</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,15 +1,12 @@
 ﻿using CoachingPlan.API.Helpers;
 using CoachingPlan.API.Security;
 using CoachingPlan.Domain.Contracts.Services;
-using CoachingPlan.Startup;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Practices.Unity;
 using Owin;
 using System;
-using Microsoft.AspNet.Identity.Owin;
 using System.Web.Http;
-using CoachingPlan.Infraestructure.Data;
 
 
 namespace CoachingPlan.API

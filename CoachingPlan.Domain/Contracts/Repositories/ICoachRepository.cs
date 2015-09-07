@@ -8,6 +8,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     {
         Coach GetOne(Guid id);
         List<Coach> GetAll();
+        List<Coach> GetAll(int take, int skip);
         void Create(Coach Coach);
         void Update(Coach Coach);
         void Delete(Coach Coach);

@@ -45,9 +45,8 @@ namespace CoachingPlan.Domain.Models
         #endregion
 
         #region Methods
-        public void AddMessage(string subject, string bodyMessage, Guid destination, DateTime date, User user, bool status = false)
+        public void AddMessage(Message message)
         {
-            Message message = new Message(subject, bodyMessage, destination, date, user, status);
             this.Message.Add(message);
         }
         #endregion

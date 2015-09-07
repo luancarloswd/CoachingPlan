@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -8,13 +7,12 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Phone (){ }
-        public Phone(string ddd, string number, Person person, string description = null)
+        public Phone(string ddd, string number, Guid idPerson, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.DDD = ddd;
             this.Number = number;
-            this.Person = person;
-            this.IdPerson = person.Id;
+            this.IdPerson = idPerson;
             this.Description = description;
         }
         #endregion
@@ -33,22 +31,22 @@ namespace CoachingPlan.Domain.Models
         {
             this.Description = description;
         }
-        public void ChangeDDD(string DDD)
+        public void ChangeDDD(string ddd)
         {
-            this.DDD = DDD;
-            this.Validate();
+            if (!this.ChangeDDDScopeIsValid(ddd))
+                return;
+            this.DDD = ddd;
         }
         public void ChangeNumber(string number)
         {
+            if (!this.ChangeNumberScopeIsValid(number))
+                return;
             this.Number = number;
-            this.Validate();
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.DDD, Errors.InvalidDDD);
-            AssertionConcern.AssertArgumentLength(this.DDD, 2, 2, Errors.InvalidDDD);
-            AssertionConcern.AssertArgumentNotNull(this.Number, Errors.InvalidPhone);
-            AssertionConcern.AssertArgumentLength(this.Number, 8, 8, Errors.InvalidPhone);
+            if (!this.CreatePhoneScopeIsValid())
+                return;
         }
 
         #endregion

@@ -1,7 +1,7 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoachingPlan.Domain.Models
 {
@@ -9,14 +9,14 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Objective(){}
-        public Objective(string description, ActionPlan actionPlan, DateTime term)
+        public Objective(string description, Guid idActionPlan, DateTime term, ICollection<Mark> mark)
         {
             this.Id = Guid.NewGuid();
             this.Description = description;
             this.Term = term;
-            this.ActionPlan = actionPlan;
-            this.IdActionPlan = actionPlan.Id;
+            this.IdActionPlan = idActionPlan;
             this.Mark = new HashSet<Mark>();
+            mark.ToList().ForEach(x => AddMark(x));
         }
         #endregion
 
@@ -31,9 +31,8 @@ namespace CoachingPlan.Domain.Models
         #endregion
 
         #region Methods
-        public void AddMark(DateTime term, Objective objective, string description)
+        public void AddMark(Mark mark)
         {
-            Mark mark = new Mark(term, objective, description);
             mark.Validate();
             this.Mark.Add(mark);
         }
@@ -43,18 +42,20 @@ namespace CoachingPlan.Domain.Models
         }
         public void ChangeDescription(string description)
         {
+            if (!this.ChangeDescriptionScopeIsValid(description))
+                return;
             this.Description = description;
-            this.Validate();
         }
         public void ChangeTerm(DateTime term)
         {
+            if (!this.ChangeTermGoalScopeIsValid(term))
+                return;
             this.Term = term;
-            this.Validate();
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Description, Errors.InvalidDescription);
-            AssertionConcern.AssertArgumentNotNull(this.Term, Errors.TermGoalIsRequired);
+            if (!this.CreateObjectiveScopeIsValid())
+                return;
         }
         #endregion
     }

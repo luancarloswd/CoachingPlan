@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -8,16 +7,14 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Job(){}
-        public Job(DateTime startDate, DateTime? realizationDate, DateTime verificationDate, Session session, Mark mark, string description = null)
+        public Job(DateTime startDate, DateTime? realizationDate, DateTime verificationDate, Guid idSession, Guid idMark, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.StartDate = startDate;
             this.RealizationDate = realizationDate;
             this.VerificationDate = verificationDate;
-            this.Session = session;
-            this.IdSession = session.Id;
-            this.Mark = mark;
-            this.IdMark = mark.Id;
+            this.IdSession = idSession;
+            this.IdMark = idMark;
             this.Description = description;
         }
         #endregion
@@ -36,15 +33,21 @@ namespace CoachingPlan.Domain.Models
         #endregion
 
         #region Methods
-        public void ChageRealizationDate(DateTime realizationDate)
+        public void ChangeRealizationDate(DateTime realizationDate)
         {
             this.RealizationDate = realizationDate;
-            this.Validate();
+        }
+        public void ChangeStartDate(DateTime startDate)
+        {
+            if (!this.ChangeStartDateScopeIsValid(startDate))
+                return;
+            this.StartDate = startDate;
         }
         public void ChangeVerifaciontDate(DateTime verificationDate)
         {
+            if (!this.ChangeVerificationDateScopeIsValid(verificationDate))
+                return;
             this.VerificationDate = verificationDate;
-            this.Validate();
         }
         public void ChangeDescription(string description)
         {
@@ -52,8 +55,8 @@ namespace CoachingPlan.Domain.Models
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.StartDate, Errors.DataIsRequired);
-            AssertionConcern.AssertArgumentNotNull(this.VerificationDate, Errors.VerificationDataIsRequired);
+            if (!this.CreateJobScopeIsValid())
+                return;
         }
         #endregion
     }

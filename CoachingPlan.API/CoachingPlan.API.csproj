@@ -216,14 +216,6 @@
       <Project>{DF8E49E8-2723-41C6-B598-E34581AE55F3}</Project>
       <Name>CoachingPlan.Infraestructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CoachingPlan.Resources\CoachingPlan.Resources.csproj">
-      <Project>{e2834bee-2bf1-4489-be52-e39ab7ae5a0e}</Project>
-      <Name>CoachingPlan.Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CoachingPlan.Startup\CoachingPlan.Startup.csproj">
-      <Project>{184c0107-5617-4e0b-a04c-aa29e338803f}</Project>
-      <Name>CoachingPlan.Startup</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

@@ -1,8 +1,5 @@
-﻿
-using CoachingPlan.Domain.Contracts.Repositories;
-using CoachingPlan.Domain.Contracts.Services;
+﻿using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Domain.Models;
-using CoachingPlan.Resources.Messages;
 using System;
 using System.Collections.Generic;
 using CoachingPlan.Domain.Enums;

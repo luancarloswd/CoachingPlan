@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AppDataContext.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Map\FilledToolMap.cs" />
     <Compile Include="Data\Map\MessageMap.cs" />
     <Compile Include="Data\Map\ReplyMap.cs" />
@@ -108,22 +109,13 @@
     <Compile Include="Data\Map\PhoneMap.cs" />
     <Compile Include="Data\MySqlHistoryContext.cs" />
     <Compile Include="Data\MySqlInitializer.cs" />
+    <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Migrations\201508291256457_v1.cs" />
     <Compile Include="Migrations\201508291256457_v1.Designer.cs">
       <DependentUpon>201508291256457_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\FormacaoRepository.cs" />
-    <Compile Include="Repositories\EspecialidadeRepository.cs" />
-    <Compile Include="Repositories\PontoForteRepository.cs" />
-    <Compile Include="Repositories\FragilidadeRepository.cs" />
-    <Compile Include="Repositories\CoacheeRepository.cs" />
-    <Compile Include="Repositories\CoachRepository.cs" />
-    <Compile Include="Repositories\UsuarioRepository.cs" />
-    <Compile Include="Repositories\PessoaRepository.cs" />
-    <Compile Include="Repositories\EnderecoRepository.cs" />
-    <Compile Include="Repositories\TelefoneRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Identity\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201508291256457_v1.resx">

@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -8,12 +7,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Weakness(){}
-        public Weakness(string name, Coachee coachee, string description = null)
+        public Weakness(string name, Guid idCoachee, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            this.Coachee = coachee;
-            this.IdCoachee = coachee.Id;
+            this.IdCoachee = idCoachee;
             this.Description = description;
         }
         #endregion
@@ -30,6 +28,8 @@ namespace CoachingPlan.Domain.Models
         #region Methods
         public void ChangeName(string name)
         {
+            if (!this.ChangeNameScopeIsValid(name))
+                return;
             this.Name = name;
         }
         public void ChangeDescription(string description)
@@ -38,8 +38,8 @@ namespace CoachingPlan.Domain.Models
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Name, Errors.InvalidWeakness);
-            AssertionConcern.AssertArgumentLength(this.Name, 2, 30, Errors.InvalidWeakness);
+            if (!this.CreateWeaknessScopeIsValid())
+                return;
         }
         #endregion
     }

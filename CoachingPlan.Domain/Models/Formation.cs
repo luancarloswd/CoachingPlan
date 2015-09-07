@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -8,12 +7,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Formation(){}
-        public Formation(string name, Coach coach, string description = null)
+        public Formation(string name, Guid idCoach, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            this.Coach = coach;
-            this.IdCoach = coach.Id;
+            this.IdCoach = idCoach;
             this.Description = description;
         }
         #endregion
@@ -30,8 +28,9 @@ namespace CoachingPlan.Domain.Models
         #region Methods
         public void ChangeName(string name)
         {
+            if (!this.ChangeNameScopeIsValid(name))
+                return;
             this.Name = name;
-            this.Validate();
         }
         public void ChangeDescription(string description)
         {
@@ -39,8 +38,8 @@ namespace CoachingPlan.Domain.Models
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Name, Errors.InvalidTraining);
-            AssertionConcern.AssertArgumentLength(this.Name, 2, 45, Errors.InvalidTraining);
+            if (!this.CreateFormationScopeIsValid())
+                return;
         }
         #endregion
     }

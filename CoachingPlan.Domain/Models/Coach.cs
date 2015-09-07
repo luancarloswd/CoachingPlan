@@ -1,6 +1,7 @@
 ﻿using CoachingPlan.Domain.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoachingPlan.Domain.Models
 {
@@ -8,15 +9,18 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Coach(){}
-        public Coach(User user)
+        public Coach(string idUser, ICollection<EvaluationTool> evaluationTool, ICollection<Speciality> speciality, ICollection<Formation> formation, ICollection<CoachingProcess> coachingProcess)
         {
             this.Id = Guid.NewGuid();
             this.EvaluationTool = new HashSet<EvaluationTool>();
+            evaluationTool.ToList().ForEach(x => AddEvaluationTool(x));
             this.Speciality = new HashSet<Speciality>();
+            speciality.ToList().ForEach(x => AddSpeciality(x));
             this.Formation = new HashSet<Formation>();
+            formation.ToList().ForEach(x => AddFormation(x));
             this.CoachingProcess = new HashSet<CoachingProcess>();
-            this.User = user;
-            this.IdUser = user.Id;
+            coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
+            this.IdUser = idUser;
         }
         #endregion
 
@@ -44,19 +48,17 @@ namespace CoachingPlan.Domain.Models
         {
             this.CoachingProcess.Remove(coachingProcess);
         }
-        public void AddEvaluationTool(string name, ETypeEvaluationTool type)
+        public void AddEvaluationTool(EvaluationTool evaluationTool)
         {
-            EvaluationTool evaluationTool = new EvaluationTool(name, type);
             evaluationTool.Validate();
-            this.EvaluationTool.Add(evaluationTool  );
+            this.EvaluationTool.Add(evaluationTool);
         }
         public void RemoveEvaluationTool(EvaluationTool evaluationTool)
         {
             this.EvaluationTool.Remove(evaluationTool);
         }
-        public void AddSpeciality(string name, Coach coach, string description = null)
+        public void AddSpeciality(Speciality speciality)
         {
-            Speciality speciality = new Speciality(name, coach, description);
             speciality.Validate();
             this.Speciality.Add(speciality);
         }
@@ -64,9 +66,8 @@ namespace CoachingPlan.Domain.Models
         {
             this.Speciality.Remove(speciality);
         }
-        public void AddFormation(string name, Coach coach, string description = null)
+        public void AddFormation(Formation formation)
         {
-            Formation formation = new Formation(name, coach, description);
             formation.Validate();
             this.Formation.Add(formation);
         }

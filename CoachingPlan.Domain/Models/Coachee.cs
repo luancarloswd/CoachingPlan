@@ -1,8 +1,8 @@
 ﻿using CoachingPlan.Domain.Enums;
-using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+using CoachingPlan.Domain.Scopes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoachingPlan.Domain.Models
 {
@@ -10,16 +10,19 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Coachee() { }
-        public Coachee(string profession, User user)
+        public Coachee(string profession, string idUser, ICollection<FilledTool> filledTool, ICollection<Weakness> weakness, ICollection<StrongPoint> strongPoint, ICollection<CoachingProcess> coachingProcess)
         {
             this.Id = Guid.NewGuid();
             this.Profession = profession;
-            this.User = user;
-            this.IdUser = user.Id;
+            this.IdUser = idUser;
             this.FilledTool = new HashSet<FilledTool>();
+            filledTool.ToList().ForEach(x => AddFilledTool(x));
             this.Weakness = new HashSet<Weakness>();
+            weakness.ToList().ForEach(x => AddWeakness(x));
             this.StrongPoint = new HashSet<StrongPoint>();
+            strongPoint.ToList().ForEach(x => AddStrongPoint(x));
             this.CoachingProcess = new HashSet<CoachingProcess>();
+            coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
         }
         #endregion
 
@@ -41,9 +44,26 @@ namespace CoachingPlan.Domain.Models
             this.User = user;
             this.IdUser = user.Id;
         }
-        public void AddWeakness(string name, Coachee coachee, string description = null)
+        public void AddCoachingProcess(CoachingProcess coachingProcess)
         {
-            Weakness weakness = new Weakness(name, coachee, description);
+            coachingProcess.Validate();
+            this.CoachingProcess.Add(coachingProcess);
+        }
+        public void RemoveCoachingProcess(CoachingProcess coachingProcess)
+        {
+            this.CoachingProcess.Remove(coachingProcess);
+        }
+        public void AddFilledTool(FilledTool filedTool)
+        {
+            filedTool.Validate();
+            this.FilledTool.Add(filedTool);
+        }
+        public void RemoveFilledTool(FilledTool filledTool)
+        {
+            this.FilledTool.Remove(filledTool);
+        }
+        public void AddWeakness(Weakness weakness)
+        {
             weakness.Validate();
             this.Weakness.Add(weakness);
         }    
@@ -51,9 +71,8 @@ namespace CoachingPlan.Domain.Models
         {
             this.Weakness.Remove(weakness);
         }
-        public void AddStrongPoint(string name, EClassStrongPoint classStrongPoint, Coachee coachee, string description = null)
+        public void AddStrongPoint(StrongPoint strongPoint)
         {
-            StrongPoint strongPoint = new StrongPoint(name, classStrongPoint, coachee, description);
             strongPoint.Validate();
             this.StrongPoint.Add(strongPoint);
         }
@@ -63,13 +82,14 @@ namespace CoachingPlan.Domain.Models
         }
         public void ChangeProfession(string profession)
         {
+            if (!this.ChangeProfessionScopeIsValid(profession))
+                return;
             this.Profession = profession;
-            this.Validate();
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Profession, Errors.InvalidProfession);
-            AssertionConcern.AssertArgumentLength(this.Profession, 2, 25, Errors.InvalidProfession);
+            if (!this.CreateCoacheeScopeIsValid())
+                return;
         }
         #endregion
     }

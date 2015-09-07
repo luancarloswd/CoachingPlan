@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Resources.Messages;
-using CoachingPlan.Resources.Validations;
+﻿using CoachingPlan.Domain.Scopes;
 using System;
 
 namespace CoachingPlan.Domain.Models
@@ -8,12 +7,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Evaluation(){}
-        public Evaluation(float note, Session session, User user, string observation = null)
+        public Evaluation(float note, Guid idSession, User user, string observation = null)
         {
             this.Id = Guid.NewGuid();
             this.Note = note;
-            this.Session = session;
-            this.IdSession = session.Id;
+            this.IdSession = idSession;
             this.User = user;
             this.IdUser = user.Id;
             this.Observation = observation;
@@ -45,17 +43,18 @@ namespace CoachingPlan.Domain.Models
         }
         public void ChangeNote(float note)
         {
+            if (!this.CreateEvaluationScopeIsValid())
+                return;
             this.Note = note;
-            this.Validate();
         }
         public void ChangeObservation(string observation)
         {
             this.Observation = observation;
-            this.Validate();
         }
         public void Validate()
         {
-            AssertionConcern.AssertArgumentNotNull(this.Note, Errors.NoteIsRequired);
+            if (!this.CreateEvaluationScopeIsValid())
+                return;
         }
         #endregion
     }

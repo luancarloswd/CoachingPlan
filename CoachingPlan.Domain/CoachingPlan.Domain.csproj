@@ -41,16 +41,31 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Repositories\IFormacaoRepository.cs" />
-    <Compile Include="Contracts\Repositories\IPontoForteRepository.cs" />
-    <Compile Include="Contracts\Repositories\IFragilidadeRepository.cs" />
-    <Compile Include="Contracts\Repositories\IEspecialidadeRepository.cs" />
+    <Compile Include="Contracts\Repositories\IActionPlanRepository.cs" />
+    <Compile Include="Contracts\Repositories\IAddressRepository.cs" />
+    <Compile Include="Contracts\Repositories\IBudgetRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoacheeRepository.cs" />
+    <Compile Include="Contracts\Repositories\ICoachingProcessRepository.cs" />
+    <Compile Include="Contracts\Repositories\IWeaknessRepository.cs" />
+    <Compile Include="Contracts\Repositories\IUserRepository.cs" />
+    <Compile Include="Contracts\Repositories\IStrongPointRepository.cs" />
+    <Compile Include="Contracts\Repositories\ISessionRepository.cs" />
+    <Compile Include="Contracts\Repositories\IServiceRepository.cs" />
+    <Compile Include="Contracts\Repositories\IReplyRepository.cs" />
+    <Compile Include="Contracts\Repositories\IQuestionRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPhoneRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPersonRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPerformanceIndicatorRepository.cs" />
+    <Compile Include="Contracts\Repositories\IObjectiveRepository.cs" />
+    <Compile Include="Contracts\Repositories\IMessageRepository.cs" />
+    <Compile Include="Contracts\Repositories\IMarkRepository.cs" />
+    <Compile Include="Contracts\Repositories\IJobRepository.cs" />
+    <Compile Include="Contracts\Repositories\IFormationRepository.cs" />
+    <Compile Include="Contracts\Repositories\IFilledToolRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEvaluationToolRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEvaluationRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoachRepository.cs" />
-    <Compile Include="Contracts\Repositories\IUsuarioRepository.cs" />
-    <Compile Include="Contracts\Repositories\IPessoaRepository.cs" />
-    <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
-    <Compile Include="Contracts\Repositories\ITelefoneRepository.cs" />
+    <Compile Include="Contracts\Services\IActionPlanService.cs" />
     <Compile Include="Contracts\Services\ICoacheeService.cs" />
     <Compile Include="Contracts\Services\ICoachService.cs" />
     <Compile Include="Contracts\Services\IUsuarioService.cs" />
@@ -96,17 +111,43 @@
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CoachingPlan.Resources\CoachingPlan.Resources.csproj">
-      <Project>{e2834bee-2bf1-4489-be52-e39ab7ae5a0e}</Project>
-      <Name>CoachingPlan.Resources</Name>
-    </ProjectReference>
+    <Compile Include="Scopes\PerformanceIndicatorScope.cs" />
+    <Compile Include="Scopes\ObjectiveScope.cs" />
+    <Compile Include="Scopes\MessageScope.cs" />
+    <Compile Include="Scopes\MarkScope.cs" />
+    <Compile Include="Scopes\JobScope.cs" />
+    <Compile Include="Scopes\FormationScope.cs" />
+    <Compile Include="Scopes\FilledToolScope.cs" />
+    <Compile Include="Scopes\EvaluationToolScope.cs" />
+    <Compile Include="Scopes\EvaluationScope.cs" />
+    <Compile Include="Scopes\CoachingProcessScope.cs" />
+    <Compile Include="Scopes\CoacheeScope.cs" />
+    <Compile Include="Scopes\CoachScope.cs" />
+    <Compile Include="Scopes\BudgetScope.cs" />
+    <Compile Include="Scopes\ActionPlanScope.cs" />
+    <Compile Include="Scopes\SessionScope.cs" />
+    <Compile Include="Scopes\WeaknessScope.cs" />
+    <Compile Include="Scopes\UserScope.cs" />
+    <Compile Include="Scopes\StrongPointScope.cs" />
+    <Compile Include="Scopes\SpecialityScope.cs" />
+    <Compile Include="Scopes\ServiceScope.cs" />
+    <Compile Include="Scopes\ReplyScope.cs" />
+    <Compile Include="Scopes\QuestionScope.cs" />
+    <Compile Include="Scopes\PhoneScope.cs" />
+    <Compile Include="Scopes\PersonScope.cs" />
+    <Compile Include="Scopes\AddressScope.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoachingPlan.SharedKernel\CoachingPlan.SharedKernel.csproj">
+      <Project>{21d6c7d6-d968-4935-8e35-d55ec88716ce}</Project>
+      <Name>CoachingPlan.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
