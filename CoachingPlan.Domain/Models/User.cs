@@ -7,11 +7,10 @@ namespace CoachingPlan.Domain.Models
     public class User : IdentityUser
     {
         #region Ctor
-        protected User(){}
-        public User(Person person, string email, string useername) 
+        public User(){}
+        public User(Guid idPerson, string email, string useername) 
         {
-            this.Person = person;
-            this.IdPerson = person.Id;
+            this.IdPerson = IdPerson;
             this.Session = new HashSet<Session>();
             this.Evaluation = new HashSet<Evaluation>();
             this.Message = new HashSet<Message>();
@@ -34,7 +33,7 @@ namespace CoachingPlan.Domain.Models
         public override DateTime? LockoutEndDateUtc { get; set; }
         public override bool LockoutEnabled { get; set; }
         public override int AccessFailedCount { get; set; }
-        public Guid IdPerson { get; private set; }
+        public Guid IdPerson { get;  set; }
         public virtual Person Person { get;  set; }
         public virtual ICollection<Session> Session { get; private set; }
         public virtual ICollection<Evaluation> Evaluation { get; private set; }
@@ -48,6 +47,10 @@ namespace CoachingPlan.Domain.Models
         public void AddMessage(Message message)
         {
             this.Message.Add(message);
+        }
+        public void Validate()
+        {
+
         }
         #endregion
     }

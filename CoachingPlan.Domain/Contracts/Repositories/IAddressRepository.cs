@@ -7,6 +7,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     public interface IAddressRepository : IDisposable
     {
         Address GetOne(Guid id);
+        Address GetOneByPerson(Guid idPerson);
         List<Address> GetAll();
         List<Address> GetAll(int take, int skip);
         void Create(Address AcctionPlan);

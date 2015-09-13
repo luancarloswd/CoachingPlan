@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoachingPlan.ApplicationService</RootNamespace>
     <AssemblyName>CoachingPlan.ApplicationService</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoachApplicationService.cs" />
+    <Compile Include="CoahceeApplicationService.cs" />
+    <Compile Include="WeaknessApplicationService.cs" />
+    <Compile Include="StrongPointApplicationService.cs" />
+    <Compile Include="PersonApplicationService.cs" />
+    <Compile Include="SpecialityApplicationService .cs" />
+    <Compile Include="FormationApplicationService.cs" />
     <Compile Include="ApplicationService.cs" />
+    <Compile Include="AddressApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PhoneApplicationService.cs" />
+    <Compile Include="UserApplicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoachingPlan.Domain\CoachingPlan.Domain.csproj">
@@ -56,6 +68,9 @@
       <Project>{b2e14f3c-dfea-49f5-bdb1-874dc4a47eb0}</Project>
       <Name>CoachingPlan.SharedKernel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

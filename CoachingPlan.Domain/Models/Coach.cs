@@ -14,10 +14,10 @@ namespace CoachingPlan.Domain.Models
             this.Id = Guid.NewGuid();
             this.EvaluationTool = new HashSet<EvaluationTool>();
             evaluationTool.ToList().ForEach(x => AddEvaluationTool(x));
-            this.Speciality = new HashSet<Speciality>();
-            speciality.ToList().ForEach(x => AddSpeciality(x));
             this.Formation = new HashSet<Formation>();
             formation.ToList().ForEach(x => AddFormation(x));
+            this.Speciality = new HashSet<Speciality>();
+            speciality.ToList().ForEach(x => AddSpeciality(x));
             this.CoachingProcess = new HashSet<CoachingProcess>();
             coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
             this.IdUser = idUser;
@@ -57,23 +57,23 @@ namespace CoachingPlan.Domain.Models
         {
             this.EvaluationTool.Remove(evaluationTool);
         }
-        public void AddSpeciality(Speciality speciality)
-        {
-            speciality.Validate();
-            this.Speciality.Add(speciality);
-        }
-        public void RemoveSpeciality(Speciality speciality)
-        {
-            this.Speciality.Remove(speciality);
-        }
         public void AddFormation(Formation formation)
         {
             formation.Validate();
             this.Formation.Add(formation);
         }
-        public void RemoveFormation(Formation formation)
+        public void RemoveSpeciality(Formation formation)
         {
             this.Formation.Remove(formation);
+        }
+        public void AddSpeciality(Speciality Speciality)
+        {
+            Speciality.Validate();
+            this.Speciality.Add(Speciality);
+        }
+        public void RemoveSpeciality(Speciality Speciality)
+        {
+            this.Speciality.Remove(Speciality);
         }
         #endregion
     }

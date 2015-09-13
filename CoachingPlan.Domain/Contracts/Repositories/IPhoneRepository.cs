@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 
-namespace PhoneingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IPhoneRepository : IDisposable
     {
         Phone GetOne(Guid id);
+        Phone GetOnebyPerson(Guid idPerson);
         List<Phone> GetAll();
         List<Phone> GetAll(int take, int skip);
-        void Create(Phone Phone);
-        void Update(Phone Phone);
-        void Delete(Phone Phone);
+        void Create(Phone phone);
+        void Update(Phone phone);
+        void Delete(Phone phone);
     }
 }

@@ -1,8 +1,9 @@
-﻿using CoachingPlan.Domain.Models;
+﻿using CoachingPlan.Domain.Commands.PersonCommands;
+using CoachingPlan.Domain.Models;
 using System;
 using System.Collections.Generic;
 
-namespace PersoningPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IPersonRepository : IDisposable
     {

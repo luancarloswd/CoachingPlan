@@ -29,23 +29,23 @@ namespace CoachingPlan.API.Security
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            var user = _userService.Authenticate(context.UserName, context.Password);
-            if (user == null)
-            {
-                context.SetError("invalid_grant", "Usuário ou senha inválidos");
-                return;
-            }
+        //    var user = _userService.Authenticate(context.UserName, context.Password);
+        //    if (user == null)
+        //    {
+        //        context.SetError("invalid_grant", "Usuário ou senha inválidos");
+        //        return;
+        //    }
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+        //    var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
-            identity.AddClaim(new Claim(ClaimTypes.Name, user.Email));
-            identity.AddClaim(new Claim(ClaimTypes.Role, user.IsAdmin ? "admin" : ""));
+        //    identity.AddClaim(new Claim(ClaimTypes.Name, user.Email));
+        //    identity.AddClaim(new Claim(ClaimTypes.Role, user.IsAdmin ? "admin" : ""));
 
-            GenericPrincipal principal = new GenericPrincipal(identity, new string[] { user.IsAdmin ? "admin" : "" });
-            Thread.CurrentPrincipal = principal;
+        //    GenericPrincipal principal = new GenericPrincipal(identity, new string[] { user.IsAdmin ? "admin" : "" });
+        //    Thread.CurrentPrincipal = principal;
 
-            context.Validated(identity);
-        }
+        //    context.Validated(identity);
+       }
     }
 
 }

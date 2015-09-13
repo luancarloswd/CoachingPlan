@@ -35,17 +35,34 @@
       <HintPath>C:\Users\Luan\Documents\Visual Studio 2013\Projects\GerenciamentoFinanceiro\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Luan\Desktop\IdentitySample\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddressCommands\ChangeAddressCommand.cs" />
+    <Compile Include="Commands\AddressCommands\CreateAddressCommand.cs" />
+    <Compile Include="Commands\CoachCommands\CreateCoachCommand.cs" />
+    <Compile Include="Commands\CoacheeCommands\CreateCoacheeCommand.cs" />
+    <Compile Include="Commands\FormationCommands\ChangeFormationCommand.cs" />
+    <Compile Include="Commands\FormationCommands\CreateFormationCommand.cs" />
+    <Compile Include="Commands\PersonCommands\CreatePersonCommand.cs" />
+    <Compile Include="Commands\PhoneCommands\ChangePhoneCommand.cs" />
+    <Compile Include="Commands\PhoneCommands\CreatePhoneCommand.cs" />
+    <Compile Include="Commands\SpecialityCommands\ChangeSpecialityCommand.cs" />
+    <Compile Include="Commands\SpecialityCommands\CreateSpecialityCommand.cs" />
+    <Compile Include="Commands\WeknessCommands\ChangeWeakness.cs" />
+    <Compile Include="Commands\WeknessCommands\CreateWekness.cs" />
+    <Compile Include="Commands\StrongPointCommands\ChangeStrongPoint.cs" />
+    <Compile Include="Commands\StrongPointCommands\CreateStrongPointCommand.cs" />
+    <Compile Include="Commands\UserCommands\CreateUserCommand.cs" />
     <Compile Include="Contracts\Repositories\IActionPlanRepository.cs" />
     <Compile Include="Contracts\Repositories\IAddressRepository.cs" />
     <Compile Include="Contracts\Repositories\IBudgetRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoacheeRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoachingProcessRepository.cs" />
+    <Compile Include="Contracts\Repositories\ISpecialityRepository.cs" />
     <Compile Include="Contracts\Repositories\IWeaknessRepository.cs" />
     <Compile Include="Contracts\Repositories\IUserRepository.cs" />
     <Compile Include="Contracts\Repositories\IStrongPointRepository.cs" />
@@ -65,17 +82,16 @@
     <Compile Include="Contracts\Repositories\IEvaluationToolRepository.cs" />
     <Compile Include="Contracts\Repositories\IEvaluationRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoachRepository.cs" />
-    <Compile Include="Contracts\Services\IActionPlanService.cs" />
-    <Compile Include="Contracts\Services\ICoacheeService.cs" />
-    <Compile Include="Contracts\Services\ICoachService.cs" />
+    <Compile Include="Contracts\Services\ICoahceeApplicationService.cs" />
+    <Compile Include="Contracts\Services\ICoachApplicationService.cs" />
+    <Compile Include="Contracts\Services\IWeaknessApplicationService.cs" />
+    <Compile Include="Contracts\Services\IStrongPointApplicationService.cs" />
+    <Compile Include="Contracts\Services\ISpecialityApplicationService.cs" />
+    <Compile Include="Contracts\Services\IFormationApplicationService.cs" />
+    <Compile Include="Contracts\Services\IAddressApplicationService.cs" />
+    <Compile Include="Contracts\Services\IPersonApplicationService.cs" />
+    <Compile Include="Contracts\Services\IPhoneApplicationService.cs" />
     <Compile Include="Contracts\Services\IUserApplicationService.cs" />
-    <Compile Include="Contracts\Services\IFormacaoService.cs" />
-    <Compile Include="Contracts\Services\IPontoForteService.cs" />
-    <Compile Include="Contracts\Services\IEspecialidadeService.cs" />
-    <Compile Include="Contracts\Services\IFragilidadeService.cs" />
-    <Compile Include="Contracts\Services\IPessoaService.cs" />
-    <Compile Include="Contracts\Services\IEnderecoService.cs" />
-    <Compile Include="Contracts\Services\ITelefoneService.cs" />
     <Compile Include="Enums\EModeProcess.cs" />
     <Compile Include="Enums\ESessionClassification.cs" />
     <Compile Include="Enums\EState.cs" />
@@ -85,6 +101,7 @@
     <Compile Include="Enums\ETypeEvaluationTool.cs" />
     <Compile Include="Enums\ETypeQuestion.cs" />
     <Compile Include="Enums\ETypeReply.cs" />
+    <Compile Include="Enums\ETypeUser.cs" />
     <Compile Include="Models\Evaluation.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Coachee.cs" />
@@ -136,10 +153,19 @@
     <Compile Include="Scopes\PhoneScope.cs" />
     <Compile Include="Scopes\PersonScope.cs" />
     <Compile Include="Scopes\AddressScope.cs" />
+    <Compile Include="Specs\CoachSpecs.cs" />
+    <Compile Include="Specs\FormationSpecs.cs" />
+    <Compile Include="Specs\PersonSpecs.cs" />
+    <Compile Include="Specs\AdressSpecs.cs" />
+    <Compile Include="Specs\PhoneSpecs.cs" />
+    <Compile Include="Specs\CoacheeSpecs.cs" />
+    <Compile Include="Specs\WeknessSpecs.cs" />
+    <Compile Include="Specs\StrongPointSpecs.cs" />
+    <Compile Include="Specs\SpecialitySpecs.cs" />
+    <Compile Include="Specs\UserSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Fakes Include="Fakes\CoachingPlan.SharedKernel.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +174,7 @@
       <Name>CoachingPlan.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

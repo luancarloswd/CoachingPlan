@@ -41,7 +41,6 @@ namespace CoachingPlan.Domain.Models
         #endregion
 
         #region Methods
-
         public void ChangeName(string name)
         {
             if (!this.ChangeNameScopeIsValid(name))

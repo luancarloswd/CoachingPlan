@@ -12,6 +12,8 @@ using Owin;
 using System;
 using System.Web.Http;
 using CoachingPlan.SharedKernel;
+using CoachingPlan.Infraestructure.Data;
+using CoachingPlan.Infraestructure.Identity;
 
 namespace CoachingPlan.API
 {
@@ -61,6 +63,8 @@ namespace CoachingPlan.API
 
         public void ConfigureOAuth(IAppBuilder app, IUserApplicationService userService)
         {
+            //app.CreatePerOwinContext(AppDataContext.Create);
+            //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,

@@ -24,7 +24,7 @@ namespace CoachingPlan.API.Helpers
             {
                 return container.Resolve(serviceType);
             }
-            catch (ResolutionFailedException)
+             catch (ResolutionFailedException)
             {
                 return null;
             }

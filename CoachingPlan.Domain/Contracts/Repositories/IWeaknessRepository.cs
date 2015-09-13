@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace WeaknessingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IWeaknessRepository : IDisposable
     {
         Weakness GetOne(Guid id);
+        Weakness GetOneByCoachee(Guid idCoachee);
         List<Weakness> GetAll();
         List<Weakness> GetAll(int take, int skip);
         void Create(Weakness Weakness);

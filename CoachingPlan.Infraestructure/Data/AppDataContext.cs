@@ -24,7 +24,7 @@ namespace CoachingPlan.Infraestructure.Data
         public DbSet<Address> Address { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<Coach> Coach { get; set; }
-        public DbSet<Formation> Formation { get; set; }
+        public DbSet<Formation> Formation{ get; set; }
         public DbSet<Speciality> Speciality { get; set; }
         public DbSet<Coachee> Coachee { get; set; }
         public DbSet<Weakness> Weakness { get; set; }

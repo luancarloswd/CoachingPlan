@@ -7,6 +7,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     public interface ICoachRepository : IDisposable
     {
         Coach GetOne(Guid id);
+        Coach GetOneByUser(string idUser);
         List<Coach> GetAll();
         List<Coach> GetAll(int take, int skip);
         void Create(Coach Coach);

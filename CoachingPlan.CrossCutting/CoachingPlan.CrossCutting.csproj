@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{445944EB-873D-4265-A01B-181FFCDC0B1C}</ProjectGuid>
+    <ProjectGuid>{B8815F4B-7D33-4E71-9527-5009DF0F422B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoachingPlan.CrossCutting</RootNamespace>
     <AssemblyName>CoachingPlan.CrossCutting</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoachingPlan.SharedKernel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CoachingPlan.SharedKernel.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\EntityFramework.dll</HintPath>
@@ -134,6 +129,13 @@
       <Project>{df8e49e8-2723-41c6-b598-e34581ae55f3}</Project>
       <Name>CoachingPlan.Infraestructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CoachingPlan.SharedKernel\CoachingPlan.SharedKernel.csproj">
+      <Project>{b2e14f3c-dfea-49f5-bdb1-874dc4a47eb0}</Project>
+      <Name>CoachingPlan.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

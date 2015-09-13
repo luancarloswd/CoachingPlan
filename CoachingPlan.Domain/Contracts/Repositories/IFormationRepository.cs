@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 
-namespace FormationingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IFormationRepository : IDisposable
     {
         Formation GetOne(Guid id);
+        Formation GetOneByCoach(Guid idCoach);
         List<Formation> GetAll();
         List<Formation> GetAll(int take, int skip);
-        void Create(Formation Formation);
-        void Update(Formation Formation);
-        void Delete(Formation Formation);
+        void Create(Formation formation);
+        void Update(Formation formation);
+        void Delete(Formation formation);
     }
 }

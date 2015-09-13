@@ -7,7 +7,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     public interface ICoacheeRepository : IDisposable
     {
         Coachee GetOne(Guid id);
-        Coachee GetOneInclude(Guid id);
+        Coachee GetOneByUser(string idUser);
         List<Coachee> GetAll();
         List<Coachee> GetAll(int take, int skip);
         void Create(Coachee Coachee);
