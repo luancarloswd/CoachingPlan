@@ -27,8 +27,8 @@ namespace CoachingPlan.Domain.Commands.PersonCommands
             this.Genre = genre;
             this.Status = status;
             this.Photograph = phototgraph;
-            this.Phone = new List<Phone>();
-            this.Address = new List<Address>();
+            this.Phone = phone;
+            this.Address = address;
         }
 
     }

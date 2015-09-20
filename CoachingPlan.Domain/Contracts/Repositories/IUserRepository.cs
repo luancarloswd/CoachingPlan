@@ -16,6 +16,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(User user, string password);
         void Update(User user);
         void Delete(User user);
-        User Authenticate(string email, string password);
+        Task<User> Authenticate(string userName, string password);
     }
 }

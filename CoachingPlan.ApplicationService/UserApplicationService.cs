@@ -66,6 +66,10 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetOneByPerson(idPerson);
         }
+        public User Authenticate(string userName, string password)
+        {
+            return _repository.Authenticate(userName, password).Result;
+        }
         public User Update(User user)
         {
             var userInto = user;

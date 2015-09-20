@@ -72,14 +72,14 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _userManager.UpdateAsync(user);
         }
-        public User Authenticate(string email, string password)
+        public async Task<User> Authenticate(string userName, string password)
         {
-            throw new NotImplementedException();
+            return await _userManager.FindAsync(userName, password);
         }
         public void Dispose()
         {
-            this._userManager = null;
-            this._context = null;
+            //this._userManager = null;
+            //this._context = null;
         }
     }
 }

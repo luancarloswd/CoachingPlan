@@ -8,9 +8,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         public User(){}
-        public User(Guid idPerson, string email, string useername) 
+        public User(Guid idPerson, string email, string userName) 
         {
-            this.IdPerson = IdPerson;
+            this.IdPerson = idPerson;
+            this.Email = email;
+            this.UserName = userName;
             this.Session = new HashSet<Session>();
             this.Evaluation = new HashSet<Evaluation>();
             this.Message = new HashSet<Message>();

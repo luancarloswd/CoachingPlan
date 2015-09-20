@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Phone Create(CreatePhoneCommand command)
         {
-            var phone = new Phone(command.DDD, command.Number, command.IdPerson, command.Description);
+            var phone = new Phone(command.DDD, command.Number, command.Description);
             phone.Validate();
             _repository.Create(phone);
 

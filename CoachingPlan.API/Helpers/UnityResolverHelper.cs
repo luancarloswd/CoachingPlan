@@ -50,7 +50,7 @@ namespace CoachingPlan.API.Helpers
 
         public void Dispose()
         {
-            container.Dispose();
+            //container.Dispose();
         }
     }
 }

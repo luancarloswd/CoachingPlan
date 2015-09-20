@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Address Create(CreateAddressCommand command)
         {
-            var Address = new Address(command.CEP, command.State, command.City, command.Street, command.Number, command.Type, command.IdPerson, command.Description );
+            var Address = new Address(command.CEP, command.State, command.City, command.Street, command.Number, command.Type, command.Description );
             Address.Validate();
             _repository.Create(Address);
 

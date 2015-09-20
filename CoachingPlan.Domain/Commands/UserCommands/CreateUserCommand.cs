@@ -15,9 +15,9 @@ namespace CoachingPlan.Domain.Commands.UserCommands
         public CreateUserCommand(string email, string userName, string password, Guid idPerson, ETypeUser type)
         {
             this.Email = email;
-            this.UserName = UserName;
+            this.UserName = userName;
             this.Password = password;
-            this.IdPerson = IdPerson;
+            this.IdPerson = idPerson;
             this.Type = type;
         }
     }

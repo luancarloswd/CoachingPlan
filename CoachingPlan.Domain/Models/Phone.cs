@@ -7,12 +7,11 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Phone (){ }
-        public Phone(string ddd, string number, Guid idPerson, string description = null)
+        public Phone(string ddd, string number,string description = null)
         {
             this.Id = Guid.NewGuid();
             this.DDD = ddd;
             this.Number = number;
-            this.IdPerson = idPerson;
             this.Description = description;
         }
         #endregion

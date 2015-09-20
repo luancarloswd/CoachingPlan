@@ -18,5 +18,6 @@ namespace CoachingPlan.Domain.Contracts.Services
         User Create(CreateUserCommand commandUser);
         User Update(User user);
         User Delete(string id);
+        User Authenticate(string userName, string password);
     }
 }

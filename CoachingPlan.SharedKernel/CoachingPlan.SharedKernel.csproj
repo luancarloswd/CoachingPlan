@@ -44,7 +44,6 @@
     <Compile Include="Events\Contracts\IDomainEvent.cs" />
     <Compile Include="Events\DomainEvent.cs" />
     <Compile Include="Events\DomainNotification.cs" />
-    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="IContainer.cs" />
     <Compile Include="IHandler.cs" />
     <Compile Include="Messages\Errors.Designer.cs" />
@@ -55,7 +54,9 @@
     <Compile Include="Validations\CPFAssertionConcern.cs" />
     <Compile Include="Validations\EmailAssertionConcern.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Messages\Errors.resx" />
   </ItemGroup>

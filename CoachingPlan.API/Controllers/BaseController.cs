@@ -22,12 +22,13 @@ namespace CoachingPlan.API.Controllers
 
         public Task<HttpResponseMessage> CreateResponse(HttpStatusCode code, object result)
         {
-            foreach (var notification in Notifications) {
+            ResponseMessage = Request.CreateResponse(code, result);
+
+            foreach (var notification in Notifications)
+            {
                 if (notification.HasNotifications())
-                    ResponseMessage = Request.CreateResponse(HttpStatusCode.BadRequest, new { errors = notification.Notify() });
-                else
-                    ResponseMessage = Request.CreateResponse(code, result);
-            }
+                        ResponseMessage = Request.CreateResponse(HttpStatusCode.BadRequest, new { errors = notification.Notify() });
+                }            
 
             return Task.FromResult<HttpResponseMessage>(ResponseMessage);
         }
