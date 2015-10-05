@@ -12,14 +12,14 @@ namespace CoachingPlan.Domain.Scopes
         {
             return AssertionConcern.IsSatisfiedBy(
                              AssertionConcern.AssertArgumentNotNull(formation.Name, Errors.InvalidTraining),
-                             AssertionConcern.AssertArgumentLength(formation.Name, 2, 45, Errors.InvalidTraining)
+                             AssertionConcern.AssertArgumentLength(formation.Name, 2, 50, Errors.InvalidTraining)
                 );
         }
         public static bool ChangeNameScopeIsValid(this Formation formation, string name)
         {
             return AssertionConcern.IsSatisfiedBy(
                              AssertionConcern.AssertArgumentNotNull(name, Errors.InvalidTraining),
-                             AssertionConcern.AssertArgumentLength(name, 2, 45, Errors.InvalidTraining)
+                             AssertionConcern.AssertArgumentLength(name, 2, 50, Errors.InvalidTraining)
                 );
         }
     }

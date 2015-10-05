@@ -5,6 +5,7 @@ using CoachingPlan.Domain.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
@@ -48,6 +49,22 @@ namespace CoachingPlan.Infraestructure.Repositories
         public void Update(Coachee coachee)
         {
             _context.Entry<Coachee>(coachee).State = System.Data.Entity.EntityState.Modified;
+        }
+
+        public Coachee GetOneIncludeDetails(Guid id)
+        {
+            return _context.Coachee.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
+        }
+
+
+        public List<Coachee> GetAllIncludeDetails()
+        {
+            return _context.Coachee.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).ToList();
+        }
+        
+        public List<Coachee> GetAllIncludePerson()
+        {
+            return _context.Coachee.Include(x => x.User.Person).ToList();
         }
         public void Dispose()
         {

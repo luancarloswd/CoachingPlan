@@ -13,5 +13,8 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(Coach Coach);
         void Update(Coach Coach);
         void Delete(Coach Coach);
+        List<Coach> GetAllIncludeDetails();
+        List<Coach> GetAllIncludePerson();
+        Coach GetOneIncludeDetails(Guid id);
     }
 }

@@ -1,5 +1,4 @@
-﻿using CoachingPlan.Domain.Models;
-using CoachingPlan.Infraestructure.Data;
+﻿using CoachingPlan.Infraestructure.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -16,7 +15,10 @@ namespace CoachingPlan.Infraestructure.Identity
 
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
-            return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<AppDataContext>()));
+            var appDbContext = context.Get<AppDataContext>();
+            var appRoleManager = new ApplicationRoleManager(new RoleStore<IdentityRole>(appDbContext));
+
+            return appRoleManager;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Coachee Create(CreateCoacheeCommand command)
         {
-            var Coachee = new Coachee(command.Profession, command.IdUser, command.FilledTool, command.Weakness, command.StrongPoint, command.CoachingProcess);
+            var Coachee = new Coachee(command.Profession, command.IdUser, command.Weakness, command.StrongPoint, command.CoachingProcess);
             Coachee.Validate();
             _repository.Create(Coachee);
 
@@ -57,23 +57,45 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetOneByUser(idUser);
         }
-        public Coachee Update(Coachee command)
+        public Coachee GetOneIncludeDetails(Guid id)
         {
-            var Coachee = _repository.GetOne(command.Id);
+            return _repository.GetOneIncludeDetails(id);
+        }
+        public Coachee Update(UpdateCoacheeCommand command)
+        {
+            var coachee = _repository.GetOne(command.Id);
             if(command.Profession != null)
-                Coachee.ChangeProfession(command.Profession);
+                coachee.ChangeProfession(command.Profession);
 
-            _repository.Update(Coachee);
+            foreach (var weakness in command.Weakness)
+            {
+                coachee.AddWeakness(weakness);
+            }
+            foreach (var strongPoint in command.StrongPoint)
+            {
+                coachee.AddStrongPoint(strongPoint);
+            }
+
+            _repository.Update(coachee);
 
             if (Commit())
-                return Coachee;
+                return coachee;
 
             return null;
         }
 
+        public List<Coachee> GetAllIncludeDetails()
+        {
+            return _repository.GetAllIncludeDetails();
+        }
+        public List<Coachee> GetAllIncludePerson()
+        {
+            return _repository.GetAllIncludePerson();
+        }
         public void Dispose()
         {
             _repository = null;
         }
+
     }
 }

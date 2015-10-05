@@ -7,11 +7,10 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Formation(){}
-        public Formation(string name, Guid idCoach, string description = null)
+        public Formation(string name, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            this.IdCoach = idCoach;
             this.Description = description;
         }
         #endregion

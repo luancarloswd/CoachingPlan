@@ -4,6 +4,7 @@ using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Commands.AddressCommands;
+using CoachingPlan.Domain.Enums;
 
 namespace CoachingPlan.ApplicationService
 {
@@ -25,6 +26,38 @@ namespace CoachingPlan.ApplicationService
                 return Address;
 
             return null;
+        }
+        public List<Address> AddToPerson(dynamic body)
+        {
+            List<Address> listAddress = new List<Address>();
+            foreach (var item in body)
+            {
+                if ((item.city != null) || (item.city != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangeAddressCommand(
+                            Guid.Parse((string)item.id),
+                            (string)item.cep,
+                            (EStates)item.state,
+                            (string)item.city,
+                            (string)item.street,
+                            (int)item.number,
+                            (EAddressType)item.type,
+                            (string)item.description));
+                    else
+                        listAddress.Add(new Address(
+                            (string)item.cep,
+                            (EStates)item.state,
+                            (string)item.city,
+                            (string)item.street,
+                            (int)item.number,
+                            (EAddressType)item.type,
+                            (string)item.description)
+                            );
+                }
+            }
+            return listAddress;
+
         }
 
         public Address Delete(Guid id)

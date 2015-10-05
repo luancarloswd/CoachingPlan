@@ -11,5 +11,9 @@ namespace CoachingPlan.Domain.Specs
             return x => x.IdPerson == idPerson;
         }
 
+        public static Expression<Func<User, bool>> GetOneByEmail(string email)
+        {
+            return x => x.Email == email;
+        }
     }
 }

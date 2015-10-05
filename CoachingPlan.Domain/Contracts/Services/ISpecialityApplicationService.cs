@@ -14,5 +14,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Speciality Create(CreateSpecialityCommand formation);
         Speciality Update(ChangeSpecialityCommand formation);
         Speciality Delete(Guid id);
+        List<Speciality> AddToCoach(dynamic body);
+
     }
 }

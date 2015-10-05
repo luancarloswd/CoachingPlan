@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Speciality Create(CreateSpecialityCommand command)
         {
-            var speciality = new Speciality(command.Name, command.IdCoach, command.Description);
+            var speciality = new Speciality(command.Name, command.Description);
             speciality.Validate();
             _repository.Create(speciality);
 
@@ -73,6 +73,29 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public List<Speciality> AddToCoach(dynamic body)
+        {
+            List<Speciality> listSpeciality = new List<Speciality>();
+            foreach (var item in body)
+            {
+                if ((item.name != null) || (item.name != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangeSpecialityCommand(
+                            Guid.Parse((string)body.id),
+                            (string)item.name,
+                            (string)item.description
+                            ));
+                    else
+                        listSpeciality.Add(new Speciality(
+                            (string)item.name,
+                            (string)item.description
+                        ));
+                }
+            }
+
+            return listSpeciality;
+        }
         public void Dispose()
         {
             _repository = null;

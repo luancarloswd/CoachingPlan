@@ -1,5 +1,7 @@
-﻿using CoachingPlan.SharedKernel;
+﻿using CoachingPlan.Infraestructure.Identity;
+using CoachingPlan.SharedKernel;
 using CoachingPlan.SharedKernel.Events;
+using Microsoft.AspNet.Identity.Owin;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -13,12 +15,14 @@ namespace CoachingPlan.API.Controllers
     {
         public IEnumerable<IHandler<DomainNotification>> Notifications;
         public HttpResponseMessage ResponseMessage;
+        private ApplicationRoleManager _AppRoleManager = null;
 
         public BaseController()
         {
             this.Notifications = DomainEvent.Container.GetService<IHandler<DomainNotification>>();
             this.ResponseMessage = new HttpResponseMessage();
         }
+
 
         public Task<HttpResponseMessage> CreateResponse(HttpStatusCode code, object result)
         {

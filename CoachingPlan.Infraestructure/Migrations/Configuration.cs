@@ -18,18 +18,10 @@ namespace CoachingPlan.Infraestructure.Migrations
 
         protected override void Seed(CoachingPlan.Infraestructure.Data.AppDataContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Roles.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole { Name = "Administrator"});
+            context.Roles.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole { Name = "Coach" });
+            context.Roles.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole { Name = "Coachee" });
+            context.Roles.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole { Name = "SessionManager" });
         }
     }
 }

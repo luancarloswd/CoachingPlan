@@ -7,11 +7,10 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Speciality(){}
-        public Speciality(string name, Guid idCoach, string description = null)
+        public Speciality(string name, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            this.IdCoach = IdCoach;
             this.Description = description;
         }
         #endregion

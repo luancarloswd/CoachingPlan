@@ -9,8 +9,9 @@ namespace CoachingPlan.Domain.Commands.PhoneCommands
         public string Number { get;  set; }
         public string Description { get;  set; }
 
-        public ChangePhoneCommand(string ddd, string number, string description = null)
+        public ChangePhoneCommand(Guid id, string ddd, string number, string description = null)
         {
+            this.Id = id;
             this.DDD = ddd;
             this.Number = number;
             this.Description = description;           

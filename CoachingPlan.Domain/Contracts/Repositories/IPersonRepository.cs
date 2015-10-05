@@ -10,8 +10,12 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Person GetOne(Guid id);
         List<Person> GetAll();
         List<Person> GetAll(int take, int skip);
+        List<Person> GetAllIncludeDetails();
         void Create(Person Person);
         void Update(Person Person);
         void Delete(Person Person);
+        List<Person> GetAllByNameIncludeCoach(string name);
+        List<Person> GetAllByNameIncludeCoachee(string name);
+        Person GetOneIncludeDetails(Guid id);
     }
 }

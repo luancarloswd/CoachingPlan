@@ -5,6 +5,7 @@ using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Commands.UserCommands;
 using CoachingPlan.Domain.Contracts.Repositories;
+using System.Security.Claims;
 
 namespace CoachingPlan.ApplicationService
 {
@@ -29,11 +30,11 @@ namespace CoachingPlan.ApplicationService
 
         public User Delete(string id)
         {
-            var user = _repository.GetOne(id);
-            _repository.Delete(user.Result);
+            var user = _repository.GetOneIncludeDetails(id);
+            _repository.Delete(user);
 
             if (Commit())
-                return user.Result;
+                return user;
 
             return null;
         }
@@ -48,19 +49,24 @@ namespace CoachingPlan.ApplicationService
             return _repository.GetAll(take, skip);
         }
 
+        public List<User> GetAllIncludeDetails()
+        {
+            return _repository.GetAllIncludeDetails();
+        }
+
         public User GetOne(string id)
         {
-            return _repository.GetOne(id).Result;
+            return _repository.GetOne(id);
         }
 
         public User GetOneByEmail(string email)
         {
-            return _repository.GetOneByEmail(email).Result;
+            return _repository.GetOneByEmail(email);
         }
 
         public User GetOneByName(string name)
         {
-            return _repository.GetOneByName(name).Result;
+            return _repository.GetOneByName(name);
         }
         public User GetOneByPerson(Guid idPerson)
         {
@@ -68,11 +74,11 @@ namespace CoachingPlan.ApplicationService
         }
         public User Authenticate(string userName, string password)
         {
-            return _repository.Authenticate(userName, password).Result;
+            return _repository.Authenticate(userName, password);
         }
-        public User Update(User user)
+        public User Update(UpdateUserCommand commandUser)
         {
-            var userInto = user;
+            var userInto = new User(commandUser.IdPerson, commandUser.Email, commandUser.UserName);
             userInto.Validate();
 
             _repository.Update(userInto);
@@ -82,11 +88,32 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
+        public void AddRole(string id, string role)
+        {
+            _repository.AddRole(id, role);
+        }
 
+        public ICollection<string> GetAllRoles(string id)
+        {
+            return _repository.GetAllRoles(id);
+        }
+
+        public ClaimsIdentity GenerateUserIdentityAsync(User user, string authenticationType)
+        {
+            return _repository.GenerateUserIdentityAsync(user, authenticationType);
+        }
+
+        public User GetOneByEmailIncludePerson(string email)
+        {
+            return _repository.GetOneByEmailIncludePerson(email);
+        }
+        public User GetOneIncludeDetails(string id)
+        {
+            return _repository.GetOneIncludeDetails(id);
+        }
         public void Dispose()
         {
             _repository = null;
         }
-
     }
 }

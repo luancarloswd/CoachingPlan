@@ -12,7 +12,10 @@ namespace CoachingPlan.Domain.Contracts.Services
         List<Coach> GetAll();
         List<Coach> GetAll(int take, int skip);
         Coach Create(CreateCoachCommand commandCoach);
-        Coach Update(Coach command);
+        Coach Update(UpdateCoachCommand command);
         Coach Delete(Guid id);
+        List<Coach> GetAllIncludeDetails();
+        List<Coach> GetAllIncludePerson();
+        Coach GetOneIncludeDetails(Guid id);
     }
 }

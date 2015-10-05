@@ -26,7 +26,6 @@ namespace CoachingPlan.CrossCutting
         public static void Resolve(UnityContainer container)
         {
 
-            container.RegisterType<IHandler<DomainNotification>, DomainNotificationHandler>(new HierarchicalLifetimeManager());
             //context
             container.RegisterType<AppDataContext, AppDataContext>(new HierarchicalLifetimeManager());
 
@@ -39,6 +38,7 @@ namespace CoachingPlan.CrossCutting
 
             //repositories
             container.RegisterType<IUserRepository, UserRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRoleRepository, RoleRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IPersonRepository, PersonRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IAddressRepository, AddressRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IPhoneRepository, PhoneRepository>(new HierarchicalLifetimeManager());
@@ -50,18 +50,25 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<ISpecialityRepository, SpecialityRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoachRepository, CoachRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoacheeRepository, CoacheeRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<ISessionRepository, SessionRepository>(new HierarchicalLifetimeManager());
 
 
             //Identity
             container.RegisterType(typeof(UserManager<>), new InjectionConstructor(typeof(IUserStore<>)));
-            container.RegisterType<UserManager<User>, ApplicationUserManager>(new HierarchicalLifetimeManager());
-            container.RegisterType<Microsoft.AspNet.Identity.IUser>(new InjectionFactory(c => c.Resolve<Microsoft.AspNet.Identity.IUser>()));
+             container.RegisterType<UserManager<User>, ApplicationUserManager>(new HierarchicalLifetimeManager());
+            container.RegisterType<RoleManager<IdentityRole>, ApplicationRoleManager>(new HierarchicalLifetimeManager());;
+            container.RegisterType<IUser>(new InjectionFactory(c => c.Resolve<IUser>()));
+            container.RegisterType<IRole>(new InjectionFactory(c => c.Resolve<IRole>()));
             container.RegisterType(typeof(IUserStore<>), typeof(UserStore<>));
-            container.RegisterType<DbContext, AppDataContext>(new ContainerControlledLifetimeManager());
+            container.RegisterType(typeof(IRoleStore<IdentityRole, string>), typeof(RoleStore<IdentityRole>));
+            container.RegisterType<DbContext, AppDataContext>(new HierarchicalLifetimeManager());
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => new OwinContext().Authentication));
+
+
 
             //Services
             container.RegisterType<IUserApplicationService, UserApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRoleApplicationService, RoleApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPersonApplicationService, PersonApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<IAddressApplicationService, AddressApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPhoneApplicationService, PhoneApplicationService>(new HierarchicalLifetimeManager());
@@ -73,6 +80,8 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<ISpecialityApplicationService, SpecialityApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoachApplicationService, CoachApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoacheeApplicationService, CoacheeApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<ISessionApplicationService, SessionApplicationService>(new HierarchicalLifetimeManager());
+
 
         }
     }

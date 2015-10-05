@@ -43,17 +43,21 @@
   <ItemGroup>
     <Compile Include="Commands\AddressCommands\ChangeAddressCommand.cs" />
     <Compile Include="Commands\AddressCommands\CreateAddressCommand.cs" />
+    <Compile Include="Commands\CoachCommands\UpdateCoachCommand.cs" />
     <Compile Include="Commands\CoachCommands\CreateCoachCommand.cs" />
+    <Compile Include="Commands\CoacheeCommands\UpdateCoacheeCommand.cs" />
     <Compile Include="Commands\CoacheeCommands\CreateCoacheeCommand.cs" />
     <Compile Include="Commands\FormationCommands\ChangeFormationCommand.cs" />
     <Compile Include="Commands\FormationCommands\CreateFormationCommand.cs" />
+    <Compile Include="Commands\PersonCommands\UpdatePersonCommand.cs" />
     <Compile Include="Commands\PersonCommands\CreatePersonCommand.cs" />
     <Compile Include="Commands\PhoneCommands\ChangePhoneCommand.cs" />
     <Compile Include="Commands\PhoneCommands\CreatePhoneCommand.cs" />
     <Compile Include="Commands\SpecialityCommands\ChangeSpecialityCommand.cs" />
     <Compile Include="Commands\SpecialityCommands\CreateSpecialityCommand.cs" />
-    <Compile Include="Commands\WeknessCommands\ChangeWeakness.cs" />
-    <Compile Include="Commands\WeknessCommands\CreateWekness.cs" />
+    <Compile Include="Commands\UserCommands\UpdateUserCommand.cs" />
+    <Compile Include="Commands\WeknessCommands\ChangeWeaknessCommand.cs" />
+    <Compile Include="Commands\WeknessCommands\CreateWeknessCommand.cs" />
     <Compile Include="Commands\StrongPointCommands\ChangeStrongPoint.cs" />
     <Compile Include="Commands\StrongPointCommands\CreateStrongPointCommand.cs" />
     <Compile Include="Commands\UserCommands\CreateUserCommand.cs" />
@@ -63,6 +67,7 @@
     <Compile Include="Contracts\Repositories\ICoacheeRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoachingProcessRepository.cs" />
     <Compile Include="Contracts\Repositories\ISpecialityRepository.cs" />
+    <Compile Include="Contracts\Repositories\IRoleRepository.cs" />
     <Compile Include="Contracts\Repositories\IWeaknessRepository.cs" />
     <Compile Include="Contracts\Repositories\IUserRepository.cs" />
     <Compile Include="Contracts\Repositories\IStrongPointRepository.cs" />
@@ -84,6 +89,8 @@
     <Compile Include="Contracts\Repositories\ICoachRepository.cs" />
     <Compile Include="Contracts\Services\ICoahceeApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoachApplicationService.cs" />
+    <Compile Include="Contracts\Services\IRoleApplicationService.cs" />
+    <Compile Include="Contracts\Services\ISessionApplicationService.cs" />
     <Compile Include="Contracts\Services\IWeaknessApplicationService.cs" />
     <Compile Include="Contracts\Services\IStrongPointApplicationService.cs" />
     <Compile Include="Contracts\Services\ISpecialityApplicationService.cs" />
@@ -157,6 +164,7 @@
     <Compile Include="Specs\FormationSpecs.cs" />
     <Compile Include="Specs\PersonSpecs.cs" />
     <Compile Include="Specs\AdressSpecs.cs" />
+    <Compile Include="Specs\SessionSpecs.cs" />
     <Compile Include="Specs\PhoneSpecs.cs" />
     <Compile Include="Specs\CoacheeSpecs.cs" />
     <Compile Include="Specs\WeknessSpecs.cs" />

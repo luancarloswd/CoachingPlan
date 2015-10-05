@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="CoachApplicationService.cs" />
     <Compile Include="CoahceeApplicationService.cs" />
+    <Compile Include="SessionApplicationService.cs" />
+    <Compile Include="RoleApplicationService.cs" />
     <Compile Include="WeaknessApplicationService.cs" />
     <Compile Include="StrongPointApplicationService.cs" />
     <Compile Include="PersonApplicationService.cs" />

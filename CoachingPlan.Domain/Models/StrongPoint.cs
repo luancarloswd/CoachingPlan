@@ -8,10 +8,9 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected StrongPoint() {}
-        public StrongPoint(string name, EClassStrongPoint classStrongPoint, Guid idCoachee, string description = null)
+        public StrongPoint(string name, EClassStrongPoint classStrongPoint, string description = null)
         {
             this.Id = Guid.NewGuid();
-            this.IdCoachee = idCoachee;
             this.Name = name;
             this.Class = classStrongPoint;
             this.Description = description;

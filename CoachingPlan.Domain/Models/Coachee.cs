@@ -10,19 +10,22 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Coachee() { }
-        public Coachee(string profession, string idUser, ICollection<FilledTool> filledTool, ICollection<Weakness> weakness, ICollection<StrongPoint> strongPoint, ICollection<CoachingProcess> coachingProcess)
+        public Coachee(string profession, string idUser, ICollection<Weakness> weakness, ICollection<StrongPoint> strongPoint, ICollection<CoachingProcess> coachingProcess)
         {
             this.Id = Guid.NewGuid();
             this.Profession = profession;
             this.IdUser = idUser;
             this.FilledTool = new HashSet<FilledTool>();
-            filledTool.ToList().ForEach(x => AddFilledTool(x));
             this.Weakness = new HashSet<Weakness>();
-            weakness.ToList().ForEach(x => AddWeakness(x));
+            if (weakness != null)
+                weakness.ToList().ForEach(x => AddWeakness(x));
             this.StrongPoint = new HashSet<StrongPoint>();
-            strongPoint.ToList().ForEach(x => AddStrongPoint(x));
+            if (strongPoint != null)
+                strongPoint.ToList().ForEach(x => AddStrongPoint(x));
             this.CoachingProcess = new HashSet<CoachingProcess>();
-            coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
+            if (coachingProcess != null)
+                coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
+            this.Session = new HashSet<Session>();
         }
         #endregion
 
@@ -36,6 +39,7 @@ namespace CoachingPlan.Domain.Models
         public virtual ICollection<Weakness> Weakness { get; set; }
         public virtual ICollection<StrongPoint> StrongPoint { get; set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; set; }
+        public virtual ICollection<Session> Session { get; set; }
         #endregion
 
         #region Methods

@@ -5,6 +5,7 @@ using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Commands.SpecialityCommands;
 using CoachingPlan.Domain.Commands.StrongPointCommands;
+using CoachingPlan.Domain.Enums;
 
 namespace CoachingPlan.ApplicationService
 {
@@ -18,7 +19,7 @@ namespace CoachingPlan.ApplicationService
         }
         public StrongPoint Create(CreateStrongPointCommand command)
         {
-            var StrongPoint = new StrongPoint(command.Name, command.Class, command.IdCoachee, command.Description);
+            var StrongPoint = new StrongPoint(command.Name, command.Class, command.Description);
             StrongPoint.Validate();
             _repository.Create(StrongPoint);
 
@@ -76,6 +77,31 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public List<StrongPoint> AddToCoachee(dynamic body)
+        {
+            List<StrongPoint> listStrongPoint = new List<StrongPoint>();
+            foreach (var item in body)
+            {
+                if ((item.name != null) || (item.name != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangeStrongPointCommand(
+                            Guid.Parse((string)body.id),
+                            (string)item.name,
+                            (EClassStrongPoint)item.classStrongPoint,
+                            (string)item.description
+                            ));
+                    else
+                        listStrongPoint.Add(new StrongPoint(
+                            (string)item.name,
+                            (EClassStrongPoint)item.classStrongPoint,
+                            (string)item.description
+                        ));
+                }
+            }
+
+            return listStrongPoint;
+        }
         public void Dispose()
         {
             _repository = null;

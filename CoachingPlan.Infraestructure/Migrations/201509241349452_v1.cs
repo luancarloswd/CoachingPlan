@@ -95,18 +95,40 @@ namespace CoachingPlan.Infraestructure.Migrations
                 .Index(t => t.a4_Id_Usuario_a8);
             
             CreateTable(
-                "dbo.a9_ponto_forte_tb",
+                "dbo.a12_Sessao_tb",
                 c => new
                     {
-                        Id_Ponto_Forte = c.Guid(nullable: false, identity: true),
-                        a8_Id_Coachee_a9 = c.Guid(nullable: false),
-                        Nome_Ponto_Forte = c.String(nullable: false, maxLength: 30, storeType: "nvarchar"),
-                        Classe_Ponto_Forte = c.Int(nullable: false),
-                        Descricao_Ponto_Forte = c.String(unicode: false),
+                        Id_Sessao = c.Guid(nullable: false, identity: true),
+                        a11_Id_Processo_a12 = c.Guid(nullable: false),
+                        a4_Id_Usuario_a12 = c.String(nullable: false, maxLength: 200, storeType: "nvarchar"),
+                        Tema_Sessao = c.String(nullable: false, maxLength: 45, storeType: "nvarchar"),
+                        Data_Sessao = c.DateTime(nullable: false, storeType: "date"),
+                        Inicio_Sessao = c.Time(nullable: false, precision: 0),
+                        Fim_Sessao = c.Time(precision: 0),
+                        Classificacao_Sessao = c.Int(nullable: false),
+                        Observacao_Sessao = c.String(unicode: false),
                     })
-                .PrimaryKey(t => t.Id_Ponto_Forte)
-                .ForeignKey("dbo.a8_coachee_tb", t => t.a8_Id_Coachee_a9, cascadeDelete: true)
-                .Index(t => t.a8_Id_Coachee_a9);
+                .PrimaryKey(t => t.Id_Sessao)
+                .ForeignKey("dbo.a11_Processo_Coaching_tb", t => t.a11_Id_Processo_a12, cascadeDelete: true)
+                .ForeignKey("dbo.a4_usuario_tb", t => t.a4_Id_Usuario_a12, cascadeDelete: true)
+                .Index(t => t.a11_Id_Processo_a12)
+                .Index(t => t.a4_Id_Usuario_a12);
+            
+            CreateTable(
+                "dbo.a13_Avaliacao_tb",
+                c => new
+                    {
+                        Id_Avaliacao = c.Guid(nullable: false, identity: true),
+                        Nota_Avaliacao = c.Single(nullable: false),
+                        Observacao_Processo = c.String(unicode: false),
+                        a12_Id_Sesso_a13 = c.Guid(nullable: false),
+                        a4_Id_Usuario_a13 = c.String(nullable: false, maxLength: 200, storeType: "nvarchar"),
+                    })
+                .PrimaryKey(t => t.Id_Avaliacao)
+                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sesso_a13, cascadeDelete: true)
+                .ForeignKey("dbo.a4_usuario_tb", t => t.a4_Id_Usuario_a13, cascadeDelete: true)
+                .Index(t => t.a12_Id_Sesso_a13)
+                .Index(t => t.a4_Id_Usuario_a13);
             
             CreateTable(
                 "dbo.a4_usuario_tb",
@@ -145,86 +167,6 @@ namespace CoachingPlan.Infraestructure.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.a4_usuario_tb", t => t.IdentityUser_Id)
                 .Index(t => t.IdentityUser_Id);
-            
-            CreateTable(
-                "dbo.a13_Avaliacao_tb",
-                c => new
-                    {
-                        Id_Avaliacao = c.Guid(nullable: false, identity: true),
-                        Nota_Avaliacao = c.Single(nullable: false),
-                        Observacao_Processo = c.String(unicode: false),
-                        a12_Id_Sesso_a13 = c.Guid(nullable: false),
-                        a4_Id_Usuario_a13 = c.String(nullable: false, maxLength: 200, storeType: "nvarchar"),
-                    })
-                .PrimaryKey(t => t.Id_Avaliacao)
-                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sesso_a13, cascadeDelete: true)
-                .ForeignKey("dbo.a4_usuario_tb", t => t.a4_Id_Usuario_a13, cascadeDelete: true)
-                .Index(t => t.a12_Id_Sesso_a13)
-                .Index(t => t.a4_Id_Usuario_a13);
-            
-            CreateTable(
-                "dbo.a12_Sessao_tb",
-                c => new
-                    {
-                        Id_Sessao = c.Guid(nullable: false, identity: true),
-                        a11_Id_Processo_a12 = c.Guid(nullable: false),
-                        a4_Id_Usuario_a12 = c.String(nullable: false, maxLength: 200, storeType: "nvarchar"),
-                        Tema_Sessao = c.String(nullable: false, maxLength: 45, storeType: "nvarchar"),
-                        Data_Sessao = c.DateTime(nullable: false, storeType: "date"),
-                        Inicio_Sessao = c.Time(nullable: false, precision: 0),
-                        Fim_Sessao = c.Time(precision: 0),
-                        Classificacao_Sessao = c.Int(nullable: false),
-                        Observacao_Processo = c.String(unicode: false),
-                    })
-                .PrimaryKey(t => t.Id_Sessao)
-                .ForeignKey("dbo.a11_Processo_Coaching_tb", t => t.a11_Id_Processo_a12, cascadeDelete: true)
-                .ForeignKey("dbo.a4_usuario_tb", t => t.a4_Id_Usuario_a12, cascadeDelete: true)
-                .Index(t => t.a11_Id_Processo_a12)
-                .Index(t => t.a4_Id_Usuario_a12);
-            
-            CreateTable(
-                "dbo.a17_Tarefa_tb",
-                c => new
-                    {
-                        Id_Tarefa = c.Guid(nullable: false, identity: true),
-                        a12_Id_Sessao_a17 = c.Guid(nullable: false),
-                        a16_Id_Meta_a17 = c.Guid(nullable: false),
-                        Data_Inicio_Tarefa = c.DateTime(nullable: false, storeType: "date"),
-                        Data_Realizacao_Tarefa = c.DateTime(storeType: "date"),
-                        Data_Verificacao_Tarefa = c.DateTime(nullable: false, storeType: "date"),
-                        Descricao_Meta = c.String(unicode: false),
-                    })
-                .PrimaryKey(t => t.Id_Tarefa)
-                .ForeignKey("dbo.a16_Meta_tb", t => t.a16_Id_Meta_a17, cascadeDelete: true)
-                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sessao_a17, cascadeDelete: true)
-                .Index(t => t.a12_Id_Sessao_a17)
-                .Index(t => t.a16_Id_Meta_a17);
-            
-            CreateTable(
-                "dbo.a16_Meta_tb",
-                c => new
-                    {
-                        Id_Meta = c.Guid(nullable: false, identity: true),
-                        a15_Id_Objective_a16 = c.Guid(nullable: false),
-                        Prazo_Meta = c.DateTime(nullable: false, storeType: "date"),
-                        Descricao_Meta = c.String(unicode: false),
-                    })
-                .PrimaryKey(t => t.Id_Meta)
-                .ForeignKey("dbo.a15_Objetivo_tb", t => t.a15_Id_Objective_a16, cascadeDelete: true)
-                .Index(t => t.a15_Id_Objective_a16);
-            
-            CreateTable(
-                "dbo.a15_Objetivo_tb",
-                c => new
-                    {
-                        Id_Objetivo = c.Guid(nullable: false, identity: true),
-                        Descricao_Objetivo = c.String(unicode: false),
-                        Prazo_Objetivo = c.DateTime(nullable: false, storeType: "date"),
-                        a14_Id_Plano_a15 = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id_Objetivo)
-                .ForeignKey("dbo.a14_Plano_Acao_tb", t => t.a14_Id_Plano_a15, cascadeDelete: true)
-                .Index(t => t.a14_Id_Plano_a15);
             
             CreateTable(
                 "dbo.t1_logins_tb",
@@ -315,6 +257,64 @@ namespace CoachingPlan.Infraestructure.Migrations
                 .ForeignKey("dbo.a4_usuario_tb", t => t.IdentityUser_Id)
                 .Index(t => t.Id_Papel)
                 .Index(t => t.IdentityUser_Id);
+            
+            CreateTable(
+                "dbo.a17_Tarefa_tb",
+                c => new
+                    {
+                        Id_Tarefa = c.Guid(nullable: false, identity: true),
+                        a12_Id_Sessao_a17 = c.Guid(nullable: false),
+                        a16_Id_Meta_a17 = c.Guid(nullable: false),
+                        Data_Inicio_Tarefa = c.DateTime(nullable: false, storeType: "date"),
+                        Data_Realizacao_Tarefa = c.DateTime(storeType: "date"),
+                        Data_Verificacao_Tarefa = c.DateTime(nullable: false, storeType: "date"),
+                        Descricao_Meta = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.Id_Tarefa)
+                .ForeignKey("dbo.a16_Meta_tb", t => t.a16_Id_Meta_a17, cascadeDelete: true)
+                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sessao_a17, cascadeDelete: true)
+                .Index(t => t.a12_Id_Sessao_a17)
+                .Index(t => t.a16_Id_Meta_a17);
+            
+            CreateTable(
+                "dbo.a16_Meta_tb",
+                c => new
+                    {
+                        Id_Meta = c.Guid(nullable: false, identity: true),
+                        a15_Id_Objective_a16 = c.Guid(nullable: false),
+                        Prazo_Meta = c.DateTime(nullable: false, storeType: "date"),
+                        Descricao_Meta = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.Id_Meta)
+                .ForeignKey("dbo.a15_Objetivo_tb", t => t.a15_Id_Objective_a16, cascadeDelete: true)
+                .Index(t => t.a15_Id_Objective_a16);
+            
+            CreateTable(
+                "dbo.a15_Objetivo_tb",
+                c => new
+                    {
+                        Id_Objetivo = c.Guid(nullable: false, identity: true),
+                        Descricao_Objetivo = c.String(unicode: false),
+                        Prazo_Objetivo = c.DateTime(nullable: false, storeType: "date"),
+                        a14_Id_Plano_a15 = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id_Objetivo)
+                .ForeignKey("dbo.a14_Plano_Acao_tb", t => t.a14_Id_Plano_a15, cascadeDelete: true)
+                .Index(t => t.a14_Id_Plano_a15);
+            
+            CreateTable(
+                "dbo.a9_ponto_forte_tb",
+                c => new
+                    {
+                        Id_Ponto_Forte = c.Guid(nullable: false, identity: true),
+                        a8_Id_Coachee_a9 = c.Guid(nullable: false),
+                        Nome_Ponto_Forte = c.String(nullable: false, maxLength: 30, storeType: "nvarchar"),
+                        Classe_Ponto_Forte = c.Int(nullable: false),
+                        Descricao_Ponto_Forte = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.Id_Ponto_Forte)
+                .ForeignKey("dbo.a8_coachee_tb", t => t.a8_Id_Coachee_a9, cascadeDelete: true)
+                .Index(t => t.a8_Id_Coachee_a9);
             
             CreateTable(
                 "dbo.a10_fragilidade_tb",
@@ -457,6 +457,32 @@ namespace CoachingPlan.Infraestructure.Migrations
                 .Index(t => t.a11_Id_Processo_t8);
             
             CreateTable(
+                "dbo.t12_coachee_session_tb",
+                c => new
+                    {
+                        a8_Id_Coachee_t12 = c.Guid(nullable: false),
+                        a12_Id_Sessao_t12 = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.a8_Id_Coachee_t12, t.a12_Id_Sessao_t12 })
+                .ForeignKey("dbo.a8_coachee_tb", t => t.a8_Id_Coachee_t12, cascadeDelete: true)
+                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sessao_t12, cascadeDelete: true)
+                .Index(t => t.a8_Id_Coachee_t12)
+                .Index(t => t.a12_Id_Sessao_t12);
+            
+            CreateTable(
+                "dbo.t11_coach_session_tb",
+                c => new
+                    {
+                        a5_Id_Coach_t11 = c.Guid(nullable: false),
+                        a12_Id_Sessao_t11 = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.a5_Id_Coach_t11, t.a12_Id_Sessao_t11 })
+                .ForeignKey("dbo.a5_coach_tb", t => t.a5_Id_Coach_t11, cascadeDelete: true)
+                .ForeignKey("dbo.a12_Sessao_tb", t => t.a12_Id_Sessao_t11, cascadeDelete: true)
+                .Index(t => t.a5_Id_Coach_t11)
+                .Index(t => t.a12_Id_Sessao_t11);
+            
+            CreateTable(
                 "dbo.t10_coachee_processo_tb",
                 c => new
                     {
@@ -483,6 +509,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.t5_Incdr_Desempenho_tb", "a11_Id_Processo_t5", "dbo.a11_Processo_Coaching_tb");
             DropForeignKey("dbo.a5_coach_tb", "a4_Id_Usuario_a5", "dbo.a4_usuario_tb");
             DropForeignKey("dbo.a7_especialidade_tb", "a5_Id_Coach_a7", "dbo.a5_coach_tb");
+            DropForeignKey("dbo.t11_coach_session_tb", "a12_Id_Sessao_t11", "dbo.a12_Sessao_tb");
+            DropForeignKey("dbo.t11_coach_session_tb", "a5_Id_Coach_t11", "dbo.a5_coach_tb");
             DropForeignKey("dbo.a6_formacao_tb", "a5_Id_Coach_a6", "dbo.a5_coach_tb");
             DropForeignKey("dbo.a22_Resposta_tb", "a21_Id_Questao_a22", "dbo.a21_Questao_tb");
             DropForeignKey("dbo.a21_Questao_tb", "a20_Id_Frmt_Avlc_a21", "dbo.a20_Frmt_Avaliacao_tb");
@@ -490,19 +518,21 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.t6_Preenchimento_Frmt_tb", "a8_Id_Frmt_Avaliacao_t6", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.a10_fragilidade_tb", "a8_Id_Coachee_a10", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.a8_coachee_tb", "a4_Id_Usuario_a8", "dbo.a4_usuario_tb");
-            DropForeignKey("dbo.a4_usuario_tb", "a1_Id_Pessoa_a4", "dbo.a1_pessoa_tb");
-            DropForeignKey("dbo.a2_telefone_tb", "a1_Id_Pessoa_a2", "dbo.a1_pessoa_tb");
-            DropForeignKey("dbo.a3_Endereco_tb", "a1_Id_Pessoa_a3", "dbo.a1_pessoa_tb");
-            DropForeignKey("dbo.a23_Menssagem_tb", "a4_Id_Usuario_a23", "dbo.a4_usuario_tb");
-            DropForeignKey("dbo.a13_Avaliacao_tb", "a4_Id_Usuario_a13", "dbo.a4_usuario_tb");
-            DropForeignKey("dbo.a13_Avaliacao_tb", "a12_Id_Sesso_a13", "dbo.a12_Sessao_tb");
+            DropForeignKey("dbo.a9_ponto_forte_tb", "a8_Id_Coachee_a9", "dbo.a8_coachee_tb");
+            DropForeignKey("dbo.t12_coachee_session_tb", "a12_Id_Sessao_t12", "dbo.a12_Sessao_tb");
+            DropForeignKey("dbo.t12_coachee_session_tb", "a8_Id_Coachee_t12", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.a12_Sessao_tb", "a4_Id_Usuario_a12", "dbo.a4_usuario_tb");
             DropForeignKey("dbo.a17_Tarefa_tb", "a12_Id_Sessao_a17", "dbo.a12_Sessao_tb");
             DropForeignKey("dbo.a17_Tarefa_tb", "a16_Id_Meta_a17", "dbo.a16_Meta_tb");
             DropForeignKey("dbo.a16_Meta_tb", "a15_Id_Objective_a16", "dbo.a15_Objetivo_tb");
             DropForeignKey("dbo.a15_Objetivo_tb", "a14_Id_Plano_a15", "dbo.a14_Plano_Acao_tb");
+            DropForeignKey("dbo.a13_Avaliacao_tb", "a4_Id_Usuario_a13", "dbo.a4_usuario_tb");
+            DropForeignKey("dbo.a4_usuario_tb", "a1_Id_Pessoa_a4", "dbo.a1_pessoa_tb");
+            DropForeignKey("dbo.a2_telefone_tb", "a1_Id_Pessoa_a2", "dbo.a1_pessoa_tb");
+            DropForeignKey("dbo.a3_Endereco_tb", "a1_Id_Pessoa_a3", "dbo.a1_pessoa_tb");
+            DropForeignKey("dbo.a23_Menssagem_tb", "a4_Id_Usuario_a23", "dbo.a4_usuario_tb");
+            DropForeignKey("dbo.a13_Avaliacao_tb", "a12_Id_Sesso_a13", "dbo.a12_Sessao_tb");
             DropForeignKey("dbo.a12_Sessao_tb", "a11_Id_Processo_a12", "dbo.a11_Processo_Coaching_tb");
-            DropForeignKey("dbo.a9_ponto_forte_tb", "a8_Id_Coachee_a9", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.t8_coachee_processo_tb", "a11_Id_Processo_t8", "dbo.a11_Processo_Coaching_tb");
             DropForeignKey("dbo.t8_coachee_processo_tb", "a8_Id_Coachee_t8", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.t9_coach_ferramenta_tb", "a20_Id_Ferramenta_t9", "dbo.a5_coach_tb");
@@ -512,6 +542,10 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.a19_Orcamento_tb", "a11_Id_Processo_a19", "dbo.a11_Processo_Coaching_tb");
             DropIndex("dbo.t10_coachee_processo_tb", new[] { "a11_Id_Processo_t10" });
             DropIndex("dbo.t10_coachee_processo_tb", new[] { "a18_Id_Servico_t10" });
+            DropIndex("dbo.t11_coach_session_tb", new[] { "a12_Id_Sessao_t11" });
+            DropIndex("dbo.t11_coach_session_tb", new[] { "a5_Id_Coach_t11" });
+            DropIndex("dbo.t12_coachee_session_tb", new[] { "a12_Id_Sessao_t12" });
+            DropIndex("dbo.t12_coachee_session_tb", new[] { "a8_Id_Coachee_t12" });
             DropIndex("dbo.t8_coachee_processo_tb", new[] { "a11_Id_Processo_t8" });
             DropIndex("dbo.t8_coachee_processo_tb", new[] { "a8_Id_Coachee_t8" });
             DropIndex("dbo.t9_coach_ferramenta_tb", new[] { "a20_Id_Ferramenta_t9" });
@@ -525,6 +559,11 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropIndex("dbo.a22_Resposta_tb", new[] { "a21_Id_Questao_a22" });
             DropIndex("dbo.a21_Questao_tb", new[] { "a20_Id_Frmt_Avlc_a21" });
             DropIndex("dbo.a10_fragilidade_tb", new[] { "a8_Id_Coachee_a10" });
+            DropIndex("dbo.a9_ponto_forte_tb", new[] { "a8_Id_Coachee_a9" });
+            DropIndex("dbo.a15_Objetivo_tb", new[] { "a14_Id_Plano_a15" });
+            DropIndex("dbo.a16_Meta_tb", new[] { "a15_Id_Objective_a16" });
+            DropIndex("dbo.a17_Tarefa_tb", new[] { "a16_Id_Meta_a17" });
+            DropIndex("dbo.a17_Tarefa_tb", new[] { "a12_Id_Sessao_a17" });
             DropIndex("dbo.t4_usuario_papel_tb", new[] { "IdentityUser_Id" });
             DropIndex("dbo.t4_usuario_papel_tb", new[] { "Id_Papel" });
             DropIndex("dbo.a2_telefone_tb", new[] { "a1_Id_Pessoa_a2" });
@@ -532,18 +571,13 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropIndex("dbo.a1_pessoa_tb", "IX_CPF");
             DropIndex("dbo.a23_Menssagem_tb", new[] { "a4_Id_Usuario_a23" });
             DropIndex("dbo.t1_logins_tb", new[] { "IdentityUser_Id" });
-            DropIndex("dbo.a15_Objetivo_tb", new[] { "a14_Id_Plano_a15" });
-            DropIndex("dbo.a16_Meta_tb", new[] { "a15_Id_Objective_a16" });
-            DropIndex("dbo.a17_Tarefa_tb", new[] { "a16_Id_Meta_a17" });
-            DropIndex("dbo.a17_Tarefa_tb", new[] { "a12_Id_Sessao_a17" });
-            DropIndex("dbo.a12_Sessao_tb", new[] { "a4_Id_Usuario_a12" });
-            DropIndex("dbo.a12_Sessao_tb", new[] { "a11_Id_Processo_a12" });
-            DropIndex("dbo.a13_Avaliacao_tb", new[] { "a4_Id_Usuario_a13" });
-            DropIndex("dbo.a13_Avaliacao_tb", new[] { "a12_Id_Sesso_a13" });
             DropIndex("dbo.t2_claims_tb", new[] { "IdentityUser_Id" });
             DropIndex("dbo.a4_usuario_tb", new[] { "a1_Id_Pessoa_a4" });
             DropIndex("dbo.a4_usuario_tb", "UserNameIndex");
-            DropIndex("dbo.a9_ponto_forte_tb", new[] { "a8_Id_Coachee_a9" });
+            DropIndex("dbo.a13_Avaliacao_tb", new[] { "a4_Id_Usuario_a13" });
+            DropIndex("dbo.a13_Avaliacao_tb", new[] { "a12_Id_Sesso_a13" });
+            DropIndex("dbo.a12_Sessao_tb", new[] { "a4_Id_Usuario_a12" });
+            DropIndex("dbo.a12_Sessao_tb", new[] { "a11_Id_Processo_a12" });
             DropIndex("dbo.a8_coachee_tb", new[] { "a4_Id_Usuario_a8" });
             DropIndex("dbo.t6_Preenchimento_Frmt_tb", new[] { "a8_Id_Frmt_Avaliacao_t6" });
             DropIndex("dbo.t6_Preenchimento_Frmt_tb", new[] { "a20_Id_Frmt_Avaliacao_t6" });
@@ -551,6 +585,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropIndex("dbo.a19_Orcamento_tb", new[] { "a11_Id_Processo_a19" });
             DropIndex("dbo.a14_Plano_Acao_tb", new[] { "a11_Id_Processo_a14" });
             DropTable("dbo.t10_coachee_processo_tb");
+            DropTable("dbo.t11_coach_session_tb");
+            DropTable("dbo.t12_coachee_session_tb");
             DropTable("dbo.t8_coachee_processo_tb");
             DropTable("dbo.t9_coach_ferramenta_tb");
             DropTable("dbo.t7_coach_processo_tb");
@@ -562,20 +598,20 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropTable("dbo.a22_Resposta_tb");
             DropTable("dbo.a21_Questao_tb");
             DropTable("dbo.a10_fragilidade_tb");
+            DropTable("dbo.a9_ponto_forte_tb");
+            DropTable("dbo.a15_Objetivo_tb");
+            DropTable("dbo.a16_Meta_tb");
+            DropTable("dbo.a17_Tarefa_tb");
             DropTable("dbo.t4_usuario_papel_tb");
             DropTable("dbo.a2_telefone_tb");
             DropTable("dbo.a3_Endereco_tb");
             DropTable("dbo.a1_pessoa_tb");
             DropTable("dbo.a23_Menssagem_tb");
             DropTable("dbo.t1_logins_tb");
-            DropTable("dbo.a15_Objetivo_tb");
-            DropTable("dbo.a16_Meta_tb");
-            DropTable("dbo.a17_Tarefa_tb");
-            DropTable("dbo.a12_Sessao_tb");
-            DropTable("dbo.a13_Avaliacao_tb");
             DropTable("dbo.t2_claims_tb");
             DropTable("dbo.a4_usuario_tb");
-            DropTable("dbo.a9_ponto_forte_tb");
+            DropTable("dbo.a13_Avaliacao_tb");
+            DropTable("dbo.a12_Sessao_tb");
             DropTable("dbo.a8_coachee_tb");
             DropTable("dbo.t6_Preenchimento_Frmt_tb");
             DropTable("dbo.a20_Frmt_Avaliacao_tb");

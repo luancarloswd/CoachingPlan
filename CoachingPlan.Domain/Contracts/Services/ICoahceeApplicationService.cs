@@ -11,8 +11,11 @@ namespace CoachingPlan.Domain.Contracts.Services
         Coachee GetOneByUser(string idUser);
         List<Coachee> GetAll();
         List<Coachee> GetAll(int take, int skip);
-        Coachee Create(CreateCoacheeCommand commandCoach);
-        Coachee Update(Coachee coachee);
+        Coachee Create(CreateCoacheeCommand commandCoachee);
+        Coachee Update(UpdateCoacheeCommand commandCoachee);
         Coachee Delete(Guid id);
+        List<Coachee> GetAllIncludeDetails();
+        List<Coachee> GetAllIncludePerson();
+        Coachee GetOneIncludeDetails(Guid id);
     }
 }

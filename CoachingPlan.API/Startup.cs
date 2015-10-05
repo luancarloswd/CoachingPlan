@@ -27,7 +27,7 @@ namespace CoachingPlan.API
             ConfigureDependencyInjection(config, container);
             ConfigureWebApi(config);
 
-            ConfigureOAuth(app, container.Resolve<IUserApplicationService>());
+            ConfigureOAuth(app, container.Resolve<IUserApplicationService>(), container.Resolve<IRoleApplicationService>());
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
@@ -61,7 +61,7 @@ namespace CoachingPlan.API
             DomainEvent.Container = new DomainEventsContainer(config.DependencyResolver);
         }
 
-        public void ConfigureOAuth(IAppBuilder app, IUserApplicationService userService)
+        public void ConfigureOAuth(IAppBuilder app, IUserApplicationService userService, IRoleApplicationService roleService)
         {
             //app.CreatePerOwinContext(AppDataContext.Create);
             //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -70,7 +70,7 @@ namespace CoachingPlan.API
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/security/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(2),
-                Provider = new SimpleAuthorizationServerProvider(userService)
+                Provider = new SimpleAuthorizationServerProvider(userService, roleService)
             };
 
             // Token Generation

@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Formation Create(CreateFormationCommand command)
         {
-            var Formation = new Formation(command.Name, command.IdCoach, command.Description);
+            var Formation = new Formation(command.Name, command.Description);
             Formation.Validate();
             _repository.Create(Formation);
 
@@ -72,7 +72,29 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
+        public List<Formation> AddToCoach(dynamic body)
+        {
+            List<Formation> listFormation = new List<Formation>();
+            foreach (var item in body)
+            {
+                if ((item.name != null) || (item.name != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangeFormationCommand(
+                            Guid.Parse((string)body.id),
+                            (string)item.name,
+                            (string)item.description
+                            ));
+                    else
+                        listFormation.Add(new Formation(
+                            (string)item.name,
+                            (string)item.description
+                        ));
+                }
+            }
 
+            return listFormation;
+        }
         public void Dispose()
         {
             _repository = null;

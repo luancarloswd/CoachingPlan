@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Infraestructure.Identity;
@@ -10,6 +11,8 @@ using Microsoft.AspNet.Identity;
 using CoachingPlan.SharedKernel.Events;
 using CoachingPlan.Domain.Specs;
 using CoachingPlan.Domain.Contracts.Repositories;
+using System.Security.Claims;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
@@ -26,7 +29,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public void Create(User user, string password)
         {
-            IdentityResult addUserResult  = _userManager.CreateAsync(user, password).Result;
+            IdentityResult addUserResult  = _userManager.Create(user, password);
             if(!addUserResult.Succeeded){
                 foreach (var error in addUserResult.Errors)
                 new DomainNotification("AssertArgumentLength", error);
@@ -35,7 +38,15 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public void Delete(User user)
         {
-            IdentityResult deleteUserResult = _userManager.DeleteAsync(user).Result;
+            foreach (var address in user.Person.Address)
+                _context.Address.Remove(address);
+
+            foreach (var phone in user.Person.Phone)
+                _context.Phone.Remove(phone);
+
+            _context.Person.Remove(user.Person);
+
+            IdentityResult deleteUserResult = _userManager.Delete(user);
             if (!deleteUserResult.Succeeded)
             {
                 foreach (var error in deleteUserResult.Errors)
@@ -52,17 +63,31 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _userManager.Users.OrderBy(x => x.UserName).Skip(skip).Take(take).ToList();
         }
 
-        public async Task<User> GetOne(string id)
+
+        public List<User> GetAllIncludeDetails()
         {
-            return await _userManager.FindByIdAsync(id);
+            return _userManager.Users.Include(x => x.Roles).Include(x => x.Person).Include(x => x.Person.Phone).Include(x => x.Person.Address).ToList();
         }
-        public async Task<User> GetOneByEmail(string email)
+        public User GetOneIncludeDetails(string id)
         {
-            return await _userManager.FindByEmailAsync(email);
+            return _userManager.Users.Include(x => x.Roles).Include(x => x.Person).Include(x => x.Person.Phone).Include(x => x.Person.Address).FirstOrDefault(x => x.Id == id);
         }
-        public async Task<User> GetOneByName(string name)
+        public User GetOne(string id)
         {
-            return await _userManager.FindByNameAsync(name);
+            return  _context.Users.FirstOrDefault(x => x.Id == id);
+        }
+        public User GetOneByEmail(string email)
+        {
+            return _userManager.FindByEmail(email);
+        }
+        public User GetOneByEmailIncludePerson(string email)
+        {
+            return _context.Users.Include(x => x.Person).Include(x => x.Roles).FirstOrDefault(UserSpecs.GetOneByEmail(email));
+        }
+
+        public User GetOneByName(string name)
+        {
+            return _userManager.FindByName(name);
         }
         public User GetOneByPerson(Guid idPerson)
         {
@@ -72,14 +97,30 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _userManager.UpdateAsync(user);
         }
-        public async Task<User> Authenticate(string userName, string password)
+        public User Authenticate(string userName, string password)
         {
-            return await _userManager.FindAsync(userName, password);
+            return  _userManager.Find(userName, password);
+        }
+        public void AddRole(string id, string role)
+        {
+             _userManager.AddToRole(id, role);
+        }
+
+        public ICollection<string> GetAllRoles(string id)
+        {
+            return _userManager.GetRoles(id);
+        }
+        public ClaimsIdentity GenerateUserIdentityAsync(User user, string authenticationType)
+        {
+            var userIdentity = _userManager.CreateIdentity(user, authenticationType);
+            return userIdentity;
         }
         public void Dispose()
         {
             //this._userManager = null;
             //this._context = null;
         }
+
+
     }
 }

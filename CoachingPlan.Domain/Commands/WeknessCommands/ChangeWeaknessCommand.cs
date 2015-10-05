@@ -8,8 +8,9 @@ namespace CoachingPlan.Domain.Commands.WeaknessCommands
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ChangeWeaknessCommand(string name, string description = null)
+        public ChangeWeaknessCommand(Guid id,string name, string description = null)
         {
+            this.Id = id;
             this.Name = name;
             this.Description = description;
         }

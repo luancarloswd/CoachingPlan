@@ -74,7 +74,30 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
-
+        public List<Phone> AddToPerson(dynamic body)
+        {
+            List<Phone> listPhone = new List<Phone>();
+            foreach (var item in body)
+            {
+                if ((item.number != null) || (item.number != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangePhoneCommand(
+                            Guid.Parse((string)item.id),
+                            (string)item.ddd,
+                            (string)item.number,
+                            (string)item.description
+                            ));
+                    else
+                        listPhone.Add(new Phone(
+                            (string)item.ddd,
+                            (string)item.number,
+                            (string)item.description
+                            ));
+                }
+            }
+            return listPhone;
+        }
         public void Dispose()
         {
             _repository = null;

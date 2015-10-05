@@ -52,12 +52,25 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetOne(id);
         }
+        public Coach GetOneIncludeDetails(Guid id)
+        {
+            return _repository.GetOneIncludeDetails(id);
+        }
         public Coach GetOneByUser(string idUser)
         {
             return _repository.GetOneByUser(idUser);
         }
-        public Coach Update(Coach coach)
+        public Coach Update(UpdateCoachCommand commandCoach)
         {
+            Coach coach = _repository.GetOneIncludeDetails(commandCoach.Id);
+            foreach (var speciality in commandCoach.Speciality)
+            {
+                coach.AddSpeciality(speciality);
+            }
+            foreach (var formation in commandCoach.Formation)
+            {
+                coach.AddFormation(formation);
+            }
             _repository.Update(coach);
 
             if (Commit())
@@ -66,6 +79,16 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+
+        public List<Coach> GetAllIncludeDetails()
+        {
+            return _repository.GetAllIncludeDetails();
+        }
+
+        public List<Coach> GetAllIncludePerson()
+        {
+            return _repository.GetAllIncludePerson();
+        }
         public void Dispose()
         {
             _repository = null;

@@ -13,8 +13,9 @@ namespace CoachingPlan.Domain.Commands.AddressCommands
         public int Number { get; set; }
         public EAddressType Type { get; set; }
         public string Description { get; set; }
-        public ChangeAddressCommand(string cep, EStates state, string city, string street, int number, EAddressType type, string description = null)
+        public ChangeAddressCommand(Guid Id, string cep, EStates state, string city, string street, int number, EAddressType type, string description = null)
         {
+            this.Id = Id;
             this.CEP = cep;
             this.State = state;
             this.City = city;

@@ -13,13 +13,18 @@ namespace CoachingPlan.Domain.Models
         {
             this.Id = Guid.NewGuid();
             this.EvaluationTool = new HashSet<EvaluationTool>();
-            evaluationTool.ToList().ForEach(x => AddEvaluationTool(x));
+            if(evaluationTool !=null)
+                evaluationTool.ToList().ForEach(x => AddEvaluationTool(x));
             this.Formation = new HashSet<Formation>();
-            formation.ToList().ForEach(x => AddFormation(x));
+            if (formation != null)
+                formation.ToList().ForEach(x => AddFormation(x));
             this.Speciality = new HashSet<Speciality>();
-            speciality.ToList().ForEach(x => AddSpeciality(x));
+            if (speciality != null)
+                speciality.ToList().ForEach(x => AddSpeciality(x));
             this.CoachingProcess = new HashSet<CoachingProcess>();
-            coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
+            if (coachingProcess != null)
+                coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
+            this.Session = new HashSet<Session>();
             this.IdUser = idUser;
         }
         #endregion
@@ -32,6 +37,7 @@ namespace CoachingPlan.Domain.Models
         public virtual ICollection<Formation> Formation { get; private set; }
         public virtual User User { get; private set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; private set; }
+        public virtual ICollection<Session> Session { get; set; }
         #endregion
 
         #region Methods

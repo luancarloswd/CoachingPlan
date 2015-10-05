@@ -5,6 +5,7 @@ using CoachingPlan.Domain.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
@@ -39,7 +40,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Coach.Where(CoachSpecs.GetOne(id)).FirstOrDefault();
         }
-
+        public Coach GetOneIncludeDetails(Guid id)
+        {
+            return _context.Coach.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
+        }
         public Coach GetOneByUser(string idUser)
         {
             return _context.Coach.Where(CoachSpecs.GetOneByUser(idUser)).FirstOrDefault();
@@ -49,6 +53,17 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _context.Entry<Coach>(coach).State = System.Data.Entity.EntityState.Modified;
         }
+
+        public List<Coach> GetAllIncludeDetails()
+        {
+            return _context.Coach.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).ToList();
+        }
+
+        public List<Coach> GetAllIncludePerson()
+        {
+            return _context.Coach.Include(x => x.User.Person).ToList();
+        }
+
         public void Dispose()
         {
             _context = null;

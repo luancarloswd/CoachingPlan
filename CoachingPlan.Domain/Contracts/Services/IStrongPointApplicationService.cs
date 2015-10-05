@@ -14,5 +14,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         StrongPoint Create(CreateStrongPointCommand StrongPoint);
         StrongPoint Update(ChangeStrongPointCommand StrongPoint);
         StrongPoint Delete(Guid id);
+        List<StrongPoint> AddToCoachee(dynamic body);
     }
 }

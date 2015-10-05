@@ -20,6 +20,16 @@ namespace CoachingPlan.Infraestructure.Data.Map
 
 
 
+            HasMany(t => t.Session)
+              .WithMany(t => t.Coachee)
+              .Map(m =>
+              {
+                  m.ToTable("t12_coachee_session_tb");
+                  m.MapLeftKey("a8_Id_Coachee_t12");
+                  m.MapRightKey("a12_Id_Sessao_t12");
+              });
+
+
             HasRequired<User>(s => s.User)
                 .WithMany(s => s.Coachee)
                 .HasForeignKey(s => s.IdUser);

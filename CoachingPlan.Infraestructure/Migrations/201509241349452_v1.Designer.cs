@@ -13,7 +13,7 @@ namespace CoachingPlan.Infraestructure.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201509101711300_v1"; }
+            get { return "201509241349452_v1"; }
         }
         
         string IMigrationMetadata.Source

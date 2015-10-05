@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Weakness Create(CreateWeaknessCommand command)
         {
-            var Weakness = new Weakness(command.Name, command.IdCoachee, command.Description);
+            var Weakness = new Weakness(command.Name, command.Description);
             Weakness.Validate();
             _repository.Create(Weakness);
 
@@ -73,6 +73,29 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public List<Weakness> AddToCoachee(dynamic body)
+        {
+            List<Weakness> listWeakness = new List<Weakness>();
+            foreach (var item in body)
+            {
+                if ((item.name != null) || (item.name != ""))
+                {
+                    if (item.id != null)
+                        Update(new ChangeWeaknessCommand(
+                            Guid.Parse((string)body.id),
+                            (string)item.name,
+                            (string)item.description
+                            ));
+                    else
+                        listWeakness.Add(new Weakness(
+                            (string)item.name,
+                            (string)item.description
+                        ));
+                }
+            }
+
+            return listWeakness;
+        }
         public void Dispose()
         {
             _repository = null;

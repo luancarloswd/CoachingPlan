@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Person Create(CreatePersonCommand command)
         {
-            var Person = new Person(command.Name, command.CPF, command.BirthDate, command.Genre,command.Status, command.Address, command.Phone, command.Photograph);
+            var Person = new Person(command.Name, command.CPF, command.BirthDate, command.Genre, command.Status, command.Address, command.Phone, command.Photograph);
             Person.Validate();
             _repository.Create(Person);
 
@@ -42,20 +42,37 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetAll();
         }
-
+        public List<Person> GetAllIncludeDetails()
+        {
+            return _repository.GetAllIncludeDetails();
+        }
         public List<Person> GetAll(int take, int skip)
         {
             return _repository.GetAll(take, skip);
+        }
+
+        public List<Person> GetAllByNameIncludeCoach(string name)
+        {
+            return _repository.GetAllByNameIncludeCoach(name);
+        }
+
+        public List<Person> GetAllByNameIncludeCoachee(string name)
+        {
+            return _repository.GetAllByNameIncludeCoachee(name);
         }
 
         public Person GetOne(Guid id)
         {
             return _repository.GetOne(id);
         }
-        public Person Update(CreatePersonCommand command)
+        public Person GetOneIncludeDetails(Guid id)
         {
-            var person = _repository.GetOne(command.Id);
-            if(command.BirthDate != null)
+            return _repository.GetOneIncludeDetails(id);
+        }
+        public Person Update(UpdatePersonCommand command)
+        {
+            Person person = _repository.GetOneIncludeDetails(command.Id);
+            if (command.BirthDate != null)
                 person.ChangeBirthDate(command.BirthDate);
             if (command.CPF != null)
                 person.ChangeCPF(command.CPF);
@@ -64,7 +81,16 @@ namespace CoachingPlan.ApplicationService
             if (command.Photograph != null)
                 person.ChangePhotograph(command.Photograph);
 
-                person.ChangeStatus(command.Status);
+            person.ChangeStatus(command.Status);
+
+            foreach (var address in command.Address)
+            {
+                person.AddAddress(address);
+            }
+            foreach (var phone in command.Phone)
+            {
+                person.AddPhone(phone);
+            }
 
             _repository.Update(person);
 

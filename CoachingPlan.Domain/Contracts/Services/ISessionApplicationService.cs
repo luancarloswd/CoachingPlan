@@ -1,14 +1,15 @@
-﻿using CoachingPlan.Domain.Enums;
+﻿using CoachingPlan.Domain.Commands.SpecialityCommands;
+using CoachingPlan.Domain.Enums;
 using CoachingPlan.Domain.Models;
 using System;
 using System.Collections.Generic;
 
 namespace CoachingPlan.Domain.Contracts.Repositories
 {
-    public interface ISessionRepository : IDisposable
+    public interface ISessionApplicationService : IDisposable
     {
-        void Create(Session Session);
-        void Delete(Session Session);
+        Session Create(Session Session);
+        Session Delete(Session Session);
         List<Session> GetAll();
         List<Session> GetAllByCoach(Person coach);
         List<Session> GetAllByCoachee(Person coachee);
@@ -19,6 +20,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Session> GetAllByCoachAndCoacheeAndClassification(Person coach, Person coachee, ESessionClassification classification);
         List<Session> GetAll(int take, int skip);
         Session GetOne(Guid id);
-        void Update(Session Session);
+        Session Update(Session Session);
     }
 }
