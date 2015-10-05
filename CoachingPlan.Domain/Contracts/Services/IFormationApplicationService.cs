@@ -15,5 +15,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Formation Update(ChangeFormationCommand formation);
         Formation Delete(Guid id);
         List<Formation> AddToCoach(dynamic body);
+        void CheckFormationRemoved(List<Formation> listFormation, Guid idCoach);
     }
 }

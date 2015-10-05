@@ -13,5 +13,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(StrongPoint StrongPoint);
         void Update(StrongPoint StrongPoint);
         void Delete(StrongPoint StrongPoint);
+        List<StrongPoint> GetAllByCoachee(Guid idCoachee);
     }
 }

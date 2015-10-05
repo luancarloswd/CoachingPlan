@@ -13,5 +13,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(Speciality speciality);
         void Update(Speciality speciality);
         void Delete(Speciality speciality);
+        List<Speciality> GetAllByCoach(Guid idCoach);
     }
 }

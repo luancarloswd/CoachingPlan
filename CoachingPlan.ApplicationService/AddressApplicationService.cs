@@ -35,7 +35,8 @@ namespace CoachingPlan.ApplicationService
                 if ((item.city != null) || (item.city != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangeAddressCommand(
+                        listAddress.Add(
+                            Update(new ChangeAddressCommand(
                             Guid.Parse((string)item.id),
                             (string)item.cep,
                             (EStates)item.state,
@@ -43,7 +44,7 @@ namespace CoachingPlan.ApplicationService
                             (string)item.street,
                             (int)item.number,
                             (EAddressType)item.type,
-                            (string)item.description));
+                            (string)item.description)));
                     else
                         listAddress.Add(new Address(
                             (string)item.cep,
@@ -57,9 +58,18 @@ namespace CoachingPlan.ApplicationService
                 }
             }
             return listAddress;
-
         }
-
+        public void CheckAddressRemoved(List<Address> listAdress, Guid idPerson)
+        {
+            var oldList = _repository.GetAllByPerson(idPerson);
+            foreach (var address in oldList)
+            {
+                if (!listAdress.Contains(address))
+                {
+                    _repository.Delete(address);
+                }
+            }
+        }
         public Address Delete(Guid id)
         {
             var Address = _repository.GetOne(id);

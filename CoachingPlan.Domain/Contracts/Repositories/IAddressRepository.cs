@@ -13,5 +13,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(Address AcctionPlan);
         void Update(Address Coachee);
         void Delete(Address Coachee);
+        List<Address> GetAllByPerson(Guid idPerson);
     }
 }

@@ -13,5 +13,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(Weakness Weakness);
         void Update(Weakness Weakness);
         void Delete(Weakness Weakness);
+        List<Weakness> GetAllByCoachee(Guid idCoachee);
     }
 }

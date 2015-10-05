@@ -85,22 +85,33 @@ namespace CoachingPlan.ApplicationService
                 if ((item.name != null) || (item.name != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangeStrongPointCommand(
-                            Guid.Parse((string)body.id),
+                        listStrongPoint.Add(Update(new ChangeStrongPointCommand(
+                            Guid.Parse((string)item.id),
                             (string)item.name,
                             (EClassStrongPoint)item.classStrongPoint,
                             (string)item.description
-                            ));
+                            )));
                     else
                         listStrongPoint.Add(new StrongPoint(
                             (string)item.name,
-                            (EClassStrongPoint)item.classStrongPoint,
+                            (EClassStrongPoint)item.typeClass,
                             (string)item.description
                         ));
                 }
             }
 
             return listStrongPoint;
+        }
+        public void CheckStrongPointRemoved(List<StrongPoint> listWeakness, Guid idCoachee)
+        {
+            var oldList = _repository.GetAllByCoachee(idCoachee);
+            foreach (var strongPoint in oldList)
+            {
+                if (!listWeakness.Contains(strongPoint))
+                {
+                    _repository.Delete(strongPoint);
+                }
+            }
         }
         public void Dispose()
         {

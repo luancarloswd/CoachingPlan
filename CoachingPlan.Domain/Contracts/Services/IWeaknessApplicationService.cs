@@ -15,5 +15,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Weakness Update(ChangeWeaknessCommand Weakness);
         Weakness Delete(Guid id);
         List<Weakness> AddToCoachee(dynamic body);
+        void CheckWeaknessRemoved(List<Weakness> listWeakness, Guid idCoachee);
     }
 }

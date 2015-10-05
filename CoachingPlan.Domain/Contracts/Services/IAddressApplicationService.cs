@@ -15,5 +15,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Address Update(ChangeAddressCommand Address);
         Address Delete(Guid id);
         List<Address> AddToPerson(dynamic address);
+        void CheckAddressRemoved(List<Address> listAdress, Guid idPerson);
     }
 }

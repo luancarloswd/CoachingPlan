@@ -53,7 +53,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public Coachee GetOneIncludeDetails(Guid id)
         {
-            return _context.Coachee.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
+            return _context.Coachee.Include(x => x.StrongPoint).Include(x => x.Weakness).Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
         }
 
 

@@ -78,13 +78,16 @@ namespace CoachingPlan.ApplicationService
         }
         public User Update(UpdateUserCommand commandUser)
         {
-            var userInto = new User(commandUser.IdPerson, commandUser.Email, commandUser.UserName);
-            userInto.Validate();
+            var user = _repository.GetOne(commandUser.Id);
+            user.UserName = commandUser.UserName;
+            user.Email = commandUser.Email;
+            user.IdPerson = commandUser.IdPerson;
+            user.Validate();
 
-            _repository.Update(userInto);
+            _repository.Update(user);
 
             if (Commit())
-                return userInto;
+                return user;
 
             return null;
         }

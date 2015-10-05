@@ -80,11 +80,11 @@ namespace CoachingPlan.ApplicationService
                 if ((item.name != null) || (item.name != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangeFormationCommand(
-                            Guid.Parse((string)body.id),
+                        listFormation.Add(Update(new ChangeFormationCommand(
+                            Guid.Parse((string)item.id),
                             (string)item.name,
                             (string)item.description
-                            ));
+                            )));
                     else
                         listFormation.Add(new Formation(
                             (string)item.name,
@@ -95,6 +95,18 @@ namespace CoachingPlan.ApplicationService
 
             return listFormation;
         }
+        public void CheckFormationRemoved(List<Formation> listFormation, Guid idCoach)
+        {
+            var oldList = _repository.GetAllByCoach(idCoach);
+            foreach (var formation in oldList)
+            {
+                if (!listFormation.Contains(formation))
+                {
+                    _repository.Delete(formation);
+                }
+            }
+        }
+
         public void Dispose()
         {
             _repository = null;

@@ -14,7 +14,8 @@ namespace CoachingPlan.Domain.Commands.CoacheeCommands
         public virtual ICollection<StrongPoint> StrongPoint { get; set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; set; }
 
-        public CreateCoacheeCommand(string profession, string idUser, ICollection<Weakness> weakness, ICollection<StrongPoint> strongPoint, ICollection<CoachingProcess> coachingProcess)
+        public CreateCoacheeCommand() { }
+        public CreateCoacheeCommand(string profession, string idUser, List<Weakness> weakness, List<StrongPoint> strongPoint, List<CoachingProcess> coachingProcess)
         {
             this.Profession = profession;
             this.IdUser = idUser;

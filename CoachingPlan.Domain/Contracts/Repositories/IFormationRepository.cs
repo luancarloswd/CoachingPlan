@@ -13,5 +13,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Create(Formation formation);
         void Update(Formation formation);
         void Delete(Formation formation);
+        List<Formation> GetAllByCoach(Guid idCoach);
     }
 }

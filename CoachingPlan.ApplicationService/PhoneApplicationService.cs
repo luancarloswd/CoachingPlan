@@ -82,12 +82,12 @@ namespace CoachingPlan.ApplicationService
                 if ((item.number != null) || (item.number != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangePhoneCommand(
+                        listPhone.Add(Update(new ChangePhoneCommand(
                             Guid.Parse((string)item.id),
                             (string)item.ddd,
                             (string)item.number,
                             (string)item.description
-                            ));
+                            )));
                     else
                         listPhone.Add(new Phone(
                             (string)item.ddd,
@@ -97,6 +97,18 @@ namespace CoachingPlan.ApplicationService
                 }
             }
             return listPhone;
+        }
+
+        public void CheckPhoneRemoved(List<Phone> listPhone, Guid idPerson)
+        {
+            var oldList = _repository.GetAllbyPerson(idPerson);
+            foreach (var phone in oldList)
+            {
+                if (!listPhone.Contains(phone))
+                {
+                    _repository.Delete(phone);
+                }
+            }
         }
         public void Dispose()
         {

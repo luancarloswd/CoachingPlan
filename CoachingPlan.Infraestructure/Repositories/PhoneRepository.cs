@@ -47,6 +47,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Phone.Where(PhoneSpecs.GetOneByPerson(idPerson)).FirstOrDefault();
         }
 
+        public List<Phone> GetAllbyPerson(Guid idPerson)
+        {
+            return _context.Phone.Where(PhoneSpecs.GetOneByPerson(idPerson)).ToList();
+        }
+
         public void Update(Phone phone)
         {
             _context.Entry<Phone>(phone).State = System.Data.Entity.EntityState.Modified;

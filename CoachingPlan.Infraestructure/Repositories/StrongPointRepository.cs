@@ -45,6 +45,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.StrongPoint.Where(StrongPointSpecs.GetOneByCoachee(idCoachee)).FirstOrDefault();
         }
 
+        public List<StrongPoint> GetAllByCoachee(Guid idCoachee)
+        {
+            return _context.StrongPoint.Where(StrongPointSpecs.GetOneByCoachee(idCoachee)).ToList();
+        }
+
         public void Update(StrongPoint strongPoint)
         {
             _context.Entry<StrongPoint>(strongPoint).State = System.Data.Entity.EntityState.Modified;

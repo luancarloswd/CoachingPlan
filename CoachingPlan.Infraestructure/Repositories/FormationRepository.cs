@@ -45,6 +45,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Formation.Where(FormationSpecs.GetOneByCoach(idCoach)).FirstOrDefault();
         }
 
+        public List<Formation> GetAllByCoach(Guid idCoach)
+        {
+            return _context.Formation.Where(FormationSpecs.GetOneByCoach(idCoach)).ToList();
+        }
+
         public void Update(Formation formation)
         {
             _context.Entry<Formation>(formation).State = System.Data.Entity.EntityState.Modified;

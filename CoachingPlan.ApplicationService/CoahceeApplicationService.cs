@@ -63,7 +63,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Coachee Update(UpdateCoacheeCommand command)
         {
-            var coachee = _repository.GetOne(command.Id);
+            var coachee = _repository.GetOneIncludeDetails(command.Id);
             if(command.Profession != null)
                 coachee.ChangeProfession(command.Profession);
 

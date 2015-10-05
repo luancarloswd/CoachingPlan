@@ -42,7 +42,7 @@ namespace CoachingPlan.Infraestructure.Repositories
         }
         public Coach GetOneIncludeDetails(Guid id)
         {
-            return _context.Coach.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
+            return _context.Coach.Include(x => x.Formation).Include(x => x.Speciality).Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
         }
         public Coach GetOneByUser(string idUser)
         {

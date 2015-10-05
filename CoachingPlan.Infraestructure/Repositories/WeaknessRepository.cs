@@ -45,6 +45,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Weakness.Where(WeaknessSpecs.GetOneByCoachee(idCoachee)).FirstOrDefault();
         }
 
+        public List<Weakness> GetAllByCoachee(Guid idCoachee)
+        {
+            return _context.Weakness.Where(WeaknessSpecs.GetOneByCoachee(idCoachee)).ToList();
+        }
+
         public void Update(Weakness weakness)
         {
             _context.Entry<Weakness>(weakness).State = System.Data.Entity.EntityState.Modified;

@@ -44,7 +44,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Address.Where(AddressSpecs.GetOneByPerson(idPerson)).FirstOrDefault();
         }
-
+        public List<Address> GetAllByPerson(Guid idPerson)
+        {
+            return _context.Address.Where(AddressSpecs.GetOneByPerson(idPerson)).ToList();
+        }
         public void Update(Address Address)
         {
             _context.Entry<Address>(Address).State = System.Data.Entity.EntityState.Modified;

@@ -65,7 +65,7 @@ namespace CoachingPlan.Api.Controllers
                cpf: (string)body.cpf,
                birthDate: (DateTime)body.birthDate,
                genre: (EGenre)body.genre,
-               status: (bool)body.status,
+               status: true,
                address: listAddress,
                phone: listPhone,
                phototgraph: (string)body.photograph
@@ -113,6 +113,10 @@ namespace CoachingPlan.Api.Controllers
                );
 
             var person = _servicePerson.Update(commandPerson);
+
+            _serviceAddress.CheckAddressRemoved(listAddress, person.Id);
+
+            _servicePhone.CheckPhoneRemoved(listPhone, person.Id);
 
             var commandUser = new UpdateUserCommand(
                 id: (string)body.id,

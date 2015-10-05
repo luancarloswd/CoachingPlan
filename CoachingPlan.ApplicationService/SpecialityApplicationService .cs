@@ -81,11 +81,11 @@ namespace CoachingPlan.ApplicationService
                 if ((item.name != null) || (item.name != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangeSpecialityCommand(
-                            Guid.Parse((string)body.id),
+                        listSpeciality.Add(Update(new ChangeSpecialityCommand(
+                            Guid.Parse((string)item.id),
                             (string)item.name,
                             (string)item.description
-                            ));
+                            )));
                     else
                         listSpeciality.Add(new Speciality(
                             (string)item.name,
@@ -95,6 +95,18 @@ namespace CoachingPlan.ApplicationService
             }
 
             return listSpeciality;
+        }
+
+        public void CheckSpecialityRemoved(List<Speciality> listSpeciality, Guid idCoach)
+        {
+            var oldList = _repository.GetAllByCoach(idCoach);
+            foreach (var speciality in oldList)
+            {
+                if (!listSpeciality.Contains(speciality))
+                {
+                    _repository.Delete(speciality);
+                }
+            }
         }
         public void Dispose()
         {

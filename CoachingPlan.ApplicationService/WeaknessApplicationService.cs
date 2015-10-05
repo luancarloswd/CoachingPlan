@@ -81,11 +81,11 @@ namespace CoachingPlan.ApplicationService
                 if ((item.name != null) || (item.name != ""))
                 {
                     if (item.id != null)
-                        Update(new ChangeWeaknessCommand(
-                            Guid.Parse((string)body.id),
+                        listWeakness.Add(Update(new ChangeWeaknessCommand(
+                            Guid.Parse((string)item.id),
                             (string)item.name,
                             (string)item.description
-                            ));
+                            )));
                     else
                         listWeakness.Add(new Weakness(
                             (string)item.name,
@@ -95,6 +95,17 @@ namespace CoachingPlan.ApplicationService
             }
 
             return listWeakness;
+        }
+        public void CheckWeaknessRemoved(List<Weakness> listWeakness, Guid idCoachee)
+        {
+            var oldList = _repository.GetAllByCoachee(idCoachee);
+            foreach (var weakness in oldList)
+            {
+                if (!listWeakness.Contains(weakness))
+                {
+                    _repository.Delete(weakness);
+                }
+            }
         }
         public void Dispose()
         {

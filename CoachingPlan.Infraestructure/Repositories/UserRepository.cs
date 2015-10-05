@@ -38,12 +38,6 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public void Delete(User user)
         {
-            foreach (var address in user.Person.Address)
-                _context.Address.Remove(address);
-
-            foreach (var phone in user.Person.Phone)
-                _context.Phone.Remove(phone);
-
             _context.Person.Remove(user.Person);
 
             IdentityResult deleteUserResult = _userManager.Delete(user);

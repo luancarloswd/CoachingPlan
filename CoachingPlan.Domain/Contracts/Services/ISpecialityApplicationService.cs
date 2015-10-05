@@ -15,6 +15,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         Speciality Update(ChangeSpecialityCommand formation);
         Speciality Delete(Guid id);
         List<Speciality> AddToCoach(dynamic body);
+        void CheckSpecialityRemoved(List<Speciality> listSpeciality, Guid idCoach);
 
     }
 }
