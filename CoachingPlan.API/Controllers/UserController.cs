@@ -40,8 +40,36 @@ namespace CoachingPlan.Api.Controllers
         public Task<HttpResponseMessage> Get()
         {
             var users = _service.GetAllIncludeDetails();
-
             return CreateResponse(HttpStatusCode.OK, users);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/users/generateTokenRecoveryPassword")]
+        public Task<HttpResponseMessage> GenerateTokenRecoveryPassword([FromBody]dynamic body)
+        {
+            var user = _service.GetOneByEmail((string)body.headers.email);
+            if (user != null)
+            {
+                var token = _service.GenerateTokenRecoveryPassword(user.Email);
+                _service.SendEmailRecoveryPassword(user.Id, token);
+                return CreateResponse(HttpStatusCode.OK, user);
+            }
+            else return CreateResponse(HttpStatusCode.NotFound, user);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/users/recoveryPassword/")]
+        public Task<HttpResponseMessage> RecoveryPassword([FromBody]dynamic body)
+        {
+            var user = _service.GetOne((string)body.headers.id);
+            if (user != null)
+            {
+                _service.RecoveryPassword(user.Id, body.headers.token, body.headers.password);
+                return CreateResponse(HttpStatusCode.OK, user);
+            }
+            else return CreateResponse(HttpStatusCode.NotFound, user);
         }
 
         [HttpGet]

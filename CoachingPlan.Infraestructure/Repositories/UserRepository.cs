@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
 using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure.Data;
@@ -12,7 +10,6 @@ using CoachingPlan.SharedKernel.Events;
 using CoachingPlan.Domain.Specs;
 using CoachingPlan.Domain.Contracts.Repositories;
 using System.Security.Claims;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
@@ -35,7 +32,23 @@ namespace CoachingPlan.Infraestructure.Repositories
                 new DomainNotification("AssertArgumentLength", error);
             }
         }
-
+        public void SendEmail(string idUser, string subject, string body)
+        {
+            var result = _userManager.SendEmailAsync(idUser, subject, body);
+        }
+        public string GenerateTokenRecoveryPassword(string id)
+        {
+            return _userManager.GeneratePasswordResetToken(id);
+        }
+        public void RecoveryPassword(string idUser, string token, string password)
+        {   
+            IdentityResult addUserResult = _userManager.ResetPassword(idUser, token, password);
+            if (!addUserResult.Succeeded)
+            {
+                foreach (var error in addUserResult.Errors)
+                    new DomainNotification("AssertArgumentLength", error);
+            }
+        }
         public void Delete(User user)
         {
             _context.Person.Remove(user.Person);

@@ -26,5 +26,9 @@ namespace CoachingPlan.Domain.Contracts.Services
         ClaimsIdentity GenerateUserIdentityAsync(User user, string authenticationType);
         User GetOneByEmailIncludePerson(string email);
         User GetOneIncludeDetails(string id);
+        string GenerateTokenRecoveryPassword(string email);
+        User RecoveryPassword(string idUser, string token, string password);
+        void SendEmail(string idUser, string subject, string body);
+        void SendEmailRecoveryPassword(string idUser, string token);
     }
 }

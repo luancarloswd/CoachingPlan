@@ -12,7 +12,7 @@ namespace CoachingPlan.Domain.Models
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
-            this.Class = classStrongPoint;
+            this.ClassStrongPoint = classStrongPoint;
             this.Description = description;
         }
         #endregion
@@ -21,7 +21,7 @@ namespace CoachingPlan.Domain.Models
         public Guid Id { get; private set; }
         public Guid IdCoachee { get; private set; }
         public string Name { get; private set; }
-        public EClassStrongPoint Class { get; private set; }
+        public EClassStrongPoint ClassStrongPoint { get; private set; }
         public string Description { get; private set; }
 
         public virtual Coachee Coachee { get; set; }
@@ -38,7 +38,7 @@ namespace CoachingPlan.Domain.Models
         {
             if (!this.ChangeClassScopeIsValid(classStrongPoint))
                 return;
-            this.Class = classStrongPoint;
+            this.ClassStrongPoint = classStrongPoint;
         }
         public void ChangeDescription(string descricao)
         {

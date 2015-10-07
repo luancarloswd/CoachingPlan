@@ -134,6 +134,7 @@
     <Compile Include="Repositories\CoacheeRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\SessionRepository.cs" />
+    <Compile Include="Repositories\ServiceRepository.cs" />
     <Compile Include="Repositories\WeaknessRepository.cs" />
     <Compile Include="Repositories\StrongPointRepository.cs" />
     <Compile Include="Repositories\SpecialityRepository.cs" />

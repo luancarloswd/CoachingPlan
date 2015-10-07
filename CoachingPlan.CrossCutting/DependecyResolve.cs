@@ -13,6 +13,7 @@ using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.ApplicationService;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Infraestructure.Repositories;
+using CoachingPlan.Infraestructure.Identity.Services;
 
 namespace CoachingPlan.CrossCutting
 {
@@ -34,7 +35,6 @@ namespace CoachingPlan.CrossCutting
 
             //unity of work
             container.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
-
 
             //repositories
             container.RegisterType<IUserRepository, UserRepository>(new HierarchicalLifetimeManager());
@@ -63,7 +63,7 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType(typeof(IRoleStore<IdentityRole, string>), typeof(RoleStore<IdentityRole>));
             container.RegisterType<DbContext, AppDataContext>(new HierarchicalLifetimeManager());
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => new OwinContext().Authentication));
-
+            container.RegisterType<IIdentityMessageService, EmailService>();
 
 
             //Services

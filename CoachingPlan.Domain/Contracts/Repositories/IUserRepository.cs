@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace CoachingPlan.Domain.Contracts.Repositories
 {
@@ -24,5 +23,8 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<User> GetAllIncludeDetails();
         User GetOneByEmailIncludePerson(string email);
         User GetOneIncludeDetails(string id);
+        string GenerateTokenRecoveryPassword(string id);
+        void RecoveryPassword(string idUser, string token, string password);
+        void SendEmail(string idUser, string subject, string body);
     }
 }

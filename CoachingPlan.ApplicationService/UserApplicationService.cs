@@ -27,7 +27,22 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
+        public string GenerateTokenRecoveryPassword(string email)
+        {
+            var user = _repository.GetOneByEmail(email);
+            return _repository.GenerateTokenRecoveryPassword(user.Id).Replace("/", "-"); ;
+        }
+        public User RecoveryPassword(string idUser, string token, string password)
+        {
+            var user = _repository.GetOne(idUser);
+            _repository.RecoveryPassword(idUser, token, password);
 
+            
+            if (Commit())
+                return user;
+
+            return null;
+        }
         public User Delete(string id)
         {
             var user = _repository.GetOneIncludeDetails(id);
@@ -114,9 +129,20 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetOneIncludeDetails(id);
         }
+        public void SendEmail(string idUser, string subject, string body)
+        {
+            _repository.SendEmail(idUser, subject, body);
+        }
+        public void SendEmailRecoveryPassword(string idUser, string token)
+        {
+            string subject = "Alteração de senha - CoachingPlan";
+            string body = "<a href=\"http://localhost:8973/wwwroot/public/dev/#/recoveryPassword/" + idUser + "/token/" + token + "\">Clique aqui para alterar sua senha</a><br/>";
+            SendEmail(idUser, subject, body);
+        }
         public void Dispose()
         {
             _repository = null;
         }
+
     }
 }

@@ -195,6 +195,7 @@
     <Content Include="packages.config" />
     <Content Include="wwwroot\app\app.js" />
     <Content Include="wwwroot\app\config.js" />
+    <Content Include="wwwroot\app\controllers\account\recovery-password-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-details-ctrl.js" />
@@ -1911,6 +1912,7 @@
     <Content Include="wwwroot\public\dev\assets\lineicons\lte-ie7.js" />
     <Content Include="wwwroot\public\dev\assets\lineicons\style.css" />
     <Content Include="wwwroot\public\dev\index.html" />
+    <Content Include="wwwroot\public\dev\pages\account\recoveryPassword.html" />
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\create.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\details.html" />

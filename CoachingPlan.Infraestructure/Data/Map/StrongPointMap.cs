@@ -26,7 +26,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasMaxLength(30)
                 .IsRequired();
 
-            Property(x => x.Class)
+            Property(x => x.ClassStrongPoint)
                 .HasColumnName("Classe_Ponto_Forte")
                 .IsRequired();
 

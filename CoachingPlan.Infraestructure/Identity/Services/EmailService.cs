@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using SendGrid;
-using System;
-using System.Collections.Generic;
+using System.Net.Mail;
 using System.Configuration;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CoachingPlan.Infraestructure.Identity.Services
@@ -20,30 +17,23 @@ namespace CoachingPlan.Infraestructure.Identity.Services
         // Use NuGet to install SendGrid (Basic C# client lib) 
         private async Task configSendGridasync(IdentityMessage message)
         {
-            var myMessage = new SendGridMessage();
+            MailMessage msg = new MailMessage();
+            msg.To.Add(message.Destination);
+            msg.Subject = message.Subject;
+            msg.Body = message.Body;
+            msg.IsBodyHtml = true;
+            msg.From = new MailAddress("contato@coachingplan.com");
 
-            myMessage.AddTo(message.Destination);
-            myMessage.From = new System.Net.Mail.MailAddress("contato@coachingplan.com", "Coaching Plan");
-            myMessage.Subject = message.Subject;
-            myMessage.Text = message.Body;
-            myMessage.Html = message.Body;
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.Host = "smtp.gmail.com";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential("coachingplansystem@gmail.com", "system2015");
 
-            var credentials = new NetworkCredential(ConfigurationManager.AppSettings["emailService:Account"],
-                                                    ConfigurationManager.AppSettings["emailService:Password"]);
+            smtp.Send(msg);
 
-            // Create a Web transport for sending email.
-            var transportWeb = new Web(credentials);
-
-            // Send the email.
-            if (transportWeb != null)
-            {
-                await transportWeb.DeliverAsync(myMessage);
-            }
-            else
-            {
-                //Trace.TraceError("Failed to create Web transport.");
                 await Task.FromResult(0);
-            }
         }
     }
 }

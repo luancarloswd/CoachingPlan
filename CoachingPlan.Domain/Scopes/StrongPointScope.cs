@@ -13,7 +13,7 @@ namespace CoachingPlan.Domain.Scopes
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(strongPoint.Name, Errors.InvalidStrongPoint),
                             AssertionConcern.AssertArgumentLength(strongPoint.Name, 2, 50, Errors.InvalidStrongPoint),
-                            AssertionConcern.AssertArgumentNotNull(strongPoint.Class, Errors.InvalidClassStrongPoint)
+                            AssertionConcern.AssertArgumentNotNull(strongPoint.ClassStrongPoint, Errors.InvalidClassStrongPoint)
                 );
         }
         public static bool ChangeNameScopeIsValid(this StrongPoint strongPoint, string name)
