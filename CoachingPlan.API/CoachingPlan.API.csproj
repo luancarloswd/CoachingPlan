@@ -198,6 +198,7 @@
     <Content Include="wwwroot\app\controllers\account\recovery-password-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\service\service-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-remove-ctrl.js" />
@@ -216,6 +217,7 @@
     <Content Include="wwwroot\app\controllers\user\user-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\user\user-list-ctrl.js" />
     <Content Include="wwwroot\app\factories\account-factory.js" />
+    <Content Include="wwwroot\app\factories\service-factory.js" />
     <Content Include="wwwroot\app\factories\coachee-factory.js" />
     <Content Include="wwwroot\app\factories\session-factory.js" />
     <Content Include="wwwroot\app\factories\coach-factory.js" />
@@ -1914,6 +1916,7 @@
     <Content Include="wwwroot\public\dev\index.html" />
     <Content Include="wwwroot\public\dev\pages\account\recoveryPassword.html" />
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
+    <Content Include="wwwroot\public\dev\pages\service\index.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\create.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\details.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\edit.html" />
@@ -2239,6 +2242,7 @@
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\CoacheeController.cs" />
     <Compile Include="Controllers\CoachController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Helpers\CompressionHelper.cs" />
     <Compile Include="Helpers\DomainEventsContainer.cs" />

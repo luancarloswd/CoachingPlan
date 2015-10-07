@@ -51,6 +51,7 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<ICoachRepository, CoachRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoacheeRepository, CoacheeRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ISessionRepository, SessionRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IServiceRepository, ServiceRepository>(new HierarchicalLifetimeManager());
 
 
             //Identity
@@ -81,6 +82,7 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<ICoachApplicationService, CoachApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoacheeApplicationService, CoacheeApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<ISessionApplicationService, SessionApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IServiceApplicationService, ServiceApplicationService>(new HierarchicalLifetimeManager());
 
 
         }

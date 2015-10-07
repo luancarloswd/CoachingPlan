@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ServiceingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IServiceRepository : IDisposable
     {
@@ -12,5 +12,6 @@ namespace ServiceingPlan.Domain.Contracts.Repositories
         void Create(Service Service);
         void Update(Service Service);
         void Delete(Service Service);
+        List<Service> GetAllByCoachingProcess(Guid idCoachingProcess);
     }
 }

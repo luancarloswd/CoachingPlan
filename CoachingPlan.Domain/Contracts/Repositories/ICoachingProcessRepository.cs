@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CoachingProcessingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface ICoachingProcessRepository : IDisposable
     {

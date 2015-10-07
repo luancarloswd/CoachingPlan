@@ -4,6 +4,7 @@ using CoachingPlan.Domain.Models;
 using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Commands.PhoneCommands;
+using CoachingPlan.Domain.Contracts.Services;
 
 namespace CoachingPlan.ApplicationService
 {

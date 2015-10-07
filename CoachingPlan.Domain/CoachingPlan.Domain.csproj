@@ -53,6 +53,8 @@
     <Compile Include="Commands\PersonCommands\CreatePersonCommand.cs" />
     <Compile Include="Commands\PhoneCommands\ChangePhoneCommand.cs" />
     <Compile Include="Commands\PhoneCommands\CreatePhoneCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\UpdateServiceCommand.cs" />
+    <Compile Include="Commands\ServiceCommands\CreateServiceCommand.cs" />
     <Compile Include="Commands\SpecialityCommands\ChangeSpecialityCommand.cs" />
     <Compile Include="Commands\SpecialityCommands\CreateSpecialityCommand.cs" />
     <Compile Include="Commands\UserCommands\UpdateUserCommand.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Contracts\Services\ICoahceeApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoachApplicationService.cs" />
     <Compile Include="Contracts\Services\IRoleApplicationService.cs" />
+    <Compile Include="Contracts\Services\IServiceApplicationService.cs" />
     <Compile Include="Contracts\Services\ISessionApplicationService.cs" />
     <Compile Include="Contracts\Services\IWeaknessApplicationService.cs" />
     <Compile Include="Contracts\Services\IStrongPointApplicationService.cs" />
@@ -167,6 +170,7 @@
     <Compile Include="Specs\SessionSpecs.cs" />
     <Compile Include="Specs\PhoneSpecs.cs" />
     <Compile Include="Specs\CoacheeSpecs.cs" />
+    <Compile Include="Specs\ServiceSpecs.cs" />
     <Compile Include="Specs\WeknessSpecs.cs" />
     <Compile Include="Specs\StrongPointSpecs.cs" />
     <Compile Include="Specs\SpecialitySpecs.cs" />
