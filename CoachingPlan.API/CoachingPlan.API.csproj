@@ -198,6 +198,11 @@
     <Content Include="wwwroot\app\controllers\account\recovery-password-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-create-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-details-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-edit-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-list-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\service\service-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-edit-ctrl.js" />
@@ -217,6 +222,7 @@
     <Content Include="wwwroot\app\controllers\user\user-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\user\user-list-ctrl.js" />
     <Content Include="wwwroot\app\factories\account-factory.js" />
+    <Content Include="wwwroot\app\factories\coaching-process-factory.js" />
     <Content Include="wwwroot\app\factories\service-factory.js" />
     <Content Include="wwwroot\app\factories\coachee-factory.js" />
     <Content Include="wwwroot\app\factories\session-factory.js" />
@@ -1916,6 +1922,8 @@
     <Content Include="wwwroot\public\dev\index.html" />
     <Content Include="wwwroot\public\dev\pages\account\recoveryPassword.html" />
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
+    <Content Include="wwwroot\public\dev\pages\coaching-process\edit.html" />
+    <Content Include="wwwroot\public\dev\pages\coaching-process\details.html" />
     <Content Include="wwwroot\public\dev\pages\service\index.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\create.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\details.html" />
@@ -1930,6 +1938,8 @@
     <Content Include="wwwroot\public\dev\pages\coach\index.html" />
     <Content Include="wwwroot\public\dev\pages\coach\details.html" />
     <Content Include="wwwroot\public\dev\pages\coach\edit.html" />
+    <Content Include="wwwroot\public\dev\pages\coaching-process\create.html" />
+    <Content Include="wwwroot\public\dev\pages\coaching-process\index.html" />
     <Content Include="wwwroot\public\dev\pages\user\create.html" />
     <Content Include="wwwroot\public\dev\pages\user\details.html" />
     <Content Include="wwwroot\public\dev\pages\user\edit.html" />
@@ -2239,6 +2249,7 @@
     <Compile Include="App_start\UnityConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CoachingProcessController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\CoacheeController.cs" />
     <Compile Include="Controllers\CoachController.cs" />

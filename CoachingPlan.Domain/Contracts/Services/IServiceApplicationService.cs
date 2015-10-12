@@ -14,5 +14,8 @@ namespace CoachingPlan.Domain.Contracts.Services
         Service Update(UpdateServiceCommand command);
         Service Delete(Guid idService);
         List<Service> GetAllByCoachingProcess(Guid idCoachingProcess);
+        List<Service> AddToCoachingProcess(dynamic body);
+        void CheckServiceRemoved(List<Service> listService, Guid idCoachingProcess);
+        Service GetOneIncludeCoachingProcess(Guid iddCoachingProcess);
     }
 }

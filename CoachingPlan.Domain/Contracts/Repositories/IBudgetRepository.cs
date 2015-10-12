@@ -8,6 +8,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     {
         Budget GetOne(Guid id);
         List<Budget> GetAll();
+        List<Budget> GetAllByCoachingProcess(Guid idCoachhingProcess);
         List<Budget> GetAll(int take, int skip);
         void Create(Budget AcctionPlan);
         void Update(Budget Coachee);

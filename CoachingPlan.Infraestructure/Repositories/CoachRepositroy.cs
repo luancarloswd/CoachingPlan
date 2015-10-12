@@ -48,7 +48,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Coach.Where(CoachSpecs.GetOneByUser(idUser)).FirstOrDefault();
         }
-
+        public List<Coach> GetAllByCoachingProcess(Guid idCoachingProcess)
+        {
+            return _context.Coach.Where(x => x.CoachingProcess.FirstOrDefault(y => y.Id == idCoachingProcess).Id == idCoachingProcess).ToList();
+        }
         public void Update(Coach coach)
         {
             _context.Entry<Coach>(coach).State = System.Data.Entity.EntityState.Modified;
@@ -63,7 +66,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Coach.Include(x => x.User.Person).ToList();
         }
-
+        public Coach GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _context.Coach.Include(x => x.CoachingProcess).FirstOrDefault(x => x.Id == id);
+        }
         public void Dispose()
         {
             _context = null;

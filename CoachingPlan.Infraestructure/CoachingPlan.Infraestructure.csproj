@@ -120,9 +120,13 @@
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\Services\EmailService.cs" />
-    <Compile Include="Migrations\201509241349452_v1.cs" />
-    <Compile Include="Migrations\201509241349452_v1.Designer.cs">
-      <DependentUpon>201509241349452_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201510082046229_v1.cs" />
+    <Compile Include="Migrations\201510082046229_v1.Designer.cs">
+      <DependentUpon>201510082046229_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510112346431_v2.cs" />
+    <Compile Include="Migrations\201510112346431_v2.Designer.cs">
+      <DependentUpon>201510112346431_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +137,9 @@
     <Compile Include="Repositories\PhoneRepository.cs" />
     <Compile Include="Repositories\CoacheeRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\CoachingProcessRepository.cs" />
+    <Compile Include="Repositories\PerformanceIndicatorRepository.cs" />
+    <Compile Include="Repositories\BudgetRepository.cs" />
     <Compile Include="Repositories\SessionRepository.cs" />
     <Compile Include="Repositories\ServiceRepository.cs" />
     <Compile Include="Repositories\WeaknessRepository.cs" />
@@ -158,8 +165,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509241349452_v1.resx">
-      <DependentUpon>201509241349452_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510082046229_v1.resx">
+      <DependentUpon>201510082046229_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510112346431_v2.resx">
+      <DependentUpon>201510112346431_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,9 +8,11 @@ namespace CoachingPlan.Domain.Contracts.Repositories
     {
         CoachingProcess GetOne(Guid id);
         List<CoachingProcess> GetAll();
+        CoachingProcess GetOneIncludeDetails(Guid id);
         List<CoachingProcess> GetAll(int take, int skip);
         void Create(CoachingProcess CoachingProcess);
         void Update(CoachingProcess CoachingProcess);
         void Delete(CoachingProcess CoachingProcess);
+        List<CoachingProcess> GetAllByService(Guid idService);
     }
 }

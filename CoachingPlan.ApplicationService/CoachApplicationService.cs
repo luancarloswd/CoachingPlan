@@ -18,7 +18,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Coach Create(CreateCoachCommand command)
         {
-            var coach = new Coach(command.IdUser,command.EvaluationTool, command.Speciality, command.Formation, command.CoachingProcess);
+            var coach = new Coach(command.IdUser, command.EvaluationTool, command.Speciality, command.Formation, command.CoachingProcess);
             _repository.Create(coach);
 
             if (Commit())
@@ -79,7 +79,30 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
-
+        public List<Coach> AddToCoachingProcess(dynamic body)
+        {
+            List<Coach> listCoach = new List<Coach>();
+            foreach (var item in body)
+            {
+                    listCoach.Add(GetOneIncludeCoachingProcess(Guid.Parse((string)item.id)));
+            }
+            return listCoach;
+        }
+        public void CheckCoachRemoved(List<Coach> listCoachingProcess, Guid idCoachingProcess)
+        {
+            var oldList = _repository.GetAllByCoachingProcess(idCoachingProcess);
+            foreach (var coach in oldList)
+            {
+                if (!listCoachingProcess.Contains(coach))
+                {
+                    _repository.Delete(coach);
+                }
+            }
+        }
+        public Coach GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _repository.GetOneIncludeCoachingProcess(id);
+        }
         public List<Coach> GetAllIncludeDetails()
         {
             return _repository.GetAllIncludeDetails();

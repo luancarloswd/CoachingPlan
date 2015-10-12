@@ -56,12 +56,19 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Coachee.Include(x => x.StrongPoint).Include(x => x.Weakness).Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).FirstOrDefault(x => x.Id == id);
         }
 
-
+        public Coachee GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _context.Coachee.Include(x => x.CoachingProcess).FirstOrDefault(x => x.Id == id);
+        }
         public List<Coachee> GetAllIncludeDetails()
         {
             return _context.Coachee.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).ToList();
         }
-        
+        public List<Coachee> GetAllByCoachingProcess(Guid idCoachingProcess)
+        {
+            return _context.Coachee.Where(x => x.CoachingProcess.FirstOrDefault(y => y.Id == idCoachingProcess).Id == idCoachingProcess).ToList();
+        }
+
         public List<Coachee> GetAllIncludePerson()
         {
             return _context.Coachee.Include(x => x.User.Person).ToList();

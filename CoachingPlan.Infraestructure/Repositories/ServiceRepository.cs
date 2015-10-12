@@ -4,6 +4,7 @@ using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Domain.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace CoachingPlan.Infraestructure.Repositories
@@ -44,7 +45,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Service.Where(x => x.CoachingProcess.FirstOrDefault(y => y.Id == idCoachingProcess).Id == idCoachingProcess).ToList();
         }
-
+        public Service GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _context.Service.Include(x => x.CoachingProcess).FirstOrDefault(x => x.Id == id);
+        }
         public void Update(Service Service)
         {
             _context.Entry<Service>(Service).State = System.Data.Entity.EntityState.Modified;

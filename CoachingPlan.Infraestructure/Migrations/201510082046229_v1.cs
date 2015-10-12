@@ -24,6 +24,7 @@ namespace CoachingPlan.Infraestructure.Migrations
                 c => new
                     {
                         Id_Processo_Coaching = c.Guid(nullable: false, identity: true),
+                        Nome_Processo = c.String(nullable: false, maxLength: 70, storeType: "nvarchar"),
                         Data_Inicio_Processo = c.DateTime(nullable: false, storeType: "date"),
                         Data_Fim_Processo = c.DateTime(storeType: "date"),
                         Modalidade_Processo_Coaching = c.Int(nullable: false),
@@ -483,7 +484,7 @@ namespace CoachingPlan.Infraestructure.Migrations
                 .Index(t => t.a12_Id_Sessao_t11);
             
             CreateTable(
-                "dbo.t10_coachee_processo_tb",
+                "dbo.t10_servico_processo_tb",
                 c => new
                     {
                         a18_Id_Servico_t10 = c.Guid(nullable: false),
@@ -504,8 +505,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.t2_claims_tb", "IdentityUser_Id", "dbo.a4_usuario_tb");
             DropForeignKey("dbo.t4_usuario_papel_tb", "Id_Papel", "dbo.t3_papel_tb");
             DropForeignKey("dbo.a14_Plano_Acao_tb", "a11_Id_Processo_a14", "dbo.a11_Processo_Coaching_tb");
-            DropForeignKey("dbo.t10_coachee_processo_tb", "a11_Id_Processo_t10", "dbo.a11_Processo_Coaching_tb");
-            DropForeignKey("dbo.t10_coachee_processo_tb", "a18_Id_Servico_t10", "dbo.a18_Servico_tb");
+            DropForeignKey("dbo.t10_servico_processo_tb", "a11_Id_Processo_t10", "dbo.a11_Processo_Coaching_tb");
+            DropForeignKey("dbo.t10_servico_processo_tb", "a18_Id_Servico_t10", "dbo.a18_Servico_tb");
             DropForeignKey("dbo.t5_Incdr_Desempenho_tb", "a11_Id_Processo_t5", "dbo.a11_Processo_Coaching_tb");
             DropForeignKey("dbo.a5_coach_tb", "a4_Id_Usuario_a5", "dbo.a4_usuario_tb");
             DropForeignKey("dbo.a7_especialidade_tb", "a5_Id_Coach_a7", "dbo.a5_coach_tb");
@@ -540,8 +541,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.t7_coach_processo_tb", "a11_Id_Processo_t7", "dbo.a11_Processo_Coaching_tb");
             DropForeignKey("dbo.t7_coach_processo_tb", "a5_Id_Coach_t7", "dbo.a5_coach_tb");
             DropForeignKey("dbo.a19_Orcamento_tb", "a11_Id_Processo_a19", "dbo.a11_Processo_Coaching_tb");
-            DropIndex("dbo.t10_coachee_processo_tb", new[] { "a11_Id_Processo_t10" });
-            DropIndex("dbo.t10_coachee_processo_tb", new[] { "a18_Id_Servico_t10" });
+            DropIndex("dbo.t10_servico_processo_tb", new[] { "a11_Id_Processo_t10" });
+            DropIndex("dbo.t10_servico_processo_tb", new[] { "a18_Id_Servico_t10" });
             DropIndex("dbo.t11_coach_session_tb", new[] { "a12_Id_Sessao_t11" });
             DropIndex("dbo.t11_coach_session_tb", new[] { "a5_Id_Coach_t11" });
             DropIndex("dbo.t12_coachee_session_tb", new[] { "a12_Id_Sessao_t12" });
@@ -584,7 +585,7 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropIndex("dbo.a5_coach_tb", new[] { "a4_Id_Usuario_a5" });
             DropIndex("dbo.a19_Orcamento_tb", new[] { "a11_Id_Processo_a19" });
             DropIndex("dbo.a14_Plano_Acao_tb", new[] { "a11_Id_Processo_a14" });
-            DropTable("dbo.t10_coachee_processo_tb");
+            DropTable("dbo.t10_servico_processo_tb");
             DropTable("dbo.t11_coach_session_tb");
             DropTable("dbo.t12_coachee_session_tb");
             DropTable("dbo.t8_coachee_processo_tb");

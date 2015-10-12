@@ -64,7 +64,7 @@ namespace CoachingPlan.ApplicationService
         public Coachee Update(UpdateCoacheeCommand command)
         {
             var coachee = _repository.GetOneIncludeDetails(command.Id);
-            if(command.Profession != null)
+            if (command.Profession != null)
                 coachee.ChangeProfession(command.Profession);
 
             foreach (var weakness in command.Weakness)
@@ -82,6 +82,30 @@ namespace CoachingPlan.ApplicationService
                 return coachee;
 
             return null;
+        }
+        public Coachee GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _repository.GetOneIncludeCoachingProcess(id);
+        }
+        public List<Coachee> AddToCoachingProcess(dynamic body)
+        {
+            List<Coachee> listCoachee = new List<Coachee>();
+            foreach (var item in body)
+            {
+                    listCoachee.Add(GetOneIncludeCoachingProcess(Guid.Parse((string)item.id)));
+            }
+            return listCoachee;
+        }
+        public void CheckCoacheeRemoved(List<Coachee> listCoachingProcess, Guid idCoachingProcess)
+        {
+            var oldList = _repository.GetAllByCoachingProcess(idCoachingProcess);
+            foreach (var coachee in oldList)
+            {
+                if (!listCoachingProcess.Contains(coachee))
+                {
+                    _repository.Delete(coachee);
+                }
+            }
         }
 
         public List<Coachee> GetAllIncludeDetails()

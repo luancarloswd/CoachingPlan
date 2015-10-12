@@ -61,12 +61,12 @@ namespace CoachingPlan.ApplicationService
         public Service Update(UpdateServiceCommand command)
         {
             var service = _repository.GetOne(command.Id);
-            if(command.Name != null)
+            if (command.Name != null)
                 service.ChangeName(command.Name);
             if (command.Description != null)
                 service.changeDescripion(command.Description);
 
-                service.ChangeValue(command.Value);
+            service.ChangeValue(command.Value);
 
             _repository.Update(service);
 
@@ -76,28 +76,16 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public Service GetOneIncludeCoachingProcess(Guid id)
+        {
+            return _repository.GetOneIncludeCoachingProcess(id);
+        }
         public List<Service> AddToCoachingProcess(dynamic body)
         {
             List<Service> listService = new List<Service>();
             foreach (var item in body)
             {
-                if ((item.name != null) || (item.name != ""))
-                {
-                    if (item.id != null)
-                        listService.Add(Update(new UpdateServiceCommand(
-                            Guid.Parse((string)item.id),
-                            (string)item.name,
-                            (float)item.value,
-                            (string)item.description
-                            )));
-                    else
-                        listService.Add(new Service(
-                            (string)item.name,
-                            (float)item.value,
-                            (List<CoachingProcess>)item.coachingProcess,
-                            (string)item.description
-                        ));
-                }
+                    listService.Add(GetOneIncludeCoachingProcess(Guid.Parse((string)item.id)));
             }
 
             return listService;

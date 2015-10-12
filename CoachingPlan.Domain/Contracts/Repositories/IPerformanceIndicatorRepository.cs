@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PerformanceIndicatoringPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IPerformanceIndicatorRepository : IDisposable
     {
@@ -12,5 +12,6 @@ namespace PerformanceIndicatoringPlan.Domain.Contracts.Repositories
         void Create(PerformanceIndicator PerformanceIndicator);
         void Update(PerformanceIndicator PerformanceIndicator);
         void Delete(PerformanceIndicator PerformanceIndicator);
+        List<PerformanceIndicator> GetAllByCoachingProcess(Guid idCoachingProcess);
     }
 }

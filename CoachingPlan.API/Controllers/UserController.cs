@@ -63,10 +63,10 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/users/recoveryPassword/")]
         public Task<HttpResponseMessage> RecoveryPassword([FromBody]dynamic body)
         {
-            var user = _service.GetOne((string)body.headers.id);
+            var user = _service.GetOne((string)body.headers.idUser);
             if (user != null)
             {
-                _service.RecoveryPassword(user.Id, body.headers.token, body.headers.password);
+                _service.RecoveryPassword(user.Id, (string)body.headers.token, (string)body.headers.password);
                 return CreateResponse(HttpStatusCode.OK, user);
             }
             else return CreateResponse(HttpStatusCode.NotFound, user);

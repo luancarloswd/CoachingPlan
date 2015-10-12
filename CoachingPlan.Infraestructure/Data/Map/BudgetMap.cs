@@ -17,6 +17,10 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("Id_Orcamento")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            Property(x => x.Status)
+                .HasColumnName("Status_Orcamento")
+                .IsRequired();
+
             Property(x => x.IdCoachingProcess)
                 .HasColumnName("a11_Id_Processo_a19")
                 .IsRequired();

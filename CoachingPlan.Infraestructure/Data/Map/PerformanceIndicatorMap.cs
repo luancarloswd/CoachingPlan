@@ -10,7 +10,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
         {
             ToTable("t5_Incdr_Desempenho_tb")
                 .HasRequired<CoachingProcess>(s => s.CoachingProcess)
-                .WithMany(s => s.PerformaceIndicator)
+                .WithMany(s => s.PerformanceIndicator)
                 .HasForeignKey(s => s.IdCoachingProcess);
 
             Property(x => x.Id)

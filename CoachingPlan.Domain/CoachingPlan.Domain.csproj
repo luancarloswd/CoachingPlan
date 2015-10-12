@@ -53,6 +53,10 @@
     <Compile Include="Commands\PersonCommands\CreatePersonCommand.cs" />
     <Compile Include="Commands\PhoneCommands\ChangePhoneCommand.cs" />
     <Compile Include="Commands\PhoneCommands\CreatePhoneCommand.cs" />
+    <Compile Include="Commands\CoachingProcessCommands\CreateCoachingProcessCommand.cs" />
+    <Compile Include="Commands\CoachingProcessCommands\UpdateCoachingProcessCommand.cs" />
+    <Compile Include="Commands\PerformanceIndicatorCommands\CreateServiceCommand.cs" />
+    <Compile Include="Commands\PerformanceIndicatorCommands\UpdateServiceCommand.cs" />
     <Compile Include="Commands\ServiceCommands\UpdateServiceCommand.cs" />
     <Compile Include="Commands\ServiceCommands\CreateServiceCommand.cs" />
     <Compile Include="Commands\SpecialityCommands\ChangeSpecialityCommand.cs" />
@@ -92,6 +96,8 @@
     <Compile Include="Contracts\Services\ICoahceeApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoachApplicationService.cs" />
     <Compile Include="Contracts\Services\IRoleApplicationService.cs" />
+    <Compile Include="Contracts\Services\ICoachingProcessApplicationService.cs" />
+    <Compile Include="Contracts\Services\IPerformanceIndicatorApplicationService.cs" />
     <Compile Include="Contracts\Services\IServiceApplicationService.cs" />
     <Compile Include="Contracts\Services\ISessionApplicationService.cs" />
     <Compile Include="Contracts\Services\IWeaknessApplicationService.cs" />
@@ -102,6 +108,7 @@
     <Compile Include="Contracts\Services\IPersonApplicationService.cs" />
     <Compile Include="Contracts\Services\IPhoneApplicationService.cs" />
     <Compile Include="Contracts\Services\IUserApplicationService.cs" />
+    <Compile Include="Enums\EBudgetStatus.cs" />
     <Compile Include="Enums\EModeProcess.cs" />
     <Compile Include="Enums\ESessionClassification.cs" />
     <Compile Include="Enums\EState.cs" />
@@ -167,6 +174,9 @@
     <Compile Include="Specs\FormationSpecs.cs" />
     <Compile Include="Specs\PersonSpecs.cs" />
     <Compile Include="Specs\AdressSpecs.cs" />
+    <Compile Include="Specs\CoachingProcessSpecs.cs" />
+    <Compile Include="Specs\PerformanceIndicatorSpecs.cs" />
+    <Compile Include="Specs\BudgetSpecs.cs" />
     <Compile Include="Specs\SessionSpecs.cs" />
     <Compile Include="Specs\PhoneSpecs.cs" />
     <Compile Include="Specs\CoacheeSpecs.cs" />

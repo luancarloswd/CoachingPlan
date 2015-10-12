@@ -12,7 +12,14 @@ namespace CoachingPlan.Domain.Scopes
         {
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(coachingProcess.StartDate, Errors.StartDateIsRequired),
-                            AssertionConcern.AssertArgumentNotNull(coachingProcess.Mode, Errors.ModeIsRequired)
+                            AssertionConcern.AssertArgumentNotNull(coachingProcess.Mode, Errors.ModeIsRequired),
+                            AssertionConcern.AssertArgumentNotNull(coachingProcess.Name, Errors.NameIsRequired)
+                );
+        }
+        public static bool ChangeNameScopeIsValid(this CoachingProcess coachingProcess, string name)
+        {
+            return AssertionConcern.IsSatisfiedBy(
+                           AssertionConcern.AssertArgumentNotNull(name, Errors.NameIsRequired)
                 );
         }
         public static bool ChangeEndDateScopeIsValid(this CoachingProcess coachingProcess, DateTime endDate)

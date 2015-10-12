@@ -35,7 +35,7 @@ namespace CoachingPlan.ApplicationService
         public User RecoveryPassword(string idUser, string token, string password)
         {
             var user = _repository.GetOne(idUser);
-            _repository.RecoveryPassword(idUser, token, password);
+            _repository.RecoveryPassword(idUser, token.Replace("-", "/"), password);
 
             
             if (Commit())
