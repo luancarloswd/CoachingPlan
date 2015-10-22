@@ -9,6 +9,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         ActionPlan GetOne(Guid id);
         ActionPlan GetOneIncludeObjective(Guid id);
         List<ActionPlan> GetAll();
+        List<ActionPlan> GetAllByCoacingProcess(Guid idCoachingProcess);
         List<ActionPlan> GetAll(int take, int skip);
         void Create(ActionPlan AcctionPlan);
         void Update(ActionPlan Coachee);

@@ -8,7 +8,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public MessageMap()
         {
-            ToTable("a23_Menssagem_tb")
+            ToTable("a22_Menssagem_tb")
                 .HasRequired<User>(s => s.User)
                 .WithMany(s => s.Message)
                 .HasForeignKey(s => s.IdUser);
@@ -18,7 +18,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.IdUser)
-                .HasColumnName("a4_Id_Usuario_a23")
+                .HasColumnName("a4_Id_Usuario_a22")
                 .IsRequired();
 
             Property(x => x.Subject)

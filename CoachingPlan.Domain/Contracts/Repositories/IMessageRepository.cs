@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MessageingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IMessageRepository : IDisposable
     {
@@ -12,5 +12,6 @@ namespace MessageingPlan.Domain.Contracts.Repositories
         void Create(Message Message);
         void Update(Message Message);
         void Delete(Message Message);
+        List<Message> GetHistoryMessages(string idUser, string idDesdination);
     }
 }

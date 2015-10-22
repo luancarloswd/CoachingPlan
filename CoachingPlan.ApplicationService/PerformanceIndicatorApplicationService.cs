@@ -61,7 +61,7 @@ namespace CoachingPlan.ApplicationService
         public PerformanceIndicator Update(UpdatePerformanceIndicatorCommand command)
         {
             var performanceIndicator = _repository.GetOne(command.Id);
-            if(command.Indicator != null)
+            if (command.Indicator != null)
                 performanceIndicator.ChangeIndicator(command.Indicator);
 
             _repository.Update(performanceIndicator);
@@ -80,17 +80,18 @@ namespace CoachingPlan.ApplicationService
                 if ((item.indicator != null) || (item.indicator != ""))
                 {
                     if (item.id != null)
+                    {
                         listPerformanceIndicator.Add(
                             Update(new UpdatePerformanceIndicatorCommand(Guid.Parse((string)item.id), (string)item.indicator)));
-                            }
-                else
-                {
-                    listPerformanceIndicator.Add(new PerformanceIndicator(
-                        (string)item.indicator)
-                    );
+                    }
+                    else
+                    {
+                        listPerformanceIndicator.Add(new PerformanceIndicator(
+                            (string)item.indicator)
+                        );
+                    }
                 }
             }
-
             return listPerformanceIndicator;
         }
 

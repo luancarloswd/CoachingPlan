@@ -7,21 +7,19 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Job(){}
-        public Job(DateTime startDate, DateTime? realizationDate, DateTime verificationDate, Guid idSession, Guid idMark, string description = null)
+        public Job(DateTime startDate, DateTime? realizationDate, DateTime verificationDate, string description = null)
         {
             this.Id = Guid.NewGuid();
             this.StartDate = startDate;
             this.RealizationDate = realizationDate;
             this.VerificationDate = verificationDate;
-            this.IdSession = idSession;
-            this.IdMark = idMark;
             this.Description = description;
         }
         #endregion
 
         #region Properties
         public Guid Id { get; private set; }
-        public Guid IdSession { get; private set; }
+        public Nullable<Guid> IdSession { get; private set; }
         public Guid IdMark { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime? RealizationDate{ get; private set; }
@@ -33,7 +31,7 @@ namespace CoachingPlan.Domain.Models
         #endregion
 
         #region Methods
-        public void ChangeRealizationDate(DateTime realizationDate)
+        public void ChangeRealizationDate(DateTime? realizationDate)
         {
             this.RealizationDate = realizationDate;
         }

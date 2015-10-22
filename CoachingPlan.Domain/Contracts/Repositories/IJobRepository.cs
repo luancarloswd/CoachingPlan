@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace JobingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IJobRepository : IDisposable
     {
         Job GetOne(Guid id);
         List<Job> GetAll();
+        List<Job> GetAllByMark(Guid idMark);
+        List<Job> GetAllBySession(Guid idSession);
         List<Job> GetAll(int take, int skip);
         void Create(Job Job);
         void Update(Job Job);

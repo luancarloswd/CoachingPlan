@@ -35,6 +35,14 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, Service);
         }
 
+        [HttpGet]
+        [Route("api/services/coachingProcess/{id}")]
+        public Task<HttpResponseMessage> GetByCoachingProcess(string id)
+        {
+            var Service = _service.GetAllByCoachingProcess(Guid.Parse(id));
+            return CreateResponse(HttpStatusCode.OK, Service);
+        }
+
         [HttpPost]
         [Route("api/services")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)

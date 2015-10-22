@@ -31,7 +31,9 @@ namespace CoachingPlan.Infraestructure.Data
         public DbSet<StrongPoint> StrongPoint { get; set; }
         public DbSet<CoachingProcess> CoachingProcess { get; set; }
         public DbSet<Session> Session { get; set; }
-        public DbSet<Evaluation> Evaluation { get; set; }
+        //public DbSet<Evaluation> Evaluation { get; set; }
+        public DbSet<EvaluationCoach> EvaluationCoach { get; set; }
+        public DbSet<EvaluationCoachee> EvaluationCoachee { get; set; }
         public DbSet <ActionPlan> ActionPlan { get; set; }
         public DbSet<Objective> Objective { get; set; }
         public DbSet<Mark> Mark { get; set; }
@@ -97,7 +99,8 @@ namespace CoachingPlan.Infraestructure.Data
             modelBuilder.Configurations.Add(new FilledToolMap());
             modelBuilder.Configurations.Add(new ReplyMap());
             modelBuilder.Configurations.Add(new QuestionMap());
-            modelBuilder.Configurations.Add(new EvaluationMap());
+            modelBuilder.Configurations.Add(new EvaluationCoacheeMap());
+            modelBuilder.Configurations.Add(new EvaluationCoachMap());
             modelBuilder.Configurations.Add(new ObjectiveMap());
             modelBuilder.Configurations.Add(new MarkMap());
             modelBuilder.Configurations.Add(new JobMap());

@@ -8,12 +8,12 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public JobMap()
         {
-            ToTable("a17_Tarefa_tb")
+            ToTable("a16_Tarefa_tb")
                 .HasRequired<Mark>(s => s.Mark)
                 .WithMany(s => s.Job)
                 .HasForeignKey(x => x.IdMark);
 
-            HasRequired<Session>(s => s.Session)
+            HasOptional<Session>(s => s.Session)
                 .WithMany(s => s.Job)
                 .HasForeignKey(x => x.IdSession);
 
@@ -22,12 +22,12 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.IdMark)
-                .HasColumnName("a16_Id_Meta_a17")
+                .HasColumnName("a15_Id_Meta_a17")
                 .IsRequired();
 
             Property(x => x.IdSession)
                 .HasColumnName("a12_Id_Sessao_a17")
-                .IsRequired();
+                .IsOptional();
 
             Property(x => x.StartDate)
                 .HasColumnName("Data_Inicio_Tarefa")

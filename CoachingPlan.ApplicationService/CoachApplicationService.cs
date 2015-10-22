@@ -79,7 +79,7 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
-        public List<Coach> AddToCoachingProcess(dynamic body)
+        public List<Coach> AddCoach(dynamic body)
         {
             List<Coach> listCoach = new List<Coach>();
             foreach (var item in body)
@@ -88,16 +88,20 @@ namespace CoachingPlan.ApplicationService
             }
             return listCoach;
         }
-        public void CheckCoachRemoved(List<Coach> listCoachingProcess, Guid idCoachingProcess)
+        public CoachingProcess CheckCoachRemovedOfCoachingProcess(List<Coach> listCoachingProcess, CoachingProcess coachingProcess)
         {
-            var oldList = _repository.GetAllByCoachingProcess(idCoachingProcess);
+            var oldList = _repository.GetAllByCoachingProcess(coachingProcess.Id);
             foreach (var coach in oldList)
             {
                 if (!listCoachingProcess.Contains(coach))
                 {
-                    _repository.Delete(coach);
+                    coachingProcess.RemoveCoach(coach);
                 }
             }
+            foreach (var coach in listCoachingProcess)
+                coachingProcess.AddCoach(coach);
+
+            return coachingProcess;
         }
         public Coach GetOneIncludeCoachingProcess(Guid id)
         {

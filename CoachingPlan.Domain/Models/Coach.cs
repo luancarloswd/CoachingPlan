@@ -24,7 +24,7 @@ namespace CoachingPlan.Domain.Models
             this.CoachingProcess = new HashSet<CoachingProcess>();
             if (coachingProcess != null)
                 coachingProcess.ToList().ForEach(x => AddCoachingProcess(x));
-            this.Session = new HashSet<Session>();
+            this.EvaluationCoach = new HashSet<EvaluationCoach>();
             this.IdUser = idUser;
         }
         #endregion
@@ -37,7 +37,7 @@ namespace CoachingPlan.Domain.Models
         public virtual ICollection<Formation> Formation { get; private set; }
         public virtual User User { get; private set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; private set; }
-        public virtual ICollection<Session> Session { get; set; }
+        public virtual ICollection<EvaluationCoach> EvaluationCoach { get; set; }
         #endregion
 
         #region Methods

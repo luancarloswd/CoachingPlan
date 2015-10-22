@@ -70,6 +70,12 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Coach.Include(x => x.CoachingProcess).FirstOrDefault(x => x.Id == id);
         }
+        public List<Coach> GetAllBySession(Guid idSession)
+        {
+            return _context.Coach.ToList();
+            //return _context.Coach.Where(x => x.Session.FirstOrDefault(y => y.Id == idSession).Id == idSession).ToList();
+        }
+
         public void Dispose()
         {
             _context = null;

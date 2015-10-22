@@ -14,7 +14,6 @@ namespace CoachingPlan.Domain.Models
             this.Email = email;
             this.UserName = userName;
             this.Session = new HashSet<Session>();
-            this.Evaluation = new HashSet<Evaluation>();
             this.Message = new HashSet<Message>();
             this.Coachee = new HashSet<Coachee>();
             this.Coach = new HashSet<Coach>();
@@ -38,7 +37,6 @@ namespace CoachingPlan.Domain.Models
         public Guid IdPerson { get;  set; }
         public virtual Person Person { get;  set; }
         public virtual ICollection<Session> Session { get; private set; }
-        public virtual ICollection<Evaluation> Evaluation { get; private set; }
         public virtual ICollection<Message> Message { get; private set; }
         public virtual ICollection<Coachee> Coachee { get; private set; }
         public virtual ICollection<Coach> Coach { get; private set; }

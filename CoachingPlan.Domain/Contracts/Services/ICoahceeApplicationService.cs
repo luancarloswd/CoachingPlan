@@ -17,8 +17,8 @@ namespace CoachingPlan.Domain.Contracts.Services
         List<Coachee> GetAllIncludeDetails();
         List<Coachee> GetAllIncludePerson();
         Coachee GetOneIncludeDetails(Guid id);
-        List<Coachee> AddToCoachingProcess(dynamic body);
-        void CheckCoacheeRemoved(List<Coachee> listCoachingProcess, Guid idCoachingProcess);
+        List<Coachee> AddCoachee(dynamic body);
+        CoachingProcess CheckCoacheeRemovedOfCoachingProcess(List<Coachee> listCoachingProcess, CoachingProcess coachingProcess);
         Coachee GetOneIncludeCoachingProcess(Guid id);
     }
 }

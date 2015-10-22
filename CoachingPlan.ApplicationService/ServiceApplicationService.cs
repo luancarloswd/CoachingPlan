@@ -91,16 +91,19 @@ namespace CoachingPlan.ApplicationService
             return listService;
         }
 
-        public void CheckServiceRemoved(List<Service> listService, Guid idCoachingProcess)
+        public CoachingProcess CheckServiceRemoved(List<Service> listService, CoachingProcess coachingProcess)
         {
-            var oldList = _repository.GetAllByCoachingProcess(idCoachingProcess);
+            var oldList = _repository.GetAllByCoachingProcess(coachingProcess.Id);
             foreach (var service in oldList)
             {
                 if (!listService.Contains(service))
                 {
-                    _repository.Delete(service);
+                    coachingProcess.RemoveService(service);
                 }
             }
+            foreach (var service in listService)
+                coachingProcess.AddService(service);
+            return coachingProcess;
         }
         public void Dispose()
         {

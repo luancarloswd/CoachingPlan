@@ -18,7 +18,7 @@ namespace CoachingPlan.ApplicationService
         }
         public CoachingProcess Create(CreateCoachingProcessCommand command)
         {
-            var coachingProcess = new CoachingProcess(command.Name, command.StartDate, command.Mode, command.Budget, command.Session, command.ActionPlan, command.PerformaceIndicator, command.Coachee, command.Coach, command.Service, command.EndDate, command.Observation);
+            var coachingProcess = new CoachingProcess(command.Name, command.StartDate, command.Mode, command.Budget, command.Session, command.PerformaceIndicator, command.Coachee, command.Coach, command.Service, command.EndDate, command.Observation);
             coachingProcess.Validate();
             _repository.Create(coachingProcess);
 
@@ -65,7 +65,7 @@ namespace CoachingPlan.ApplicationService
         }
         public CoachingProcess Update(UpdateCoachingProcessCommand command)
         {
-            var coachingProcess = _repository.GetOne(command.Id);
+            var coachingProcess = _repository.GetOneIncludeDetails(command.Id);
 
             if (!string.IsNullOrEmpty(command.Name))
                 coachingProcess.ChangeName(command.Name);
@@ -77,7 +77,7 @@ namespace CoachingPlan.ApplicationService
                 coachingProcess.ChangeEndDate(command.EndDate);
             if (command.Observation != null)
                 coachingProcess.ChangeObservation(command.Observation);
-            if (command.PerformaceIndicator.Count != 0 || command.PerformaceIndicator != null)
+            if (command.PerformaceIndicator != null)
             {
                 foreach (var performanceIndicator in command.PerformaceIndicator)
                 {
@@ -92,13 +92,6 @@ namespace CoachingPlan.ApplicationService
                 }
             }
 
-            if ( command.ActionPlan != null)
-            {
-                foreach (var actionPlan in command.ActionPlan)
-                {
-                    coachingProcess.AddActionPlan(actionPlan);
-                }
-            }
             if (command.Budget != null)
             {
                 foreach (var budget in command.Budget)

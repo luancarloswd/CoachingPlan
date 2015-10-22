@@ -16,7 +16,6 @@ namespace CoachingPlan.Domain.Commands.CoachingProcessCommands
 
         public virtual ICollection<Budget> Budget { get;  set; }
         public virtual ICollection<Session> Session { get; set; }
-        public virtual ICollection<ActionPlan> ActionPlan { get; set; }
         public virtual ICollection<Coach> Coach { get; set; }
         public virtual ICollection<PerformanceIndicator> PerformaceIndicator { get; set; }
         public virtual ICollection<Coachee> Coachee { get; set; }

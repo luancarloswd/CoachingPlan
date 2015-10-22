@@ -8,13 +8,13 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public ServiceMap()
         {
-            ToTable("a18_Servico_tb")
+            ToTable("a17_Servico_tb")
                 .HasMany(t => t.CoachingProcess)
                 .WithMany(t => t.Service)
                 .Map(m =>
                 {
                     m.ToTable("t10_servico_processo_tb");
-                    m.MapLeftKey("a18_Id_Servico_t10");
+                    m.MapLeftKey("a17_Id_Servico_t10");
                     m.MapRightKey("a11_Id_Processo_t10");
                 }); ;
 

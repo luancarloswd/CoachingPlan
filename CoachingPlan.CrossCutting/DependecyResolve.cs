@@ -54,6 +54,13 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<IServiceRepository, ServiceRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<IPerformanceIndicatorRepository, PerformanceIndicatorRepository>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoachingProcessRepository, CoachingProcessRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IBudgetRepository, BudgetRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IActionPlanRepository, ActionPlanRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IObjectiveRepository, ObjectiveRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IMarkRepository, MarkRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IJobRepository, JobRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IEvaluationCoachRepository, EvaluationCoachRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IEvaluationCoacheeRepository, EvaluationCoacheeRepository>(new HierarchicalLifetimeManager());
 
 
             //Identity
@@ -87,8 +94,13 @@ namespace CoachingPlan.CrossCutting
             container.RegisterType<IServiceApplicationService, ServiceApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPerformanceIndicatorApplicationService, PerformanceIndicatorApplicationService>(new HierarchicalLifetimeManager());
             container.RegisterType<ICoachingProcessApplicationService, CoachingProcessApplicationService>(new HierarchicalLifetimeManager());
-
-
+            container.RegisterType<IBudgetApplicationService, BudgetApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IActionPlanApplicationService, ActionPlanApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IObjectiveApplicationService, ObjectiveApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IMarkApplicationService, MarkApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IJobApplicationService, JobApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IEvaluationCoachApplicationService, EvaluationCoachApplicationService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IEvaluationCoacheeApplicationService, EvaluationCoacheeApplicationService>(new HierarchicalLifetimeManager());
         }
     }
 }

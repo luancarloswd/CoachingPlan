@@ -8,7 +8,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public QuestionMap()
         {
-            ToTable("a21_Questao_tb")
+            ToTable("a20_Questao_tb")
                 .HasRequired<EvaluationTool>(s=> s.EvaluationTool)
                 .WithMany(s=> s.Question)
                 .HasForeignKey(s=> s.IdEvaluationTool);
@@ -18,7 +18,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.IdEvaluationTool)
-                .HasColumnName("a20_Id_Frmt_Avlc_a21");
+                .HasColumnName("a19_Id_Frmt_Avlc_a21");
 
             Property(x => x.TypeReply)
                 .HasColumnName("Tipo_Resposta_Questao")

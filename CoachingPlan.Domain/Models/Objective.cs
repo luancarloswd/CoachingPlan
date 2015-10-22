@@ -8,15 +8,15 @@ namespace CoachingPlan.Domain.Models
     public class Objective
     {
         #region Ctor
-        protected Objective(){}
-        public Objective(string description, Guid idActionPlan, DateTime term, ICollection<Mark> mark)
+        protected Objective() { }
+        public Objective(string description, DateTime term, ICollection<Mark> mark)
         {
             this.Id = Guid.NewGuid();
             this.Description = description;
             this.Term = term;
-            this.IdActionPlan = idActionPlan;
             this.Mark = new HashSet<Mark>();
-            mark.ToList().ForEach(x => AddMark(x));
+            if (mark != null)
+                mark.ToList().ForEach(x => AddMark(x));
         }
         #endregion
 

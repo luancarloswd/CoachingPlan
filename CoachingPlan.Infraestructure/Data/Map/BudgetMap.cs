@@ -8,7 +8,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public BudgetMap()
         {
-            ToTable("a19_Orcamento_tb")
+            ToTable("a18_Orcamento_tb")
                 .HasRequired<CoachingProcess>(s => s.CoachingProcess)
                 .WithMany(s => s.Budget)
                 .HasForeignKey(s => s.IdCoachingProcess);
@@ -22,7 +22,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .IsRequired();
 
             Property(x => x.IdCoachingProcess)
-                .HasColumnName("a11_Id_Processo_a19")
+                .HasColumnName("a11_Id_Processo_a18")
                 .IsRequired();
 
             Property(x => x.Proposal)

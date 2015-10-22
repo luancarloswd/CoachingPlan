@@ -20,13 +20,16 @@ namespace CoachingPlan.Api.Controllers
         private readonly ICoacheeApplicationService _serviceCoachee;
         private readonly IPerformanceIndicatorApplicationService _servicePerformanceIndicator;
         private readonly IServiceApplicationService _service;
+        private readonly IActionPlanApplicationService _serviceActionPlan;
 
         public CoachingProcessController(ICoachingProcessApplicationService coachingProcess,
             ICoachApplicationService serviceCoach,
             ICoacheeApplicationService serviceCoachee,
             IPerformanceIndicatorApplicationService servicePerformanceIndicator,
-            IServiceApplicationService service)
+            IServiceApplicationService service,
+            IActionPlanApplicationService serviceActionplan)
         {
+            this._serviceActionPlan = serviceActionplan;
             this._serviceCoachingProcess = coachingProcess;
             this._serviceCoach = serviceCoach;
             this._serviceCoachee = serviceCoachee;
@@ -54,9 +57,9 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
-            var listCoach = _serviceCoach.AddToCoachingProcess(body.coachs);
+            var listCoach = _serviceCoach.AddCoach(body.coachs);
 
-            var listCoachee = _serviceCoachee.AddToCoachingProcess(body.coachees);
+            var listCoachee = _serviceCoachee.AddCoachee(body.coachees);
 
             var listPerformanceIndicator = _servicePerformanceIndicator.AddToCoachingProcess(body.performanceIndicator);
 
@@ -87,8 +90,8 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)
         {
-            var listCoach = _serviceCoach.AddToCoachingProcess(body.coach);
-            var listCoachee = _serviceCoachee.AddToCoachingProcess(body.coachee);
+            var listCoach = _serviceCoach.AddCoach(body.coach);
+            var listCoachee = _serviceCoachee.AddCoachee(body.coachee);
             var listPerformanceIndicator = _servicePerformanceIndicator.AddToCoachingProcess(body.performanceIndicator);
             var listService = _service.AddToCoachingProcess(body.service);
 
@@ -96,25 +99,27 @@ namespace CoachingPlan.Api.Controllers
             if (body.endDate == null || body.endDate == "")
                 body.endDate = DateTime.MinValue;
 
+            var coachingProcess = _serviceCoachingProcess.GetOneIncludeDetails(Guid.Parse((string)body.id));
+
+            coachingProcess = _serviceCoach.CheckCoachRemovedOfCoachingProcess(listCoach, coachingProcess);
+            coachingProcess = _serviceCoachee.CheckCoacheeRemovedOfCoachingProcess(listCoachee, coachingProcess);
+            coachingProcess = _service.CheckServiceRemoved(listService, coachingProcess);
+
             var commandCoachingProcess = new UpdateCoachingProcessCommand(
                 id: Guid.Parse((string)body.id),
                 name: (string)body.name,
                 startDate: (DateTime)body.startDate,
                 endDate: (DateTime)body.endDate,
                 mode: (EModeProcess)body.mode,
-                coach: listCoach,
-                coachee: listCoachee,
+                coach: coachingProcess.Coach,
+                coachee: coachingProcess.Coachee,
                 performanceIndicator: listPerformanceIndicator,
-                service: listService,
+                service: coachingProcess.Service,
                 observation: (string)body.observation
               );
 
-            var coachingProcess = _serviceCoachingProcess.Update(commandCoachingProcess);
-
-            _serviceCoach.CheckCoachRemoved(listCoach, coachingProcess.Id);
-            _serviceCoachee.CheckCoacheeRemoved(listCoachee, coachingProcess.Id);
             _servicePerformanceIndicator.CheckPerformanceIndicatorRemoved(listPerformanceIndicator, coachingProcess.Id);
-            _service.CheckServiceRemoved(listService, coachingProcess.Id);
+            coachingProcess = _serviceCoachingProcess.Update(commandCoachingProcess);
 
             return CreateResponse(HttpStatusCode.Created, coachingProcess);
         }
@@ -124,6 +129,8 @@ namespace CoachingPlan.Api.Controllers
         public Task<HttpResponseMessage> Delete(string id)
         {
             var coachingProcess = _serviceCoachingProcess.Delete(Guid.Parse(id));
+            if (coachingProcess.ActionPlan != null)
+                _serviceActionPlan.Delete(coachingProcess.ActionPlan.Id);
             return CreateResponse(HttpStatusCode.OK, coachingProcess);
         }
     }

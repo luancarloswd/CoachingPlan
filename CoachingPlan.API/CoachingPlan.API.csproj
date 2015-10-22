@@ -198,6 +198,14 @@
     <Content Include="wwwroot\app\controllers\account\recovery-password-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\action-plan\action-plan-create-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\action-plan\action-plan-details-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\action-plan\action-plan-edit-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\budget\budget-create-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\budget\budget-details-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\budget\budget-edit-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\budget\budget-list-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\budget\budget-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-create-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-edit-ctrl.js" />
@@ -215,6 +223,10 @@
     <Content Include="wwwroot\app\controllers\coach\coach-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coach\coach-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\home\home-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\session\session-create-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\session\session-edit-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\session\session-remove-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\session\session-list-coaching-process.js" />
     <Content Include="wwwroot\app\controllers\session\session-list-ctrl.js" />
     <Content Include="wwwroot\app\controllers\user\user-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\user\user-create-ctrl.js" />
@@ -222,6 +234,8 @@
     <Content Include="wwwroot\app\controllers\user\user-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\user\user-list-ctrl.js" />
     <Content Include="wwwroot\app\factories\account-factory.js" />
+    <Content Include="wwwroot\app\factories\budget-factory.js" />
+    <Content Include="wwwroot\app\factories\action-plan-factory.js" />
     <Content Include="wwwroot\app\factories\coaching-process-factory.js" />
     <Content Include="wwwroot\app\factories\service-factory.js" />
     <Content Include="wwwroot\app\factories\coachee-factory.js" />
@@ -512,6 +526,23 @@
     <Content Include="wwwroot\bower_components\bootstrap-datepicker\tests\suites\noconflict.js" />
     <Content Include="wwwroot\bower_components\bootstrap-datepicker\tests\suites\options.js" />
     <Content Include="wwwroot\bower_components\bootstrap-datepicker\tests\tests.html" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\.gitignore" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\ico\favicon.ico" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\images\bg.png" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\prettify\prettify.css" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\prettify\prettify.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\assets\pygments.css" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\Gruntfile.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\index.html" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\fixtures\timepicker.html" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\helpers\jasmine-jquery.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\helpers\SpecHelper.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\KeyboardEventsSpec.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\MouseEventsSpec.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\spec\js\TimepickerSpec.js" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\_layouts\default.html" />
     <Content Include="wwwroot\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="wwwroot\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="wwwroot\bower_components\bootstrap\dist\css\bootstrap.css" />
@@ -1922,6 +1953,13 @@
     <Content Include="wwwroot\public\dev\index.html" />
     <Content Include="wwwroot\public\dev\pages\account\recoveryPassword.html" />
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
+    <Content Include="wwwroot\public\dev\pages\action-plan\details.html" />
+    <Content Include="wwwroot\public\dev\pages\action-plan\edit.html" />
+    <Content Include="wwwroot\public\dev\pages\action-plan\create.html" />
+    <Content Include="wwwroot\public\dev\pages\budget\edit.html" />
+    <Content Include="wwwroot\public\dev\pages\budget\create.html" />
+    <Content Include="wwwroot\public\dev\pages\budget\details.html" />
+    <Content Include="wwwroot\public\dev\pages\budget\index.html" />
     <Content Include="wwwroot\public\dev\pages\coaching-process\edit.html" />
     <Content Include="wwwroot\public\dev\pages\coaching-process\details.html" />
     <Content Include="wwwroot\public\dev\pages\service\index.html" />
@@ -1929,6 +1967,8 @@
     <Content Include="wwwroot\public\dev\pages\coachee\details.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\edit.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\index.html" />
+    <Content Include="wwwroot\public\dev\pages\session\edit.html" />
+    <Content Include="wwwroot\public\dev\pages\session\create.html" />
     <Content Include="wwwroot\public\dev\pages\session\index.html" />
     <Content Include="wwwroot\public\dev\pages\home\index.html" />
     <Content Include="wwwroot\public\dev\pages\shared\footer.html" />
@@ -2241,6 +2281,17 @@
     <Content Include="wwwroot\bower_components\angular-ui-calendar\bower.json" />
     <Content Include="wwwroot\bower_components\angular-ui-calendar\LICENSE" />
     <Content Include="wwwroot\bower_components\angular-ui-calendar\README.md" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\.bower.json" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\.bowerrc" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\.travis.yml" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\bower.json" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\CHANGELOG.md" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\composer.json" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\LICENSE" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\package.json" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\README.md" />
+    <Content Include="wwwroot\bower_components\bootstrap-timepicker\_config.yml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
@@ -2248,6 +2299,8 @@
   <ItemGroup>
     <Compile Include="App_start\UnityConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BudgetController.cs" />
+    <Compile Include="Controllers\ActionPlanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CoachingProcessController.cs" />
     <Compile Include="Controllers\SessionController.cs" />

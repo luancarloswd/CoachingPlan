@@ -28,7 +28,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public List<Budget> GetAll()
         {
-            return _context.Budget.ToList();
+            return _context.Budget.Include(x => x.CoachingProcess).ToList();
         }
 
         public List<Budget> GetAll(int take, int skip)
@@ -38,7 +38,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public Budget GetOne(Guid id)
         {
-            return _context.Budget.Where(BudgetSpecs.GetOne(id)).FirstOrDefault();
+            return _context.Budget.Where(BudgetSpecs.GetOne(id)).Include(x => x.CoachingProcess).FirstOrDefault();
         }
 
         public List<Budget> GetAllByCoachingProcess(Guid idCoachingProcess)

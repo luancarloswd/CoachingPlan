@@ -25,7 +25,7 @@ namespace CoachingPlan.Domain.Scopes
                             AssertionConcern.AssertArgumentNotNull(session.Classification, Errors.ClassificationIsRequired)
                 );
         }
-        public static bool ChangeEndTimeScopeIsValid(this Session session, TimeSpan endTime)
+        public static bool ChangeEndTimeScopeIsValid(this Session session, TimeSpan? endTime)
         {
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(endTime, Errors.EndTimeIsRequired)

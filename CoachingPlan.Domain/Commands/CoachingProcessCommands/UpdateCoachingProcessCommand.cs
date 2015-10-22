@@ -22,7 +22,7 @@ namespace CoachingPlan.Domain.Commands.CoachingProcessCommands
         public virtual ICollection<Coachee> Coachee { get; set; }
         public virtual ICollection<Service> Service { get; set; }
 
-        public UpdateCoachingProcessCommand(Guid id, string name, DateTime startDate, DateTime endDate, EModeProcess mode, List<Coach> coach, List<Coachee> coachee, List<PerformanceIndicator> performanceIndicator, List<Service> service, string observation = null)
+        public UpdateCoachingProcessCommand(Guid id, string name, DateTime startDate, DateTime endDate, EModeProcess mode, ICollection<Coach> coach, ICollection<Coachee> coachee, ICollection<PerformanceIndicator> performanceIndicator, ICollection<Service> service, string observation = null)
         {
             this.Id = id;
             this.Name = name;

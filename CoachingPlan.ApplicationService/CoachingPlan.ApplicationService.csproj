@@ -42,10 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvaluationCoacheeApplicationService.cs" />
+    <Compile Include="JobApplicationService.cs" />
+    <Compile Include="MarkApplicationService.cs" />
+    <Compile Include="ObjectiveApplicationService.cs" />
+    <Compile Include="ActionPlanApplicationService.cs" />
     <Compile Include="CoachApplicationService.cs" />
-    <Compile Include="CoahceeApplicationService.cs" />
+    <Compile Include="CoacheeApplicationService.cs" />
     <Compile Include="CoachingProcessApplicationService.cs" />
     <Compile Include="PerformanceIndicatorApplicationService.cs" />
+    <Compile Include="BudgetApplicationService.cs" />
+    <Compile Include="EvaluationCoachApplicationService.cs" />
     <Compile Include="SessionApplicationService.cs" />
     <Compile Include="RoleApplicationService.cs" />
     <Compile Include="ServiceApplicationService.cs" />

@@ -73,6 +73,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             return _context.Coachee.Include(x => x.User.Person).ToList();
         }
+        public List<Coachee> GetAllBySession(Guid idSession)
+        {
+            return _context.Coachee.Where(x => x.EvaluationCoachee.FirstOrDefault(y => y.Id == idSession).Id == idSession).ToList();
+        }
         public void Dispose()
         {
             _context = null;

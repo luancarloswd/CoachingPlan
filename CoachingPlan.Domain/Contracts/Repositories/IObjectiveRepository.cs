@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace ObjectiveingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IObjectiveRepository : IDisposable
     {
         Objective GetOne(Guid id);
         List<Objective> GetAll();
+        List<Objective> GetAllByActionPlan(Guid idActionPlan);
         List<Objective> GetAll(int take, int skip);
         void Create(Objective Objective);
         void Update(Objective Objective);

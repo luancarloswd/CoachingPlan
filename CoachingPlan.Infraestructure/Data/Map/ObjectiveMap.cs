@@ -8,7 +8,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public ObjectiveMap()
         {
-            ToTable("a15_Objetivo_tb")
+            ToTable("a14_Objetivo_tb")
                 .HasRequired<ActionPlan>(s => s.ActionPlan)
                 .WithMany(s => s.Objective)
                 .HasForeignKey(x => x.IdActionPlan);
@@ -18,7 +18,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.IdActionPlan)
-                .HasColumnName("a14_Id_Plano_a15")
+                .HasColumnName("a13_Id_Plano_a15")
                 .IsRequired();
 
             Property(x => x.Term)

@@ -33,7 +33,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public CoachingProcess GetOneIncludeDetails(Guid id)
         {
-            return _context.CoachingProcess.Include(x => x.Coachee.Select(n => n.User)).Include(x => x.Coachee.Select(n => n.User.Person)).Include(x => x.Coach.Select(n => n.User)).Include(x => x.Coach.Select(n => n.User.Person)).Include(x => x.Coachee).Include(x => x.Coach).Include(x => x.PerformanceIndicator).Include(x => x.Budget).Include(x => x.Session).Include(x => x.Service).FirstOrDefault(x => x.Id == id);
+            return _context.CoachingProcess.Include(x => x.Coachee.Select(n => n.User.Person)).Include(x => x.Coach.Select(n => n.User.Person)).Include(x => x.PerformanceIndicator).Include(x => x.Budget).Include(x => x.Service).Include(x => x.ActionPlan.Objective.Select(y =>y.Mark.Select(z => z.Job))).Include(x => x.Budget).FirstOrDefault(x => x.Id == id);
         }
 
         public List<CoachingProcess> GetAll(int take, int skip)

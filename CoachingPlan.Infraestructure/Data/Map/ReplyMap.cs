@@ -8,7 +8,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
     {
         public ReplyMap()
         {
-            ToTable("a22_Resposta_tb")
+            ToTable("a21_Resposta_tb")
                 .HasRequired<Question>(s => s.Question)
                 .WithMany(s => s.Reply)
                 .HasForeignKey(s => s.IdQuestion);
@@ -18,7 +18,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(x => x.IdQuestion)
-                .HasColumnName("a21_Id_Questao_a22");
+                .HasColumnName("a20_Id_Questao_a22");
 
             Property(x => x.BodyReply)
                 .HasColumnName("Resposta")

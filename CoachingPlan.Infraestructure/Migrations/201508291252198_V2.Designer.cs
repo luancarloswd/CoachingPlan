@@ -7,13 +7,13 @@ namespace CoachingPlan.Infraestructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class v2 : IMigrationMetadata
+    public sealed partial class V2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(v2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(V2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510112346431_v2"; }
+            get { return "201508291252198_V2"; }
         }
         
         string IMigrationMetadata.Source
