@@ -13,10 +13,9 @@ namespace CoachingPlan.Domain.Commands.UserCommands
         public string Password{ get; set; }
         public Guid IdPerson { get; private set; }
         public UpdateUserCommand(){}
-        public UpdateUserCommand(string id, string email, string userName, string password, Guid idPerson)
+        public UpdateUserCommand(string id, string userName, string password, Guid idPerson)
         {
             this.Id = id;
-            this.Email = email;
             this.UserName = userName;
             this.Password = password;
             this.IdPerson = idPerson;

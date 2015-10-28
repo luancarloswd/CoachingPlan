@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="634bf34e-79d9-4d89-bc13-fb8767777b37" name="UC06 - Manter Serviço" linkedPackageId="17620ad7-dfa4-4a64-8df4-bd1b31eba7ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="634bf34e-79d9-4d89-bc13-fb8767777b37" name="UC06 - Manter Serviço" linkedPackageId="17620ad7-dfa4-4a64-8df4-bd1b31eba7ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="1da8c3fe-af47-49e5-8699-38042a27ae6e">
+      <profileInstance Id="d2d215e6-15d7-4319-a3da-2d7091cec012" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+      </profileInstance>
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="144e7119-772e-42c1-bf5c-c23f630cd6c2" name="Administrador" isAbstract="false" isLeaf="false">
@@ -69,17 +77,6 @@
           <dependency Id="290e53b7-1424-4593-a245-cfb41fc93bd6">
             <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
             <elementDefinition Id="a47428a3-e5f1-435b-9807-c31efba2def0" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="0fd7d91a-9ec1-45a9-923d-16e9a8b43ff6" name="Visualizar Serviço" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="cc0446cc-1b96-4a25-a647-bd0501db7d57" />
-        <suppliersInternal>
-          <dependency Id="490c68e7-449b-4563-b890-07febfeebdae">
-            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
-            <elementDefinition Id="05ae891a-7568-4ec4-a5d5-7c8595f623d7" />
           </dependency>
         </suppliersInternal>
       </useCase>

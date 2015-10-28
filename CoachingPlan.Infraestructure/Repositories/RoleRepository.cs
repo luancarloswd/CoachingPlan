@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CoachingPlan.Domain.Models;
-using CoachingPlan.Infraestructure.Data;
+﻿using CoachingPlan.Infraestructure.Data;
 using CoachingPlan.Infraestructure.Identity;
 using Microsoft.AspNet.Identity;
 using CoachingPlan.SharedKernel.Events;
-using CoachingPlan.Domain.Specs;
 using CoachingPlan.Domain.Contracts.Repositories;
 using Microsoft.AspNet.Identity.EntityFramework;
 

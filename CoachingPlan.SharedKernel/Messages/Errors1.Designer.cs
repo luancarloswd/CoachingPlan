@@ -70,6 +70,15 @@ namespace CoachingPlan.SharedKernel.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Autor inválido.
+        /// </summary>
+        public static string AuthorInvalid {
+            get {
+                return ResourceManager.GetString("AuthorInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo corpo da menssagem é necessário.
         /// </summary>
         public static string BodyMessageIsRequired {
@@ -156,6 +165,15 @@ namespace CoachingPlan.SharedKernel.Messages {
         public static string Failure {
             get {
                 return ResourceManager.GetString("Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo grupo é necessário.
+        /// </summary>
+        public static string GroupIsRequired {
+            get {
+                return ResourceManager.GetString("GroupIsRequired", resourceCulture);
             }
         }
         
@@ -295,11 +313,29 @@ namespace CoachingPlan.SharedKernel.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avaliação inválida.
+        /// </summary>
+        public static string InvalidEvaluation {
+            get {
+                return ResourceManager.GetString("InvalidEvaluation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gênero inválido.
         /// </summary>
         public static string InvalidGenre {
             get {
                 return ResourceManager.GetString("InvalidGenre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grupo inválido.
+        /// </summary>
+        public static string InvalidGroup {
+            get {
+                return ResourceManager.GetString("InvalidGroup", resourceCulture);
             }
         }
         
@@ -534,6 +570,15 @@ namespace CoachingPlan.SharedKernel.Messages {
         public static string RequiresVerification {
             get {
                 return ResourceManager.GetString("RequiresVerification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sessão não encontrada.
+        /// </summary>
+        public static string SessionNotFound {
+            get {
+                return ResourceManager.GetString("SessionNotFound", resourceCulture);
             }
         }
         

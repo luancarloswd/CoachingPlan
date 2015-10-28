@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoachingPlan.Domain.Scopes;
+using System;
 
 namespace CoachingPlan.Domain.Models
 {
@@ -29,11 +30,18 @@ namespace CoachingPlan.Domain.Models
         #region Methods
         public void ChangeEvaluation(int? evaluation)
         {
+            if (!this.ChangeEvaluationScopeIsValid(evaluation))
+                return;
             this.Evaluation = evaluation;
         }
         public void ChangeObservation(string observation)
         {
             this.Observation = observation;
+        }
+        public void Validate()
+        {
+            if (!this.CreateEvaluationCoachScopeIsValid())
+                return;
         }
         #endregion
     }

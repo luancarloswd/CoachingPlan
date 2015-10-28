@@ -15,7 +15,7 @@ namespace CoachingPlan.Domain.Models
             this.Id = Guid.NewGuid();
             this.Profession = profession;
             this.IdUser = idUser;
-            this.FilledTool = new HashSet<FilledTool>();
+            this.FilledTool = new HashSet<FilledToolCoachee>();
             this.Weakness = new HashSet<Weakness>();
             if (weakness != null)
                 weakness.ToList().ForEach(x => AddWeakness(x));
@@ -35,7 +35,7 @@ namespace CoachingPlan.Domain.Models
         public string Profession { get; private set; }
 
         public virtual User User { get; set; }
-        public virtual ICollection<FilledTool> FilledTool { get; set; }
+        public virtual ICollection<FilledToolCoachee> FilledTool { get; set; }
         public virtual ICollection<Weakness> Weakness { get; set; }
         public virtual ICollection<StrongPoint> StrongPoint { get; set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; set; }
@@ -57,12 +57,12 @@ namespace CoachingPlan.Domain.Models
         {
             this.CoachingProcess.Remove(coachingProcess);
         }
-        public void AddFilledTool(FilledTool filedTool)
+        public void AddFilledTool(FilledToolCoachee filedTool)
         {
             filedTool.Validate();
             this.FilledTool.Add(filedTool);
         }
-        public void RemoveFilledTool(FilledTool filledTool)
+        public void RemoveFilledTool(FilledToolCoachee filledTool)
         {
             this.FilledTool.Remove(filledTool);
         }

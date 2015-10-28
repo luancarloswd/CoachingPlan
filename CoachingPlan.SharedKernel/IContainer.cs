@@ -5,8 +5,9 @@ namespace CoachingPlan.SharedKernel
 {
     public interface IContainer
     {
+        T GetService<T>();
         object GetService(Type serviceType);
-        IEnumerable<T> GetService<T>();
+        IEnumerable<T> GetServices<T>();
         IEnumerable<object> GetServices(Type serviceType);
     }
 }

@@ -76,6 +76,11 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public Service GetOneByName(string name)
+        {
+            return _repository.GetOneByName(name);
+        }
+
         public Service GetOneIncludeCoachingProcess(Guid id)
         {
             return _repository.GetOneIncludeCoachingProcess(id);

@@ -41,6 +41,22 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\FilledTollCoachCommands\CreateFilledToolCoachCommand.cs" />
+    <Compile Include="Commands\FilledTollCoachCommands\UpdateFilledToolCoachCommand.cs" />
+    <Compile Include="Commands\FilledToolCoacheeCommands\CreateFilledToolCoacheeCommand.cs" />
+    <Compile Include="Commands\FilledToolCoacheeCommands\UpdateFilledToolCoacheeCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\CreateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Wheel\CreateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Wheel\UpdateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Script\CreateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Script\UpdateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\UpdateQuestionCommand.cs" />
+    <Compile Include="Commands\ReplyCommands\CreateReplyCommand.cs" />
+    <Compile Include="Commands\ReplyCommands\UpdateReplyCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Questionnaire\CreateQuestionCommand.cs" />
+    <Compile Include="Commands\QuestionCommands\Questionnaire\UpdateQuestionCommand.cs" />
+    <Compile Include="Commands\EvaluationToolCommands\CreateEvaluationToolCommand.cs" />
+    <Compile Include="Commands\EvaluationToolCommands\UpdateEvaluationToolCommand.cs" />
     <Compile Include="Commands\MessageCommands\CreateMessageCommand.cs" />
     <Compile Include="Commands\EvaluationCoacheeCommands\CreateEvaluationCoacheeCommand.cs" />
     <Compile Include="Commands\EvaluationCoacheeCommands\UpdateEvaluationCoacheeCommand.cs" />
@@ -91,6 +107,7 @@
     <Compile Include="Contracts\Repositories\ICoachingProcessRepository.cs" />
     <Compile Include="Contracts\Repositories\IEvaluationCoacheeRepository.cs" />
     <Compile Include="Contracts\Repositories\IEvaluationCoachRepository.cs" />
+    <Compile Include="Contracts\Repositories\IFilledToolCoachRepository.cs" />
     <Compile Include="Contracts\Repositories\ISpecialityRepository.cs" />
     <Compile Include="Contracts\Repositories\IRoleRepository.cs" />
     <Compile Include="Contracts\Repositories\IWeaknessRepository.cs" />
@@ -108,7 +125,7 @@
     <Compile Include="Contracts\Repositories\IMarkRepository.cs" />
     <Compile Include="Contracts\Repositories\IJobRepository.cs" />
     <Compile Include="Contracts\Repositories\IFormationRepository.cs" />
-    <Compile Include="Contracts\Repositories\IFilledToolRepository.cs" />
+    <Compile Include="Contracts\Repositories\IFilledToolCoacheeRepository.cs" />
     <Compile Include="Contracts\Repositories\IEvaluationToolRepository.cs" />
     <Compile Include="Contracts\Repositories\ICoachRepository.cs" />
     <Compile Include="Contracts\Services\IActionPlanApplicationService.cs" />
@@ -116,10 +133,15 @@
     <Compile Include="Contracts\Services\IEvaluationCoachApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoahceeApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoachApplicationService.cs" />
+    <Compile Include="Contracts\Services\IEvaluationToolApplicationService.cs" />
+    <Compile Include="Contracts\Services\IFilledToolCoachApplicationService.cs" />
+    <Compile Include="Contracts\Services\IFilledToolCoacheeApplicationService.cs" />
     <Compile Include="Contracts\Services\IJobApplicationService.cs" />
     <Compile Include="Contracts\Services\IMarkApplicationService.cs" />
     <Compile Include="Contracts\Services\IMessageApplicationService.cs" />
     <Compile Include="Contracts\Services\IObjectiveApplicationService.cs" />
+    <Compile Include="Contracts\Services\IQuestionApplicationService.cs" />
+    <Compile Include="Contracts\Services\IReplyApplicationService.cs" />
     <Compile Include="Contracts\Services\IRoleApplicationService.cs" />
     <Compile Include="Contracts\Services\ICoachingProcessApplicationService.cs" />
     <Compile Include="Contracts\Services\IPerformanceIndicatorApplicationService.cs" />
@@ -150,6 +172,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\EvaluationCoachee.cs" />
     <Compile Include="Models\EvaluationCoach.cs" />
+    <Compile Include="Models\FilledToolCoach.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\EvaluationTool.cs" />
     <Compile Include="Models\Formation.cs" />
@@ -162,7 +185,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\ActionPlan.cs" />
     <Compile Include="Models\StrongPoint.cs" />
-    <Compile Include="Models\FilledTool.cs" />
+    <Compile Include="Models\FilledToolCoachee.cs" />
     <Compile Include="Models\CoachingProcess.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Reply.cs" />
@@ -172,13 +195,16 @@
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scopes\EvaluationCoacheeScope.cs" />
+    <Compile Include="Scopes\EvaluationCoachScope.cs" />
+    <Compile Include="Scopes\FilledToolCoachScope.cs" />
     <Compile Include="Scopes\PerformanceIndicatorScope.cs" />
     <Compile Include="Scopes\ObjectiveScope.cs" />
     <Compile Include="Scopes\MessageScope.cs" />
     <Compile Include="Scopes\MarkScope.cs" />
     <Compile Include="Scopes\JobScope.cs" />
     <Compile Include="Scopes\FormationScope.cs" />
-    <Compile Include="Scopes\FilledToolScope.cs" />
+    <Compile Include="Scopes\FilledToolCoacheeScope.cs" />
     <Compile Include="Scopes\EvaluationToolScope.cs" />
     <Compile Include="Scopes\CoachingProcessScope.cs" />
     <Compile Include="Scopes\CoacheeScope.cs" />
@@ -196,7 +222,13 @@
     <Compile Include="Scopes\PhoneScope.cs" />
     <Compile Include="Scopes\PersonScope.cs" />
     <Compile Include="Scopes\AddressScope.cs" />
+    <Compile Include="Specs\FilledToolCoach.cs" />
+    <Compile Include="Specs\FilledToolCoachee.cs" />
+    <Compile Include="Specs\ReplySpecs.cs" />
+    <Compile Include="Specs\QuestionSpecs.cs" />
+    <Compile Include="Specs\EvaluationToolSpecs.cs" />
     <Compile Include="Specs\EvaluationCoacheeSpecs.cs" />
+    <Compile Include="Specs\MessageSpecs.cs" />
     <Compile Include="Specs\JobSpecs.cs" />
     <Compile Include="Specs\MarkSpecs.cs" />
     <Compile Include="Specs\ObjectiveSpecs.cs" />

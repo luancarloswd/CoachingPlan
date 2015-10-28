@@ -20,7 +20,7 @@ namespace CoachingPlan.ApplicationService
         {
             var user = new User(commandUser.IdPerson, commandUser.Email, commandUser.UserName);
             user.Validate();
-            _repository.Create(user, commandUser.Password);
+            _repository.Create(user, "C@achinP1an");
 
             if (Commit())
                 return user;
@@ -94,12 +94,14 @@ namespace CoachingPlan.ApplicationService
         public User Update(UpdateUserCommand commandUser)
         {
             var user = _repository.GetOne(commandUser.Id);
-            user.UserName = commandUser.UserName;
-            user.Email = commandUser.Email;
             user.IdPerson = commandUser.IdPerson;
+
             user.Validate();
 
-            _repository.Update(user);
+            if (commandUser.Password != null)
+                _repository.Update(user, commandUser.Password);
+            else
+                _repository.Update(user);
 
             if (Commit())
                 return user;

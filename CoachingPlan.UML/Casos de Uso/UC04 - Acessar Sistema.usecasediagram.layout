@@ -34,7 +34,7 @@
       <useCaseMoniker Id="1219a48e-2f26-4190-bf0c-e74e750432b3" LastKnownName="UC04-Acessar sistema" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseAssociationConnector edgePoints="[(7.25 : 3.625); (6.75 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(7.25 : 3.625); (6.75 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="7beaafcf-95eb-4773-b2bf-428b512dc803" />
       <relativeChildShapes />
       <nodes>
@@ -46,7 +46,7 @@
       <actorMoniker Id="322b71ba-3eed-4acc-9c12-1ebd0e872971" LastKnownName="Gerenciador de Sessões" />
       <relativeChildShapes />
     </actorShape>
-    <useCaseAssociationConnector edgePoints="[(7.125 : 2.84722222222222); (6.57243546960489 : 3.33839069368454)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(7.125 : 2.84722222222222); (6.57243546960489 : 3.33839069368454)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="3788c760-06ad-4ff6-a946-68fbec060297" />
       <relativeChildShapes />
       <nodes>
@@ -58,7 +58,7 @@
       <useCaseMoniker Id="cc0c4862-0c72-4114-9e29-d73ff46ec2a4" LastKnownName="Altenticar Sistema" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseDependencyConnector edgePoints="[(5.97976454436544 : 2.99445060351935); (6.09699540979344 : 3.26798928951803)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+    <useCaseDependencyConnector edgePoints="[(5.97976454436544 : 2.99445060351935); (6.09699540979344 : 3.26798928951803)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <dependencyMoniker Id="b0596752-550f-48d0-83c5-e9ae68a31915" />
       <relativeChildShapes />
       <nodes>
@@ -70,7 +70,7 @@
       <useCaseMoniker Id="a5dbf155-1978-4bd0-8bc8-d3a37d017cfc" LastKnownName="Logout Sistema" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseDependencyConnector edgePoints="[(5.19721359549996 : 3.36180339887499); (5.77565835097474 : 3.50641458774369)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+    <useCaseDependencyConnector edgePoints="[(5.19721359549996 : 3.36180339887499); (5.77565835097474 : 3.50641458774369)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <dependencyMoniker Id="18f1ada3-4736-45f1-ab65-0ecf5b61a80a" />
       <relativeChildShapes />
       <nodes>
@@ -82,12 +82,9 @@
       <useCaseMoniker Id="8a222d66-9bcb-4a42-b551-1e89800a57e7" LastKnownName="UC05-Recuperar Senha" />
       <relativeChildShapes />
     </useCaseShape>
-    <extendConnector edgePoints="[(4.61895976319411 : 3.81688708668305); (5.75604023680589 : 3.68311291331695)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«extend»">
-      <extendMoniker Id="022de36b-06ee-44d6-a9ed-c7bdc527f917" />
+    <extendConnector edgePoints="[(4.61895976319411 : 3.81688708668305); (5.75604023680589 : 3.68311291331695)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="46f0418e-dc5c-460c-89b5-935cd3481b36" />
       <relativeChildShapes />
-      <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.875, 3.9375, 0.51066982746124268, 0.14800345897674561" shapeFieldName="NameDecorator" />
-      </moveableDecoratorHostShapes>
       <nodes>
         <useCaseShapeMoniker Id="e68ec549-9cf4-42b3-98e7-fb51eff45ad5" />
         <useCaseShapeMoniker Id="81d69794-7543-432e-8aef-9d380d856531" />

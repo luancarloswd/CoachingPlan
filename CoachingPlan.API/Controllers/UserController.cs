@@ -1,13 +1,10 @@
 ﻿using CoachingPlan.API.Controllers;
-using CoachingPlan.Domain.Commands.AddressCommands;
-using CoachingPlan.Domain.Commands.CoachCommands;
-using CoachingPlan.Domain.Commands.CoacheeCommands;
+using CoachingPlan.API.ViewModels;
 using CoachingPlan.Domain.Commands.PersonCommands;
 using CoachingPlan.Domain.Commands.UserCommands;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Domain.Enums;
-using CoachingPlan.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -40,7 +37,13 @@ namespace CoachingPlan.Api.Controllers
         public Task<HttpResponseMessage> Get()
         {
             var users = _service.GetAllIncludeDetails();
-            return CreateResponse(HttpStatusCode.OK, users);
+            List<UserRoleViewModel> listUsersRoles = new List<UserRoleViewModel>();
+            foreach (var user in users)
+            {
+                var roles = _service.GetAllRoles(user.Id);
+                listUsersRoles.Add(new UserRoleViewModel(user, roles));
+            }
+            return CreateResponse(HttpStatusCode.OK, listUsersRoles);
         }
 
         [AllowAnonymous]
@@ -84,6 +87,16 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/users")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
+            var cpf = _servicePerson.GetOneByCPF((string)body.cpf);
+
+            if (cpf != null)
+                return CreateResponse(HttpStatusCode.Ambiguous, cpf);
+
+            var email = _service.GetOneByEmail((string)body.email);
+
+            if (email != null)
+                return CreateResponse(HttpStatusCode.Ambiguous, cpf);
+
             var listAddress = _serviceAddress.AddToPerson(body.address);
 
             var listPhone = _servicePhone.AddToPerson(body.phone);
@@ -93,7 +106,6 @@ namespace CoachingPlan.Api.Controllers
                cpf: (string)body.cpf,
                birthDate: (DateTime)body.birthDate,
                genre: (EGenre)body.genre,
-               status: true,
                address: listAddress,
                phone: listPhone,
                phototgraph: (string)body.photograph
@@ -116,6 +128,9 @@ namespace CoachingPlan.Api.Controllers
             else if (commandUser.Type == ETypeUser.SessionManager)
                 _service.AddRole(user.Id, "SessionManager");
 
+            var token = _service.GenerateTokenRecoveryPassword(user.Email);
+            _service.SendEmailRecoveryPassword(user.Id, token);
+
             return CreateResponse(HttpStatusCode.Created, user);
         }
 
@@ -131,10 +146,8 @@ namespace CoachingPlan.Api.Controllers
             var commandPerson = new UpdatePersonCommand(
                 id: Guid.Parse((string)body.person.id),
                name: (string)body.person.name,
-               cpf: (string)body.person.cpf,
                birthDate: (DateTime)body.person.birthDate,
                genre: (EGenre)body.person.genre,
-               status: (bool)body.person.status,
                address: listAddress,
                phone: listPhone,
                phototgraph: (string)body.person.photograph
@@ -148,7 +161,6 @@ namespace CoachingPlan.Api.Controllers
 
             var commandUser = new UpdateUserCommand(
                 id: (string)body.id,
-                email: (string)body.email,
                 password: (string)body.password,
                 userName: (string)body.email,
                 idPerson: person.Id

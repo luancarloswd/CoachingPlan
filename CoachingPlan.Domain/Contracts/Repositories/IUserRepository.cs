@@ -15,6 +15,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<User> GetAll(int take, int skip);
         void Create(User user, string password);
         void Update(User user);
+        void Update(User user, string newPassword);
         void Delete(User user);
         void AddRole(string id, string role);
         User Authenticate(string userName, string password);

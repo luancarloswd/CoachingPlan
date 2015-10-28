@@ -9,7 +9,7 @@ namespace CoachingPlan.Domain.Commands.CoacheeCommands
         public Guid Id { get; set; }
         public string IdUser { get; set; }
         public string Profession { get; set; }
-        public virtual ICollection<FilledTool> FilledTool { get; set; }
+        public virtual ICollection<FilledToolCoachee> FilledTool { get; set; }
         public virtual ICollection<Weakness> Weakness { get; set; }
         public virtual ICollection<StrongPoint> StrongPoint { get; set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; set; }

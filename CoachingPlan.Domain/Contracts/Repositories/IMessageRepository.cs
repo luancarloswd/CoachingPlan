@@ -11,7 +11,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Message> GetAll(int take, int skip);
         void Create(Message Message);
         void Update(Message Message);
-        void Delete(Message Message);
         List<Message> GetHistoryMessages(string idUser, string idDesdination);
     }
 }

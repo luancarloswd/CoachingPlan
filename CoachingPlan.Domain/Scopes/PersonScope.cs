@@ -18,14 +18,7 @@ namespace CoachingPlan.Domain.Scopes
                             AssertionConcern.AssertArgumentLength(person.CPF, 11, 11, Errors.InvalidCPF),
                             AssertionConcern.AssertArgumentNotNull(person.BirthDate, Errors.InvalidBirthDate),
                             AssertionConcern.AssertArgumentIsGreaterThan(DateTime.Now, person.BirthDate, Errors.InvalidBirthDate),
-                            AssertionConcern.AssertArgumentNotNull(person.Genre, Errors.InvalidGenre),
-                            AssertionConcern.AssertArgumentNotNull(person.Status, Errors.InvalidStatus)
-                );
-        }
-        public static bool ChangeStatusScopeIsValid(this Person person, bool status)
-        {
-            return AssertionConcern.IsSatisfiedBy(
-                            AssertionConcern.AssertArgumentNotNull(status, Errors.InvalidStatus)
+                            AssertionConcern.AssertArgumentNotNull(person.Genre, Errors.InvalidGenre)
                 );
         }
         public static bool ChangeGenreScopeIsValid(this Person person, EGenre genre)

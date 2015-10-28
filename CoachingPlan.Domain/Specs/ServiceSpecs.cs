@@ -10,5 +10,10 @@ namespace CoachingPlan.Domain.Specs
         {
             return x => x.Id == id;
         }
+
+        public static Expression<Func<Service, bool>> GetOneByName(string name)
+        {
+            return x => x.Name == name;
+        }
     }
 }

@@ -29,6 +29,14 @@ namespace CoachingPlan.Infraestructure.Data.Map
             Property(x => x.IdSession)
                 .HasColumnName("a12_fk_sessao_t12")
                 .IsRequired();
+
+            Property(x => x.Evaluation)
+                .HasColumnName("Avaliacao")
+                .IsOptional();
+
+            Property(x => x.Observation)
+                .HasColumnName("Observacao_Avaliacao")
+                .IsOptional();
         }
     }
 }

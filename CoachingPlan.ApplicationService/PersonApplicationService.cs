@@ -17,7 +17,7 @@ namespace CoachingPlan.ApplicationService
         }
         public Person Create(CreatePersonCommand command)
         {
-            var Person = new Person(command.Name, command.CPF, command.BirthDate, command.Genre, command.Status, command.Address, command.Phone, command.Photograph);
+            var Person = new Person(command.Name, command.CPF, command.BirthDate, command.Genre, command.Address, command.Phone, command.Photograph);
             Person.Validate();
             _repository.Create(Person);
 
@@ -74,14 +74,11 @@ namespace CoachingPlan.ApplicationService
             Person person = _repository.GetOneIncludeDetails(command.Id);
             if (command.BirthDate != null)
                 person.ChangeBirthDate(command.BirthDate);
-            if (command.CPF != null)
-                person.ChangeCPF(command.CPF);
             if (command.Name != null)
                 person.ChangeName(command.Name);
             if (command.Photograph != null)
                 person.ChangePhotograph(command.Photograph);
 
-            person.ChangeStatus(command.Status);
 
             foreach (var address in command.Address)
             {
@@ -98,6 +95,11 @@ namespace CoachingPlan.ApplicationService
                 return person;
 
             return null;
+        }
+
+        public Person GetOneByCPF(string cpf)
+        {
+            return _repository.GetOneByCPF(cpf);
         }
 
         public void Dispose()

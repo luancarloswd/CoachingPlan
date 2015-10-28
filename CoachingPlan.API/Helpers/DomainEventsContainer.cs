@@ -21,13 +21,20 @@ namespace CoachingPlan.API.Helpers
             return _resolver.GetService(serviceType);
         }
 
+        public T GetService<T>()
+        {
+            return (T)_resolver.GetService(typeof(T));
+        }
+
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return _resolver.GetServices(serviceType);
         }
-        public IEnumerable<T> GetService<T>()
+
+        public IEnumerable<T> GetServices<T>()
         {
             return (IEnumerable<T>)_resolver.GetServices(typeof(T));
         }
     }
+
 }

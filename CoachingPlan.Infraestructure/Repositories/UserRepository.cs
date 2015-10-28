@@ -10,6 +10,7 @@ using CoachingPlan.SharedKernel.Events;
 using CoachingPlan.Domain.Specs;
 using CoachingPlan.Domain.Contracts.Repositories;
 using System.Security.Claims;
+using CoachingPlan.SharedKernel.Validations;
 
 namespace CoachingPlan.Infraestructure.Repositories
 {
@@ -26,10 +27,11 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public void Create(User user, string password)
         {
-            IdentityResult addUserResult  = _userManager.Create(user, password);
-            if(!addUserResult.Succeeded){
+            IdentityResult addUserResult = _userManager.Create(user, password);
+            if (!addUserResult.Succeeded)
+            {
                 foreach (var error in addUserResult.Errors)
-                new DomainNotification("AssertArgumentLength", error);
+                    new DomainNotification("AssertArgumentLength", error);
             }
         }
         public void SendEmail(string idUser, string subject, string body)
@@ -41,12 +43,12 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _userManager.GeneratePasswordResetToken(id);
         }
         public void RecoveryPassword(string idUser, string token, string password)
-        {   
-            IdentityResult addUserResult = _userManager.ResetPassword(idUser, token, password);
-            if (!addUserResult.Succeeded)
+        {
+            IdentityResult recoveryPassword = _userManager.ResetPassword(idUser, token, password);
+            if (!recoveryPassword.Succeeded)
             {
-                foreach (var error in addUserResult.Errors)
-                    new DomainNotification("AssertArgumentLength", error);
+                foreach (var error in recoveryPassword.Errors)
+                    AssertionConcern.IsSatisfiedBy(AssertionConcern.AssertArgumentTrue(recoveryPassword.Succeeded, error));
             }
         }
         public void Delete(User user)
@@ -73,7 +75,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public List<User> GetAllIncludeDetails()
         {
-            return _userManager.Users.Include(x => x.Roles).Include(x => x.Person).Include(x => x.Person.Phone).Include(x => x.Person.Address).ToList();
+            return _userManager.Users.Include(x => x.Coach).Include(x => x.Coachee).Include(x => x.Person).Include(x => x.Person.Phone).Include(x => x.Person.Address).ToList();
         }
         public User GetOneIncludeDetails(string id)
         {
@@ -81,7 +83,7 @@ namespace CoachingPlan.Infraestructure.Repositories
         }
         public User GetOne(string id)
         {
-            return  _context.Users.FirstOrDefault(x => x.Id == id);
+            return _context.Users.FirstOrDefault(x => x.Id == id);
         }
         public User GetOneByEmail(string email)
         {
@@ -104,13 +106,19 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _userManager.UpdateAsync(user);
         }
+        public void Update(User user, string newPassword)
+        {
+            _userManager.RemovePassword(user.Id);
+            _userManager.AddPassword(user.Id, newPassword);
+            _userManager.UpdateAsync(user);
+        }
         public User Authenticate(string userName, string password)
         {
-            return  _userManager.Find(userName, password);
+            return _userManager.Find(userName, password);
         }
         public void AddRole(string id, string role)
         {
-             _userManager.AddToRole(id, role);
+            _userManager.AddToRole(id, role);
         }
 
         public ICollection<string> GetAllRoles(string id)

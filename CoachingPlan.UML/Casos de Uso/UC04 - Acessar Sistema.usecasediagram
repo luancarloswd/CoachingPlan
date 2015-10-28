@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e135ba3e-897b-48eb-8a19-49d922867b23" name="UC04 - Acessar Sistema" linkedPackageId="25457b98-1fd2-4c8d-a2c5-afe9d305f3a2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e135ba3e-897b-48eb-8a19-49d922867b23" name="UC04 - Acessar Sistema" linkedPackageId="25457b98-1fd2-4c8d-a2c5-afe9d305f3a2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="ded2b4ff-6180-45ac-9c2a-b3de00923858">
+      <profileInstance Id="2ad912b4-344b-4476-8d56-44cf00671eb6" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+      </profileInstance>
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="b83a9f4a-dcfb-44ff-8043-64ef13ac8976" name="Administrador" isAbstract="false" isLeaf="false">
@@ -100,9 +108,9 @@
       <useCase Id="8a222d66-9bcb-4a42-b551-1e89800a57e7" name="UC05-Recuperar Senha" isAbstract="false" isLeaf="false">
         <elementDefinition Id="ac017a2c-8755-4bb7-a7fd-e2fe72ebf55b" />
         <extendedCases>
-          <extend Id="022de36b-06ee-44d6-a9ed-c7bdc527f917">
+          <extend Id="46f0418e-dc5c-460c-89b5-935cd3481b36">
             <useCaseMoniker Id="1219a48e-2f26-4190-bf0c-e74e750432b3" LastKnownName="UC04-Acessar sistema" />
-            <elementDefinition Id="ed220366-229a-41bf-84c6-bca845aec7f5" />
+            <elementDefinition Id="78fb4de6-3605-40c5-9855-2ff0c6e9054e" />
           </extend>
         </extendedCases>
       </useCase>

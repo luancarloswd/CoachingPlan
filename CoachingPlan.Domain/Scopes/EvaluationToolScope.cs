@@ -23,6 +23,13 @@ namespace CoachingPlan.Domain.Scopes
                             AssertionConcern.AssertArgumentLength(name, 2, 60, Errors.InvalidName)
                 );
         }
+        public static bool ChangeAuthorScopeIsValid(this EvaluationTool evaluationTool, string author)
+        {
+            return AssertionConcern.IsSatisfiedBy(
+                            AssertionConcern.AssertArgumentNotNull(author, Errors.AuthorInvalid),
+                            AssertionConcern.AssertArgumentLength(author, 2, 60, Errors.AuthorInvalid)
+                );
+        }
         public static bool ChangeTypeScopeIsValid(this EvaluationTool evaluationTool, ETypeEvaluationTool type)
         {
             return AssertionConcern.IsSatisfiedBy(

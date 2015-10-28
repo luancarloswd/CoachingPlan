@@ -20,9 +20,17 @@ namespace CoachingPlan.Infraestructure.Data.Map
             Property(x => x.IdQuestion)
                 .HasColumnName("a20_Id_Questao_a22");
 
+            Property(x => x.Status)
+                .HasColumnName("Situacao_Resposta");
+
             Property(x => x.BodyReply)
                 .HasColumnName("Resposta")
                 .IsRequired();
+
+            Property(x => x.Group)
+            .HasColumnName("Grupo_Resposta")
+            .IsOptional()
+            .HasMaxLength(20);
         }
     }
 }

@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bae9daf2-fb8f-495a-a14c-1790d59437dd" name="Diagrama Macro" linkedPackageId="b922cc4e-b895-4bf4-b636-13cc7950e05c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="6636f231-bf6c-4c67-b976-fc8845ea3de9">
-      <profileInstance Id="198ce977-32cb-41eb-b8d8-adc33ca91c69" name="CSharpProfile">
-        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
-      </profileInstance>
-      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bae9daf2-fb8f-495a-a14c-1790d59437dd" name="Diagrama Macro" linkedPackageId="b922cc4e-b895-4bf4-b636-13cc7950e05c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="017c602d-e8ff-489b-a42d-f092645e7c97" name="Administrador" isAbstract="false" isLeaf="false">
@@ -393,9 +385,9 @@
       <useCase Id="48fd86b5-8ac0-4305-ac7d-6db860192ddd" name="UC05-Recuperar Senha" isAbstract="false" isLeaf="false">
         <elementDefinition Id="ac017a2c-8755-4bb7-a7fd-e2fe72ebf55b" />
         <extendedCases>
-          <extend Id="596db410-2996-4fd7-a583-6349851691aa">
+          <extend Id="7718900f-2288-4c01-b598-cf68ba73b3d6">
             <useCaseMoniker Id="6645bebb-ade2-45c0-8057-707db038d908" LastKnownName="UC04-Acessar sistema" />
-            <elementDefinition Id="ed220366-229a-41bf-84c6-bca845aec7f5" />
+            <elementDefinition Id="78fb4de6-3605-40c5-9855-2ff0c6e9054e" />
           </extend>
         </extendedCases>
       </useCase>
@@ -420,6 +412,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6636f231-bf6c-4c67-b976-fc8845ea3de9">
+        <profileInstance Id="198ce977-32cb-41eb-b8d8-adc33ca91c69" name="CSharpProfile">
+          <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+        </profileInstance>
+        <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

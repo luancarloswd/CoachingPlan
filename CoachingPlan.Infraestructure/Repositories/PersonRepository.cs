@@ -64,6 +64,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Person.Where(PersonSpecs.GetOne(idPerson)).FirstOrDefault();
         }
 
+        public Person GetOneByCPF(string cpf)
+        {
+            return _context.Person.Where(PersonSpecs.GetOneByCPF(cpf)).FirstOrDefault();
+        }
+
         public void Update(Person Person)
         {
             _context.Entry<Person>(Person).State = EntityState.Modified;

@@ -8,7 +8,7 @@ namespace CoachingPlan.ApplicationService
     public class BaseApplicationService
     {
         private IUnitOfWork _unitOfWork;
-        private IEnumerable<IHandler<DomainNotification>> _notifications;
+        private IHandler<DomainNotification> _notifications;
 
         public BaseApplicationService(IUnitOfWork unitOfWork)
         {
@@ -18,11 +18,9 @@ namespace CoachingPlan.ApplicationService
 
         public bool Commit()
         {
-            foreach (var notification in _notifications)
-            {
-                if (notification.HasNotifications())
-                    return false;
-            }
+            if (_notifications.HasNotifications())
+                return false;
+
             _unitOfWork.Commit();
             return true;
         }

@@ -17,5 +17,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Person> GetAllByNameIncludeCoach(string name);
         List<Person> GetAllByNameIncludeCoachee(string name);
         Person GetOneIncludeDetails(Guid id);
+        Person GetOneByCPF(string cpf);
     }
 }

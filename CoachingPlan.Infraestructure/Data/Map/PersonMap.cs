@@ -38,10 +38,6 @@ namespace CoachingPlan.Infraestructure.Data.Map
                .HasColumnType("Date")
                .IsRequired();
 
-            Property(x => x.Status)
-                .HasColumnName("Status_Pessoa")
-                .IsRequired();
-
             Property(x => x.Photograph)
                 .HasColumnName("Foto_Pessoa");
         }

@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6cda9092-f076-4c99-b415-54d15b9ff6dc" name="UC01 - Manter Usuário" linkedPackageId="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6cda9092-f076-4c99-b415-54d15b9ff6dc" name="UC01 - Manter Usuário" linkedPackageId="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="8f067759-cd88-472b-ae27-bc95788a3278">
+      <profileInstance Id="52554e39-effe-4656-a94a-24434d343b8d" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+      </profileInstance>
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="37dcc9ab-36b7-4f3e-87e3-dc8665c1296e" name="Administrador" isAbstract="false" isLeaf="false">
@@ -102,28 +110,6 @@
           <dependency Id="41061c07-4fbe-4e1f-9924-fcd3859d254b">
             <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
             <elementDefinition Id="97f19499-344d-40ec-8c54-a9a31b3b34ef" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="78f58a58-9316-4e3d-8098-675ff0d3e0a3" name="Bloquear Usuário" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="11a4eb10-a858-446b-a131-a42dfdda5c51" />
-        <suppliersInternal>
-          <dependency Id="4fafc259-d214-4df7-b40d-6cb9e73ae97e">
-            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
-            <elementDefinition Id="62d39b26-bfb5-4248-b319-bfd02ac0e517" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="cb404087-73ba-4b18-b4ea-7dcd04cecf53" name="Desbloquear Usuário" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="675cfd0b-9874-41d6-a57b-318196b0af2d" />
-        <suppliersInternal>
-          <dependency Id="7113daff-aee5-4ba6-8af0-2ce5f246b8b5">
-            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
-            <elementDefinition Id="73a09000-dc80-4d85-9b69-b95069da245e" />
           </dependency>
         </suppliersInternal>
       </useCase>

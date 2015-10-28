@@ -17,7 +17,7 @@ using CoachingPlan.Domain.Commands.EvaluationCoacheeCommands;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Coach, SessionManager")]
     public class SessionController : BaseController
     {
         private readonly ISessionApplicationService _serviceSession;

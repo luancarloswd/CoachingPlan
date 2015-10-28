@@ -38,10 +38,11 @@ namespace CoachingPlan.Domain.Models
         public virtual User User { get; private set; }
         public virtual ICollection<CoachingProcess> CoachingProcess { get; private set; }
         public virtual ICollection<EvaluationCoach> EvaluationCoach { get; set; }
-        #endregion
+        public virtual ICollection<FilledToolCoach> FilledTollCoach {get; set; }
+            #endregion
 
-        #region Methods
-        public void ChangeUser(User user)
+            #region Methods
+            public void ChangeUser(User user)
         {
             this.User = user;
             this.IdUser = user.Id;

@@ -1,10 +1,7 @@
 ﻿using CoachingPlan.API.Controllers;
 using CoachingPlan.Domain.Commands.ActionPlanCommands;
 using CoachingPlan.Domain.Contracts.Services;
-using CoachingPlan.Domain.Enums;
-using CoachingPlan.Domain.Models;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -12,7 +9,7 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Coach")]
     public class ActionPlanController : BaseController
     {
         private readonly IActionPlanApplicationService _serviceActionPlan;

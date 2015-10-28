@@ -15,5 +15,9 @@ namespace CoachingPlan.Domain.Specs
         {
             return x => x.Name == name;
         }
+        public static Expression<Func<Person, bool>> GetOneByCPF(string cpf)
+        {
+            return x => x.CPF == cpf;
+        }
     }
 }

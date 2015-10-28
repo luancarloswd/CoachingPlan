@@ -42,8 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilledToolCoacheeApplicationService.cs" />
+    <Compile Include="FilledToolCoachApplicationService.cs" />
+    <Compile Include="ReplyApplicationService.cs" />
+    <Compile Include="QuestionApplicationService.cs" />
+    <Compile Include="EvaluationToolApplicationService.cs" />
     <Compile Include="EvaluationCoacheeApplicationService.cs" />
     <Compile Include="JobApplicationService.cs" />
+    <Compile Include="MessageApplicationService.cs" />
     <Compile Include="MarkApplicationService.cs" />
     <Compile Include="ObjectiveApplicationService.cs" />
     <Compile Include="ActionPlanApplicationService.cs" />

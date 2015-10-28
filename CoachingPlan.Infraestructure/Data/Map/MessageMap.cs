@@ -21,11 +21,6 @@ namespace CoachingPlan.Infraestructure.Data.Map
                 .HasColumnName("a4_Id_Usuario_a22")
                 .IsRequired();
 
-            Property(x => x.Subject)
-                .HasColumnName("Assunto_Menssagem")
-                .HasMaxLength(60)
-                .IsRequired();
-
             Property(x => x.BodyMessage)
                 .HasColumnName("Menssagem")
                 .IsRequired();

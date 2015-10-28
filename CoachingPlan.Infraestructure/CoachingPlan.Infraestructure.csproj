@@ -92,7 +92,8 @@
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Map\EvaluationCoacheeMap.cs" />
     <Compile Include="Data\Map\EvaluationCoachMap.cs" />
-    <Compile Include="Data\Map\FilledToolMap.cs" />
+    <Compile Include="Data\Map\FilledToolCoachMap.cs" />
+    <Compile Include="Data\Map\FilledToolCoacheeMap.cs" />
     <Compile Include="Data\Map\MessageMap.cs" />
     <Compile Include="Data\Map\ReplyMap.cs" />
     <Compile Include="Data\Map\QuestionMap.cs" />
@@ -122,14 +123,20 @@
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\Services\EmailService.cs" />
-    <Compile Include="Migrations\201510211558515_v1.cs" />
-    <Compile Include="Migrations\201510211558515_v1.Designer.cs">
-      <DependentUpon>201510211558515_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201510280847026_v1.cs" />
+    <Compile Include="Migrations\201510280847026_v1.Designer.cs">
+      <DependentUpon>201510280847026_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FilledToolCoachRepository.cs" />
+    <Compile Include="Repositories\FilledToolCoacheeRepository.cs" />
+    <Compile Include="Repositories\ReplyRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\EvaluationToolRepository.cs" />
     <Compile Include="Repositories\EvaluationCoacheeRepository.cs" />
     <Compile Include="Repositories\JobRepository.cs" />
+    <Compile Include="Repositories\MessageRepository.cs" />
     <Compile Include="Repositories\MarkRepository.cs" />
     <Compile Include="Repositories\ObjectiveRepository.cs" />
     <Compile Include="Repositories\CoachRepositroy.cs" />
@@ -169,8 +176,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510211558515_v1.resx">
-      <DependentUpon>201510211558515_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510280847026_v1.resx">
+      <DependentUpon>201510280847026_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

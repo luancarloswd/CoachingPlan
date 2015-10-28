@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Coach")]
     public class ServiceController : BaseController
     {
         private readonly IServiceApplicationService _service;
@@ -47,13 +47,17 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/services")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
+            var service = _service.GetOneByName((string)body.name);
+            if (service == null)
+                return CreateResponse(HttpStatusCode.Ambiguous, service);
+
             var commandService = new CreateServiceCommand(
                    name: (string)body.name,
                    value: (float)body.value,
                    description: (string)body.description
                );
 
-            var service = _service.Create(commandService);
+            service = _service.Create(commandService);
 
             return CreateResponse(HttpStatusCode.Created, service);
         }
@@ -63,6 +67,10 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/Services")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)
         {
+            var service = _service.GetOneByName((string)body.name);
+            if (service == null)
+                return CreateResponse(HttpStatusCode.Ambiguous, service);
+
             var commandService = new UpdateServiceCommand(
                   id: Guid.Parse((string)body.id),
                   name: (string)body.name,
@@ -70,7 +78,7 @@ namespace CoachingPlan.Api.Controllers
                   description: (string)body.description
               );
 
-            var service = _service.Update(commandService);
+            service = _service.Update(commandService);
 
             return CreateResponse(HttpStatusCode.Created, service);
         }
@@ -79,8 +87,14 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/Services/{id}")]
         public Task<HttpResponseMessage> Delete(string id)
         {
-            var Service = _service.Delete(Guid.Parse(id));
-            return CreateResponse(HttpStatusCode.OK, Service);
+            var service = _service.GetOneIncludeCoachingProcess(Guid.Parse(id));
+
+            if (service.CoachingProcess.Count != 0)
+                return CreateResponse(HttpStatusCode.Conflict, service);
+
+            _service.Delete(service.Id);
+
+            return CreateResponse(HttpStatusCode.OK, service);
         }
     }
 }

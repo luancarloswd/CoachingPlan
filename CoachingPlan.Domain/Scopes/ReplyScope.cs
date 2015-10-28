@@ -12,14 +12,21 @@ namespace CoachingPlan.Domain.Scopes
         {
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(reply.BodyReply, Errors.ReplyIsRequired),
-                            AssertionConcern.AssertArgumentLength(reply.BodyReply, 2, 256, Errors.InvalidReply)
+                            AssertionConcern.AssertArgumentLength(reply.BodyReply, 1, 256, Errors.InvalidReply)
                 );
         }
         public static bool ChangeReplyScopeIsValid(this Reply reply, string bodyReply)
         {
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(bodyReply, Errors.ReplyIsRequired),
-                            AssertionConcern.AssertArgumentLength(bodyReply, 2, 256, Errors.InvalidReply)
+                            AssertionConcern.AssertArgumentLength(bodyReply, 1, 256, Errors.InvalidReply)
+                );
+        }
+        public static bool ChangeGroupScopeIsValid(this Reply reply, string group)
+        {
+            return AssertionConcern.IsSatisfiedBy(
+                            AssertionConcern.AssertArgumentNotNull(group, Errors.GroupIsRequired),
+                            AssertionConcern.AssertArgumentLength(group, 1, 60, Errors.InvalidGroup)
                 );
         }
     }

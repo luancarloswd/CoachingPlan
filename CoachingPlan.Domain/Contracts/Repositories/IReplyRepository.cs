@@ -1,16 +1,19 @@
-﻿using CoachingPlan.Domain.Models;
+﻿using CoachingPlan.Domain.Commands.ReplyCommands;
+using CoachingPlan.Domain.Models;
 using System;
 using System.Collections.Generic;
 
-namespace ReplyingPlan.Domain.Contracts.Repositories
+namespace CoachingPlan.Domain.Contracts.Repositories
 {
     public interface IReplyRepository : IDisposable
     {
         Reply GetOne(Guid id);
         List<Reply> GetAll();
+        List<Reply> GetAllByQuestion(Guid id);
+        List<Reply> GetAllByQuestionAndStatusOfTrue(Guid id);
         List<Reply> GetAll(int take, int skip);
-        void Create(Reply Reply);
-        void Update(Reply Reply);
-        void Delete(Reply Reply);
+        void Create(Reply reply);
+        void Update(Reply reply);
+        void Delete(Reply reply);
     }
 }

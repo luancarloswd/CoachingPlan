@@ -315,4 +315,19 @@
   <data name="InvalidDate" xml:space="preserve">
     <value>Data inválida</value>
   </data>
+  <data name="SessionNotFound" xml:space="preserve">
+    <value>Sessão não encontrada</value>
+  </data>
+  <data name="AuthorInvalid" xml:space="preserve">
+    <value>Autor inválido</value>
+  </data>
+  <data name="InvalidEvaluation" xml:space="preserve">
+    <value>Avaliação inválida</value>
+  </data>
+  <data name="GroupIsRequired" xml:space="preserve">
+    <value>O campo grupo é necessário</value>
+  </data>
+  <data name="InvalidGroup" xml:space="preserve">
+    <value>Grupo inválido</value>
+  </data>
 </root>

@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator, Coach")]
     public class BudgetController : BaseController
     {
         private readonly IBudgetApplicationService _serviceBudget;

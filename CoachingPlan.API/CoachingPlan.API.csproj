@@ -198,6 +198,11 @@
     <Content Include="wwwroot\app\controllers\account\recovery-password-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-list-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-remove-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-create-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-details-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\action-plan\action-plan-create-ctrl.js" />
     <Content Include="wwwroot\app\controllers\action-plan\action-plan-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\action-plan\action-plan-edit-ctrl.js" />
@@ -211,6 +216,7 @@
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-list-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-remove-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\message\message-create-ctrl.js" />
     <Content Include="wwwroot\app\controllers\service\service-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coachee\coachee-edit-ctrl.js" />
@@ -237,6 +243,8 @@
     <Content Include="wwwroot\app\factories\budget-factory.js" />
     <Content Include="wwwroot\app\factories\action-plan-factory.js" />
     <Content Include="wwwroot\app\factories\coaching-process-factory.js" />
+    <Content Include="wwwroot\app\factories\message-factory.js" />
+    <Content Include="wwwroot\app\factories\evaluation-tool-factory.js" />
     <Content Include="wwwroot\app\factories\service-factory.js" />
     <Content Include="wwwroot\app\factories\coachee-factory.js" />
     <Content Include="wwwroot\app\factories\session-factory.js" />
@@ -1953,6 +1961,9 @@
     <Content Include="wwwroot\public\dev\index.html" />
     <Content Include="wwwroot\public\dev\pages\account\recoveryPassword.html" />
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
+    <Content Include="wwwroot\public\dev\pages\evaluation-tool\create.html" />
+    <Content Include="wwwroot\public\dev\pages\evaluation-tool\details.html" />
+    <Content Include="wwwroot\public\dev\pages\evaluation-tool\edit.html" />
     <Content Include="wwwroot\public\dev\pages\action-plan\details.html" />
     <Content Include="wwwroot\public\dev\pages\action-plan\edit.html" />
     <Content Include="wwwroot\public\dev\pages\action-plan\create.html" />
@@ -1962,11 +1973,13 @@
     <Content Include="wwwroot\public\dev\pages\budget\index.html" />
     <Content Include="wwwroot\public\dev\pages\coaching-process\edit.html" />
     <Content Include="wwwroot\public\dev\pages\coaching-process\details.html" />
+    <Content Include="wwwroot\public\dev\pages\evaluation-tool\index.html" />
     <Content Include="wwwroot\public\dev\pages\service\index.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\create.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\details.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\edit.html" />
     <Content Include="wwwroot\public\dev\pages\coachee\index.html" />
+    <Content Include="wwwroot\public\dev\pages\message\index.html" />
     <Content Include="wwwroot\public\dev\pages\session\edit.html" />
     <Content Include="wwwroot\public\dev\pages\session\create.html" />
     <Content Include="wwwroot\public\dev\pages\session\index.html" />
@@ -2303,10 +2316,12 @@
     <Compile Include="Controllers\ActionPlanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CoachingProcessController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\CoacheeController.cs" />
     <Compile Include="Controllers\CoachController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\EvaluationToolController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Helpers\CompressionHelper.cs" />
     <Compile Include="Helpers\DomainEventsContainer.cs" />

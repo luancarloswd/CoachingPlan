@@ -31,7 +31,6 @@ namespace CoachingPlan.Infraestructure.Data
         public DbSet<StrongPoint> StrongPoint { get; set; }
         public DbSet<CoachingProcess> CoachingProcess { get; set; }
         public DbSet<Session> Session { get; set; }
-        //public DbSet<Evaluation> Evaluation { get; set; }
         public DbSet<EvaluationCoach> EvaluationCoach { get; set; }
         public DbSet<EvaluationCoachee> EvaluationCoachee { get; set; }
         public DbSet <ActionPlan> ActionPlan { get; set; }
@@ -41,7 +40,8 @@ namespace CoachingPlan.Infraestructure.Data
         public DbSet<EvaluationTool> EvaluationTool { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<Reply> Reply { get; set; }
-        public DbSet<FilledTool> FilledTool { get; set; }
+        public DbSet<FilledToolCoachee> FilledToolCoachee { get; set; }
+        public DbSet<FilledToolCoach> FilledToolCoach { get; set; }
         public DbSet<Message> Message { get; set; }
         public DbSet<PerformanceIndicator> PerformanceIndicator { get; set; }
         public DbSet<Budget> Budget{ get; set; }
@@ -96,7 +96,8 @@ namespace CoachingPlan.Infraestructure.Data
             modelBuilder.Configurations.Add(new CoacheeMap());
             modelBuilder.Configurations.Add(new PerformanceIndicatorMap());
             modelBuilder.Configurations.Add(new PersonMap());
-            modelBuilder.Configurations.Add(new FilledToolMap());
+            modelBuilder.Configurations.Add(new FilledToolCoacheeMap());
+            modelBuilder.Configurations.Add(new FilledToolCoachMap());
             modelBuilder.Configurations.Add(new ReplyMap());
             modelBuilder.Configurations.Add(new QuestionMap());
             modelBuilder.Configurations.Add(new EvaluationCoacheeMap());

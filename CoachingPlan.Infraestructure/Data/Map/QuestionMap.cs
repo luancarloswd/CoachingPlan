@@ -30,15 +30,20 @@ namespace CoachingPlan.Infraestructure.Data.Map
 
             Property(x => x.PhaseQuestion)
                 .HasColumnName("Fase_Questao")
-                .IsRequired();
+                .IsOptional();
+
+            Property(x => x.Group)
+                .HasColumnName("Grupo_Questao")
+                .IsOptional()
+                .HasMaxLength(20);
 
             Property(x => x.StepQuestion)
                 .HasColumnName("Passo_Questao")
-                .IsRequired();
+                .IsOptional();
 
             Property(x => x.Enunciation)
                 .HasColumnName("Enunciado_Questao")
-                .IsOptional();
+                .IsRequired();
 
             Property(x => x.Education)
                 .HasColumnName("Instrucao_Questao")

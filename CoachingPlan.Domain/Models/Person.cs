@@ -10,14 +10,13 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected Person() { }
-        public Person(string name, string cpf, DateTime birthDate, EGenre genre, bool status, ICollection<Address> address, ICollection<Phone> phone, string phototgraph = null)
+        public Person(string name, string cpf, DateTime birthDate, EGenre genre, ICollection<Address> address, ICollection<Phone> phone, string phototgraph = null)
         {
             this.Id = Guid.NewGuid();
             this.Name = name;
             this.CPF = cpf;
             this.BirthDate = birthDate;
             this.Genre = genre;
-            this.Status = status;
             this.Photograph = phototgraph;
             this.Phone = new List<Phone>();
             phone.ToList().ForEach(x => AddPhone(x));
@@ -32,7 +31,6 @@ namespace CoachingPlan.Domain.Models
         public string CPF { get; private set; }
         public System.DateTime BirthDate { get; private set; }
         public EGenre Genre { get; private set; }
-        public bool Status { get; private set; }
         public string Photograph { get; private set; }
 
         public virtual ICollection<Phone> Phone { get; set; }
@@ -47,23 +45,11 @@ namespace CoachingPlan.Domain.Models
                 return;
             this.Name = name;
         }
-        public void ChangeCPF(string cpf)
-        {
-            if (!this.ChangeCPFScopeIsValid(cpf))
-                return;
-            this.CPF = cpf;
-        }
         public void ChangeBirthDate(DateTime birthDate)
         {
             if (!this.ChangeBirthDatedScopeIsValid(birthDate))
                 return;
             this.BirthDate = birthDate;
-        }
-        public void ChangeStatus(bool status)
-        {
-            if (!this.ChangeStatusScopeIsValid(status))
-                return;
-            this.Status = status;
         }
         public void ChangePhotograph(string photograph)
         {

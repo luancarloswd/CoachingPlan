@@ -41,6 +41,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Service.Where(ServiceSpecs.GetOne(id)).FirstOrDefault();
         }
 
+        public Service GetOneByName(string name)
+        {
+            return _context.Service.Where(ServiceSpecs.GetOneByName(name)).FirstOrDefault();
+        }
+
         public List<Service> GetAllByCoachingProcess(Guid idCoachingProcess)
         {
             return _context.Service.Where(x => x.CoachingProcess.FirstOrDefault(y => y.Id == idCoachingProcess).Id == idCoachingProcess).ToList();

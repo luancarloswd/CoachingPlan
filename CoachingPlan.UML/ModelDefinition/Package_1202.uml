@@ -1,15 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="17bb37c9-2918-4bd6-a3ec-046cb06b36be"
   name="SPA" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <suppliersInternal>
-    <dependency
-      Id="ccf541bc-32cb-4fc3-9ddc-94ddec3a5abb">
+  <packagedElements>
+    <packageHasNamedElement>
       <packageMoniker
-        Id="75276a6f-1c91-4003-9d0d-384e73684011"
-        LastKnownName="API"
-        LastKnownLocation="Package1_1158.uml" />
-    </dependency>
-  </suppliersInternal>
+        Id="7f4723fd-46fa-4a7a-9ed4-91ec42932788"
+        LastKnownName="App"
+        LastKnownLocation="Package_1434.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dde2042f-799d-4ea6-97d3-6fc7cd0dd0e1"
+        LastKnownName="Pages"
+        LastKnownLocation="Package1_1434.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
 </package>

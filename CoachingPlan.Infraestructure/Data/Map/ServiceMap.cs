@@ -1,5 +1,6 @@
 ﻿using CoachingPlan.Domain.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 
 namespace CoachingPlan.Infraestructure.Data.Map
@@ -25,7 +26,9 @@ namespace CoachingPlan.Infraestructure.Data.Map
             Property(x => x.Name)
                 .HasColumnName("Nome_Servico")
                 .HasMaxLength(60)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnAnnotation(
+                    "Index", new IndexAnnotation(new IndexAttribute("IX_NOME_SERVICO") { IsUnique = true })); ; ;
 
             Property(x => x.Value)
                 .HasColumnName("Valor_Servico")

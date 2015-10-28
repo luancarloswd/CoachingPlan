@@ -17,5 +17,6 @@ namespace CoachingPlan.Domain.Contracts.Services
         List<Service> AddToCoachingProcess(dynamic body);
         CoachingProcess CheckServiceRemoved(List<Service> listService, CoachingProcess coachingProcess);
         Service GetOneIncludeCoachingProcess(Guid iddCoachingProcess);
+        Service GetOneByName(string name);
     }
 }
