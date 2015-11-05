@@ -64,7 +64,7 @@ namespace CoachingPlan.ApplicationService
         public Coachee Update(UpdateCoacheeCommand command)
         {
             var coachee = _repository.GetOneIncludeDetails(command.Id);
-            if (command.Profession != null)
+            if (!string.IsNullOrEmpty(command.Profession))
                 coachee.ChangeProfession(command.Profession);
 
             foreach (var weakness in command.Weakness)

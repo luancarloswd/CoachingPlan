@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="68b0b681-b684-435a-b7e8-18fcaba1cf12"
+  name="Domain"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c6e4215f-e70f-48b5-9042-f00394340311"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCoachingPlan.Domain"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b905d7f7-4ca1-4cb4-a8e4-d3ccb3122525"
+        LastKnownName="Models"
+        LastKnownLocation="Package2_1815.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ed1d2dbc-f100-4876-90be-656ad26e0dc8"
+        LastKnownName="Enums"
+        LastKnownLocation="Package4_1815.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ed5a1cef-85eb-471c-97b0-f1dc0302411b"
+        LastKnownName="Specs"
+        LastKnownLocation="Package_1821.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

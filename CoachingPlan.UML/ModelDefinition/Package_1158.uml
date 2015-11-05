@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="88c590bf-27a6-417d-a844-886a42d4a83e"
   name="Coaching Plan" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -13,7 +13,7 @@
     <packageHasNamedElement>
       <packageMoniker
         Id="02da7dcf-c87c-4d6c-b98f-8672a8ebddaa"
-        LastKnownName="Business"
+        LastKnownName="ApplicationService"
         LastKnownLocation="Package_1159.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -30,14 +30,8 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
-        Id="ca2a6026-44a2-4589-9743-8477f248db06"
-        LastKnownName="Resources"
-        LastKnownLocation="Package3_1159.uml" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <packageMoniker
         Id="c53af1d3-70de-4626-a222-ff4362ebf5cb"
-        LastKnownName="Startup"
+        LastKnownName="CrossCutting"
         LastKnownLocation="Package_1200.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -45,6 +39,12 @@
         Id="17bb37c9-2918-4bd6-a3ec-046cb06b36be"
         LastKnownName="SPA"
         LastKnownLocation="Package_1202.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ca2a6026-44a2-4589-9743-8477f248db06"
+        LastKnownName="SharedKernel"
+        LastKnownLocation="Package3_1159.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

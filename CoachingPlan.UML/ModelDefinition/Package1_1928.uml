@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="27fa1e3f-76b7-479a-a6a0-a62af5d1b170"
   name="UC07 - Manter Ferramenta de Avaliação" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -88,6 +88,23 @@
         <suppliersInternal>
           <dependency
             Id="b2fabb21-1f8c-456b-80e4-77f30c5e07d8">
+            <useCaseMoniker
+              Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
+              LastKnownName="UC07-Manter Ferramenta de Avaliação"
+              LastKnownLocation="Package1_1928.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="33e7aaad-ac90-4ba8-92eb-8cecd4b78df2"
+        name="Disponibilizar Ferramenta de Avaliação"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="f4935580-1fd6-461d-aeb3-df93a4ed8dfe">
             <useCaseMoniker
               Id="2c195e0f-7fc1-47c8-935e-da2e4c8decdd"
               LastKnownName="UC07-Manter Ferramenta de Avaliação"

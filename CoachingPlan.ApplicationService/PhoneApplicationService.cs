@@ -61,11 +61,11 @@ namespace CoachingPlan.ApplicationService
         public Phone Update(ChangePhoneCommand command)
         {
             var phone = _repository.GetOne(command.Id);
-            if (command.DDD != null)
+            if (!string.IsNullOrEmpty(command.DDD))
                 phone.ChangeDDD(command.DDD);
-            if (command.Number != null)
+            if (!string.IsNullOrEmpty(command.Number))
                 phone.ChangeNumber(command.Number);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 phone.ChangeDescription(command.Description);
 
             _repository.Update(phone);

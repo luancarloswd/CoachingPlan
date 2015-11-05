@@ -3,6 +3,7 @@
     public enum ETypeQuestion
     {
         Sigle = 1,
-        Multiple = 2
+        Multiple = 2,
+        Essay = 3
     }
 }

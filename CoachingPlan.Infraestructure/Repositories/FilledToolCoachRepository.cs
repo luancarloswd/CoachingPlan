@@ -38,7 +38,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public FilledToolCoach GetOne(Guid id)
         {
-            return _context.FilledToolCoach.Where(FilledToolCoachSpecs.GetOne(id)).Include(x => x.EvaluationTool).Include(x=> x.Coach).FirstOrDefault();
+            return _context.FilledToolCoach.Where(FilledToolCoachSpecs.GetOne(id)).Include(x => x.EvaluationTool.Question.Select(n => n.Reply)).Include(x=> x.Coach).FirstOrDefault();
         }
 
         public void Update(FilledToolCoach FilledTool)

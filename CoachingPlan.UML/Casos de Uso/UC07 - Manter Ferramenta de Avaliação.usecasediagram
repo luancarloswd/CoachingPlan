@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="c001dc7d-9533-4fea-9d7a-9ea7431795b3" name="UC0 - Manter Ferramenta de Avaliação" linkedPackageId="edf4ad99-14e4-4deb-87b9-c6229fcc4ba3" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c001dc7d-9533-4fea-9d7a-9ea7431795b3" name="UC0 - Manter Ferramenta de Avaliação" linkedPackageId="edf4ad99-14e4-4deb-87b9-c6229fcc4ba3" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <profileInstances>
-    <packageHasProfileInstances Id="ff624a99-16fe-45c8-82d8-e298f5a1c7a5">
-      <profileInstance Id="01287f24-0fd0-4ad6-99b4-635eaa82d29c" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="a366ac22-23a7-4c9c-9589-f9a01618f4ef">
+      <profileInstance Id="0720edbd-0dec-475b-897a-7b87a4eece52" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="5370ae8d-4a2c-49a6-ad46-821c02cf0bd9">
-      <profileInstance Id="2af79256-fefd-414c-a1d7-4220a8d23a1f" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -109,8 +103,33 @@
         </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="eb9c5f82-b70c-43bb-af72-9426d50a722b" name="Disponibilizar Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33e7aaad-ac90-4ba8-92eb-8cecd4b78df2" />
+        <suppliersInternal>
+          <dependency Id="791b6457-9f10-43bd-bbf9-f9261fb58172">
+            <useCaseMoniker Id="6bc10e6b-402f-4ee0-ba9c-d336f43360ea" LastKnownName="UC07-Manter Ferramenta de Avaliação" />
+            <elementDefinition Id="f4935580-1fd6-461d-aeb3-df93a4ed8dfe" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="edf4ad99-14e4-4deb-87b9-c6229fcc4ba3" name="CoachingPlan">
     <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ff624a99-16fe-45c8-82d8-e298f5a1c7a5">
+        <profileInstance Id="01287f24-0fd0-4ad6-99b4-635eaa82d29c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5370ae8d-4a2c-49a6-ad46-821c02cf0bd9">
+        <profileInstance Id="2af79256-fefd-414c-a1d7-4220a8d23a1f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

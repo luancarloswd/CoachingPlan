@@ -1,84 +1,175 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.375, 8.5" name="Diagrama de Pacote">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.875, 8.5" name="Diagrama de Pacote">
   <logicalClassDesignerModelMoniker Id="b258cc56-088f-4eb2-814d-480dac5783b7" />
   <nestedChildShapes>
-    <packageShape Id="b60d476b-25af-482a-b886-94d565af9e85" absoluteBounds="2.625, 0.75, 11.5, 7" customColor="255, 249, 230" hideQualifiedName="true">
+    <packageShape Id="b60d476b-25af-482a-b886-94d565af9e85" absoluteBounds="1.5, 0.5, 13.125, 7.125" customColor="255, 249, 230" hideQualifiedName="true">
       <packageMoniker Id="3ff724a4-1815-42ea-b222-9978692520bf" LastKnownName="Coaching Plan" />
       <nestedChildShapes>
-        <packageShape Id="108b415c-bdd1-4645-9707-0803667dfd52" absoluteBounds="7.5, 1.375, 2.375, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
+        <packageShape Id="108b415c-bdd1-4645-9707-0803667dfd52" absoluteBounds="7, 5.375, 2.375, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
           <packageMoniker Id="9913e204-72b2-4ce7-ad59-ed78942246e0" LastKnownName="ApplicationService" />
         </packageShape>
-        <packageShape Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" absoluteBounds="10.125, 1.375, 3.75, 3.125" customColor="255, 249, 230" hideQualifiedName="false">
+        <packageShape Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" absoluteBounds="10.5, 1.375, 3.75, 3.125" customColor="255, 249, 230" hideQualifiedName="false">
           <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
           <nestedChildShapes>
-            <packageShape Id="2001e41c-137e-434b-a61f-20b3187a8662" absoluteBounds="10.25, 1.75, 3.5, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="2001e41c-137e-434b-a61f-20b3187a8662" absoluteBounds="10.625, 1.75, 3.5, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="43ae6ff5-6d4a-46cb-b065-1c6e194344c9" LastKnownName="Contracts" />
               <nestedChildShapes>
-                <packageShape Id="64141bc0-1e6d-4eea-80a0-197618fd1aea" absoluteBounds="10.375, 2.125, 1.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="64141bc0-1e6d-4eea-80a0-197618fd1aea" absoluteBounds="10.75, 2.125, 1.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="3748ab85-3cd6-46cb-b145-1fa9c3845ace" LastKnownName="Repositories" />
                 </packageShape>
-                <packageShape Id="faa09dcc-21ce-4d9b-86e6-9ac8255b7581" absoluteBounds="12.125, 2.125, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="faa09dcc-21ce-4d9b-86e6-9ac8255b7581" absoluteBounds="12.5, 2.125, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="49e006e3-96bf-48ec-9691-d0579594aef1" LastKnownName="Services" />
                 </packageShape>
               </nestedChildShapes>
             </packageShape>
-            <packageShape Id="7d9e5e5c-fae9-4be4-b24d-76962ca1c7a9" absoluteBounds="10.25, 3.375, 1.375, 1" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="7d9e5e5c-fae9-4be4-b24d-76962ca1c7a9" absoluteBounds="10.625, 3.375, 1.375, 1" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="b238d4dc-eb77-4020-8b98-0e803d87f15d" LastKnownName="Models" />
             </packageShape>
           </nestedChildShapes>
         </packageShape>
-        <packageShape Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" absoluteBounds="7.875, 3.125, 2, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
-          <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
-          <nestedChildShapes>
-            <packageShape Id="735b5c22-152e-475d-8897-20d8a417cf36" absoluteBounds="8, 3.5, 1.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
-              <packageMoniker Id="c4fcd6bf-5957-4cdb-a07c-577f5cc5076a" LastKnownName="Repositories" />
-            </packageShape>
-          </nestedChildShapes>
-        </packageShape>
-        <packageShape Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" absoluteBounds="10.25, 4.875, 3.375, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
+        <packageShape Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" absoluteBounds="6.875, 3.5, 3.375, 1.5" customColor="255, 249, 230" hideQualifiedName="false">
           <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
           <nestedChildShapes>
-            <packageShape Id="8db30ee4-1471-456f-842d-8a30cb9e3d22" absoluteBounds="10.375, 5.25, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="8db30ee4-1471-456f-842d-8a30cb9e3d22" absoluteBounds="7, 3.875, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="299b3b26-8b0d-4560-993a-dd2fe463c18c" LastKnownName="Messages" />
             </packageShape>
-            <packageShape Id="8bb2c47e-52d8-43a6-a43b-4379f9c97b2c" absoluteBounds="12, 5.25, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="8bb2c47e-52d8-43a6-a43b-4379f9c97b2c" absoluteBounds="8.625, 3.875, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="a0f80c69-02de-45a0-a062-628b8b923945" LastKnownName="Validations" />
             </packageShape>
           </nestedChildShapes>
         </packageShape>
-        <packageShape Id="0418c128-f28b-4803-8e14-dc599855f006" absoluteBounds="7.875, 4.875, 1.875, 1" customColor="255, 249, 230" hideQualifiedName="false">
-          <packageMoniker Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" LastKnownName="CrossCutting" />
-        </packageShape>
-        <packageShape Id="d6fb2681-3ce9-440f-baab-5fc1d2a4005d" absoluteBounds="2.75, 5, 4.625, 2.625" customColor="255, 249, 230" hideQualifiedName="false">
+        <dependencyConnector edgePoints="[(10.5 : 4); (10.25 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="c5dd5e7c-5c34-4e28-a8af-abce7ffe4c1b" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
+            <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
+          </nodes>
+        </dependencyConnector>
+        <dependencyConnector edgePoints="[(8.1875 : 5.375); (8.1875 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="19a903fb-6305-4787-85f9-dde04da84385" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
+            <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
+          </nodes>
+        </dependencyConnector>
+        <packageShape Id="d6fb2681-3ce9-440f-baab-5fc1d2a4005d" absoluteBounds="2.125, 4.625, 4.625, 2.625" customColor="255, 249, 230" hideQualifiedName="false">
           <packageMoniker Id="4579a29a-7ad2-41ef-8b0a-f98afd11fe84" LastKnownName="SPA" />
           <nestedChildShapes>
-            <packageShape Id="75e275a8-e859-4d0a-9ac5-df4ff22519a2" absoluteBounds="2.875, 5.375, 1.75, 2" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="75e275a8-e859-4d0a-9ac5-df4ff22519a2" absoluteBounds="2.25, 5, 1.75, 2" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="e5c81bed-4510-4b5b-8c85-ae6d53156a14" LastKnownName="App" />
               <nestedChildShapes>
-                <packageShape Id="5cb2207c-6f84-4447-b018-cb5886fe9489" absoluteBounds="3, 5.75, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="5cb2207c-6f84-4447-b018-cb5886fe9489" absoluteBounds="2.375, 5.375, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="9751b2b9-f721-43b8-a384-fa7dcdf5f000" LastKnownName="Controllers" />
                 </packageShape>
-                <packageShape Id="09eebe10-9ec0-4428-b6eb-d36ffb95ecaa" absoluteBounds="3, 6.625, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="09eebe10-9ec0-4428-b6eb-d36ffb95ecaa" absoluteBounds="2.375, 6.25, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="1c562147-5e04-4a78-b60b-f7a8e609df00" LastKnownName="Factories" />
                 </packageShape>
               </nestedChildShapes>
             </packageShape>
-            <packageShape Id="c3abb40e-4547-4430-92a0-c74cab196cb6" absoluteBounds="4.875, 5.5, 2.375, 1.875" customColor="255, 249, 230" hideQualifiedName="false">
+            <packageShape Id="c3abb40e-4547-4430-92a0-c74cab196cb6" absoluteBounds="4.25, 5.125, 2.375, 1.875" customColor="255, 249, 230" hideQualifiedName="false">
               <packageMoniker Id="89180d44-62cb-4086-ac4e-9d6746f1db20" LastKnownName="Pages" />
               <nestedChildShapes>
-                <packageShape Id="45a03f7f-f507-4d35-b0ac-5353e4937288" absoluteBounds="5.125, 5.875, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="45a03f7f-f507-4d35-b0ac-5353e4937288" absoluteBounds="4.5, 5.5, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="e0f8ee64-30d7-4f92-8064-26d8182f7a9b" LastKnownName="Dev" />
                 </packageShape>
-                <packageShape Id="7ebcb664-45c6-4674-b0ef-b1606f7e098e" absoluteBounds="5.125, 6.625, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
+                <packageShape Id="7ebcb664-45c6-4674-b0ef-b1606f7e098e" absoluteBounds="4.5, 6.25, 1.5, 0.625" customColor="255, 249, 230" hideQualifiedName="false">
                   <packageMoniker Id="00c0e0a2-bd5a-4d66-ab68-31a1892dac50" LastKnownName="Dist" />
                 </packageShape>
               </nestedChildShapes>
             </packageShape>
           </nestedChildShapes>
         </packageShape>
+        <packageShape Id="267b4698-a750-458b-a16e-944828a8f625" absoluteBounds="2.125, 1.25, 4.25, 2.875" customColor="255, 249, 230" hideQualifiedName="true">
+          <packageMoniker Id="a6ebee97-9a16-4af7-b71b-13f6414db739" LastKnownName="API" />
+          <nestedChildShapes>
+            <packageShape Id="716a4120-d980-491c-afc5-a5b2465cde31" absoluteBounds="2.25, 1.625, 2, 2.25" customColor="255, 249, 230" hideQualifiedName="false">
+              <packageMoniker Id="ae0ea320-8853-437b-ab13-9056902fc669" LastKnownName="Controllers" />
+              <nestedChildShapes>
+                <packageShape Id="4d7433b4-8f9f-4f35-ac0c-8f7a415e6522" absoluteBounds="2.5, 2.375, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+                  <packageMoniker Id="9140f798-6512-4550-a521-74b7db2cc43d" LastKnownName="Reports" />
+                </packageShape>
+              </nestedChildShapes>
+            </packageShape>
+            <packageShape Id="8605fb07-2f27-4f59-be06-c3722902aa42" absoluteBounds="4.625, 1.625, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+              <packageMoniker Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" LastKnownName="Helpers" />
+            </packageShape>
+            <packageShape Id="a185a098-636e-4074-8923-0005e4d9056a" absoluteBounds="4.625, 3, 1.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
+              <packageMoniker Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" LastKnownName="ViewModels" />
+            </packageShape>
+          </nestedChildShapes>
+        </packageShape>
+        <dependencyConnector edgePoints="[(6.375 : 3.8125); (6.875 : 3.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="35da7df0-b021-4330-97f6-b0013ce8655c" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
+            <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
+          </nodes>
+        </dependencyConnector>
+        <packageShape Id="0418c128-f28b-4803-8e14-dc599855f006" absoluteBounds="6.75, 1, 1.875, 1" customColor="255, 249, 230" hideQualifiedName="false">
+          <packageMoniker Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" LastKnownName="CrossCutting" />
+        </packageShape>
+        <dependencyConnector edgePoints="[(7.75 : 2); (7.75 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="15f71be2-e067-4fdc-b0c6-fccb25318e36" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
+            <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
+          </nodes>
+        </dependencyConnector>
+        <dependencyConnector edgePoints="[(6.375 : 1.625); (6.75 : 1.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="3a5533ab-33a3-410d-a360-40dd5e7fe6a5" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
+            <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
+          </nodes>
+        </dependencyConnector>
+        <dependencyConnector edgePoints="[(8.625 : 1.84650173187256); (10.5 : 1.84650173187256)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="09ad95f5-f4c7-4dbc-83e6-73ad69fade60" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
+            <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
+          </nodes>
+        </dependencyConnector>
+        <packageShape Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" absoluteBounds="10.5, 4.875, 3.875, 2.5" customColor="255, 249, 230" hideQualifiedName="false">
+          <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
+          <nestedChildShapes>
+            <packageShape Id="735b5c22-152e-475d-8897-20d8a417cf36" absoluteBounds="10.625, 5.25, 3.625, 2" customColor="255, 249, 230" hideQualifiedName="false">
+              <packageMoniker Id="c4fcd6bf-5957-4cdb-a07c-577f5cc5076a" LastKnownName="Repositories" />
+            </packageShape>
+          </nestedChildShapes>
+        </packageShape>
+        <dependencyConnector edgePoints="[(11.928126 : 4.875); (11.928126 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="9a6b33b3-dba9-4741-a570-a6100f7ed510" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
+            <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
+          </nodes>
+        </dependencyConnector>
+        <dependencyConnector edgePoints="[(9.375 : 6.125); (10.5 : 6.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+          <dependencyMoniker Id="c5cb2d2e-7a20-42aa-be81-8f01c688eeeb" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
+            <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
+          </nodes>
+        </dependencyConnector>
+        <dependencyConnector edgePoints="[(8.47840909090909 : 1.26800346374512); (10.4375 : 1.26800346374512); (10.4375 : 1.11458333333333); (14.3854186666667 : 1.11458333333333); (14.3854186666667 : 3.81362482070923); (14.301906779661 : 3.81362482070923); (14.301906779661 : 5.14300346374512)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+          <dependencyMoniker Id="4dbf68b8-6898-4abc-8658-0f5161970b3e" />
+          <relativeChildShapes />
+          <nodes>
+            <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
+            <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
+          </nodes>
+        </dependencyConnector>
       </nestedChildShapes>
     </packageShape>
-    <dependencyConnector edgePoints="[(9.875 : 2.125); (10.125 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <dependencyConnector edgePoints="[(9.375 : 5.92962072649573); (9.725625 : 5.92962072649573); (9.725625 : 5.9296875); (10.4375 : 5.9296875); (10.4375 : 4.8125); (11.3984375 : 4.8125); (11.3984375 : 4.5)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
       <dependencyMoniker Id="1600b127-ea74-4bc2-9d95-f5919ae3886e" />
       <relativeChildShapes />
       <nodes>
@@ -86,63 +177,23 @@
         <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(11.9375 : 4.5); (11.9375 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="c5dd5e7c-5c34-4e28-a8af-abce7ffe4c1b" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
-        <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(9.875 : 3.8125); (10.125 : 3.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="9a6b33b3-dba9-4741-a570-a6100f7ed510" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
-        <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(8.875 : 2.875); (8.875 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="c5cb2d2e-7a20-42aa-be81-8f01c688eeeb" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
-        <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(8.8125 : 4.875); (8.8125 : 4.78125); (9.26041666666667 : 4.78125 : JumpStart); (9.42708333333333 : 4.78125 : JumpEnd); (11.8541666666667 : 4.78125 : JumpStart); (12.0208333333333 : 4.78125 : JumpEnd); (12.2379807692308 : 4.78125); (12.2379807692308 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
-      <dependencyMoniker Id="29884ae1-c6b1-4985-aeb4-7f6495d15b2d" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
-        <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(9.34375 : 5.14300346374512); (9.34375 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="cae3d831-e5c9-4c01-8b9f-eeef50db36e5" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
-        <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(7.875 : 5.375); (7.578125 : 5.375); (7.578125 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="59a333dc-ba89-4284-8d56-9ca74591fdc1" />
+    <dependencyConnector edgePoints="[(6.75 : 1.0539314516129); (1.58854166666667 : 1.0539314516129); (1.58854166666667 : 7.50260416666667); (7.46155247813411 : 7.50260416666667); (7.46155247813411 : 6.875)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="caafd5e2-9975-41a0-9660-5d45b9da62c7" />
       <relativeChildShapes />
       <nodes>
         <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
         <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(7.65625 : 2.875); (7.65625 : 6.078125); (10.25 : 6.078125)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
-      <dependencyMoniker Id="bfc99e20-cadd-4994-81b0-4d45b8bab37a" />
+    <dependencyConnector edgePoints="[(6.375 : 2.35441406622529); (10.5 : 2.35441406622529)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="8c3adb11-e550-487b-853b-e15583431092" />
       <relativeChildShapes />
       <nodes>
-        <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
-        <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
+        <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
+        <packageShapeMoniker Id="dbe78f66-f7b7-4207-9b9f-029ebfcebb86" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(3.75 : 6.375); (3.75 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <dependencyConnector edgePoints="[(3.125 : 6); (3.125 : 6.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <dependencyMoniker Id="e4e8bdd5-e4be-4408-9b76-4147eb7771a4" />
       <relativeChildShapes />
       <nodes>
@@ -150,58 +201,31 @@
         <packageShapeMoniker Id="09eebe10-9ec0-4428-b6eb-d36ffb95ecaa" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(4.875 : 6.0625); (4.5 : 6.0625)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="5d7d1ee6-588e-4548-9f27-44819391c2fd" />
+    <dependencyConnector edgePoints="[(10.5 : 5.6586602393617); (9.4375 : 5.6586602393617); (9.4375 : 5.3125); (9.22365702479339 : 5.3125); (9.22365702479339 : 5)]" fixedFrom="Caller" fixedTo="Caller" customColor="Black">
+      <dependencyMoniker Id="a9f41158-8193-49e8-8fc8-1c3d000c4a95" />
       <relativeChildShapes />
       <nodes>
-        <packageShapeMoniker Id="c3abb40e-4547-4430-92a0-c74cab196cb6" />
-        <packageShapeMoniker Id="5cb2207c-6f84-4447-b018-cb5886fe9489" />
-      </nodes>
-    </dependencyConnector>
-    <packageShape Id="267b4698-a750-458b-a16e-944828a8f625" absoluteBounds="2.875, 1.625, 4.25, 2.875" customColor="255, 249, 230" hideQualifiedName="true">
-      <packageMoniker Id="a6ebee97-9a16-4af7-b71b-13f6414db739" LastKnownName="API" />
-      <nestedChildShapes>
-        <packageShape Id="716a4120-d980-491c-afc5-a5b2465cde31" absoluteBounds="3, 2, 2, 2.25" customColor="255, 249, 230" hideQualifiedName="false">
-          <packageMoniker Id="ae0ea320-8853-437b-ab13-9056902fc669" LastKnownName="Controllers" />
-          <nestedChildShapes>
-            <packageShape Id="4d7433b4-8f9f-4f35-ac0c-8f7a415e6522" absoluteBounds="3.25, 2.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
-              <packageMoniker Id="9140f798-6512-4550-a521-74b7db2cc43d" LastKnownName="Reports" />
-            </packageShape>
-          </nestedChildShapes>
-        </packageShape>
-        <packageShape Id="8605fb07-2f27-4f59-be06-c3722902aa42" absoluteBounds="5.375, 2, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
-          <packageMoniker Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" LastKnownName="Helpers" />
-        </packageShape>
-        <packageShape Id="a185a098-636e-4074-8923-0005e4d9056a" absoluteBounds="5.375, 3.375, 1.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
-          <packageMoniker Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" LastKnownName="ViewModels" />
-        </packageShape>
-      </nestedChildShapes>
-    </packageShape>
-    <dependencyConnector edgePoints="[(7.125 : 2.25); (7.5 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
-      <dependencyMoniker Id="bb814d3a-ff8c-49d3-ab35-394b3f7b28ce" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
-        <packageShapeMoniker Id="108b415c-bdd1-4645-9707-0803667dfd52" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(5.24384615384615 : 4.5); (5.24384615384615 : 4.75); (7.625 : 4.75); (7.625 : 5.49961538461538); (7.875 : 5.49961538461538)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
-      <dependencyMoniker Id="3242b14d-48aa-48e4-a4cd-b15b390a5001" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
-        <packageShapeMoniker Id="0418c128-f28b-4803-8e14-dc599855f006" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(7.125 : 3.0625); (7.49479166666667 : 3.0625 : JumpStart); (7.73958333333333 : 3.0625 : JumpEnd); (7.8125 : 3.0625); (7.8125 : 4.6875); (11.8541666666667 : 4.6875 : JumpStart); (12.0208333333333 : 4.6875 : JumpEnd); (12.0615384615385 : 4.6875); (12.0615384615385 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
-      <dependencyMoniker Id="baf29461-2e7d-4d75-98e8-f6a77b5434dc" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="267b4698-a750-458b-a16e-944828a8f625" />
+        <packageShapeMoniker Id="a6dd2abb-412e-4c1a-9873-c510471fcde8" />
         <packageShapeMoniker Id="d85e3ed3-d2ea-4c99-a20d-ffa95506b120" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(5 : 2.5); (5.375 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <dependencyConnector edgePoints="[(3.875 : 5.6875); (4.25 : 5.6875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="675d989b-7ccd-4692-ab60-d0cfd84f4a59" />
+      <relativeChildShapes />
+      <nodes>
+        <packageShapeMoniker Id="5cb2207c-6f84-4447-b018-cb5886fe9489" />
+        <packageShapeMoniker Id="c3abb40e-4547-4430-92a0-c74cab196cb6" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(2.375 : 6.25); (2.17708333333333 : 6.25); (2.17708333333333 : 6.0625); (1.84375 : 6.0625); (1.84375 : 2.75); (2.25 : 2.75)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <dependencyMoniker Id="51e67312-9642-469e-aba0-e0c5695aee2c" />
+      <relativeChildShapes />
+      <nodes>
+        <packageShapeMoniker Id="09eebe10-9ec0-4428-b6eb-d36ffb95ecaa" />
+        <packageShapeMoniker Id="716a4120-d980-491c-afc5-a5b2465cde31" />
+      </nodes>
+    </dependencyConnector>
+    <dependencyConnector edgePoints="[(4.25 : 2.125); (4.625 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <dependencyMoniker Id="fb1391b9-379f-4d58-97c2-84ef5faf4d66" />
       <relativeChildShapes />
       <nodes>
@@ -209,20 +233,12 @@
         <packageShapeMoniker Id="8605fb07-2f27-4f59-be06-c3722902aa42" />
       </nodes>
     </dependencyConnector>
-    <dependencyConnector edgePoints="[(5 : 3.8125); (5.375 : 3.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <dependencyConnector edgePoints="[(4.25 : 3.4375); (4.625 : 3.4375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
       <dependencyMoniker Id="b2f8e874-c009-4675-b749-88ff4611e37f" />
       <relativeChildShapes />
       <nodes>
         <packageShapeMoniker Id="716a4120-d980-491c-afc5-a5b2465cde31" />
         <packageShapeMoniker Id="a185a098-636e-4074-8923-0005e4d9056a" />
-      </nodes>
-    </dependencyConnector>
-    <dependencyConnector edgePoints="[(3 : 6.9375); (2.625 : 6.9375); (2.625 : 3.125); (3 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
-      <dependencyMoniker Id="51e67312-9642-469e-aba0-e0c5695aee2c" />
-      <relativeChildShapes />
-      <nodes>
-        <packageShapeMoniker Id="09eebe10-9ec0-4428-b6eb-d36ffb95ecaa" />
-        <packageShapeMoniker Id="716a4120-d980-491c-afc5-a5b2465cde31" />
       </nodes>
     </dependencyConnector>
   </nestedChildShapes>

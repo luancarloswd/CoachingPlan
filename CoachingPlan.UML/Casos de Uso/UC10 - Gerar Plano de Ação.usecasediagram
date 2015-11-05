@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="a11854c2-708a-42af-8b08-cc06fcc463ff" name="UC10 - Gerar Plano de Ação" linkedPackageId="9e5d8c52-1ef7-4c9e-baef-9b2decf98618" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a11854c2-708a-42af-8b08-cc06fcc463ff" name="UC10 - Gerar Plano de Ação" linkedPackageId="9e5d8c52-1ef7-4c9e-baef-9b2decf98618" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <profileInstances>
-    <packageHasProfileInstances Id="78d5f340-8168-4419-a99b-52db506eb472">
-      <profileInstance Id="bb393de9-9e06-46a8-913a-d6592b3d6ad1" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="a958d2e0-96b0-48e6-9d11-6b3ff23c191e">
+      <profileInstance Id="f72932b9-ec64-4c14-94ec-e71cc80a790d" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="68e3260c-8cb4-4073-a098-18ab989ba2d9">
-      <profileInstance Id="4af13a83-6c65-4380-a40c-ae3bdd09e725" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -88,28 +82,6 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="e9918d16-d4b7-4a4c-bf33-bc05c7de99ea" name="Excluir Plano de Ação" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="6f077123-ee54-4883-986e-0ed957244770" />
-        <suppliersInternal>
-          <dependency Id="5b8fc1d6-7d01-444e-a2fd-72e0ca3ad2f6">
-            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
-            <elementDefinition Id="e1c4be3c-ff98-4832-972b-0f49c61bf51c" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="76d68d29-4e52-49b0-93d0-e494161af00f" name="Pesquisar Plano de Ação" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="c0f1bab4-029e-4aa8-99db-dd1d691fa754" />
-        <suppliersInternal>
-          <dependency Id="20b7d4c6-9ba9-4ea8-bc31-b03debd1242c">
-            <useCaseMoniker Id="72ad5e62-fa24-478b-a508-6cb09232f532" LastKnownName="UC10-Gerar plano de Ação" />
-            <elementDefinition Id="e142b248-0791-4678-b394-386f60d7fce5" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
       <useCase Id="f8023956-a276-49d7-9a21-024ce192a7bf" name="Visualizar Plano de Ação" isAbstract="false" isLeaf="false">
         <elementDefinition Id="0ebf5a9b-3571-4abd-8f54-ea82a2917e2b" />
         <suppliersInternal>
@@ -123,5 +95,19 @@
   </packagedElements>
   <package Id="9e5d8c52-1ef7-4c9e-baef-9b2decf98618" name="CoachingPlan">
     <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="78d5f340-8168-4419-a99b-52db506eb472">
+        <profileInstance Id="bb393de9-9e06-46a8-913a-d6592b3d6ad1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="68e3260c-8cb4-4073-a098-18ab989ba2d9">
+        <profileInstance Id="4af13a83-6c65-4380-a40c-ae3bdd09e725" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

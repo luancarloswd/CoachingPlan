@@ -162,12 +162,348 @@
       <SubType>Content</SubType>
       <DependentUpon>Diagrama de Pacote.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Diagramas de Classe\Diagrama de classe conceitual.classdiagram">
+    <Content Include="Diagramas de Classe\Diagrama de Classe Conceitual.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Diagramas de Classe\Diagrama de classe conceitual.classdiagram.layout">
+    <Content Include="Diagramas de Classe\Diagrama de Classe Conceitual.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Diagramas de Classe\Diagrama de classe conceitual.classdiagram</DependentUpon>
+      <DependentUpon>Diagramas de Classe\Diagrama de Classe Conceitual.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 5.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 5.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 5.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC02 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC02 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC02 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC02 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 5.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC02 - Fluxo Alternativo 5.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC02 - Fluxo Alternativo 5.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC03 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC03 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC03 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC03 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 5.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC03 - Fluxo Alternativo 5.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC03 - Fluxo Alternativo 5.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC04 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC04 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC04 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC05 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC05 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC05 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC06 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC06 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC06 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC06 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC06 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 17.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 17.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 17.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 18.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 18.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 18.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 19.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 19.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 19.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 20.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 20.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 20.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 21.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC07 - Fluxo Alternativo 21.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC07 - Fluxo Alternativo 21.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC08 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC08 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC08 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC08 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 5.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC08 - Fluxo Alternativo 5.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC08 - Fluxo Alternativo 5.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC09 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC09 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC09 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC09 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC09 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC10 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC10 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC10 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC10 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC11 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC11 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 3.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 3.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC11 - Fluxo Alternativo 3.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 4.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 4.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC11 - Fluxo Alternativo 4.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 5.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC11 - Fluxo Alternativo 5.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC11 - Fluxo Alternativo 5.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC12 - Fluxo Alternativo 1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC12 - Fluxo Alternativo 1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC12 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC12 - Fluxo Alternativo 2.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC12 - Fluxo Alternativo 2.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC12 - Fluxo Alternativo 2.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC13 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC13 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC13 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC14 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC14 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC14 - Fluxo Principal.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1106.uml">
       <SubType>Content</SubType>
@@ -188,6 +524,18 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_1435.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1815.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1817.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1821.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1831.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_1926.uml">
@@ -223,6 +571,15 @@
     <Content Include="ModelDefinition\Package2_1435.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_1815.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1821.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1831.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package3_1159.uml">
       <SubType>Content</SubType>
     </Content>
@@ -233,6 +590,15 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package3_1435.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1815.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1831.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_1815.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1105.uml">
@@ -283,6 +649,18 @@
     <Content Include="ModelDefinition\Package_1435.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1815.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1817.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1821.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1831.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1926.uml">
       <SubType>Content</SubType>
     </Content>
@@ -322,6 +700,7 @@
     <Content Include="ModelDefinition\Package_2032.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Diagramas de Sequência\" />
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\CoachingPlan.uml">
       <SubType>Content</SubType>

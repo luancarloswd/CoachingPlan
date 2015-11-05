@@ -74,9 +74,9 @@ namespace CoachingPlan.ApplicationService
             Person person = _repository.GetOneIncludeDetails(command.Id);
             if (command.BirthDate != null)
                 person.ChangeBirthDate(command.BirthDate);
-            if (command.Name != null)
+            if (!string.IsNullOrEmpty(command.Name))
                 person.ChangeName(command.Name);
-            if (command.Photograph != null)
+            if (!string.IsNullOrEmpty(command.Photograph))
                 person.ChangePhotograph(command.Photograph);
 
 

@@ -103,7 +103,7 @@ namespace CoachingPlan.ApplicationService
         public Mark Update(UpdateMarkCommand command)
         {
             var Mark = _repository.GetOne(command.Id);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 Mark.ChangeDescription(command.Description);
             if (command.Term != null)
                 Mark.ChangeTerm(command.Term);

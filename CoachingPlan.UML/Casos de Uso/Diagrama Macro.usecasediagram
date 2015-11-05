@@ -159,22 +159,6 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="fe3eb513-bdf4-4dde-9564-36eb12fe6f82" />
           </association>
-          <association Id="db8fb329-418d-48e8-a71d-c13351c82105" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Preencher Ferramenta de avaliação" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="f6871fbf-da38-45a6-afc1-20e752dcee0c" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="676ae616-05e4-437e-b7ed-d0b7d6a22857" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e7d23311-e8ce-49c7-aab1-13fdea132dcc" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="26a039fc-c63b-4e5b-b98e-fcf801face3d" name="Preencher Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="4db8d866-2b40-4638-b53b-5ecec6d7942d" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2e2c035b-a12a-49ef-a8fb-f923a5ad0fc9" />
-          </association>
           <association Id="9f1c9263-1e5f-429e-b194-3c337b17c400" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Avaliar Sessão" isLeaf="false" isAbstract="false">
             <useCaseMoniker Id="1ff06eff-ce40-4d1a-80de-51fcdc5b7eda" LastKnownName="UC14-Avaliar Sessão" />
             <relationshipOwnedElementsInternal>
@@ -338,6 +322,12 @@
     <useCaseModelRootHasTypes>
       <useCase Id="f6871fbf-da38-45a6-afc1-20e752dcee0c" name="UC15-Preencher Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
         <elementDefinition Id="17a67882-440a-47aa-b896-4d8f5b2849e4" />
+        <extendedCases>
+          <extend Id="b2ef0211-b592-4156-8c0d-c3a6eef710d0">
+            <useCaseMoniker Id="3825b43a-6c87-4ee1-92e7-843dfb403fcd" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="a5ecd148-ec19-4170-820c-46573b68df5d" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>

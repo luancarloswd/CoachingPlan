@@ -60,9 +60,9 @@ namespace CoachingPlan.ApplicationService
         public Formation Update(ChangeFormationCommand command)
         {
             var formation = _repository.GetOne(command.Id);
-            if(command.Name != null)
+            if(!string.IsNullOrEmpty(command.Name))
                 formation.ChangeName(command.Name);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 formation.ChangeDescription(command.Description);
 
             _repository.Update(formation);

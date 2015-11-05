@@ -26,7 +26,7 @@ namespace CoachingPlan.Domain.Commands.CoachingProcessCommands
         {
             this.Id = id;
             this.Name = name;
-            this.StartDate = StartDate;
+            this.StartDate = startDate;
             this.EndDate = endDate;
             this.Mode = mode;
             this.Coach = coach;

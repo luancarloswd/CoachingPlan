@@ -2,17 +2,17 @@
 using CoachingPlan.Domain.Commands.CoachingProcessCommands;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Domain.Enums;
-using CoachingPlan.Domain.Models;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator, Coach")]
     public class CoachingProcessController : BaseController
     {
         private readonly ICoachingProcessApplicationService _serviceCoachingProcess;
@@ -37,6 +37,7 @@ namespace CoachingPlan.Api.Controllers
             this._service = service;
         }
 
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpGet]
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Get()
@@ -45,14 +46,37 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, coachingProcesss);
         }
 
+        [Authorize(Roles = "Administrator, Coach, Coachee")]
+        [HttpGet]
+        [Route("api/coachingProcesss/coachee/{id}")]
+        public Task<HttpResponseMessage> GetByCoachee(string id)
+        {
+            var coachingProcesss = _serviceCoachingProcess.GetAllByCoachee(id);
+            return CreateResponse(HttpStatusCode.OK, coachingProcesss);
+        }
+
+        [Authorize(Roles = "Administrator, Coach, Coachee")]
         [HttpGet]
         [Route("api/coachingProcesss/{id}")]
         public Task<HttpResponseMessage> Get(string id)
         {
             var coachingProcess = _serviceCoachingProcess.GetOneIncludeDetails(Guid.Parse(id));
+
+            ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
+            var role = principal.Claims.Where(c => c.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Single().Value;
+            if (role == "Coachee")
+            {
+                foreach (var coachee in coachingProcess.Coachee)
+                {
+                    if (coachee.User.Email == User.Identity.Name)
+                        return CreateResponse(HttpStatusCode.OK, coachingProcess);
+                }
+                return CreateResponse(HttpStatusCode.Unauthorized, null);
+            }
             return CreateResponse(HttpStatusCode.OK, coachingProcess);
         }
 
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPost]
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
@@ -85,7 +109,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, coachingProcess);
         }
 
-
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPut]
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)
@@ -124,6 +148,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, coachingProcess);
         }
 
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpDelete]
         [Route("api/coachingProcesss/{id}")]
         public Task<HttpResponseMessage> Delete(string id)

@@ -12,11 +12,11 @@ namespace CoachingPlan.Domain.Commands.EvaluationToolCommands
         public string Author { get; private set; }
         public ETypeEvaluationTool Type { get; private set; }
 
-        public virtual List<Coach> Coach { get; private set; }
+        public virtual ICollection<Coach> Coach { get; private set; }
         public virtual ICollection<Question> Question { get; private set; }
         public virtual ICollection<FilledToolCoachee> FilledToolCoachee { get; private set; }
         public virtual ICollection<FilledToolCoach> FilledToolCoach { get; private set; }
-        public CreateEvaluationToolCommand(string name, ETypeEvaluationTool type, ICollection<Question> question, List<Coach> coach, string author)
+        public CreateEvaluationToolCommand(string name, ETypeEvaluationTool type, ICollection<Question> question, ICollection<Coach> coach, string author)
         {
             this.Name = name;
             this.Type = type;

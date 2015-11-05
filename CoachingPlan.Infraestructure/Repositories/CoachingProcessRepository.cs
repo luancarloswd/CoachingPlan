@@ -33,7 +33,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public CoachingProcess GetOneIncludeDetails(Guid id)
         {
-            return _context.CoachingProcess.Include(x => x.Coachee.Select(n => n.User.Person)).Include(x => x.Coach.Select(n => n.User.Person)).Include(x => x.PerformanceIndicator).Include(x => x.Budget).Include(x => x.Service).Include(x => x.ActionPlan.Objective.Select(y =>y.Mark.Select(z => z.Job))).Include(x => x.Budget).FirstOrDefault(x => x.Id == id);
+            return _context.CoachingProcess.Include(x => x.Coachee.Select(n => n.User.Person)).Include(x => x.Coach.Select(n => n.User.Person)).Include(x => x.PerformanceIndicator).Include(x => x.Budget).Include(x => x.Service).Include(x => x.ActionPlan.Objective.Select(y =>y.Mark.Select(z => z.Job))).Include(x => x.Budget).Include(x => x.FilledToolCoach.Select(n => n.EvaluationTool)).Include(x => x.FilledToolCoachee.Select(n => n.EvaluationTool)).FirstOrDefault(x => x.Id == id);
         }
 
         public List<CoachingProcess> GetAll(int take, int skip)
@@ -49,6 +49,11 @@ namespace CoachingPlan.Infraestructure.Repositories
         public List<CoachingProcess> GetAllByService(Guid idService)
         {
             return _context.CoachingProcess.Where(x => x.Service.FirstOrDefault(y => y.Id == idService).Id == idService).ToList();
+        }
+
+        public List<CoachingProcess> GetAllByCoachee(string idCoachee)
+        {
+            return _context.CoachingProcess.Where(x => x.Coachee.FirstOrDefault(y => y.IdUser == idCoachee).IdUser == idCoachee).ToList();
         }
 
         public void Update(CoachingProcess coachingProcess)

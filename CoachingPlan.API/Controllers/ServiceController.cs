@@ -48,7 +48,7 @@ namespace CoachingPlan.Api.Controllers
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
             var service = _service.GetOneByName((string)body.name);
-            if (service == null)
+            if (service != null)
                 return CreateResponse(HttpStatusCode.Ambiguous, service);
 
             var commandService = new CreateServiceCommand(

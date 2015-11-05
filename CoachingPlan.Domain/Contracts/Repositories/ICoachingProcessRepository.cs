@@ -14,5 +14,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         void Update(CoachingProcess CoachingProcess);
         void Delete(CoachingProcess CoachingProcess);
         List<CoachingProcess> GetAllByService(Guid idService);
+        List<CoachingProcess> GetAllByCoachee(string idCoachee);
     }
 }

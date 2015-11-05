@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator, Coach")]
     public class ActionPlanController : BaseController
     {
         private readonly IActionPlanApplicationService _serviceActionPlan;
@@ -30,15 +29,7 @@ namespace CoachingPlan.Api.Controllers
             this._serviceJob = serviceJob;
             this._serviceCoachingProcess = serviceCoachingProcess;
         }
-
-        [HttpGet]
-        [Route("api/actionPlan")]
-        public Task<HttpResponseMessage> Get()
-        {
-            var actionPlan = _serviceActionPlan.GetAll();
-            return CreateResponse(HttpStatusCode.OK, actionPlan);
-        }
-
+        [Authorize(Roles = "Administrator, Coach, Coachee")]
         [HttpGet]
         [Route("api/actionPlan/{id}")]
         public Task<HttpResponseMessage> Get(string id)
@@ -46,7 +37,7 @@ namespace CoachingPlan.Api.Controllers
             var ActionPlan = _serviceActionPlan.GetOne(Guid.Parse(id));
             return CreateResponse(HttpStatusCode.OK, ActionPlan);
         }
-
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPost]
         [Route("api/actionPlan")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
@@ -64,7 +55,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, actionPlan);
         }
 
-
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPut]
         [Route("api/actionPlan")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)

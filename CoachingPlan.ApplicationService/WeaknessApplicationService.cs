@@ -60,9 +60,9 @@ namespace CoachingPlan.ApplicationService
         public Weakness Update(ChangeWeaknessCommand command)
         {
             var Weakness = _repository.GetOne(command.Id);
-            if(command.Name != null)
+            if(!string.IsNullOrEmpty(command.Name))
                 Weakness.ChangeName(command.Name);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 Weakness.ChangeDescription(command.Description);
 
             _repository.Update(Weakness);

@@ -1,5 +1,7 @@
 ﻿using CoachingPlan.API.Controllers;
 using CoachingPlan.Domain.Commands.EvaluationToolCommands;
+using CoachingPlan.Domain.Commands.FilledToolCoachCommands;
+using CoachingPlan.Domain.Commands.FilledToolCoacheeCommands;
 using CoachingPlan.Domain.Contracts.Repositories;
 using CoachingPlan.Domain.Contracts.Services;
 using CoachingPlan.Domain.Enums;
@@ -13,7 +15,6 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator, Coach")]
     public class EvaluationToolController : BaseController
     {
         private readonly IEvaluationToolApplicationService _serviceEvaluationTool;
@@ -37,7 +38,7 @@ namespace CoachingPlan.Api.Controllers
             this._serviceFilledToolCoachee = serviceFilledToolCoachee;
             this._serviceCoach = serviceCoach;
         }
-
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpGet]
         [Route("api/evaluationTools")]
         public Task<HttpResponseMessage> Get()
@@ -46,6 +47,26 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, evaluationTools);
         }
 
+        [Authorize(Roles = "Administrator, Coach, Coachee")]
+        [HttpGet]
+        [Route("api/filledTool/{id}/{role}")]
+        public Task<HttpResponseMessage> GetFilledTool(string id, string role)
+        {
+            if (role == "Coach")
+            {
+                var filledToll = _serviceFilledToolCoach.GetOne(Guid.Parse(id));
+                return CreateResponse(HttpStatusCode.OK, filledToll);
+            }
+            if (role == "Coachee")
+            {
+                var filledToll = _serviceFilledToolCoachee.GetOne(Guid.Parse(id));
+                return CreateResponse(HttpStatusCode.OK, filledToll);
+            }
+            else
+                return CreateResponse(HttpStatusCode.BadRequest, null);
+        }
+
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpGet]
         [Route("api/evaluationTools/{id}")]
         public Task<HttpResponseMessage> Get(string id)
@@ -54,6 +75,58 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, user);
         }
 
+        [Authorize(Roles = "Administrator, Coach")]
+        [HttpPost]
+        [Route("api/filledToll")]
+        public Task<HttpResponseMessage> FilledToll([FromBody]dynamic body)
+        {
+            var role = (string)body.role;
+            var evaluationToolOrigin = _serviceEvaluationTool.GetOne(Guid.Parse((string)body.idEvaluationTool));
+            List<Question> listQuestion = new List<Question>();
+            foreach (var question in evaluationToolOrigin.Question)
+            {
+                List<Reply> listReply = new List<Reply>();
+                foreach (var reply in question.Reply)
+                    listReply.Add(new Reply(reply.BodyReply, reply.Group));
+                listQuestion.Add(new Question(question.TypeReply, question.TypeQuestion, question.StepQuestion, question.Enunciation, question.Education, listReply, question.PhaseQuestion, question.Group));
+
+            }
+
+            var newEvaluationToolFilled = _serviceEvaluationTool.Create(new CreateEvaluationToolCommand(
+                evaluationToolOrigin.Name,
+                evaluationToolOrigin.Type,
+                listQuestion,
+                evaluationToolOrigin.Coach,
+                evaluationToolOrigin.Author
+           ));
+
+            if (role == "Coachee")
+            {
+                var commandFilledTool = new CreateFilledToolCoacheeCommand(
+                   DateTime.MinValue,
+                   newEvaluationToolFilled.Id,
+                   Guid.Parse((string)body.idCoachingProcess),
+                   Guid.Parse((string)body.idUser)
+               );
+                var filledTool = _serviceFilledToolCoachee.Create(commandFilledTool);
+                return CreateResponse(HttpStatusCode.Created, filledTool);
+            }
+            else if (role == "Coach")
+            {
+                var commandFilledTool = new CreateFilledToolCoachCommand(
+                   DateTime.MinValue,
+                   Guid.Parse((string)body.idEvaluationTool),
+                   Guid.Parse((string)body.idCoachingProcess),
+                   Guid.Parse((string)body.idUser)
+               );
+                var filledTool = _serviceFilledToolCoach.Create(commandFilledTool);
+                return CreateResponse(HttpStatusCode.Created, filledTool);
+            } 
+
+            return CreateResponse(HttpStatusCode.BadRequest, null);
+        }
+
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPost]
         [Route("api/evaluationTools")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
@@ -61,8 +134,8 @@ namespace CoachingPlan.Api.Controllers
             var listQuestion = _serviceQuestion.AddToEvaluationTool(body.question, (ETypeEvaluationTool)body.type);
             var coach = _serviceCoach.GetOneByUser((string)body.idCoach);
             List<Coach> listCoach = _serviceCoach.AddCoach(body.coach);
-
-            listCoach.Add(coach);
+            if (coach != null)
+                listCoach.Add(coach);
 
             var commandEvaluationTool = new CreateEvaluationToolCommand(
                 (string)body.name,
@@ -78,6 +151,7 @@ namespace CoachingPlan.Api.Controllers
         }
 
 
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpPut]
         [Route("api/evaluationTools")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)
@@ -96,6 +170,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, evaluationTool);
         }
 
+        [Authorize(Roles = "Administrator, Coach")]
         [HttpDelete]
         [Route("api/evaluationTools/{id}")]
         public Task<HttpResponseMessage> Delete(string id)

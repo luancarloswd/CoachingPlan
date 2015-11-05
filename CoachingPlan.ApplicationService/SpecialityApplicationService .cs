@@ -60,9 +60,9 @@ namespace CoachingPlan.ApplicationService
         public Speciality Update(ChangeSpecialityCommand command)
         {
             var speciality = _repository.GetOne(command.Id);
-            if(command.Name != null)
+            if(!string.IsNullOrEmpty(command.Name))
                 speciality.ChangeName(command.Name);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 speciality.ChangeDescription(command.Description);
 
             _repository.Update(speciality);

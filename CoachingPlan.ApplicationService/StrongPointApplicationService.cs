@@ -62,9 +62,9 @@ namespace CoachingPlan.ApplicationService
         public StrongPoint Update(ChangeStrongPointCommand command)
         {
             var StrongPoint = _repository.GetOne(command.Id);
-            if(command.Name != null)
+            if(!string.IsNullOrEmpty(command.Name))
                 StrongPoint.ChangeName(command.Name);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 StrongPoint.ChangeDescription(command.Description);
 
                 StrongPoint.ChangeClass(command.Class);

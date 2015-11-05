@@ -103,16 +103,16 @@ namespace CoachingPlan.ApplicationService
         public Address Update(ChangeAddressCommand command)
         {
             var address = _repository.GetOne(command.Id);
-            if(command.CEP != null)
+            if(!string.IsNullOrEmpty(command.CEP))
                 address.ChangeCEP(command.CEP);
-            if (command.City != null)
+            if (!string.IsNullOrEmpty(command.City))
                 address.ChangeCity(command.City);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 address.ChangeDescription(command.Description);
             if (command.Number != 0)
                 address.ChangeNumber(command.Number);
             address.ChangeState(command.State);
-            if(command.Street != null)
+            if(!string.IsNullOrEmpty(command.Street))
                 address.ChangeStreet(command.Street);
             address.ChangeType(command.Type);
 

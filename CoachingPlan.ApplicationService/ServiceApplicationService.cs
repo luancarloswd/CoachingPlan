@@ -61,9 +61,9 @@ namespace CoachingPlan.ApplicationService
         public Service Update(UpdateServiceCommand command)
         {
             var service = _repository.GetOne(command.Id);
-            if (command.Name != null)
+            if (!string.IsNullOrEmpty(command.Name))
                 service.ChangeName(command.Name);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 service.changeDescripion(command.Description);
 
             service.ChangeValue(command.Value);

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using SendGrid;
 using System.Net.Mail;
 using System.Configuration;
 using System.Net;

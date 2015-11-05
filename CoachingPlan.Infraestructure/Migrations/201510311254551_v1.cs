@@ -66,8 +66,8 @@ namespace CoachingPlan.Infraestructure.Migrations
                         Id_Avaliacao = c.Guid(nullable: false, identity: true),
                         a5_fk_coach_t11 = c.Guid(nullable: false),
                         a12_fk_sessao_t11 = c.Guid(nullable: false),
-                        Evaluation = c.Int(),
-                        Observation = c.String(unicode: false),
+                        Avaliacao = c.Int(),
+                        Observacao_Avaliacao = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.Id_Avaliacao)
                 .ForeignKey("dbo.a5_coach_tb", t => t.a5_fk_coach_t11, cascadeDelete: true)
@@ -102,8 +102,8 @@ namespace CoachingPlan.Infraestructure.Migrations
                         Id_Avaliacao = c.Guid(nullable: false, identity: true),
                         a5_fk_coachee_t12 = c.Guid(nullable: false),
                         a12_fk_sessao_t12 = c.Guid(nullable: false),
-                        Evaluation = c.Int(),
-                        Observation = c.String(unicode: false),
+                        Avaliacao = c.Int(),
+                        Observacao_Avaliacao = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.Id_Avaliacao)
                 .ForeignKey("dbo.a8_coachee_tb", t => t.a5_fk_coachee_t12, cascadeDelete: true)
@@ -129,17 +129,17 @@ namespace CoachingPlan.Infraestructure.Migrations
                     {
                         Id_Resposta = c.Guid(nullable: false, identity: true),
                         a20_Id_Frmt_Avaliacao_t6 = c.Guid(nullable: false),
+                        a8_Id_Coachee_t6 = c.Guid(nullable: false),
                         a11_Id_Processo_t6 = c.Guid(nullable: false),
-                        IdCoachingProcess = c.Guid(nullable: false),
-                        Data_Preenchimento = c.DateTime(nullable: false, storeType: "date"),
+                        Data_Preenchimento = c.DateTime(storeType: "date"),
                     })
                 .PrimaryKey(t => t.Id_Resposta)
-                .ForeignKey("dbo.a8_coachee_tb", t => t.a11_Id_Processo_t6, cascadeDelete: true)
-                .ForeignKey("dbo.a11_Processo_Coaching_tb", t => t.IdCoachingProcess, cascadeDelete: true)
+                .ForeignKey("dbo.a8_coachee_tb", t => t.a8_Id_Coachee_t6, cascadeDelete: true)
+                .ForeignKey("dbo.a11_Processo_Coaching_tb", t => t.a11_Id_Processo_t6, cascadeDelete: true)
                 .ForeignKey("dbo.a19_Frmt_Avaliacao_tb", t => t.a20_Id_Frmt_Avaliacao_t6, cascadeDelete: true)
                 .Index(t => t.a20_Id_Frmt_Avaliacao_t6)
-                .Index(t => t.a11_Id_Processo_t6)
-                .Index(t => t.IdCoachingProcess);
+                .Index(t => t.a8_Id_Coachee_t6)
+                .Index(t => t.a11_Id_Processo_t6);
             
             CreateTable(
                 "dbo.a19_Frmt_Avaliacao_tb",
@@ -160,7 +160,7 @@ namespace CoachingPlan.Infraestructure.Migrations
                         a20_Id_Frmt_Avaliacao_t13 = c.Guid(nullable: false),
                         a5_Id_Coach_t13 = c.Guid(nullable: false),
                         a11_Id_Processo_t13 = c.Guid(nullable: false),
-                        Data_Preenchimento = c.DateTime(nullable: false, storeType: "date"),
+                        Data_Preenchimento = c.DateTime(storeType: "date"),
                     })
                 .PrimaryKey(t => t.Id_Resposta)
                 .ForeignKey("dbo.a5_coach_tb", t => t.a5_Id_Coach_t13, cascadeDelete: true)
@@ -178,9 +178,9 @@ namespace CoachingPlan.Infraestructure.Migrations
                         a19_Id_Frmt_Avlc_a21 = c.Guid(nullable: false),
                         Tipo_Resposta_Questao = c.Int(nullable: false),
                         Tipo_Questao = c.Int(nullable: false),
-                        Fase_Questao = c.Int(nullable: false),
-                        Passo_Questao = c.Int(nullable: false),
-                        Enunciado_Questao = c.String(unicode: false),
+                        Fase_Questao = c.Int(),
+                        Passo_Questao = c.Int(),
+                        Enunciado_Questao = c.String(nullable: false, unicode: false),
                         Instrucao_Questao = c.String(unicode: false),
                         Grupo_Questao = c.String(maxLength: 20, storeType: "nvarchar"),
                     })
@@ -548,8 +548,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropForeignKey("dbo.t13_Prnchnt_Frmt_Coach_tb", "a5_Id_Coach_t13", "dbo.a5_coach_tb");
             DropForeignKey("dbo.t9_coach_ferramenta_tb", "a19_Id_Ferramenta_t9", "dbo.a5_coach_tb");
             DropForeignKey("dbo.t9_coach_ferramenta_tb", "a5_Id_Coach_t9", "dbo.a19_Frmt_Avaliacao_tb");
-            DropForeignKey("dbo.t6_Prnchmnt_Frmt_Coachee_tb", "IdCoachingProcess", "dbo.a11_Processo_Coaching_tb");
-            DropForeignKey("dbo.t6_Prnchmnt_Frmt_Coachee_tb", "a11_Id_Processo_t6", "dbo.a8_coachee_tb");
+            DropForeignKey("dbo.t6_Prnchmnt_Frmt_Coachee_tb", "a11_Id_Processo_t6", "dbo.a11_Processo_Coaching_tb");
+            DropForeignKey("dbo.t6_Prnchmnt_Frmt_Coachee_tb", "a8_Id_Coachee_t6", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.t8_coachee_processo_tb", "a11_Id_Processo_t8", "dbo.a11_Processo_Coaching_tb");
             DropForeignKey("dbo.t8_coachee_processo_tb", "a8_Id_Coachee_t8", "dbo.a8_coachee_tb");
             DropForeignKey("dbo.a12_Sessao_tb", "a11_Id_Processo_a12", "dbo.a11_Processo_Coaching_tb");
@@ -592,8 +592,8 @@ namespace CoachingPlan.Infraestructure.Migrations
             DropIndex("dbo.t13_Prnchnt_Frmt_Coach_tb", new[] { "a11_Id_Processo_t13" });
             DropIndex("dbo.t13_Prnchnt_Frmt_Coach_tb", new[] { "a5_Id_Coach_t13" });
             DropIndex("dbo.t13_Prnchnt_Frmt_Coach_tb", new[] { "a20_Id_Frmt_Avaliacao_t13" });
-            DropIndex("dbo.t6_Prnchmnt_Frmt_Coachee_tb", new[] { "IdCoachingProcess" });
             DropIndex("dbo.t6_Prnchmnt_Frmt_Coachee_tb", new[] { "a11_Id_Processo_t6" });
+            DropIndex("dbo.t6_Prnchmnt_Frmt_Coachee_tb", new[] { "a8_Id_Coachee_t6" });
             DropIndex("dbo.t6_Prnchmnt_Frmt_Coachee_tb", new[] { "a20_Id_Frmt_Avaliacao_t6" });
             DropIndex("dbo.a8_coachee_tb", new[] { "a4_Id_Usuario_a8" });
             DropIndex("dbo.t12_coachee_avaliacao_tb", new[] { "a12_fk_sessao_t12" });

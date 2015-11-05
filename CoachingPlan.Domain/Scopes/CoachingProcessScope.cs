@@ -25,7 +25,7 @@ namespace CoachingPlan.Domain.Scopes
         public static bool ChangeEndDateScopeIsValid(this CoachingProcess coachingProcess, DateTime endDate)
         {
             return AssertionConcern.IsSatisfiedBy(
-                           AssertionConcern.AssertArgumentIsGreaterOrEqualThan(coachingProcess.StartDate, endDate, Errors.StartDateIsRequired)
+                           AssertionConcern.AssertArgumentIsGreaterOrEqualThan(endDate, coachingProcess.StartDate, Errors.StartDateIsRequired)
                 );
         }
         public static bool ChangeStartDateScopeIsValid(this CoachingProcess coachingProcess, DateTime startDate)

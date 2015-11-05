@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ed1d2dbc-f100-4876-90be-656ad26e0dc8"
+  name="Enums"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="5b4e3f74-18cf-4fb5-aadf-08047d21a4ba"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCoachingPlan.Domain.Enums"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="83d334ef-020b-475e-a660-1f0992b7a0e5"
+        name="EStates"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="4ba16033-6df2-475d-9a01-fa41f62672b4"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEStates"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="eacf9e6c-1d44-42f4-b5e3-412daa082025"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="142407a4-9b81-40f9-a617-2625bda006b2">
+                <propertyInstance
+                  Id="f8ff3272-d916-471c-9455-f41f0dcabec1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="401f182e-a911-40f8-8176-ba383349f28f">
+                <propertyInstance
+                  Id="2750225c-028f-44d4-b039-91a7b8b1d18c"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b33d4074-3826-4c3a-8e7f-fa71ecef820b">
+                <propertyInstance
+                  Id="2df52667-886e-494b-992a-694dde598e2f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="d82e0f22-2b27-47bd-8203-c747b70091da"
+        name="EAddressType"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="4e90795e-a47a-4dbe-b995-443dcbc41834"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEAddressType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="34f642a6-22a1-4a2b-ae07-ec0a21d9a124"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fa3cc3dd-a0ff-4b06-826a-9d2f9ba33ae9">
+                <propertyInstance
+                  Id="37285106-49f0-4f3c-9aa2-5d85cdc4f484"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2ad97684-b405-4600-978e-b6ee7a4f96fd">
+                <propertyInstance
+                  Id="f004a171-1369-4d60-833f-4c801da43a45"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab135df2-1323-4ee1-85fb-eeb29a220332">
+                <propertyInstance
+                  Id="f620d246-9031-4043-bd67-6e0112299487"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="0a0f2fde-7d63-453c-87a7-f2272a25d092"
+        name="EGenre"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="0587c068-3645-4fea-bbee-39d9cc27ef9f"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEGenre"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d649d6cf-9f80-40a7-aa68-a7324b1e8f8f"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ba93610-9d60-4f27-a645-245ca1bda65f">
+                <propertyInstance
+                  Id="60caf59d-a85b-4c45-84fc-d5a6460fe1be"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="64d38e31-fda9-42f9-aee8-38bbdba5f03c">
+                <propertyInstance
+                  Id="e7b123e0-e92c-4821-8888-784b02f29b29"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a86cbd87-1132-40eb-8b75-2cbf8e5df60a">
+                <propertyInstance
+                  Id="d3323514-1b29-4cd8-bc78-e3b3f9f0930a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="a35159be-9f9b-4cad-aaa6-f3399d63cf00"
+        name="EBudgetStatus"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="10b2c2a2-fae2-42b1-8769-7e2d181cabd4"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEBudgetStatus"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="92eacbee-e9e0-4cac-bb4a-8485cbf45e32"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48d5731e-372b-43c6-ba4f-8a467a0e2591">
+                <propertyInstance
+                  Id="6f8fa04b-aaa2-4d95-b6c5-711605f0f61e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="320a9950-f0c1-473c-92d0-0f2003d08a0e">
+                <propertyInstance
+                  Id="1c1943a6-a998-4143-881e-7446128b5b25"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1eff752e-b22c-47fb-9629-3a2a74861920">
+                <propertyInstance
+                  Id="7af6e683-8f42-444c-bc44-15eb2b03fb53"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="3df10b4a-73a9-480b-a6c6-3d6fd9c1866e"
+        name="ETypeEvaluationTool"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="adaaa20b-05ad-4e9b-bc02-db97ec686d1b"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DETypeEvaluationTool"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bbaa38a9-b590-4515-b429-b223da86ff06"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b62b977c-0705-44b3-9411-fe6f1bd83d05">
+                <propertyInstance
+                  Id="b56a2a33-7464-49ee-bca4-bda70f780788"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9d0002d-5310-4d60-898e-5bfaab351f2d">
+                <propertyInstance
+                  Id="7e27f957-b16c-4f45-be60-d36ec959828d"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f9eb55af-2b57-48ef-a99c-9bf555c56fb8">
+                <propertyInstance
+                  Id="23ff2360-78fb-4730-b4bf-e9f8ef610464"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="158180ba-dac8-4393-ace4-68165d94f024"
+        name="ETypeReply"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="77252e43-fa23-4499-ae5c-cb3e8291d416"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DETypeReply"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="45aaeab2-33ae-4a48-bd40-8f21c76d685d"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98b026ec-49c9-45c3-af7a-53e6c1aad9ef">
+                <propertyInstance
+                  Id="b09ef7be-2e3e-4d47-a626-e97cf5ce19cf"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="265a6519-aa29-4a06-a661-8a3855699f7f">
+                <propertyInstance
+                  Id="04a55432-ea0d-46f1-9b82-3cda6ef92258"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0a7217ac-e057-4944-b349-1bce0efef006">
+                <propertyInstance
+                  Id="16f252f0-02fb-4f05-b184-1b22afe77b7d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="e0615d98-6766-4f92-8deb-8bcf46008b11"
+        name="ETypeQuestion"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="dfb08897-1b46-4e0e-981d-701730a60514"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DETypeQuestion"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="626ae830-0fac-4848-84c0-765cd3736a47"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da13bdeb-171a-4912-b147-4464b74eb9ce">
+                <propertyInstance
+                  Id="ae7a2b30-d4d9-4f4b-9949-f8faae8d2540"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="97e1996d-7e2f-41e5-a14b-4ce576855297">
+                <propertyInstance
+                  Id="8861e0f0-6ea0-4774-b350-d5d6053c4e12"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c9bf2cbb-2eb3-4cfd-831b-0eb7ca88f22b">
+                <propertyInstance
+                  Id="2bc2e98d-4ace-4dc1-8cde-5c5b5e21d29e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="a73e8408-1060-450d-a623-b3395bfc0b71"
+        name="ESessionClassification"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="181139d3-0fad-4a79-80de-d8a6b61fd616"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DESessionClassification"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7449c174-3cea-4151-90f2-c1a17b090f76"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="36d2b7a1-80e2-4397-8a74-a082365844aa">
+                <propertyInstance
+                  Id="96b8831c-dae2-401a-b7dc-bf429e10a157"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ef6cd8d4-0f47-4616-a95a-f19f3b82b9c5">
+                <propertyInstance
+                  Id="2f6e284e-b5e4-45ee-8294-803dda1b43d0"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e36757b3-580a-4fcc-a29d-dd44ce65f6e6">
+                <propertyInstance
+                  Id="da1393d9-42c4-43d5-83fa-8659f64c44df"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="dc5d5eab-37de-457a-8f0f-af4eef99f05a"
+        name="EClassStrongPoint"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="35f4bc47-354b-4fc7-b7c9-1f8a301cb68e"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEClassStrongPoint"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d9029810-642c-44e7-af0f-99bd2a172f0e"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e31ebca2-b1e6-4de4-a747-51ba5fa2bb5c">
+                <propertyInstance
+                  Id="eb00ca9c-92b4-458a-bef3-68b634173f74"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="93e324b2-b02c-4563-9cf6-f427fedee66c">
+                <propertyInstance
+                  Id="14c80b52-a200-4b66-8af4-6b4229e0597a"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e61ab97-e287-4f10-8d09-bdc5efdae1f6">
+                <propertyInstance
+                  Id="d2018fa6-b103-4c10-8226-a37c09bb4b76"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="94ea99b8-21df-4629-b7a7-b1e063b25834"
+        name="EModeProcess"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="6727e458-e27a-49ee-8db0-d42936136363"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3D&quot;file:%2F%2F%2FE:%2FCOACHING PLAN%2FCoachingPlan%2FCoachingPlan.Domain%2Fbin%2FDebug%2FCoachingPlan.Domain.dll&quot; Namespace%3DCoachingPlan.Domain.Enums Type%3DEModeProcess"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e033b937-791b-4c68-97cf-af7275111674"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e5394084-2920-4ae6-a19b-329a748190df">
+                <propertyInstance
+                  Id="e4097c74-efa1-4d24-bc10-9f783e33f52e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bd3df75e-8414-42cd-b834-485ea52ea7a5">
+                <propertyInstance
+                  Id="7fecfdc4-ddc3-42d2-9083-45cd83ec7047"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7ab62039-faf3-4d8a-9faa-2aa167cabbb6">
+                <propertyInstance
+                  Id="df958061-4cfb-443e-a654-1e826a3221be"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -104,6 +104,10 @@ namespace CoachingPlan.ApplicationService
         public Question Update(UpdateQuestionCommand command)
         {
             var Question = _repository.GetOne(command.Id);
+            if (!string.IsNullOrEmpty(command.Enunciation))
+                Question.ChangeEnunciation(command.Enunciation);
+            if (!string.IsNullOrEmpty(command.Education))
+                Question.ChangeEducation(command.Education);
             if (command.PhaseQuestion != null)
                 Question.ChangePhaseQuestion(command.PhaseQuestion);
             if (command.StepQuestion != null)
@@ -154,9 +158,9 @@ namespace CoachingPlan.ApplicationService
         private Question Update(UpdateQuestionCommandWheel command)
         {
             var Question = _repository.GetOne(command.Id);
-            if (command.Enunciation != null)
+            if (!string.IsNullOrEmpty(command.Enunciation))
                 Question.ChangeEnunciation(command.Enunciation);
-            if (command.Education != null)
+            if (!string.IsNullOrEmpty(command.Education))
                 Question.ChangeEducation(command.Education);
 
             if (command.Reply.Count > 0)
@@ -174,9 +178,9 @@ namespace CoachingPlan.ApplicationService
         private Question Update(UpdateQuestionCommandScript command)
         {
             var Question = _repository.GetOne(command.Id);
-            if (command.Enunciation != null)
+            if (!string.IsNullOrEmpty(command.Enunciation))
                 Question.ChangeEnunciation(command.Enunciation);
-            if (command.Education != null)
+            if (!string.IsNullOrEmpty(command.Education))
                 Question.ChangeEducation(command.Education);
 
             if (command.Reply.Count > 0)

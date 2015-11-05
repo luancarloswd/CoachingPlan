@@ -19,7 +19,7 @@
         LastKnownLocation="Package2_1159.uml" />
     </dependency>
     <dependency
-      Id="63789d1b-483c-4269-a9a0-b9826ff0b78f">
+      Id="ff545776-c18a-4f15-86d5-a82ed729bbee">
       <packageMoniker
         Id="ca2a6026-44a2-4589-9743-8477f248db06"
         LastKnownName="SharedKernel"

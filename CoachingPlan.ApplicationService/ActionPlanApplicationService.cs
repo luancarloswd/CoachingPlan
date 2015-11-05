@@ -62,7 +62,7 @@ namespace CoachingPlan.ApplicationService
         public ActionPlan Update(UpdateActionPlanCommand command)
         {
             var ActionPlan = _repository.GetOne(command.Id);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 ActionPlan.ChangeDescription(command.Description);
 
             if (command.Objective != null)

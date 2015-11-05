@@ -74,9 +74,9 @@ namespace CoachingPlan.ApplicationService
         public EvaluationTool Update(UpdateEvaluationToolCommand command)
         {
             var evaluationTool = _repository.GetOne(command.Id);
-            if (command.Author != null)
+            if (!string.IsNullOrEmpty(command.Author))
                 evaluationTool.ChangeAuthor(command.Author);
-            if (command.Name != null)
+            if (!string.IsNullOrEmpty(command.Name))
                 evaluationTool.ChangeName(command.Name);
             if (command.Type != 0)
                 evaluationTool.ChangeType(command.Type);

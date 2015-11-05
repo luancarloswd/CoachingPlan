@@ -40,7 +40,7 @@ namespace CoachingPlan.Infraestructure.Data.Map
             Property(x => x.EvaluationDate)
                 .HasColumnName("Data_Preenchimento")
                 .HasColumnType("Date")
-                .IsRequired();
+                .IsOptional();
         }
     }
 }

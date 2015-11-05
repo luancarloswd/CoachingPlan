@@ -6,21 +6,44 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2015-06-04T11:35:29" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual' -  (Package)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Papel' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Medium" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel' -  (Class)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::ID_PAPEL' -  (Property)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::ID_USUARIO' -  (Property)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::IDENTITYUSER_ID' -  (Property)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::Papel' -  (Property)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::Usuario' -  (Property)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel::Usuario_Papel' -  (Operation)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel to CoachingPlan::DiagramadeClassesConceitual::Usuario (Association)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: CoachingPlan::DiagramadeClassesConceitual::Usuario_Papel to CoachingPlan::DiagramadeClassesConceitual::Papel (Association)" />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="High" Text="(2) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2015-06-04T11:35:30" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2015-11-03T18:42:34" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '19809cd5-34d4-4616-98de-5f6838cc6823' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::CoachingProcess' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Medium" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service' -  (Class)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::AddCoachingProcess' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::AddCoachingProcess::coachingProcess' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::changeDescripion' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::changeDescripion::description' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::ChangeName' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::ChangeName::name' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::ChangeValue' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::ChangeValue::value' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::CoachingProcess' -  (Property)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Description' -  (Property)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Id' -  (Property)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Name' -  (Property)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Service' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Service::coachingProcess' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Service::description' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Service::name' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Service::value' -  (Parameter)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Validate' -  (Operation)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::CoachingPlan::Domain::Models::Service::Value' -  (Property)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Collections::Generic::ICollection' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Collections::Generic::ICollection&lt;CoachingProcess‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Guid' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'CoachingPlan::System::Single' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: CoachingPlan::CoachingPlan::Domain::Models::Service to CoachingPlan::System::Collections::Generic::ICollection&lt;CoachingProcess‎&gt; (Association)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: CoachingPlan::CoachingPlan::Domain::Models::Service to CoachingPlan::System::Guid (Association)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: CoachingPlan::CoachingPlan::Domain::Models::Service to CoachingPlan::System::Single (Association)" />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="High" Text="(5) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-11-03T18:43:15" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

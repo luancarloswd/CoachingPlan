@@ -14,10 +14,10 @@ using System.Security.Claims;
 using System.Linq;
 using CoachingPlan.Domain.Commands.EvaluationCoachCommands;
 using CoachingPlan.Domain.Commands.EvaluationCoacheeCommands;
+using Microsoft.AspNet.Identity;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator, Coach, SessionManager")]
     public class SessionController : BaseController
     {
         private readonly ISessionApplicationService _serviceSession;
@@ -46,6 +46,7 @@ namespace CoachingPlan.Api.Controllers
             this._serviceUser = serviceUser;
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager, Coachee")]
         [HttpGet]
         [Route("api/sessions")]
         public Task<HttpResponseMessage> Get()
@@ -55,6 +56,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, sessions);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager, Coachee")]
         [HttpGet]
         [Route("api/sessions/{id}")]
         public Task<HttpResponseMessage> Get(string id)
@@ -63,137 +65,40 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, session);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager, Coachee")]
         [HttpGet]
         [Route("api/sessions/byCoachingProcess/{id}")]
         public Task<HttpResponseMessage> GetByCoachingProcess(string id)
         {
             var sessions = _serviceSession.GetAllByCoachingProcess(Guid.Parse(id));
+
+            ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
+            var role = principal.Claims.Where(c => c.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Single().Value;
+            if (role == "Coachee")
+            {
+                foreach (var session in sessions)
+                {
+                     foreach (var evaluation in session.EvaluationCoachee)
+                        if (evaluation.Coachee.IdUser == User.Identity.GetUserId())
+                            return CreateResponse(HttpStatusCode.OK, sessions);
+                }
+                return CreateResponse(HttpStatusCode.Unauthorized, null);
+            }
+
             return CreateResponse(HttpStatusCode.OK, sessions);
         }
+
+        [Authorize(Roles = "Administrator, Coach, SessionManager, Coachee")]
         [HttpPost]
         [Route("api/sessions/search")]
         public Task<HttpResponseMessage> Search([FromBody]dynamic body)
         {
-            List<Session> sessions = new List<Session>();
-            if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && string.IsNullOrEmpty((string)body.idCoachingProcess))
-                sessions = _serviceSession.GetAll();
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-                sessions = _serviceSession.GetAllByCoachingProcess(Guid.Parse((string)body.idCoachingProcess));
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-                sessions = _serviceSession.GetAllByClassificationAndCoachingProcess((ESessionClassification)body.classificationSession, Guid.Parse((string)body.idCoachingProcess));
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByCoachAndCoachingProcess(person, Guid.Parse((string)body.idCoachingProcess)))
-                        sessions.Add(session);
-                }
-            }
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByCoacheeAndCoachingProcess(person, Guid.Parse((string)body.idCoachingProcess)))
-                        sessions.Add(session);
-                }
-            }
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByClassificationAndCoachAndCoachingProcess((ESessionClassification)body.classificationSession, person, Guid.Parse((string)body.idCoachingProcess)))
-                        sessions.Add(session);
-                }
-            }
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByClassificationAndCoacheeAndCoachingProcess((ESessionClassification)body.classificationSession, person, Guid.Parse((string)body.idCoachingProcess)))
-                        sessions.Add(session);
-                }
-            }
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                    {
-                        foreach (var session in _serviceSession.GetAllByCoachAndCoacheeAndCoachingProcess(personCoach, personCoachee, Guid.Parse((string)body.idCoachingProcess)))
-                            sessions.Add(session);
-                    }
-                }
-            }
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
-            {
-                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                    {
-                        foreach (var session in _serviceSession.GetAllByCoachAndCoacheeAndClassificationAndCoachingProcess(personCoach, personCoachee, (ESessionClassification)body.classificationSession, Guid.Parse((string)body.idCoachingProcess)))
-                            sessions.Add(session);
-                    }
-                }
-            }
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
-                sessions = _serviceSession.GetAllByClassification((ESessionClassification)body.classificationSession);
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByCoach(person))
-                        sessions.Add(session);
-                }
-            }
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByCoachee(person))
-                        sessions.Add(session);
-                }
-            }
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByClassificationAndCoach((ESessionClassification)body.classificationSession, person))
-                    sessions.Add(session);
-                }
-            }
-            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
-            {
-                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var session in _serviceSession.GetAllByClassificationAndCoachee((ESessionClassification)body.classificationSession, person))
-                        sessions.Add(session);
-                }
-            }
-            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
-            {
-                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                    {
-                        foreach (var session in _serviceSession.GetAllByCoachAndCoachee(personCoach, personCoachee))
-                            sessions.Add(session);
-                    }
-                }
-            }
-            else
-            {
-                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
-                {
-                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
-                    {
-                        foreach (var session in _serviceSession.GetAllByCoachAndCoacheeAndClassification(personCoach, personCoachee, (ESessionClassification)body.classificationSession))
-                            sessions.Add(session);
-                    }
-                }
-            }
+            List<Session> sessions = _serviceSession.Search(body);
+
             return CreateResponse(HttpStatusCode.Created, sessions);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager")]
         [HttpPost]
         [Route("api/sessions")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
@@ -221,6 +126,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, session);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager, Coachee")]
         [HttpPut]
         [Route("api/sessions/evaluation")]
         public Task<HttpResponseMessage> Evaluation([FromBody]dynamic body)
@@ -238,6 +144,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, true);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager")]
         [HttpPut]
         [Route("api/sessions")]
         public Task<HttpResponseMessage> Put([FromBody]dynamic body)
@@ -275,6 +182,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.Created, session);
         }
 
+        [Authorize(Roles = "Administrator, Coach, SessionManager")]
         [HttpDelete]
         [Route("api/sessions/{id}")]
         public Task<HttpResponseMessage> Delete(string id)

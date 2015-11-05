@@ -72,7 +72,7 @@ namespace CoachingPlan.ApplicationService
             var evaluation = _repository.GetOne(command.Id);
             if (command.Evaluation > 0)
                 evaluation.ChangeEvaluation(command.Evaluation);
-            if (command.Observation != null)
+            if (!string.IsNullOrEmpty(command.Observation))
                 evaluation.ChangeObservation(command.Observation);
 
             _repository.Update(evaluation);

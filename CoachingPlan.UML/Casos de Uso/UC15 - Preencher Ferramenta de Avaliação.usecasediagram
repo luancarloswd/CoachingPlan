@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="91b3342a-83f1-4fd3-a6aa-27046c5a16f0" name="UC15 - Preencher Ferramenta de Avaliação" linkedPackageId="a6ee2c8f-849f-4643-ad21-0d48e110b56a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="91b3342a-83f1-4fd3-a6aa-27046c5a16f0" name="UC15 - Preencher Ferramenta de Avaliação" linkedPackageId="a6ee2c8f-849f-4643-ad21-0d48e110b56a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <profileInstances>
-    <packageHasProfileInstances Id="ab653530-1024-4e92-b4ab-26f696bfe3d3">
-      <profileInstance Id="461672ef-510d-4583-a99d-b1f09fc9a264" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="42efc1ab-e1b2-43d9-b10b-6795c0592db9">
+      <profileInstance Id="4c4462e1-a201-4869-a9e8-b03689bd7735" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="2a0dfd08-5f33-4b83-a345-9a94a3022dcd">
-      <profileInstance Id="b01c1f4f-e3d9-4acf-8ae2-be30f1bc7046" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <useCase Id="514fe6d3-f037-439b-9b8e-1cfad210699d" name="UC15-Preencher Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
         <elementDefinition Id="17a67882-440a-47aa-b896-4d8f5b2849e4" />
+        <extendedCases>
+          <extend Id="7fa9a182-792a-4d10-84e9-82174eb22ddc">
+            <useCaseMoniker Id="a71b3b5f-cf7c-4d8b-8daa-c79caac3ccd4" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="a5ecd148-ec19-4170-820c-46573b68df5d" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -35,21 +35,21 @@
       <actor Id="5958a3d8-764c-4f67-9d67-e77b110feca9" name="Coachee" isAbstract="false" isLeaf="false">
         <elementDefinition Id="1990fc6e-c832-4ae5-b65e-cc45f0788aa5" />
         <targetEnds>
-          <association Id="13675fc3-4f42-4d38-87ad-c0ff3f18d504" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="Preencher Ferramenta de avaliação" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="514fe6d3-f037-439b-9b8e-1cfad210699d" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
+          <association Id="8b915507-613a-4252-a366-a2a7ea63385a" isDerived="false" sourceEndRoleName="Coachee" targetEndRoleName="UC12-Acompanhar Processo de coaching" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a71b3b5f-cf7c-4d8b-8daa-c79caac3ccd4" LastKnownName="UC12-Acompanhar Processo de Coaching" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="350fff66-fb0c-4d50-9939-287696232cb3" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e7d23311-e8ce-49c7-aab1-13fdea132dcc" />
+                <memberEnd Id="9d0fc6a5-8865-4c3a-96e2-427ba7b2f634" name="Coachee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a67fe57-a7be-4803-bbdc-dd2b54aa1824" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="1f845e75-8d57-4141-9292-87ff17fa10e0" name="Preencher Ferramenta de avaliação" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="4db8d866-2b40-4638-b53b-5ecec6d7942d" />
+                <memberEnd Id="7b0b05d7-899a-49db-8c1d-7993b112dfd6" name="UC12-Acompanhar Processo de coaching" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0873addf-7adb-4215-9ce2-94072a4d78b8" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2e2c035b-a12a-49ef-a8fb-f923a5ad0fc9" />
+            <elementDefinition Id="592dc6e2-a1e5-4ba5-b91f-c0a391029ad2" />
           </association>
         </targetEnds>
       </actor>
@@ -77,18 +77,26 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="bf2d1cef-e657-4670-b4ea-d79e4a2d20aa" name="Editar Respostas" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="35c51f97-d737-48a8-a622-4f6bb2a17931" />
-        <suppliersInternal>
-          <dependency Id="752fd7de-213e-47fd-a971-a9ce65816eca">
-            <useCaseMoniker Id="514fe6d3-f037-439b-9b8e-1cfad210699d" LastKnownName="UC15-Preencher Ferramenta de Avaliação" />
-            <elementDefinition Id="ac797049-9341-49a2-a98a-1c008bfa67bd" />
-          </dependency>
-        </suppliersInternal>
+      <useCase Id="a71b3b5f-cf7c-4d8b-8daa-c79caac3ccd4" name="UC12-Acompanhar Processo de Coaching" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="a6ee2c8f-849f-4643-ad21-0d48e110b56a" name="CoachingPlan">
     <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ab653530-1024-4e92-b4ab-26f696bfe3d3">
+        <profileInstance Id="461672ef-510d-4583-a99d-b1f09fc9a264" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2a0dfd08-5f33-4b83-a345-9a94a3022dcd">
+        <profileInstance Id="b01c1f4f-e3d9-4acf-8ae2-be30f1bc7046" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

@@ -12,8 +12,6 @@ using Owin;
 using System;
 using System.Web.Http;
 using CoachingPlan.SharedKernel;
-using CoachingPlan.Infraestructure.Data;
-using CoachingPlan.Infraestructure.Identity;
 
 namespace CoachingPlan.API
 {

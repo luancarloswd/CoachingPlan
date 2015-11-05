@@ -62,7 +62,7 @@ namespace CoachingPlan.ApplicationService
         public Budget Update(UpdateBudgetCommand command)
         {
             var budget = _repository.GetOne(command.Id);
-            if (command.Proposal != null)
+            if (!string.IsNullOrEmpty(command.Proposal))
                 budget.ChangeProposal(command.Proposal);
             if (command.Price != 0)
                 budget.ChangePrice(command.Price);

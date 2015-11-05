@@ -67,7 +67,7 @@ namespace CoachingPlan.ApplicationService
         public Reply Update(UpdateReplyCommand command)
         {
             var Reply = _repository.GetOne(command.Id);
-            if (command.BodyReply != null)
+            if (!string.IsNullOrEmpty(command.BodyReply))
                 Reply.ChangeBodyReply(command.BodyReply);
 
             Reply.ChangeStatus(command.Status);

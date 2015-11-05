@@ -11,14 +11,16 @@ namespace CoachingPlan.ApplicationService
     public class SessionApplicationService : BaseApplicationService, ISessionApplicationService
     {
         private ISessionRepository _repositorySession;
+        private IPersonApplicationService _servicePerson;
         private ICoacheeRepository _repositoryCoachee;
         private ICoachRepository _repositoryCoach;
 
-        public SessionApplicationService(ISessionRepository repositorySession, ICoacheeRepository repositoryCoachee, ICoachRepository repositoryCoach,  IUnitOfWork unitOfWork) : base(unitOfWork)
+        public SessionApplicationService(IPersonApplicationService servicePerson, ISessionRepository repositorySession, ICoacheeRepository repositoryCoachee, ICoachRepository repositoryCoach,  IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this._repositorySession = repositorySession;
             this._repositoryCoachee = repositoryCoachee;
             this._repositoryCoach = repositoryCoach;
+            this._servicePerson = servicePerson;
         }
       
 
@@ -38,6 +40,130 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
+
+        public List<Session> Search(dynamic body)
+        {
+            List<Session> sessions = new List<Session>();
+            if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && string.IsNullOrEmpty((string)body.idCoachingProcess))
+                sessions = GetAll();
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+                sessions = GetAllByCoachingProcess(Guid.Parse((string)body.idCoachingProcess));
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+                sessions = GetAllByClassificationAndCoachingProcess((ESessionClassification)body.classificationSession, Guid.Parse((string)body.idCoachingProcess));
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                {
+                    foreach (var session in GetAllByCoachAndCoachingProcess(person, Guid.Parse((string)body.idCoachingProcess)))
+                        sessions.Add(session);
+                }
+            }
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var session in GetAllByCoacheeAndCoachingProcess(person, Guid.Parse((string)body.idCoachingProcess)))
+                        sessions.Add(session);
+                }
+            }
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                {
+                    foreach (var session in GetAllByClassificationAndCoachAndCoachingProcess((ESessionClassification)body.classificationSession, person, Guid.Parse((string)body.idCoachingProcess)))
+                        sessions.Add(session);
+                }
+            }
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var session in GetAllByClassificationAndCoacheeAndCoachingProcess((ESessionClassification)body.classificationSession, person, Guid.Parse((string)body.idCoachingProcess)))
+                        sessions.Add(session);
+                }
+            }
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                    {
+                        foreach (var session in GetAllByCoachAndCoacheeAndCoachingProcess(personCoach, personCoachee, Guid.Parse((string)body.idCoachingProcess)))
+                            sessions.Add(session);
+                    }
+                }
+            }
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0 && !string.IsNullOrEmpty((string)body.idCoachingProcess))
+            {
+                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                    {
+                        foreach (var session in GetAllByCoachAndCoacheeAndClassificationAndCoachingProcess(personCoach, personCoachee, (ESessionClassification)body.classificationSession, Guid.Parse((string)body.idCoachingProcess)))
+                            sessions.Add(session);
+                    }
+                }
+            }
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
+                sessions = GetAllByClassification((ESessionClassification)body.classificationSession);
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                {
+                    foreach (var session in GetAllByCoach(person))
+                        sessions.Add(session);
+                }
+            }
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var session in GetAllByCoachee(person))
+                        sessions.Add(session);
+                }
+            }
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                {
+                    foreach (var session in GetAllByClassificationAndCoach((ESessionClassification)body.classificationSession, person))
+                        sessions.Add(session);
+                }
+            }
+            else if (string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession != 0)
+            {
+                foreach (var person in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var session in GetAllByClassificationAndCoachee((ESessionClassification)body.classificationSession, person))
+                        sessions.Add(session);
+                }
+            }
+            else if (!string.IsNullOrEmpty((string)body.coach.user.person.name) && !string.IsNullOrEmpty((string)body.coachee.user.person.name) && (int)body.classificationSession == 0)
+            {
+                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                    {
+                        foreach (var session in GetAllByCoachAndCoachee(personCoach, personCoachee))
+                            sessions.Add(session);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var personCoachee in _servicePerson.GetAllByNameIncludeCoachee((string)body.coachee.user.person.name))
+                {
+                    foreach (var personCoach in _servicePerson.GetAllByNameIncludeCoach((string)body.coach.user.person.name))
+                    {
+                        foreach (var session in GetAllByCoachAndCoacheeAndClassification(personCoach, personCoachee, (ESessionClassification)body.classificationSession))
+                            sessions.Add(session);
+                    }
+                }
+            }
+
+            return sessions;
+        } 
+
 
         public Session Delete(Guid idSession)
         {
@@ -154,7 +280,7 @@ namespace CoachingPlan.ApplicationService
                 session.ChangeTheme(command.Theme);
             if (command.CoachingProcess != null)
                 session.ChangeCoachingProcess(command.CoachingProcess);
-            if (command.Observation != null)
+            if (!string.IsNullOrEmpty(command.Observation))
                 session.ChangeObservation(command.Observation);
 
             if (command.Coach != null)

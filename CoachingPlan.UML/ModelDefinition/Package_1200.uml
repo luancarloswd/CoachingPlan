@@ -5,21 +5,28 @@
   name="CrossCutting" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <suppliersInternal>
     <dependency
-      Id="8790b2a6-8482-4fa8-94f6-93967ceed536">
+      Id="e10e175f-df81-45f7-91f5-1e8867909e78">
       <packageMoniker
-        Id="89a412f4-b732-42e1-a00d-14653532d6aa"
-        LastKnownName="Domain"
-        LastKnownLocation="Package1_1159.uml" />
+        Id="ca2a6026-44a2-4589-9743-8477f248db06"
+        LastKnownName="SharedKernel"
+        LastKnownLocation="Package3_1159.uml" />
     </dependency>
     <dependency
-      Id="c5e09f09-d235-4418-a1a1-490f4bfe1c44">
+      Id="3cddb26a-d54c-4ab4-a129-34f2294084f5">
       <packageMoniker
         Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c"
         LastKnownName="Infraestructure"
         LastKnownLocation="Package2_1159.uml" />
     </dependency>
     <dependency
-      Id="95878c7e-3ec3-4a44-892d-9d2098a2bbf7">
+      Id="0b052a76-d876-49b3-8274-f89a2e576017">
+      <packageMoniker
+        Id="89a412f4-b732-42e1-a00d-14653532d6aa"
+        LastKnownName="Domain"
+        LastKnownLocation="Package1_1159.uml" />
+    </dependency>
+    <dependency
+      Id="299f24ae-1557-4c24-81b3-34463b937c55">
       <packageMoniker
         Id="02da7dcf-c87c-4d6c-b98f-8672a8ebddaa"
         LastKnownName="ApplicationService"

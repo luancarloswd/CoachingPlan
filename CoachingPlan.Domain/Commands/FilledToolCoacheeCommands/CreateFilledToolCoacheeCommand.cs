@@ -8,7 +8,7 @@ namespace CoachingPlan.Domain.Commands.FilledToolCoacheeCommands
         public Guid Id { get; set; }
         public Guid IdEvaluationTool { get; set; }
         public Guid IdCoachee { get; set; }
-        public DateTime EvaluationDate { get; set; }
+        public Nullable<DateTime> EvaluationDate { get; set; }
         public Guid IdCoachingProcess { get; set; }
 
         public virtual CoachingProcess CoachingProcess { get; set;}

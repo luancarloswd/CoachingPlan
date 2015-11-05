@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="75276a6f-1c91-4003-9d0d-384e73684011"
   name="API" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <suppliersInternal>
     <dependency
-      Id="742ef085-4db2-4fc2-935b-cb53da4b7fd8">
-      <packageMoniker
-        Id="02da7dcf-c87c-4d6c-b98f-8672a8ebddaa"
-        LastKnownName="Business"
-        LastKnownLocation="Package_1159.uml" />
-    </dependency>
-    <dependency
-      Id="270a1bec-63a0-486d-86d0-33814a65e6bf">
+      Id="bc5b58f1-f871-4089-a835-702e9fbee264">
       <packageMoniker
         Id="c53af1d3-70de-4626-a222-ff4362ebf5cb"
-        LastKnownName="Startup"
+        LastKnownName="CrossCutting"
         LastKnownLocation="Package_1200.uml" />
     </dependency>
     <dependency
-      Id="ab5d8624-84d4-417e-b0ca-b81b5cbfeb11">
+      Id="87beddad-e8ef-4305-ab07-8e86e4a980e0">
       <packageMoniker
         Id="ca2a6026-44a2-4589-9743-8477f248db06"
-        LastKnownName="Resources"
+        LastKnownName="SharedKernel"
         LastKnownLocation="Package3_1159.uml" />
+    </dependency>
+    <dependency
+      Id="e63c7482-6b3e-4ffc-9e66-156c7367ab5a">
+      <packageMoniker
+        Id="89a412f4-b732-42e1-a00d-14653532d6aa"
+        LastKnownName="Domain"
+        LastKnownLocation="Package1_1159.uml" />
     </dependency>
   </suppliersInternal>
   <packagedElements>

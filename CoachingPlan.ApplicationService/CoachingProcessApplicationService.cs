@@ -63,6 +63,12 @@ namespace CoachingPlan.ApplicationService
         {
             return _repository.GetAllByService(idService);
         }
+
+        public List<CoachingProcess> GetAllByCoachee(string idCoachee)
+        {
+            return _repository.GetAllByCoachee(idCoachee);
+        }
+
         public CoachingProcess Update(UpdateCoachingProcessCommand command)
         {
             var coachingProcess = _repository.GetOneIncludeDetails(command.Id);
@@ -75,7 +81,7 @@ namespace CoachingPlan.ApplicationService
                 coachingProcess.ChangeMode(command.Mode);
             if (command.EndDate != DateTime.MinValue)
                 coachingProcess.ChangeEndDate(command.EndDate);
-            if (command.Observation != null)
+            if (!string.IsNullOrEmpty(command.Observation))
                 coachingProcess.ChangeObservation(command.Observation);
             if (command.PerformaceIndicator != null)
             {

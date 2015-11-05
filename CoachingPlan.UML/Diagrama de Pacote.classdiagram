@@ -17,9 +17,9 @@
                   <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
                   <elementDefinition Id="b7e2e095-bcea-4221-b357-a6d3760e0151" />
                 </dependency>
-                <dependency Id="bfc99e20-cadd-4994-81b0-4d45b8bab37a">
+                <dependency Id="19a903fb-6305-4787-85f9-dde04da84385">
                   <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
-                  <elementDefinition Id="63789d1b-483c-4269-a9a0-b9826ff0b78f" />
+                  <elementDefinition Id="ff545776-c18a-4f15-86d5-a82ed729bbee" />
                 </dependency>
               </suppliersInternal>
             </package>
@@ -60,18 +60,110 @@
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="b44f5c38-3002-4339-a036-995553f4e99a" name="Infraestructure">
-              <elementDefinition Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c" />
+            <package Id="4579a29a-7ad2-41ef-8b0a-f98afd11fe84" name="SPA">
+              <elementDefinition Id="17bb37c9-2918-4bd6-a3ec-046cb06b36be" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="e5c81bed-4510-4b5b-8c85-ae6d53156a14" name="App">
+                    <elementDefinition Id="7f4723fd-46fa-4a7a-9ed4-91ec42932788" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <package Id="9751b2b9-f721-43b8-a384-fa7dcdf5f000" name="Controllers">
+                          <elementDefinition Id="32009d9c-0430-48be-bfd0-1de55e6ca6c8" />
+                          <suppliersInternal>
+                            <dependency Id="e4e8bdd5-e4be-4408-9b76-4147eb7771a4">
+                              <packageMoniker Id="1c562147-5e04-4a78-b60b-f7a8e609df00" LastKnownName="Factories" />
+                              <elementDefinition Id="3106f77c-7661-4583-b742-fe172e38182d" />
+                            </dependency>
+                            <dependency Id="675d989b-7ccd-4692-ab60-d0cfd84f4a59">
+                              <packageMoniker Id="89180d44-62cb-4086-ac4e-9d6746f1db20" LastKnownName="Pages" />
+                              <elementDefinition Id="572ce735-ff7f-433e-a244-f777b6ab38ef" />
+                            </dependency>
+                          </suppliersInternal>
+                        </package>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <package Id="1c562147-5e04-4a78-b60b-f7a8e609df00" name="Factories">
+                          <elementDefinition Id="0b876503-937c-44a6-8d64-e5559006275c" />
+                          <suppliersInternal>
+                            <dependency Id="51e67312-9642-469e-aba0-e0c5695aee2c">
+                              <packageMoniker Id="ae0ea320-8853-437b-ab13-9056902fc669" LastKnownName="Controllers" />
+                              <elementDefinition Id="d46f2a31-2b24-4a32-a43a-01b48ef589e4" />
+                            </dependency>
+                          </suppliersInternal>
+                        </package>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="89180d44-62cb-4086-ac4e-9d6746f1db20" name="Pages">
+                    <elementDefinition Id="dde2042f-799d-4ea6-97d3-6fc7cd0dd0e1" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <package Id="e0f8ee64-30d7-4f92-8064-26d8182f7a9b" name="Dev">
+                          <elementDefinition Id="9255d162-dc18-4a9a-ba9c-fd73d72366d2" />
+                        </package>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <package Id="00c0e0a2-bd5a-4d66-ab68-31a1892dac50" name="Dist">
+                          <elementDefinition Id="cec5cbda-2400-4b94-8390-25e2a812eb5a" />
+                        </package>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="a6ebee97-9a16-4af7-b71b-13f6414db739" name="API">
+              <elementDefinition Id="75276a6f-1c91-4003-9d0d-384e73684011" />
               <suppliersInternal>
-                <dependency Id="9a6b33b3-dba9-4741-a570-a6100f7ed510">
+                <dependency Id="3a5533ab-33a3-410d-a360-40dd5e7fe6a5">
+                  <packageMoniker Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" LastKnownName="CrossCutting" />
+                  <elementDefinition Id="bc5b58f1-f871-4089-a835-702e9fbee264" />
+                </dependency>
+                <dependency Id="35da7df0-b021-4330-97f6-b0013ce8655c">
+                  <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
+                  <elementDefinition Id="87beddad-e8ef-4305-ab07-8e86e4a980e0" />
+                </dependency>
+                <dependency Id="8c3adb11-e550-487b-853b-e15583431092">
                   <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
-                  <elementDefinition Id="7c707f9d-53b6-4654-8618-63cd3bfc0103" />
+                  <elementDefinition Id="e63c7482-6b3e-4ffc-9e66-156c7367ab5a" />
                 </dependency>
               </suppliersInternal>
               <packagedElements>
                 <packageHasNamedElement>
-                  <package Id="c4fcd6bf-5957-4cdb-a07c-577f5cc5076a" name="Repositories">
-                    <elementDefinition Id="340b3f02-420a-43ff-866d-da5cc7da6fe2" />
+                  <package Id="ae0ea320-8853-437b-ab13-9056902fc669" name="Controllers">
+                    <elementDefinition Id="8fbb013f-ee55-4ddf-9fb6-743db873587b" />
+                    <suppliersInternal>
+                      <dependency Id="fb1391b9-379f-4d58-97c2-84ef5faf4d66">
+                        <packageMoniker Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" LastKnownName="Helpers" />
+                        <elementDefinition Id="e1e38580-7608-4166-be50-ff9a6a240def" />
+                      </dependency>
+                      <dependency Id="b2f8e874-c009-4675-b749-88ff4611e37f">
+                        <packageMoniker Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" LastKnownName="ViewModels" />
+                        <elementDefinition Id="ed5ee8f9-6faa-41e8-ace5-511260c5fe29" />
+                      </dependency>
+                    </suppliersInternal>
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <package Id="9140f798-6512-4550-a521-74b7db2cc43d" name="Reports">
+                          <elementDefinition Id="06d9448a-ce79-4525-8d58-7e6a1dd70745" />
+                        </package>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" name="Helpers">
+                    <elementDefinition Id="a0b65b27-92c1-446f-abca-8ec306b19323" />
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" name="ViewModels">
+                    <elementDefinition Id="21a5878e-a6f2-4072-aa49-7c7a116525fa" />
                   </package>
                 </packageHasNamedElement>
               </packagedElements>
@@ -98,75 +190,42 @@
             <package Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" name="CrossCutting">
               <elementDefinition Id="c53af1d3-70de-4626-a222-ff4362ebf5cb" />
               <suppliersInternal>
-                <dependency Id="29884ae1-c6b1-4985-aeb4-7f6495d15b2d">
-                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
-                  <elementDefinition Id="8790b2a6-8482-4fa8-94f6-93967ceed536" />
+                <dependency Id="15f71be2-e067-4fdc-b0c6-fccb25318e36">
+                  <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
+                  <elementDefinition Id="e10e175f-df81-45f7-91f5-1e8867909e78" />
                 </dependency>
-                <dependency Id="cae3d831-e5c9-4c01-8b9f-eeef50db36e5">
+                <dependency Id="4dbf68b8-6898-4abc-8658-0f5161970b3e">
                   <packageMoniker Id="b44f5c38-3002-4339-a036-995553f4e99a" LastKnownName="Infraestructure" />
-                  <elementDefinition Id="c5e09f09-d235-4418-a1a1-490f4bfe1c44" />
+                  <elementDefinition Id="3cddb26a-d54c-4ab4-a129-34f2294084f5" />
                 </dependency>
-                <dependency Id="59a333dc-ba89-4284-8d56-9ca74591fdc1">
+                <dependency Id="09ad95f5-f4c7-4dbc-83e6-73ad69fade60">
+                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
+                  <elementDefinition Id="0b052a76-d876-49b3-8274-f89a2e576017" />
+                </dependency>
+                <dependency Id="caafd5e2-9975-41a0-9660-5d45b9da62c7">
                   <packageMoniker Id="9913e204-72b2-4ce7-ad59-ed78942246e0" LastKnownName="ApplicationService" />
-                  <elementDefinition Id="95878c7e-3ec3-4a44-892d-9d2098a2bbf7" />
+                  <elementDefinition Id="299f24ae-1557-4c24-81b3-34463b937c55" />
                 </dependency>
               </suppliersInternal>
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="4579a29a-7ad2-41ef-8b0a-f98afd11fe84" name="SPA">
-              <elementDefinition Id="17bb37c9-2918-4bd6-a3ec-046cb06b36be" />
+            <package Id="b44f5c38-3002-4339-a036-995553f4e99a" name="Infraestructure">
+              <elementDefinition Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c" />
+              <suppliersInternal>
+                <dependency Id="9a6b33b3-dba9-4741-a570-a6100f7ed510">
+                  <packageMoniker Id="71e26fe9-0789-44df-bb43-655310c3a1c5" LastKnownName="Domain" />
+                  <elementDefinition Id="7c707f9d-53b6-4654-8618-63cd3bfc0103" />
+                </dependency>
+                <dependency Id="a9f41158-8193-49e8-8fc8-1c3d000c4a95">
+                  <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
+                  <elementDefinition Id="5c11dff5-313a-4da8-9d7c-b45784a4afa8" />
+                </dependency>
+              </suppliersInternal>
               <packagedElements>
                 <packageHasNamedElement>
-                  <package Id="e5c81bed-4510-4b5b-8c85-ae6d53156a14" name="App">
-                    <elementDefinition Id="7f4723fd-46fa-4a7a-9ed4-91ec42932788" />
-                    <packagedElements>
-                      <packageHasNamedElement>
-                        <package Id="9751b2b9-f721-43b8-a384-fa7dcdf5f000" name="Controllers">
-                          <elementDefinition Id="32009d9c-0430-48be-bfd0-1de55e6ca6c8" />
-                          <suppliersInternal>
-                            <dependency Id="e4e8bdd5-e4be-4408-9b76-4147eb7771a4">
-                              <packageMoniker Id="1c562147-5e04-4a78-b60b-f7a8e609df00" LastKnownName="Factories" />
-                              <elementDefinition Id="3106f77c-7661-4583-b742-fe172e38182d" />
-                            </dependency>
-                          </suppliersInternal>
-                        </package>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <package Id="1c562147-5e04-4a78-b60b-f7a8e609df00" name="Factories">
-                          <elementDefinition Id="0b876503-937c-44a6-8d64-e5559006275c" />
-                          <suppliersInternal>
-                            <dependency Id="51e67312-9642-469e-aba0-e0c5695aee2c">
-                              <packageMoniker Id="ae0ea320-8853-437b-ab13-9056902fc669" LastKnownName="Controllers" />
-                              <elementDefinition Id="d46f2a31-2b24-4a32-a43a-01b48ef589e4" />
-                            </dependency>
-                          </suppliersInternal>
-                        </package>
-                      </packageHasNamedElement>
-                    </packagedElements>
-                  </package>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <package Id="89180d44-62cb-4086-ac4e-9d6746f1db20" name="Pages">
-                    <elementDefinition Id="dde2042f-799d-4ea6-97d3-6fc7cd0dd0e1" />
-                    <suppliersInternal>
-                      <dependency Id="5d7d1ee6-588e-4548-9f27-44819391c2fd">
-                        <packageMoniker Id="9751b2b9-f721-43b8-a384-fa7dcdf5f000" LastKnownName="Controllers" />
-                        <elementDefinition Id="0bb0f9a5-98d5-4e2a-a8a5-f0a1a52f4fdc" />
-                      </dependency>
-                    </suppliersInternal>
-                    <packagedElements>
-                      <packageHasNamedElement>
-                        <package Id="e0f8ee64-30d7-4f92-8064-26d8182f7a9b" name="Dev">
-                          <elementDefinition Id="9255d162-dc18-4a9a-ba9c-fd73d72366d2" />
-                        </package>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <package Id="00c0e0a2-bd5a-4d66-ab68-31a1892dac50" name="Dist">
-                          <elementDefinition Id="cec5cbda-2400-4b94-8390-25e2a812eb5a" />
-                        </package>
-                      </packageHasNamedElement>
-                    </packagedElements>
+                  <package Id="c4fcd6bf-5957-4cdb-a07c-577f5cc5076a" name="Repositories">
+                    <elementDefinition Id="340b3f02-420a-43ff-866d-da5cc7da6fe2" />
                   </package>
                 </packageHasNamedElement>
               </packagedElements>
@@ -175,59 +234,6 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
-    <packageHasNamedElement>
-      <package Id="a6ebee97-9a16-4af7-b71b-13f6414db739" name="API">
-        <elementDefinition Id="75276a6f-1c91-4003-9d0d-384e73684011" />
-        <suppliersInternal>
-          <dependency Id="bb814d3a-ff8c-49d3-ab35-394b3f7b28ce">
-            <packageMoniker Id="9913e204-72b2-4ce7-ad59-ed78942246e0" LastKnownName="ApplicationService" />
-            <elementDefinition Id="742ef085-4db2-4fc2-935b-cb53da4b7fd8" />
-          </dependency>
-          <dependency Id="3242b14d-48aa-48e4-a4cd-b15b390a5001">
-            <packageMoniker Id="719c3a31-8a6a-40cf-8e89-81b4ce6efd33" LastKnownName="CrossCutting" />
-            <elementDefinition Id="270a1bec-63a0-486d-86d0-33814a65e6bf" />
-          </dependency>
-          <dependency Id="baf29461-2e7d-4d75-98e8-f6a77b5434dc">
-            <packageMoniker Id="423da91e-b92b-4eb6-abe1-fa8be480e9b4" LastKnownName="SharedKernel" />
-            <elementDefinition Id="ab5d8624-84d4-417e-b0ca-b81b5cbfeb11" />
-          </dependency>
-        </suppliersInternal>
-        <packagedElements>
-          <packageHasNamedElement>
-            <package Id="ae0ea320-8853-437b-ab13-9056902fc669" name="Controllers">
-              <elementDefinition Id="8fbb013f-ee55-4ddf-9fb6-743db873587b" />
-              <suppliersInternal>
-                <dependency Id="fb1391b9-379f-4d58-97c2-84ef5faf4d66">
-                  <packageMoniker Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" LastKnownName="Helpers" />
-                  <elementDefinition Id="e1e38580-7608-4166-be50-ff9a6a240def" />
-                </dependency>
-                <dependency Id="b2f8e874-c009-4675-b749-88ff4611e37f">
-                  <packageMoniker Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" LastKnownName="ViewModels" />
-                  <elementDefinition Id="ed5ee8f9-6faa-41e8-ace5-511260c5fe29" />
-                </dependency>
-              </suppliersInternal>
-              <packagedElements>
-                <packageHasNamedElement>
-                  <package Id="9140f798-6512-4550-a521-74b7db2cc43d" name="Reports">
-                    <elementDefinition Id="06d9448a-ce79-4525-8d58-7e6a1dd70745" />
-                  </package>
-                </packageHasNamedElement>
-              </packagedElements>
-            </package>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <package Id="675cdf48-9157-4d32-b268-c0d9b3a11de1" name="Helpers">
-              <elementDefinition Id="a0b65b27-92c1-446f-abca-8ec306b19323" />
-            </package>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <package Id="2aae7af8-54ff-49c4-bfe9-aab0aeaaac2d" name="ViewModels">
-              <elementDefinition Id="21a5878e-a6f2-4072-aa49-7c7a116525fa" />
-            </package>
-          </packageHasNamedElement>
-        </packagedElements>
-      </package>
-    </packageHasNamedElement>
   </packagedElements>
   <package Id="809bd284-5692-4d41-a043-cb34fb9bf8e6" name="CoachingPlan">
     <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />

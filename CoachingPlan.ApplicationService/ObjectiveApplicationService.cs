@@ -101,7 +101,7 @@ namespace CoachingPlan.ApplicationService
         public Objective Update(UpdateObjectiveCommand command)
         {
             var Objective = _repository.GetOne(command.Id);
-            if (command.Description != null)
+            if (!string.IsNullOrEmpty(command.Description))
                 Objective.ChangeDescription(command.Description);
             if (command.Term != null)
                 Objective.ChangeTerm(command.Term);

@@ -61,7 +61,7 @@ namespace CoachingPlan.ApplicationService
         public PerformanceIndicator Update(UpdatePerformanceIndicatorCommand command)
         {
             var performanceIndicator = _repository.GetOne(command.Id);
-            if (command.Indicator != null)
+            if (!string.IsNullOrEmpty(command.Indicator))
                 performanceIndicator.ChangeIndicator(command.Indicator);
 
             _repository.Update(performanceIndicator);

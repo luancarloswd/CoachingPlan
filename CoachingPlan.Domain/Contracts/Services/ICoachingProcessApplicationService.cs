@@ -15,5 +15,6 @@ namespace CoachingPlan.Domain.Contracts.Services
         CoachingProcess Delete(Guid id);
         List<CoachingProcess> GetAllByService(Guid idService);
         CoachingProcess GetOneIncludeDetails(Guid id);
+        List<CoachingProcess> GetAllByCoachee(string idCoachee);
     }
 }

@@ -7,10 +7,10 @@ namespace CoachingPlan.Domain.Models
     {
         #region Ctor
         protected FilledToolCoach(){}
-        public FilledToolCoach(DateTime evaluationDate, Guid idEvaluationTool, Guid idCoachingProcess, Guid idCoach)
+        public FilledToolCoach(DateTime? evaluationDate, Guid idEvaluationTool, Guid idCoachingProcess, Guid idCoach)
         {
             this.Id = Guid.NewGuid();
-            this.IdCoach = IdCoach;
+            this.IdCoach = idCoach;
             this.IdCoachingProcess = idCoachingProcess;
             this.IdEvaluationTool = idEvaluationTool;
             this.EvaluationDate = evaluationDate;
@@ -22,7 +22,7 @@ namespace CoachingPlan.Domain.Models
         public Guid IdEvaluationTool { get; private set; }
         public Guid IdCoach { get; private set; }
         public Guid IdCoachingProcess { get; private set; }
-        public DateTime EvaluationDate { get; private set; }
+        public Nullable<DateTime> EvaluationDate { get; private set; }
 
         public virtual EvaluationTool EvaluationTool { get; private set; }
         public virtual Coach Coach { get; private set; }

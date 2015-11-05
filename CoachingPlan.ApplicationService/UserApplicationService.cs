@@ -98,7 +98,7 @@ namespace CoachingPlan.ApplicationService
 
             user.Validate();
 
-            if (commandUser.Password != null)
+            if (!string.IsNullOrEmpty(commandUser.Password))
                 _repository.Update(user, commandUser.Password);
             else
                 _repository.Update(user);

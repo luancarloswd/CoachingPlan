@@ -28,15 +28,15 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public List<EvaluationTool> GetAll()
         {
-            return _context.EvaluationTool.ToList();
+            return _context.EvaluationTool.Where(x => x.FilledToolCoach.Count == 0).Where(x => x.FilledToolCoachee.Count == 0).ToList();
         }
         public List<EvaluationTool> GetAllIncludeDetails()
         {
-            return _context.EvaluationTool.Include(x => x.Question.Select(y => y.Reply)).ToList();
+            return _context.EvaluationTool.Include(x => x.Question.Select(y => y.Reply)).Where(x => x.FilledToolCoach.Count == 0).Where(x => x.FilledToolCoachee.Count == 0).ToList();
         }
         public List<EvaluationTool> GetAllByCoach(Guid id)
         {
-            return _context.EvaluationTool.Where(x => x.Coach.FirstOrDefault(y => y.Id == id).Id == id).ToList();
+            return _context.EvaluationTool.Where(x => x.Coach.FirstOrDefault(y => y.Id == id).Id == id).Where(x => x.FilledToolCoach.Count == 0).Where(x => x.FilledToolCoachee.Count == 0).ToList();
         }
 
         public List<EvaluationTool> GetAllByCoachee(Guid id)
@@ -50,7 +50,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public EvaluationTool GetOne(Guid id)
         {
-            return _context.EvaluationTool.Where(EvaluationToolSpecs.GetOne(id)).Include(x => x.Question.Select(y => y.Reply)).Include(x=> x.Coach).FirstOrDefault();
+            return _context.EvaluationTool.Where(EvaluationToolSpecs.GetOne(id)).Include(x => x.Question.Select(y => y.Reply)).Include(x=> x.Coach.Select(y => y.User.Person)).FirstOrDefault();
         }
 
         public EvaluationTool GetOneIncludeFilledTool(Guid id)

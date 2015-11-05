@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="24a9d0b7-8a50-40af-8251-8bce6b921d3c"
   name="Infraestructure" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -10,6 +10,13 @@
         Id="89a412f4-b732-42e1-a00d-14653532d6aa"
         LastKnownName="Domain"
         LastKnownLocation="Package1_1159.uml" />
+    </dependency>
+    <dependency
+      Id="5c11dff5-313a-4da8-9d7c-b45784a4afa8">
+      <packageMoniker
+        Id="ca2a6026-44a2-4589-9743-8477f248db06"
+        LastKnownName="SharedKernel"
+        LastKnownLocation="Package3_1159.uml" />
     </dependency>
   </suppliersInternal>
   <packagedElements>
