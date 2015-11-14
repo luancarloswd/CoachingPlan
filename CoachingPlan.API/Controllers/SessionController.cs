@@ -103,6 +103,11 @@ namespace CoachingPlan.Api.Controllers
         [Route("api/sessions")]
         public Task<HttpResponseMessage> Post([FromBody]dynamic body)
         {
+            var validate= _serviceSession.GetAllByCoachingProcess(Guid.Parse((string)body.coachingProcess.id));
+            foreach(var item in  validate)
+                if (item.StartTime == (TimeSpan)body.startTime && item.Date == (DateTime)body.date)
+                    return CreateResponse(HttpStatusCode.BadRequest, null);
+
             var listJob = _serviceJob.AddJobToSession(body.job);
             var coachingProcess = _serviceCoachingProcess.GetOne(Guid.Parse((string)body.coachingProcess.id));
             var user = _serviceUser.GetOne((string)body.idUser);

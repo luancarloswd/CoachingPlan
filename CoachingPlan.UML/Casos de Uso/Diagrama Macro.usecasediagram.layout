@@ -295,17 +295,6 @@
         <useCaseShapeMoniker Id="0c39de6e-de27-45a7-a9a8-ef145470e267" />
       </nodes>
     </extendConnector>
-    <includeConnector edgePoints="[(6.75009242998508 : 7.11538639288433); (4.49987928536763 : 7.07211306318015)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«include»">
-      <includeMoniker Id="cb6cea47-5b69-4230-9d3a-c1a97dff13d6" />
-      <relativeChildShapes />
-      <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="4.9375, 7.3125, 0.52439594268798828, 0.14800345897674561" shapeFieldName="NameDecorator" />
-      </moveableDecoratorHostShapes>
-      <nodes>
-        <useCaseShapeMoniker Id="de97d28c-21d5-4db7-8234-191fa1b15633" />
-        <useCaseShapeMoniker Id="0c39de6e-de27-45a7-a9a8-ef145470e267" />
-      </nodes>
-    </includeConnector>
     <extendConnector edgePoints="[(3.46615912518001 : 6.49052763412143); (3.68373271456879 : 6.72364219418084)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«extend»">
       <extendMoniker Id="b2ef0211-b592-4156-8c0d-c3a6eef710d0" />
       <relativeChildShapes />
@@ -314,6 +303,17 @@
       </moveableDecoratorHostShapes>
       <nodes>
         <useCaseShapeMoniker Id="65a5b841-a682-46b6-8921-fcf68678d8ca" />
+        <useCaseShapeMoniker Id="0c39de6e-de27-45a7-a9a8-ef145470e267" />
+      </nodes>
+    </extendConnector>
+    <extendConnector edgePoints="[(6.75009242998508 : 7.11538639288433); (4.49987928536763 : 7.07211306318015)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="9f2d3836-718c-4b78-a6a1-8fc870ecbfcd" />
+      <relativeChildShapes />
+      <moveableDecoratorHostShapes>
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5, 7.1875, 0.51066982746124268, 0.14800345897674561" shapeFieldName="NameDecorator" />
+      </moveableDecoratorHostShapes>
+      <nodes>
+        <useCaseShapeMoniker Id="de97d28c-21d5-4db7-8234-191fa1b15633" />
         <useCaseShapeMoniker Id="0c39de6e-de27-45a7-a9a8-ef145470e267" />
       </nodes>
     </extendConnector>

@@ -5,17 +5,18 @@ namespace CoachingPlan.Domain.Commands.ReplyCommands
 {
     public class UpdateReplyCommand
     {
-        public Guid Id { get; private set; }
-        public Guid IdQuestion { get; private set; }
-        public string BodyReply { get; private set; }
-        public bool Status { get; private set; }
+        public Guid Id { get; set; }
+        public Guid IdQuestion { get; set; }
+        public string BodyReply { get; set; }
+        public bool Status { get; set; }
 
-        public virtual Question Question { get; private set; }
+        public virtual Question Question { get; set; }
 
-        public UpdateReplyCommand(Guid id, string bodyReply)
+        public UpdateReplyCommand(Guid id, string bodyReply, bool status)
         {
             this.Id = id;
             this.BodyReply = bodyReply;
+            this.Status = status;
         }
     }
 }

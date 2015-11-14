@@ -16,7 +16,8 @@ namespace CoachingPlan.Domain.Scopes
         public static bool ChangeEvaluationDateScopeIsValid(this FilledToolCoachee filledTool, DateTime evaluationDate)
         {
             return AssertionConcern.IsSatisfiedBy(
-                             AssertionConcern.AssertArgumentNotNull(evaluationDate, Errors.DateIsRequired)
+                             AssertionConcern.AssertArgumentNotNull(evaluationDate, Errors.DateIsRequired),
+                              AssertionConcern.AssertArgumentAreEquals(filledTool.EvaluationDate, DateTime.MinValue, Errors.StartDateIsRequired)
                 );
         }
     }

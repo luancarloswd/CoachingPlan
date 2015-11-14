@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="baa4b02d-9a85-4866-b3b5-09fb0ee13148" name="UC11 - Gerenciar Sessões de Coaching" linkedPackageId="391e35e0-60c8-4172-8ae9-96d0c81b4c5a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="baa4b02d-9a85-4866-b3b5-09fb0ee13148" name="UC11 - Gerenciar Sessões de Coaching" linkedPackageId="391e35e0-60c8-4172-8ae9-96d0c81b4c5a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <profileInstances>
-    <packageHasProfileInstances Id="56c0e896-0db3-443f-ac6c-e1942813da51">
-      <profileInstance Id="8f3133df-3d66-4ea0-8bee-f94283cdfcd8" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="830bb5f2-ef3d-4fbb-884b-8a2bb0274049">
+      <profileInstance Id="54f823fd-42d4-4ddb-bb46-6fece08d6b9c" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3d371720-9c45-40d3-8f23-d43022dc11e8">
-      <profileInstance Id="10928231-a555-4b2f-8afe-9c432a73eeaf" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -89,17 +83,6 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="1044dc49-8fef-442f-9997-90e3339acfb9" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
-        <extendedCases>
-          <extend Id="51c76ec3-9401-4e69-9221-5273573715ff">
-            <useCaseMoniker Id="21ef0c80-9c44-4681-8422-f3810185ee23" LastKnownName="UC11-Gerenciar Sessões de Coaching" />
-            <elementDefinition Id="f7be6f4b-1239-41fc-a2a8-6d393ae6ec30" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
       <useCase Id="deb1cb0e-4a30-4ecc-9fcd-ab4f9341bc28" name="Cadastrar Sessão de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="a2f6b9f6-95b8-4a53-b3d0-f7ac63591184" />
         <suppliersInternal>
@@ -154,8 +137,33 @@
         </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3086034d-1109-4201-bde2-d14093fff90b" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
+        <additions>
+          <include Id="10498143-89cb-4993-925b-c4426afd6ae1">
+            <useCaseMoniker Id="21ef0c80-9c44-4681-8422-f3810185ee23" LastKnownName="UC11-Gerenciar Sessões de Coaching" />
+            <elementDefinition Id="8cc659e5-5b8d-468e-a1d7-2ab2fd5380ac" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="391e35e0-60c8-4172-8ae9-96d0c81b4c5a" name="CoachingPlan">
     <elementDefinition Id="3e1b4d7b-3c83-4f82-8365-83575c2f9d5b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="56c0e896-0db3-443f-ac6c-e1942813da51">
+        <profileInstance Id="8f3133df-3d66-4ea0-8bee-f94283cdfcd8" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3d371720-9c45-40d3-8f23-d43022dc11e8">
+        <profileInstance Id="10928231-a555-4b2f-8afe-9c432a73eeaf" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

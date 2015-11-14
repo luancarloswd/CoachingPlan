@@ -91,7 +91,8 @@ namespace CoachingPlan.ApplicationService
                         listReply.Add(
                             Update(new UpdateReplyCommand(
                             Guid.Parse((string)item.id),
-                            (string)item.bodyReply)));
+                            (string)item.bodyReply,
+                            (bool)item.status)));
                     else
                         listReply.Add(new Reply( 
                             (string)item.bodyReply,

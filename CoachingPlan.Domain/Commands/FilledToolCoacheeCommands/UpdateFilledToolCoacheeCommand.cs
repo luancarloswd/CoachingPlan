@@ -13,11 +13,10 @@ namespace CoachingPlan.Domain.Commands.FilledToolCoacheeCommands
         public virtual EvaluationTool EvaluationTool { get; private set; }
         public virtual Coachee Coachee { get; private set; }
 
-        public UpdateFilledToolCoacheeCommand(Guid id, DateTime evaluationDate, Guid idEvaluationTool, Coachee coachee)
+        public UpdateFilledToolCoacheeCommand(Guid id, DateTime evaluationDate, Guid idEvaluationTool, Guid coachee)
         {
             this.Id = id;
-            this.Coachee = coachee;
-            this.IdCoachee = coachee.Id;
+            this.IdCoachee = coachee;
             this.IdEvaluationTool = idEvaluationTool;
             this.EvaluationDate = evaluationDate;
         }

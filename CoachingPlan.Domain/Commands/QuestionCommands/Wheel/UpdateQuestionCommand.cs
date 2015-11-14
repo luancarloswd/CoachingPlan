@@ -18,13 +18,13 @@ namespace CoachingPlan.Domain.Commands.QuestionCommands.Wheel
 
         public virtual EvaluationTool EvaluationTool { get; private set; }
         public virtual ICollection<Reply> Reply { get; private set; }
-        public UpdateQuestionCommandWheel(Guid id, ETypeReply typeReply, ETypeQuestion typeQuestion, string enunciation, string education)
+        public UpdateQuestionCommandWheel(Guid id, ETypeReply typeReply, ETypeQuestion typeQuestion, string enunciation, string education, List<Reply> reply)
         {
             this.Id = id;
             this.TypeReply = typeReply;
             this.TypeQuestion = typeQuestion;
             this.Enunciation = enunciation;
-            this.Reply = new HashSet<Reply>();
+            this.Reply = reply;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace CoachingPlan.Domain.Commands.EvaluationToolCommands
         {
             this.Id = id;
             this.Name = name;
-            this.Type = type;
+            this.Type = type;  
             this.Question = question;
         }
     }

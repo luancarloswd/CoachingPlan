@@ -250,26 +250,28 @@ namespace CoachingPlan.ApplicationService
                 if ((item.enunciation != null && item.enunciation != ""))
                 {
                     if (item.id != null)
+                    {
+                        var listReply = _serviceReply.AddReplys(item.reply);
                         listQuestion.Add(
                             Update(new UpdateQuestionCommandWheel(
                             Guid.Parse((string)item.id),
                             (ETypeReply)item.typeReply,
                             (ETypeQuestion)item.typeQuestion,
                             (string)item.enunciation,
-                            (string)item.education
+                            (string)item.education,
+                            listReply
                             )));
+                        _serviceReply.CheckReplyRemovedOfQuestion(listReply, Guid.Parse((string)item.id));
+                    }
                     else
                     {
-                        List<Reply> listReply = new List<Reply>();
-                        for (var i = 1; i <= 10; i++)
-                            listReply.Add(new Reply(i.ToString(), null));
                         listQuestion.Add(new Question(
                             (ETypeReply)item.typeReply,
                             (ETypeQuestion)item.typeQuestion,
                             0,
                             (string)item.enunciation,
                             (string)item.education,
-                            listReply,
+                            new List<Reply>(),
                             0,
                             null));
                     }

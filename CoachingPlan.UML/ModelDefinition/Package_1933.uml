@@ -10,6 +10,15 @@
         name="UC13-Visualizar Agenda de Sessões"
         isAbstract="false"
         isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="f5db7036-5eb6-4bd0-a72e-df5e6acf297e">
+            <useCaseMoniker
+              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
+              LastKnownName="UC12-Acompanhar Processo de Coaching"
+              LastKnownLocation="Package1_1932.uml" />
+          </extend>
+        </extendedCases>
         <additions>
           <include
             Id="8cc659e5-5b8d-468e-a1d7-2ab2fd5380ac">
@@ -17,13 +26,6 @@
               Id="c26e886c-9827-49bb-bed1-1f21f8974a38"
               LastKnownName="UC11-Gerenciar Sessões de Coaching"
               LastKnownLocation="Package_1932.uml" />
-          </include>
-          <include
-            Id="03c7598a-3ff0-419b-8a89-2492870f12a0">
-            <useCaseMoniker
-              Id="3566127d-0dbf-4d1f-b4d2-0569ca4f1474"
-              LastKnownName="UC12-Acompanhar Processo de Coaching"
-              LastKnownLocation="Package1_1932.uml" />
           </include>
         </additions>
       </useCase>

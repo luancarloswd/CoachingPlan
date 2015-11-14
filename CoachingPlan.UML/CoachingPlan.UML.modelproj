@@ -169,13 +169,6 @@
       <SubType>Content</SubType>
       <DependentUpon>Diagramas de Classe\Diagrama de Classe Conceitual.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Diagramas de Sequência\UC01 - Fluxo Alternativo 1.sequencediagram</DependentUpon>
-    </Content>
     <Content Include="Diagramas de Sequência\UC01 - Fluxo Alternativo 2.sequencediagram">
       <SubType>Content</SubType>
     </Content>

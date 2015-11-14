@@ -126,6 +126,47 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.BadRequest, null);
         }
 
+        [Authorize(Roles = "Administrator, Coach, Coachee")]
+        [HttpPut]
+        [Route("api/evaluationTools/fill")]
+        public Task<HttpResponseMessage> Fill([FromBody]dynamic body)
+        {
+            if (body.role == "Coachee")
+            {
+                var commandFilledTool = new UpdateFilledToolCoacheeCommand(
+                   Guid.Parse((string)body.id),
+                   DateTime.Now,
+                   Guid.Parse((string)body.idEvaluationTool),
+                   Guid.Parse((string)body.idCoachee)
+               );
+                var filledTool = _serviceFilledToolCoachee.Update(commandFilledTool);
+            }
+            else if (body.role == "Coach")
+            {
+                var commandFilledTool = new UpdateFilledToolCoachCommand(
+                   Guid.Parse((string)body.id),
+                   DateTime.Now,
+                   Guid.Parse((string)body.idEvaluationTool),
+                   Guid.Parse((string)body.idCoach)
+               );
+                var filledTool = _serviceFilledToolCoach.Update(commandFilledTool);
+            }
+            else
+                return CreateResponse(HttpStatusCode.BadRequest, null);
+
+            var listQuestion = _serviceQuestion.AddToEvaluationTool(body.evaluationTool.question, (ETypeEvaluationTool)body.evaluationTool.type);
+            var commandEvaluationTool = new UpdateEvaluationToolCommand(
+                Guid.Parse((string)body.evaluationTool.id),
+                (string)body.evaluationTool.name,
+                (ETypeEvaluationTool)body.evaluationTool.type,
+                listQuestion
+           );
+            
+            var evaluationTool = _serviceEvaluationTool.Update(commandEvaluationTool);
+
+            return CreateResponse(HttpStatusCode.OK, evaluationTool);
+        }
+
         [Authorize(Roles = "Administrator, Coach")]
         [HttpPost]
         [Route("api/evaluationTools")]

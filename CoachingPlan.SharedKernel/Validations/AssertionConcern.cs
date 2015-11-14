@@ -92,6 +92,11 @@ namespace CoachingPlan.SharedKernel.Validations
             return (!(value1 > value2)) ?
                 new DomainNotification("AssertArgumentTrue", message) : null;
         }
+        public static DomainNotification AssertArgumentAreEquals(DateTime value1, DateTime value2, string message)
+        {
+            return (!(value1 == value2)) ?
+                new DomainNotification("AssertArgumentTrue", message) : null;
+        }
 
     }
 }

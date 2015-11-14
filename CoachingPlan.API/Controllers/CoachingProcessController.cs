@@ -37,7 +37,7 @@ namespace CoachingPlan.Api.Controllers
             this._service = service;
         }
 
-        [Authorize(Roles = "Administrator, Coach")]
+        [Authorize(Roles = "Administrator, Coach, SessionManager")]
         [HttpGet]
         [Route("api/coachingProcesss")]
         public Task<HttpResponseMessage> Get()
@@ -55,7 +55,7 @@ namespace CoachingPlan.Api.Controllers
             return CreateResponse(HttpStatusCode.OK, coachingProcesss);
         }
 
-        [Authorize(Roles = "Administrator, Coach, Coachee")]
+        [Authorize(Roles = "Administrator, SessionManager, Coach, Coachee")]
         [HttpGet]
         [Route("api/coachingProcesss/{id}")]
         public Task<HttpResponseMessage> Get(string id)

@@ -118,12 +118,13 @@
     <Content Include="wwwroot\app\controllers\account\login-ctrl.js" />
     <Content Include="wwwroot\app\controllers\account\logout-ctrl.js" />
     <Content Include="wwwroot\app\controllers\coaching-process\coaching-process-list-coachee-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-details-ctrl.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\filled-tool.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-filled-tool.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-list-ctrl.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-remove-ctrl.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-create-ctrl.js" />
-    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-details-ctrl.js" />
+    <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-result-ctrl.js" />
     <Content Include="wwwroot\app\controllers\evaluation-tool\evaluation-tool-edit-ctrl.js" />
     <Content Include="wwwroot\app\controllers\action-plan\action-plan-create-ctrl.js" />
     <Content Include="wwwroot\app\controllers\action-plan\action-plan-details-ctrl.js" />
@@ -174,6 +175,12 @@
     <Content Include="wwwroot\app\factories\coach-factory.js" />
     <Content Include="wwwroot\app\factories\user-factory.js" />
     <Content Include="wwwroot\app\routes.js" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\angular-chart.js" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.css" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.js" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.min.css" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.min.js" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\gulpfile.js" />
     <Content Include="wwwroot\bower_components\angular-route\angular-route.js" />
     <Content Include="wwwroot\bower_components\angular-route\angular-route.min.js" />
     <Content Include="wwwroot\bower_components\angular-route\index.js" />
@@ -1886,6 +1893,7 @@
     <Content Include="wwwroot\public\dev\pages\account\login.html" />
     <Content Include="wwwroot\public\dev\pages\evaluation-tool\create.html" />
     <Content Include="wwwroot\public\dev\pages\evaluation-tool\createFilled.html" />
+    <Content Include="wwwroot\public\dev\pages\evaluation-tool\result.html" />
     <Content Include="wwwroot\public\dev\pages\evaluation-tool\filledTool.html" />
     <Content Include="wwwroot\public\dev\pages\evaluation-tool\details.html" />
     <Content Include="wwwroot\public\dev\pages\evaluation-tool\edit.html" />
@@ -2232,6 +2240,15 @@
     <Content Include="wwwroot\bower_components\bootstrap-timepicker\package.json" />
     <Content Include="wwwroot\bower_components\bootstrap-timepicker\README.md" />
     <Content Include="wwwroot\bower_components\bootstrap-timepicker\_config.yml" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\.bower.json" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\angular-chart.less" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\bower.json" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.js.tar.gz" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.min.css.map" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\dist\angular-chart.min.js.map" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\LICENSE" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\package.json" />
+    <Content Include="wwwroot\bower_components\angular-chart.js\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />

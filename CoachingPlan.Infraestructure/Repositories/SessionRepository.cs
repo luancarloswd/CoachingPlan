@@ -90,7 +90,7 @@ namespace CoachingPlan.Infraestructure.Repositories
 
         public List<Session> GetAllByCoachingProcess(Guid idCoachingProcess)
         {
-            return _context.Session.Where(SessionSpecs.GetAllByCoachingProcess(idCoachingProcess)).Include(x=> x.EvaluationCoachee.Select(n => n.Coachee)).ToList();
+            return _context.Session.Where(SessionSpecs.GetAllByCoachingProcess(idCoachingProcess)).ToList();
         }
 
         public List<Session> GetAllByCoachAndCoachingProcess(Person person, Guid idCoachingProcess)
