@@ -294,7 +294,7 @@ namespace CoachingPlan.ApplicationService
                             Guid.Parse((string)item.id),
                             (ETypeReply)item.typeReply,
                             (ETypeQuestion)item.typeQuestion,
-                            (int)item.step,
+                            0,
                             (string)item.enunciation,
                             (string)item.education,
                             listReply)));

@@ -498,6 +498,40 @@
       <SubType>Content</SubType>
       <DependentUpon>Diagramas de Sequência\UC14 - Fluxo Principal.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Diagramas de Sequência\UC15 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC15 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC15 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC16 - Fluxo Alternativo 1sequencediagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC16 - Fluxo Principal.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC16 - Fluxo Principal.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC16 - Fluxo Principal.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC17 - Fluxo Alternativo 1sequencediagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC17 - Fluxo Alternativo 3sequencediagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC17 - Fluxo Alternativo 2sequencediagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC17 - Fluxo Alternativo 3sequencediagram.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC17 - Fluxo Alternativo 2sequencediagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Diagramas de Sequência\UC17 - Fluxo Alternativo 3sequencediagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Diagramas de Sequência\UC17 - Fluxo Alternativo 2sequencediagram.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1106.uml">
       <SubType>Content</SubType>
     </Content>

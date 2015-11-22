@@ -154,6 +154,10 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _context.Entry<Session>(Session).State = EntityState.Modified;
         }
+        public List<Session> GetAllIncludeDetails()
+        {
+            return _context.Session.Include(x => x.CoachingProcess).ToList();
+        }
         public void Dispose()
         {
             _context = null;

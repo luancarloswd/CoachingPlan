@@ -19,5 +19,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Coachee> GetAllByCoachingProcess(Guid idCoachingProcess);
         Coachee GetOneIncludeCoachingProcess(Guid id);
         List<Coachee> GetAllBySession(Guid idSession);
+        List<Coachee> GetAllIncludeProcess();
     }
 }

@@ -134,7 +134,10 @@ namespace CoachingPlan.ApplicationService
 
             return null;
         }
-
+        public CoachingProcess UtilizationCoachingProcess(Guid id)
+        {
+            return _repository.UtilizationCoachingProcess(id);
+        }
         public void Dispose()
         {
             _repository = null;

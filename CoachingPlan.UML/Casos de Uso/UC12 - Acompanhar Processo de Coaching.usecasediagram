@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="d31f25bf-e37f-4b9d-86bb-1d4e46ffc294" name="UC12 - Acompanhar Processo de Coaching" linkedPackageId="d4b9350b-9d8c-468c-9a4c-f30b907b7e6a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d31f25bf-e37f-4b9d-86bb-1d4e46ffc294" name="UC12 - Acompanhar Processo de Coaching" linkedPackageId="d4b9350b-9d8c-468c-9a4c-f30b907b7e6a" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="fe002317-f024-4837-bf1f-0d789c4cd4ff">
+      <profileInstance Id="4b16084f-af7b-4578-a246-3cd1e25380ec" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+      </profileInstance>
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <useCase Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" name="UC12-Acompanhar Processo de Coaching" isAbstract="false" isLeaf="false">
@@ -52,28 +60,6 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="4ac33553-9c25-48f7-a533-ca2efb6290be" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
-        <extendedCases>
-          <extend Id="81e12217-9b04-4789-8f73-6be29ef08924">
-            <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
-            <elementDefinition Id="7f590421-8ec4-4e6c-984d-c00358761dd4" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="d0c0eda6-7899-4a47-a569-9b60787e593f" name="Visualizar Resultado Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="bb628d52-7ee7-41ec-8ab8-0b3bf0bcef6b" />
-        <suppliersInternal>
-          <dependency Id="93d3857b-2f2d-4e2f-833a-a349ae8d3625">
-            <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
-            <elementDefinition Id="4d51c44b-1fd9-4eb8-96cb-baadba3e6000" />
-          </dependency>
-        </suppliersInternal>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
       <useCase Id="715b959b-0189-44ed-8868-c2533b3ffee8" name="Visualizar Processo de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="9e8e896c-7f1f-454d-ad7a-c7853459fd7b" />
         <suppliersInternal>
@@ -91,6 +77,28 @@
           <extend Id="f1f37368-fdd1-48cd-aead-98e69da453f0">
             <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
             <elementDefinition Id="7497d62b-5400-4e4c-a6a5-c6fd93187a51" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="72a8b07f-437c-4ce0-9368-fa3bd4b1cbde" name="UC13-Visualizar Agenda de Sessões" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="73ffc175-c01e-47e8-86b0-47871f4f1a13" />
+        <extendedCases>
+          <extend Id="6e731cae-a68d-4576-8f3d-5258f3b38f99">
+            <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="f5db7036-5eb6-4bd0-a72e-df5e6acf297e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2536fbc3-6ab8-4ee4-9c1e-678f5af76afe" name="UC15-Preencher Ferramenta de Avaliação" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17a67882-440a-47aa-b896-4d8f5b2849e4" />
+        <extendedCases>
+          <extend Id="c880eabf-c149-4f3c-ac24-2207b4f0e61e">
+            <useCaseMoniker Id="d6415938-d5d5-4467-9b9d-f9846ca6ca89" LastKnownName="UC12-Acompanhar Processo de Coaching" />
+            <elementDefinition Id="a5ecd148-ec19-4170-820c-46573b68df5d" />
           </extend>
         </extendedCases>
       </useCase>

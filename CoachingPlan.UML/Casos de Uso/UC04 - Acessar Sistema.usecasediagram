@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e135ba3e-897b-48eb-8a19-49d922867b23" name="UC04 - Acessar Sistema" linkedPackageId="25457b98-1fd2-4c8d-a2c5-afe9d305f3a2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="ded2b4ff-6180-45ac-9c2a-b3de00923858">
-      <profileInstance Id="2ad912b4-344b-4476-8d56-44cf00671eb6" name="CSharpProfile">
-        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
-      </profileInstance>
-      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e135ba3e-897b-48eb-8a19-49d922867b23" name="UC04 - Acessar Sistema" linkedPackageId="25457b98-1fd2-4c8d-a2c5-afe9d305f3a2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="b83a9f4a-dcfb-44ff-8043-64ef13ac8976" name="Administrador" isAbstract="false" isLeaf="false">
@@ -83,7 +75,7 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="cc0c4862-0c72-4114-9e29-d73ff46ec2a4" name="Altenticar Sistema" isAbstract="false" isLeaf="false">
+      <useCase Id="cc0c4862-0c72-4114-9e29-d73ff46ec2a4" name="Autenticar Sistema" isAbstract="false" isLeaf="false">
         <elementDefinition Id="fd7f5ec4-7145-45b3-864a-310741793d56" />
         <suppliersInternal>
           <dependency Id="b0596752-550f-48d0-83c5-e9ae68a31915">
@@ -130,6 +122,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ded2b4ff-6180-45ac-9c2a-b3de00923858">
+        <profileInstance Id="2ad912b4-344b-4476-8d56-44cf00671eb6" name="CSharpProfile">
+          <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+        </profileInstance>
+        <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

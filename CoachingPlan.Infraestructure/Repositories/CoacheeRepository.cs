@@ -69,6 +69,11 @@ namespace CoachingPlan.Infraestructure.Repositories
             return _context.Coachee.Where(x => x.CoachingProcess.FirstOrDefault(y => y.Id == idCoachingProcess).Id == idCoachingProcess).ToList();
         }
 
+        public List<Coachee> GetAllIncludeProcess()
+        {
+            return _context.Coachee.Include(x => x.User).Include(x => x.User.Person).Include(x => x.User.Person.Phone).Include(x => x.User.Person.Address).Include(x => x.CoachingProcess).ToList();
+        }
+
         public List<Coachee> GetAllIncludePerson()
         {
             return _context.Coachee.Include(x => x.User.Person).ToList();

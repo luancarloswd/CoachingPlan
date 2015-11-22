@@ -316,5 +316,10 @@ namespace CoachingPlan.ApplicationService
             return null;
         }
 
+        public List<Session> GetAllIncludeDetails()
+        {
+            return _repositorySession.GetAllIncludeDetails();
+        }
+
     }
 }

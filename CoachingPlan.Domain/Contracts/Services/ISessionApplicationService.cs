@@ -30,5 +30,6 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Session> GetAllByCoachAndCoacheeAndCoachingProcess(Person coach, Person coachee, Guid idCoachingProcess);
         List<Session> GetAllByCoachAndCoacheeAndClassificationAndCoachingProcess(Person coach, Person coachee, ESessionClassification classification, Guid idCoachingProcess);
         List<Session> Search(dynamic body);
+        List<Session> GetAllIncludeDetails();
     }
 }

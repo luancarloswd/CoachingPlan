@@ -60,6 +60,17 @@ namespace CoachingPlan.Infraestructure.Repositories
         {
             _context.Entry<CoachingProcess>(coachingProcess).State = System.Data.Entity.EntityState.Modified;
         }
+        public CoachingProcess UtilizationCoachingProcess(Guid id)
+        {
+           var process = _context.CoachingProcess.Include(x => x.Session.Select(n => n.EvaluationCoachee.Select(z => z.Coachee.User.Person))).FirstOrDefault(x => x.Id == id);
+           var process2 = _context.CoachingProcess.Include(x => x.Session.Select(n => n.EvaluationCoach.Select(z => z.Coach.User.Person))).FirstOrDefault(x => x.Id == id);
+            foreach(var session in process.Session)
+            {
+                foreach(var eval in process2.Session.FirstOrDefault(x=> x.Id == session.Id).EvaluationCoach)
+                    session.EvaluationCoach.Add(eval);
+            }
+            return process;
+        }
         public void Dispose()
         {
             _context = null;

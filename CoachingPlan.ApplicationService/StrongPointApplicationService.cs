@@ -94,7 +94,7 @@ namespace CoachingPlan.ApplicationService
                     else
                         listStrongPoint.Add(new StrongPoint(
                             (string)item.name,
-                            (EClassStrongPoint)item.typeClass,
+                            (EClassStrongPoint)item.classStrongPoint,
                             (string)item.description
                         ));
                 }

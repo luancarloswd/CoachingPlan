@@ -26,6 +26,7 @@ namespace CoachingPlan.Domain.Contracts.Repositories
         List<Session> GetAllByCoachAndCoacheeAndCoachingProcess(Person coach, Person coachee, Guid idCoachingProcess);
         List<Session> GetAllByCoachAndCoacheeAndClassificationAndCoachingProcess(Person coach, Person coachee, ESessionClassification classification, Guid idCoachingProcess);
         List<Session> GetAll(int take, int skip);
+        List<Session> GetAllIncludeDetails();
         Session GetOne(Guid id);
         void Update(Session Session);
     }

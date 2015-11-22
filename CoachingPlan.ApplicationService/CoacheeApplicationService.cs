@@ -126,5 +126,9 @@ namespace CoachingPlan.ApplicationService
             _repository = null;
         }
 
+        public List<Coachee> GetAllIncludeProcess()
+        {
+            return _repository.GetAllIncludeProcess();
+        }
     }
 }
