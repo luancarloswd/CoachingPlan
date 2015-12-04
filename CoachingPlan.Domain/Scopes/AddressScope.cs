@@ -12,7 +12,7 @@ namespace CoachingPlan.Domain.Scopes
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(address.CEP, Errors.InvalidCEP),
                             AssertionConcern.AssertArgumentLength(address.CEP, 8, 8, Errors.InvalidCEP),
-                            CEPAssertionConcern.AssertIsValid(address.CEP, Errors.InvalidCEP),
+                            AssertionConcern.CEPIsValid(address.CEP, Errors.InvalidCEP),
                             AssertionConcern.AssertArgumentNotNull(address.State, Errors.InvalidState),
                             AssertionConcern.AssertArgumentNotNull(address.City, Errors.InvalidCity),
                             AssertionConcern.AssertArgumentLength(address.City, 3, 35, Errors.InvalidCity),
@@ -59,7 +59,7 @@ namespace CoachingPlan.Domain.Scopes
             return AssertionConcern.IsSatisfiedBy(
                             AssertionConcern.AssertArgumentNotNull(cep, Errors.InvalidCEP),
                             AssertionConcern.AssertArgumentLength(cep, 8, 8, Errors.InvalidCEP),
-                            CEPAssertionConcern.AssertIsValid(cep, Errors.InvalidCEP)
+                            AssertionConcern.CEPIsValid(cep, Errors.InvalidCEP)
                 );
         }
     }

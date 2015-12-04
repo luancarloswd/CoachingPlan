@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="a259671a-8681-4111-a98b-71b38fcfab7f"
   name="UC01 - Manter Usuário" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -34,15 +34,15 @@
         name="Editar Usuário"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="dd9c8133-81a3-49ca-a609-5fff177ce71c">
+        <extendedCases>
+          <extend
+            Id="f9bff59a-677c-4708-8511-3c87df8bcaf9">
             <useCaseMoniker
-              Id="d553b200-cf08-4830-9277-1fb09f08909f"
-              LastKnownName="UC01-Manter Usuário"
+              Id="274942bc-3300-4b0b-9568-6c900617740b"
+              LastKnownName="Pesquisar Usuário"
               LastKnownLocation="Package_2032.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -68,15 +68,15 @@
         name="Visualizar Usuário"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="9e89310d-0784-4786-813c-1bce792c1b0e">
+        <extendedCases>
+          <extend
+            Id="6e31b3c1-9cea-40dd-ae4b-71cf6c6f8277">
             <useCaseMoniker
-              Id="d553b200-cf08-4830-9277-1fb09f08909f"
-              LastKnownName="UC01-Manter Usuário"
+              Id="274942bc-3300-4b0b-9568-6c900617740b"
+              LastKnownName="Pesquisar Usuário"
               LastKnownLocation="Package_2032.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -85,15 +85,15 @@
         name="Excluir Usuário"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="97f19499-344d-40ec-8c54-a9a31b3b34ef">
+        <extendedCases>
+          <extend
+            Id="906a57fd-dc06-4d84-af43-bb6b563f8d9d">
             <useCaseMoniker
-              Id="d553b200-cf08-4830-9277-1fb09f08909f"
-              LastKnownName="UC01-Manter Usuário"
+              Id="274942bc-3300-4b0b-9568-6c900617740b"
+              LastKnownName="Pesquisar Usuário"
               LastKnownLocation="Package_2032.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>

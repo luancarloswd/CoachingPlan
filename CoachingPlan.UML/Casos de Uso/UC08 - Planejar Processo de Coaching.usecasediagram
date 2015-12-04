@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="8f537a98-aac2-484b-94ac-f60ac2101c0a" name="UC08 - Planejar Processo de Coaching" linkedPackageId="d5aca735-9dbf-4d9d-a25c-e4e804864446" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="8f537a98-aac2-484b-94ac-f60ac2101c0a" name="UC08 - Planejar Processo de Coaching" linkedPackageId="d5aca735-9dbf-4d9d-a25c-e4e804864446" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="9af2ac2d-069f-41b0-9f50-89bd1c07e04d">
+      <profileInstance Id="0eee407f-ec43-49b0-8445-e1e94ae3eece" name="CSharpProfile">
+        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+      </profileInstance>
+      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
+    </packageHasProfileInstances>
+  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <useCase Id="f5c6202f-4f02-4225-a84f-4345f297342d" name="Cadastrar Processo de Coaching" isAbstract="false" isLeaf="false">
@@ -15,23 +23,23 @@
     <useCaseModelRootHasTypes>
       <useCase Id="c9cd900b-31cf-48a2-993e-bee850cf544a" name="Editar Processo de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="7d31834b-f4f9-48d0-a6bc-dd779f5b47eb" />
-        <suppliersInternal>
-          <dependency Id="929cd08f-02b8-465a-bc31-5d20e6081f63">
-            <useCaseMoniker Id="3f1978a3-b44e-4341-adce-97475dc6e4ad" LastKnownName="UC08-Planejar Processo de Coaching" />
-            <elementDefinition Id="8c19ca18-6e3f-48b1-95bb-63388ef28161" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="22c34434-306c-4c53-8a51-4e8079b50a03">
+            <useCaseMoniker Id="a15bcd1b-d818-4ec6-8727-67d8a40e4b75" LastKnownName="Pesquisar Processo de Coaching" />
+            <elementDefinition Id="a0b63a70-012d-4316-ab3e-4827aa624502" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="3c0a837b-a730-4632-ad9c-2190d12613c9" name="Excluir Processo de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="fb06b1f9-8fd0-45de-9019-5060cde11cc1" />
-        <suppliersInternal>
-          <dependency Id="9782f123-915d-4064-b6fb-c9787a55ce69">
-            <useCaseMoniker Id="3f1978a3-b44e-4341-adce-97475dc6e4ad" LastKnownName="UC08-Planejar Processo de Coaching" />
-            <elementDefinition Id="647801f4-bcbf-4100-ad07-1c1ff060a938" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="45310bfd-88a1-46d8-a502-b142d7e9210e">
+            <useCaseMoniker Id="a15bcd1b-d818-4ec6-8727-67d8a40e4b75" LastKnownName="Pesquisar Processo de Coaching" />
+            <elementDefinition Id="9e263bf1-9954-4971-bfb3-4f62903551b2" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -48,12 +56,12 @@
     <useCaseModelRootHasTypes>
       <useCase Id="65844906-d61c-4ff4-952a-a276e151c2d2" name="Visualizar Processo de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="d298dedb-5c33-4348-b02d-d8ba263c1fd5" />
-        <suppliersInternal>
-          <dependency Id="63433b46-824b-487c-af27-a661e6163f5b">
-            <useCaseMoniker Id="3f1978a3-b44e-4341-adce-97475dc6e4ad" LastKnownName="UC08-Planejar Processo de Coaching" />
-            <elementDefinition Id="61ca328d-6818-4118-8f8d-44d5c22ab6f5" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="6e086298-6c01-471b-9243-b334a18e7c89">
+            <useCaseMoniker Id="a15bcd1b-d818-4ec6-8727-67d8a40e4b75" LastKnownName="Pesquisar Processo de Coaching" />
+            <elementDefinition Id="965d049d-7501-4d79-addb-165be7a6c18d" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -95,7 +103,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="5a5ddd93-d0cb-494a-b69e-8e65335e85e9" name="UC11-Gerenciar Sessão de Coaching" isAbstract="false" isLeaf="false">
+      <useCase Id="5a5ddd93-d0cb-494a-b69e-8e65335e85e9" name="UC11-Gerenciar Sessões de Coaching" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c26e886c-9827-49bb-bed1-1f21f8974a38" />
         <extendedCases>
           <extend Id="6f2e4ec8-db4e-4790-98f3-89d1dc8cf2ae">

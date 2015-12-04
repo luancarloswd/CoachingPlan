@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6cda9092-f076-4c99-b415-54d15b9ff6dc" name="UC01 - Manter Usuário" linkedPackageId="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="8f067759-cd88-472b-ae27-bc95788a3278">
-      <profileInstance Id="52554e39-effe-4656-a94a-24434d343b8d" name="CSharpProfile">
-        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
-      </profileInstance>
-      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6cda9092-f076-4c99-b415-54d15b9ff6dc" name="UC01 - Manter Usuário" linkedPackageId="7c2ed5e6-419a-4076-8378-e5fbb84af8c8" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="37dcc9ab-36b7-4f3e-87e3-dc8665c1296e" name="Administrador" isAbstract="false" isLeaf="false">
@@ -73,23 +65,23 @@
     <useCaseModelRootHasTypes>
       <useCase Id="4cca0bd9-286a-455b-a6ab-5448ed8bd803" name="Editar Usuário" isAbstract="false" isLeaf="false">
         <elementDefinition Id="0df7e0f5-a836-4cff-8ce0-91ff89056570" />
-        <suppliersInternal>
-          <dependency Id="a922d696-09e6-4ad6-8dd7-bf2fb6bd6b9b">
-            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
-            <elementDefinition Id="dd9c8133-81a3-49ca-a609-5fff177ce71c" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="1610a4f0-7e67-4911-952b-3af66e168c1a">
+            <useCaseMoniker Id="83376c50-b03e-4abc-a7fa-12a835753576" LastKnownName="Pesquisar Usuário" />
+            <elementDefinition Id="f9bff59a-677c-4708-8511-3c87df8bcaf9" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="e4efe316-5c94-48f9-8ce7-8fa33f3e1e50" name="Visualizar Usuário" isAbstract="false" isLeaf="false">
         <elementDefinition Id="bac32bfb-c07b-48cb-b7be-8858292df8c5" />
-        <suppliersInternal>
-          <dependency Id="e0aff716-f103-4913-8c27-852d5b4d8f38">
-            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
-            <elementDefinition Id="9e89310d-0784-4786-813c-1bce792c1b0e" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="5bb5b254-e9d4-462f-ba91-a3a1d8834cbb">
+            <useCaseMoniker Id="83376c50-b03e-4abc-a7fa-12a835753576" LastKnownName="Pesquisar Usuário" />
+            <elementDefinition Id="6e31b3c1-9cea-40dd-ae4b-71cf6c6f8277" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -106,12 +98,12 @@
     <useCaseModelRootHasTypes>
       <useCase Id="59b98cdf-ff22-4855-9c57-53a555788f42" name="Excluir Usuário" isAbstract="false" isLeaf="false">
         <elementDefinition Id="6ae9149f-cd27-4bb3-9d74-a57e14f9e3bf" />
-        <suppliersInternal>
-          <dependency Id="41061c07-4fbe-4e1f-9924-fcd3859d254b">
-            <useCaseMoniker Id="dfc9858d-8f6a-41c3-a95b-d6aeea70423d" LastKnownName="UC01-Manter Usuário" />
-            <elementDefinition Id="97f19499-344d-40ec-8c54-a9a31b3b34ef" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="4c1910e2-ba2e-4a06-9905-7c8ecda38c0e">
+            <useCaseMoniker Id="83376c50-b03e-4abc-a7fa-12a835753576" LastKnownName="Pesquisar Usuário" />
+            <elementDefinition Id="906a57fd-dc06-4d84-af43-bb6b563f8d9d" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
@@ -129,6 +121,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8f067759-cd88-472b-ae27-bc95788a3278">
+        <profileInstance Id="52554e39-effe-4656-a94a-24434d343b8d" name="CSharpProfile">
+          <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+        </profileInstance>
+        <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

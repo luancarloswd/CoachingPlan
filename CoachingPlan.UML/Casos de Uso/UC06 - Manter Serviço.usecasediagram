@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="634bf34e-79d9-4d89-bc13-fb8767777b37" name="UC06 - Manter Serviço" linkedPackageId="17620ad7-dfa4-4a64-8df4-bd1b31eba7ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="1da8c3fe-af47-49e5-8699-38042a27ae6e">
-      <profileInstance Id="d2d215e6-15d7-4319-a3da-2d7091cec012" name="CSharpProfile">
-        <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
-      </profileInstance>
-      <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="144e7119-772e-42c1-bf5c-c23f630cd6c2" name="Administrador" isAbstract="false" isLeaf="false">
@@ -62,12 +54,12 @@
     <useCaseModelRootHasTypes>
       <useCase Id="1059bc3d-33e1-4cec-9ddb-a5577d1385da" name="Editar Serviço" isAbstract="false" isLeaf="false">
         <elementDefinition Id="cf9fce03-401c-47bd-8ecc-75b2c357d1ae" />
-        <suppliersInternal>
-          <dependency Id="180d8bfc-ac5a-465d-8fce-ee00a412cdac">
-            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
-            <elementDefinition Id="1a602e72-bff0-4170-8276-0af285c64840" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="0178d6a4-9057-42c6-8910-c0da021125b3">
+            <useCaseMoniker Id="6b3204a0-3deb-43a8-bc4a-54c9077256c2" LastKnownName="Pesquisar Serviço" />
+            <elementDefinition Id="f08b50fb-fb0d-4369-a431-1be75e4905f2" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -84,12 +76,12 @@
     <useCaseModelRootHasTypes>
       <useCase Id="d2659054-92bf-4734-adc6-76797f076f09" name="Excluir Serviço" isAbstract="false" isLeaf="false">
         <elementDefinition Id="60779371-d821-499f-8d7c-76f81c10dc0b" />
-        <suppliersInternal>
-          <dependency Id="4cf43b6d-2ddd-435d-a8bc-a4bc0d4844f8">
-            <useCaseMoniker Id="12cbd789-d6f8-46d8-b655-b892655db525" LastKnownName="UC06-Manter Serviço" />
-            <elementDefinition Id="72476ccc-e314-4f16-b9bf-03ea1ac6aada" />
-          </dependency>
-        </suppliersInternal>
+        <extendedCases>
+          <extend Id="623ca12d-5d7b-4aff-9551-a8ea9dc6a8d1">
+            <useCaseMoniker Id="6b3204a0-3deb-43a8-bc4a-54c9077256c2" LastKnownName="Pesquisar Serviço" />
+            <elementDefinition Id="b7580635-bfde-45f7-b4ae-778ac3b33a3b" />
+          </extend>
+        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
@@ -107,6 +99,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1da8c3fe-af47-49e5-8699-38042a27ae6e">
+        <profileInstance Id="d2d215e6-15d7-4319-a3da-2d7091cec012" name="CSharpProfile">
+          <elementDefinition Id="bcfc9e1c-9322-4440-92dc-c08253d7b9a0" />
+        </profileInstance>
+        <elementDefinition Id="24d00279-951f-4cda-aec7-a5c304419b19" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

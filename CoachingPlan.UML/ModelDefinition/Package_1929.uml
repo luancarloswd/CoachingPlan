@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="2188907b-5117-454c-b317-fdccf2f5fa85"
   name="UC08 - Planejar Processo de Coaching" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -34,15 +34,15 @@
         name="Editar Processo de Coaching"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="8c19ca18-6e3f-48b1-95bb-63388ef28161">
+        <extendedCases>
+          <extend
+            Id="a0b63a70-012d-4316-ab3e-4827aa624502">
             <useCaseMoniker
-              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
-              LastKnownName="UC08-Planejar Processo de Coaching"
+              Id="6bf1e4d6-3d26-42b2-b3ba-fac6823d2cf0"
+              LastKnownName="Pesquisar Processo de Coaching"
               LastKnownLocation="Package_1929.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -68,15 +68,15 @@
         name="Visualizar Processo de Coaching"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="61ca328d-6818-4118-8f8d-44d5c22ab6f5">
+        <extendedCases>
+          <extend
+            Id="965d049d-7501-4d79-addb-165be7a6c18d">
             <useCaseMoniker
-              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
-              LastKnownName="UC08-Planejar Processo de Coaching"
+              Id="6bf1e4d6-3d26-42b2-b3ba-fac6823d2cf0"
+              LastKnownName="Pesquisar Processo de Coaching"
               LastKnownLocation="Package_1929.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -85,15 +85,15 @@
         name="Excluir Processo de Coaching"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="647801f4-bcbf-4100-ad07-1c1ff060a938">
+        <extendedCases>
+          <extend
+            Id="9e263bf1-9954-4971-bfb3-4f62903551b2">
             <useCaseMoniker
-              Id="ae684fc0-dca1-4328-b56a-bfc54c87aef3"
-              LastKnownName="UC08-Planejar Processo de Coaching"
+              Id="6bf1e4d6-3d26-42b2-b3ba-fac6823d2cf0"
+              LastKnownName="Pesquisar Processo de Coaching"
               LastKnownLocation="Package_1929.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
   </packagedElements>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="0949580b-1b62-42ea-b048-9fee2e652798"
   name="UC02 - Manter Coach" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -44,15 +44,15 @@
         name="Editar Coach"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="34619348-5b05-463d-b424-9fdadfc6c51b">
+        <extendedCases>
+          <extend
+            Id="0b56febe-63f1-4048-a6ca-e54ea1084cb6">
             <useCaseMoniker
-              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
-              LastKnownName="UC02-Manter Coach"
+              Id="bd8c3765-df48-456c-98db-85d4dfb513c1"
+              LastKnownName="Pesquisar Coach"
               LastKnownLocation="Package_1926.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -78,15 +78,15 @@
         name="Visualizar Coach"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="3d1b1ba6-9c37-4000-9b29-b7106407eca9">
+        <extendedCases>
+          <extend
+            Id="91c7f94d-b540-48b8-b732-1f4dab6c72d1">
             <useCaseMoniker
-              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
-              LastKnownName="UC02-Manter Coach"
+              Id="bd8c3765-df48-456c-98db-85d4dfb513c1"
+              LastKnownName="Pesquisar Coach"
               LastKnownLocation="Package_1926.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -95,15 +95,15 @@
         name="Excluir Coach"
         isAbstract="false"
         isLeaf="false">
-        <suppliersInternal>
-          <dependency
-            Id="ba73af79-0886-499a-bbe0-7ba313fa8ce2">
+        <extendedCases>
+          <extend
+            Id="43732a1f-abbd-4c6e-ba06-e3330d5d8c9b">
             <useCaseMoniker
-              Id="19e75f76-4c3e-47f6-bf1d-436a5b7ff299"
-              LastKnownName="UC02-Manter Coach"
+              Id="bd8c3765-df48-456c-98db-85d4dfb513c1"
+              LastKnownName="Pesquisar Coach"
               LastKnownLocation="Package_1926.uml" />
-          </dependency>
-        </suppliersInternal>
+          </extend>
+        </extendedCases>
       </useCase>
     </packageHasNamedElement>
   </packagedElements>
