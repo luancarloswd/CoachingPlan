@@ -14,7 +14,6 @@ using System.Web.Http;
 
 namespace CoachingPlan.Api.Controllers
 {
-    [Authorize(Roles = "Administrator, Coach, Coachee, SessionManager")]
     public class UserController : BaseController
     {
         private readonly IUserApplicationService _service;
